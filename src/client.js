@@ -10,6 +10,7 @@ import store from "./store";
 const app = document.getElementById('app')
 
 //Connects store and Layout to render.
-ReactDOM.render(<Provider store={store}>
+ReactDOM.render(
+  <Provider store={store}>
   <Layout/>
   </Provider>,app);

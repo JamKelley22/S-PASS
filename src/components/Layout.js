@@ -5,6 +5,8 @@ import React from "react";
 import {connect} from "react-redux"; //Connects the store to application.
 
 import {addFunction} from "../actions/functionTableAction";
+//bootstrap
+import {Button} from 'react-bootstrap'
 
 //Connects to store in order to grab needed info. This is a smart component.
 //Calling store.functionReducer.functionName accesses the default component for
@@ -23,9 +25,10 @@ export default class Layout extends React.Component{
     const {myFunctionName} = this.props;
     return(
       <div>
+        <Button>Push me</Button>
         <h1>S-PASS</h1>
         //<h1>{myFunctionName}</h1>
-         
+
       </div>
     );
   }
