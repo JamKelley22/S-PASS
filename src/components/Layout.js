@@ -23,8 +23,9 @@ export default class Layout extends React.Component{
     const {myFunctionName} = this.props;
     return(
       <div>
-        <h1>Hello World! Here is a project for React with Redux already set up!</h1>
-        <h1>{myFunctionName}</h1>
+        <h1>S-PASS</h1>
+        //<h1>{myFunctionName}</h1>
+         
       </div>
     );
   }
