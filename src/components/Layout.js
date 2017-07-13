@@ -9,6 +9,8 @@ import {addFunction} from "../actions/functionTableAction";
 import {Button, Grid, Col, Row,PageHeader} from 'react-bootstrap'
 import './Layout.css'
 
+import {link} from 'react-router';
+
 //Connects to store in order to grab needed info. This is a smart component.
 //Calling store.functionReducer.functionName accesses the default component for
 //functionReducer called functionName
@@ -39,7 +41,9 @@ export default class Layout extends React.Component{
             </Col>
           </Row>
           <Row className="show-grid">
-            <h1>{myFunctionName}</h1>
+            <h1>
+              {myFunctionName}
+            </h1>
           </Row>
       </Grid>
       </PageHeader>
