@@ -2,14 +2,13 @@
 //This is a smart commponent that pulls directly from the store.
 
 import React from "react";
+import {Link} from 'react-router';
 import {connect} from "react-redux"; //Connects the store to application.
 
 import {addFunction} from "../actions/functionTableAction";
 //bootstrap
-import {Button, Grid, Col, Row,PageHeader} from 'react-bootstrap'
-import './Layout.css'
-
-import {link} from 'react-router';
+import {Button, Grid, Col, Row,PageHeader} from 'react-bootstrap';
+import './Layout.css';
 
 //Connects to store in order to grab needed info. This is a smart component.
 //Calling store.functionReducer.functionName accesses the default component for
@@ -29,21 +28,18 @@ export default class Layout extends React.Component{
 
 
     return(
-      <PageHeader background="red">
+      <PageHeader>
         <Grid>
-          <Row className = "show-grid">
-            <Col xs={4} md={4}>
-
-              <Button bsStyle="custom">Push me</Button>
-            </Col>
-            <Col  xs={4} md={4}>
-              <h1>S-PASS</h1>
-            </Col>
-          </Row>
           <Row className="show-grid">
             <h1>
-              {myFunctionName}
+              S-PASS
             </h1>
+            <h1>{myFunctionName}</h1>
+          </Row>
+          <Row className = "show-grid">
+            <Col xs={4} md={4}>
+              <Button bsStyle="custom">Push me</Button>
+            </Col>
           </Row>
       </Grid>
       </PageHeader>
