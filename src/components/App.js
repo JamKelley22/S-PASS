@@ -1,9 +1,11 @@
 import React from 'react';
-import Layout from './Layout';
+import Layout from './Layout.js';
+import MasashiRouter from './MasashiTest/MasashiTest';
+import { Link } from 'react-router';
 
-const App = () => (
+const App = (props) => (
   <div>
-    <Layout/>
+    <MasashiRouter/>
   </div>
 )
 
