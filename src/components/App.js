@@ -1,11 +1,21 @@
 import React from 'react';
 import Layout from './Layout.js';
-import MasashiRouter from './MasashiTest/MasashiTest';
-import { Link } from 'react-router';
+import {Link,Route} from 'react-router-dom';
+import MasashiRouter from './MasashiTest/MasashiTest.js';
+import {Button} from 'react-bootstrap';
 
-const App = (props) => (
+const App = () => (
   <div>
-    <MasashiRouter/>
+  <ul>
+    <Link to="/Layout">
+      <Button bsStyle="info">Layout</Button>
+    </Link>
+    <Link to="/MasashiRouter">
+      <Button bsStyle="primary">Masashi Test</Button>
+    </Link>
+  </ul>
+    <Route path="/Layout" component={Layout}/>
+    <Route path="/MasashiRouter" component={MasashiRouter}/>
   </div>
 )
 

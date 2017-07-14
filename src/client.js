@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Provider} from "react-redux"; //Adds
-//import { Router, Route, hashHistory } from 'react-router';
-import { BrowserRouter, Route,IndexRoute } from 'react-router-dom';
+import {Provider} from "react-redux";
+
+import { BrowserRouter as Router} from 'react-router-dom';
 
 //Connects react entry
 import App from "./components/App";
@@ -15,9 +15,7 @@ const app = document.getElementById('app')
 //Connects store and Layout to render.
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter >
-      <Route path='/' component={App}>
-        <Route path='Layout' component={Layout}/>
-      </Route>
-    </BrowserRouter>
+    <Router >
+      <App/>
+    </Router>
   </Provider>,app);
