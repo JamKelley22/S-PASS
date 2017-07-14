@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from './Layout.js';
 import {Link,Route} from 'react-router-dom';
 import MasashiRouter from './MasashiTest/MasashiTest.js';
+import SideBar from './SideBar/Sidebar.js';
 import {PageHeader,Button,Grid,Row,Col,Nav,NavItem} from 'react-bootstrap';
 
 const App = () => (
@@ -10,21 +11,10 @@ const App = () => (
       S-PASS
     </PageHeader>
     <Row>
-      <Col xs={2} md={2}>
-        <Nav>
-          <NavItem>
-            <Link to="/Layout">
-              <Button bsStyle="info">Layout</Button>
-              </Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/MasashiRouter">
-              <Button bsStyle="primary">Masashi Test</Button>
-            </Link>
-          </NavItem>
-        </Nav>
+      <Col xs={3} md={3}>
+        <SideBar/>
       </Col>
-      <Col xs={14} md={10}>
+      <Col xs={9} md={9}>
         <Route path="/Layout" component={Layout}/>
         <Route path="/MasashiRouter" component={MasashiRouter}/>
       </Col>
