@@ -1,15 +1,17 @@
 import React from 'react';
+import {Button} from 'react-bootstrap';
+import {Route, Link} from 'react-router-dom';
+import MasashiTables from '../MasashiTables/MasashiTables.js';
 
-class MasashiRouter extends React.Component{
-  render(){
-    return(
+const MasashiRouter = ({match}) =>(
       <div>
         <h1>
-          Reduxstagram
+          <Link to={`${match.url}/MasashiTables`}>
+            <Button>Reduxstagram</Button>
+          </Link>
         </h1>
+         <Route path={`${match.url}/MasashiTables`} component={MasashiTables}/>
       </div>
-    );
-  }
-}
+  )
 
 export default MasashiRouter;
