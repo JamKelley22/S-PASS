@@ -7,7 +7,7 @@ import Home from './Home/Home.js';
 import {PageHeader,Button,Grid,Row,Col,Nav,NavItem} from 'react-bootstrap';
 
 const App = () => (
-    <Grid>
+  <Grid>
     <PageHeader>
       <Link to="/">
         S-PASS

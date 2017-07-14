@@ -7,7 +7,7 @@ const MasashiRouter = ({match}) =>(
       <div>
         <h1>
           <Link to={`${match.url}/MasashiTables`}>
-            <Button>Reduxstagram</Button>
+            <Button bsStyle='danger'>Don't Click Me</Button>
           </Link>
         </h1>
          <Route path={`${match.url}/MasashiTables`} component={MasashiTables}/>

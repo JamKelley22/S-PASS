@@ -5,7 +5,7 @@ class MasashiTables extends React.Component{
     return(
       <div>
         <h1>
-          Look at this cool table
+          What did I tell you?!
         </h1>
       </div>
     );
