@@ -28,21 +28,19 @@ export default class Layout extends React.Component{
 
 
     return(
-      <PageHeader>
         <Grid>
-          <Row className="show-grid">
+          <Row>
             <h1>
-              S-PASS
+              Layout Page
             </h1>
             <h1>{myFunctionName}</h1>
           </Row>
-          <Row className = "show-grid">
-            <Col xs={4} md={4}>
+          <Row>
+            <Col>
               <Button bsStyle="custom">Push me</Button>
             </Col>
           </Row>
       </Grid>
-      </PageHeader>
     );
   }
 }
