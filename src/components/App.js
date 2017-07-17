@@ -10,7 +10,6 @@ const App = () => (
   <Grid>
     <PageHeader>
       <Link to="/">
-
         <img src={require('../Images/coolslice.png')} />
       </Link>
     </PageHeader>
