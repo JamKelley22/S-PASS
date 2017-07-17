@@ -5,19 +5,12 @@ import MasashiRouter from './MasashiTest/MasashiTest.js';
 import PhaseOne from './PhaseOne/PhaseOne.js';
 import SideBar from './SideBar/Sidebar.js';
 import Home from './Home/Home.js';
+import './App.css';
 import {PageHeader,Button,Grid,Row,Col,Nav,NavItem} from 'react-bootstrap';
-
 
 
 const App = () => (
   <Grid>
-    <style type="text/css">{`
-      .pre-scrollable {
-    max-height: 85%;
-    overflow-y: scroll;
-}
-  `}</style>
-
     <PageHeader>
       <Link to="/">
         S-PASS
