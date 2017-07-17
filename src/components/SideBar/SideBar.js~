@@ -7,13 +7,13 @@ const SideBar = () => (
   <Nav>
       <NavItem>
       <Link to="/Layout">
-      <Button bsStyle="primary" block>
+      <Button bsStyle="primary">
         Layout</Button>
         </Link>
     </NavItem>
     <NavItem>
       <Link to="/MasashiRouter">
-        <Button bsStyle="primary" block>Masashi Test</Button>
+        <Button bsStyle="primary">Masashi Test</Button>
       </Link>
     </NavItem>
   </Nav>
