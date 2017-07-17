@@ -10,7 +10,8 @@ const App = () => (
   <Grid>
     <PageHeader>
       <Link to="/">
-        S-PASS
+
+        <img src={require('../Images/coolslice.png')} />
       </Link>
     </PageHeader>
     <Row>
