@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "webpack --watch"
   },
   "author": "Masashi Schafer",
   "license": "ISC",
@@ -30,7 +31,9 @@
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.3.0",
     "redux-thunk": "^2.2.0",
+    "require": "^2.4.20",
     "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
     "webpack": "^3.0.0",
     "webpack-dev-middleware": "^1.11.0"
   },
