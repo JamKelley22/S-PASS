@@ -6,7 +6,7 @@ const app = express();
 
 const compiler = webpack(webpackConfig);
 
-const path = require("path");
+const path = require("path");//new
 
 
 app.use(express.static(__dirname + '/www'));
@@ -21,7 +21,7 @@ app.use(webpackDevMiddleware(compiler, {
   historyApiFallback: true,
 }));
 
-app.get('*',function(req,res){
+app.get('*',function(req,res){//new
   res.sendFile(path.join(__dirname+'/www/index.html'));
 });
 

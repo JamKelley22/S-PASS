@@ -1,13 +1,15 @@
 import React from 'react';
 import Layout from './Layout.js';
+import './App.css';
 import {Link,Route} from 'react-router-dom';
 import MasashiRouter from './MasashiTest/MasashiTest.js';
+import PhaseOne from './PhaseOne/PhaseOne.js';
 import SideBar from './SideBar/Sidebar.js';
 import Home from './Home/Home.js';
 import TopNav from './SideBar/navbar.js';
 import Breadcrumbs from './breadcrumbs.js';
-import Phase1 from './Phases/Phase1.js';
 import {PageHeader,Button,Grid,Row,Col,Nav,NavItem} from 'react-bootstrap';
+
 
 const App = () => (
   <Grid>
@@ -20,12 +22,13 @@ const App = () => (
         <SideBar/>
       </Col>
       <Col xs={9} md={9}>
-        <Route exact path="/" component={Home}/>
-        <Route path="/Layout" component={Layout}/>
-        <Route path="/MasashiRouter" component={MasashiRouter}/>
-        <Route path="/Home" component={Home}/>
-        <Route path="/Phase1" component={Phase1}/>
-        
+        <div className="pre-scrollable">
+          <Route exact path="/" component={Home}/>
+          <Route path="/Layout" component={Layout}/>
+          <Route path="/MasashiRouter" component={MasashiRouter}/>
+          <Route path="/Home" component={Home}/>
+          <Route path="/PhaseOne" component={PhaseOne}/>
+        </div>
       </Col>
     </Row>
   </Grid>
