@@ -7,7 +7,8 @@
     "compile": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "dev": "concurrently --kill-others \"webpack --watch\" \"node server.js\""
   },
   "author": "Masashi Schafer",
   "license": "ISC",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "babel-plugin-transform-decorators": "^6.24.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4"
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "concurrently": "^3.5.0"
   }
 }
