@@ -12,7 +12,7 @@ export default class PhaseOneInput extends React.Component{
     return(
     <div>
     <ListGroup>
-      <h1>Funtions test</h1>
+      <h1>Funtions</h1>
       <ListGroupItem>{this.props.name}</ListGroupItem>
       <ListGroupItem>Function 2</ListGroupItem>
       <ListGroupItem>Function 3</ListGroupItem>
