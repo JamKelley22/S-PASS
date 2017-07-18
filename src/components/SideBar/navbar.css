@@ -1,6 +1,10 @@
 .navItem {
   font-size: 20px;
 }
+.navItemSmall {
+  font-size: 15px;
+  padding-left: 20px;
+}
 #accountdDropdown {
   font-size: 20px;
 }

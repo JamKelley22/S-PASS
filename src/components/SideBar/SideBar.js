@@ -2,19 +2,33 @@ import {Switch, Route} from 'react-router-dom';
 import {Button,Nav,NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import React from 'react';
+import {LinkContainer} from 'react-router-bootstrap';
 
 const SideBar = () => (
   <Nav bsStyle="pills" stacked>
-    <NavItem><Link to="/Home"><span className="navItem">Overview</span></Link></NavItem>
-    <NavDropdown className="navItem" title="Phases">
-    <MenuItem><Link to="/PhaseOne"><span className="navItem">Phase 1</span></Link></MenuItem>
-    <MenuItem><Link to="/"><span className="navItem">Phase 2</span></Link></MenuItem>
-    <MenuItem><Link to="/"><span className="navItem">Phase 3</span></Link></MenuItem>
+    <LinkContainer to="/Home">
+      <NavItem><span className="navItem">Overview</span></NavItem>
+    </LinkContainer>
+
+    <NavDropdown className="navItem" title="Phases" id="Phases">
+      <LinkContainer to="/PhaseOne">
+        <MenuItem><span className="navItemSmall">Phase 1</span></MenuItem>
+      </LinkContainer>
+      <LinkContainer to="/PhaseTwo">
+        <MenuItem><span className="navItemSmall">Phase 2</span></MenuItem>
+      </LinkContainer>
+      <LinkContainer to="/PhaseThree">
+        <MenuItem><span className="navItemSmall">Phase 3</span></MenuItem>
+      </LinkContainer>
+
     </NavDropdown>
-    <NavItem><Link to="/"><span className="navItem">Project Files</span></Link></NavItem>
-    <NavItem><Link to="/"><span className="navItem">About</span></Link></NavItem>
+    <LinkContainer to="/Files">
+      <NavItem><span className="navItem">Project Files</span></NavItem>
+    </LinkContainer>
 
-
+    <LinkContainer to="/About">
+      <NavItem><span className="navItem">About</span></NavItem>
+    </LinkContainer>
   </Nav>
 )
 
