@@ -11,7 +11,6 @@ const SideBar = () => (
     <MenuItem><Link to="/"><span className="navItem">Phase 2</span></Link></MenuItem>
     <MenuItem><Link to="/"><span className="navItem">Phase 3</span></Link></MenuItem>
     </NavDropdown>
-    </NavItem>
     <NavItem><Link to="/"><span className="navItem">Project Files</span></Link></NavItem>
     <NavItem><Link to="/"><span className="navItem">About</span></Link></NavItem>
 

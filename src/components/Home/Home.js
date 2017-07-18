@@ -4,7 +4,7 @@ import other from './other.css';
 const Home = () =>(
   <div>
     <h1>Here is the home page!</h1>
-    <p className="pre-scrollable">
+    <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis elit, lobortis ut placerat vitae, dignissim ac magna. Aliquam erat volutpat. Phasellus ut ullamcorper enim. Cras aliquam tincidunt consequat. Vivamus sit amet dapibus neque, ac convallis enim. Nulla est diam, aliquam ac facilisis id, luctus sagittis augue. Mauris imperdiet ultricies neque ac mollis. Nunc bibendum lorem sit amet dictum aliquet. Aliquam non justo mauris. Phasellus cursus metus at iaculis accumsan. Nullam hendrerit bibendum nisi vel pretium. Maecenas euismod lacus dictum nulla volutpat, vel efficitur libero vehicula. Curabitur elementum sapien eu eros elementum vulputate. Ut sed orci pellentesque, tristique ligula id, consectetur sem. Aenean placerat eget ligula id fringilla.
 
     Curabitur mollis velit nec arcu tristique, vel molestie felis commodo. Sed sodales tortor nulla. Integer vitae ullamcorper massa. Suspendisse aliquet consequat purus, nec volutpat quam pretium eu. Quisque posuere nulla in massa rhoncus fringilla. Sed venenatis, mauris sit amet scelerisque posuere, orci nisl pretium lorem, at accumsan velit lorem et dui. Proin finibus tempus dolor in malesuada. Ut tempus condimentum tellus, nec pharetra mauris mattis sit amet. Cras pretium lectus eu turpis sodales, at molestie nibh pellentesque. Pellentesque nec sagittis quam. Mauris sit amet fermentum nisl, ac rhoncus tellus.
