@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import React from 'react';
 
 const SideBar = () => (
+<<<<<<< HEAD
   <Nav bsStyle="pills" stacked>
     <NavItem><Link to="/Home"><span className="navItem">Overview</span></Link></NavItem>
     <NavDropdown className="navItem" title="Phases">
@@ -14,6 +15,26 @@ const SideBar = () => (
 
     <NavItem><Link to="/"><span className="navItem">Project Files</span></Link></NavItem>
     <NavItem><Link to="/"><span className="navItem">About</span></Link></NavItem>
+=======
+  <Nav>
+    <NavItem>
+      <Link to="/Layout">
+      <Button bsStyle="primary" block>Layout</Button>
+      </Link>
+    </NavItem>
+
+    <NavItem>
+      <Link to="/MasashiRouter">
+        <Button bsStyle="primary" block>Masashi Test</Button>
+      </Link>
+    </NavItem>
+
+    <NavItem>
+    <Link to="/PhaseOne">
+      <Button bsStyle="primary" block>Phase One</Button>
+    </Link>
+    </NavItem>
+>>>>>>> masashi
   </Nav>
 )
 
