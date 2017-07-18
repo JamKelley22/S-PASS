@@ -6,6 +6,7 @@ import SideBar from './SideBar/Sidebar.js';
 import Home from './Home/Home.js';
 import TopNav from './SideBar/navbar.js';
 import Breadcrumbs from './breadcrumbs.js';
+import Phase1 from './Phases/Phase1.js';
 import {PageHeader,Button,Grid,Row,Col,Nav,NavItem} from 'react-bootstrap';
 
 const App = () => (
@@ -23,6 +24,8 @@ const App = () => (
         <Route path="/Layout" component={Layout}/>
         <Route path="/MasashiRouter" component={MasashiRouter}/>
         <Route path="/Home" component={Home}/>
+        <Route path="/Phase1" component={Phase1}/>
+        
       </Col>
     </Row>
   </Grid>
