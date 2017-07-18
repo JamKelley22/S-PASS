@@ -7,14 +7,10 @@ const SideBar = () => (
   <Nav bsStyle="pills" stacked>
     <NavItem><Link to="/Home"><span className="navItem">Overview</span></Link></NavItem>
     <NavDropdown className="navItem" title="Phases">
-    <MenuItem><Link to="/Phase1"><span className="navItem">Phase 1</span></Link></MenuItem>
+    <MenuItem><Link to="/PhaseOne"><span className="navItem">Phase 1</span></Link></MenuItem>
     <MenuItem><Link to="/"><span className="navItem">Phase 2</span></Link></MenuItem>
     <MenuItem><Link to="/"><span className="navItem">Phase 3</span></Link></MenuItem>
     </NavDropdown>
-    <NavItem>
-    <Link to="/PhaseOne">
-    Phase One
-    </Link>
     </NavItem>
     <NavItem><Link to="/"><span className="navItem">Project Files</span></Link></NavItem>
     <NavItem><Link to="/"><span className="navItem">About</span></Link></NavItem>

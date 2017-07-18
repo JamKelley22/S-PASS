@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "webpack --watch",
-    "dev": "webpack --watch & node server.js"
+    "dev": "concurrently \"node server.js\" \"webpack --watch\""
   },
   "author": "Masashi Schafer",
   "license": "ISC",
