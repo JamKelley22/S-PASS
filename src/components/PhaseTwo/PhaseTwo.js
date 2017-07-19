@@ -31,29 +31,6 @@ export default class PhaseTwo extends React.Component{
 
     const {myFunctionName} = this.props;
 
-    function createTable(myArray) {
-      var result = "";
-
-      result += "<Table striped bordered condensed hover><thead><tr>";
-      for(var j=0; j<myArray[0].length; j++){
-          result += "<td>"+myArray[0][j]+"</td>";
-      }
-      result += "</tr></thead>";
-
-      result += "<tbody>";
-      for(var i=1; i<myArray.length; i++) {
-          result += "<tr>";
-          for(var j=0; j<myArray[i].length; j++){
-              result += "<td>"+myArray[i][j]+"</td>";
-          }
-          result += "</tr>";
-      }
-      result += "</tbody></Table>";
-
-      return result;
-    }
-
-
     return(
       <div>
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
@@ -63,35 +40,6 @@ export default class PhaseTwo extends React.Component{
           </Tab>
           <Tab eventKey={2} title="Output">
 
-          <Table striped bordered condensed hover>
-            <thead>
-              <tr>
-                <td>station one</td>
-                <td>000</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>station two</td>
-                <td>001</td>
-              </tr>
-            </tbody>
-          </Table>
-
-          <h3>Option 1</h3>
-          {Parser(createTable(stations))}
-
-          <h3>Option 2</h3>
-          <td dangerouslySetInnerHTML={{__html: createTable(stations)}}/>
-
-          <h3>Option 3</h3>
-          <Table striped bordered condensed hover><tbody><tr>
-            {single.map(function(name,index) {
-              return <td key={ index }>{name}</td>;
-            })}
-          </tr></tbody></Table>
-
-          <h3>Option 4</h3>
           <Table striped bordered condensed hover><tbody>
             {stations.map(function(nested) {
               return <tr>{nested.map(function(name,index) {

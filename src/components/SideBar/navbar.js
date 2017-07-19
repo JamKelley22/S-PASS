@@ -38,7 +38,7 @@ const NavBar = () => (
           </LinkContainer>
 
         </NavDropdown>
-        
+
       </Nav>
     </Row>
   </Grid>
