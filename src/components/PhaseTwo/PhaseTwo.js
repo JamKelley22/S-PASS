@@ -4,7 +4,6 @@ import {Tabs,Tab} from 'react-bootstrap';
 
 import {connect} from "react-redux"; //Connects the store to application.
 import {Table} from 'react-bootstrap';
-import Parser from 'html-react-parser';
 
 
 
