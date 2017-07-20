@@ -8,9 +8,9 @@ export default function reducer(state={
   switch(action.type){
     //Handles addFunction method from functionTableAction.js
     //payload: name
-    case "ADD_FUNCTION":{
-      return{state}
-    }
+    //case "ADD_FUNCTION":{
+      //return{state}
+  //  }
 
     //Handles removeFunction method from functionTableAction.js
     //payload: none
@@ -24,7 +24,7 @@ export default function reducer(state={
       return{state}
     }
   }
-  
+
   //default return
   return state
 }

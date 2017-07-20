@@ -5,11 +5,13 @@ import {combineReducers} from "redux";
 import functionReducer from "./functionTableReducer";
 import moduleReducer from "./moduleTableReducer";
 import requirementReducer from "./requirementTableReducer";
+import functionList from "./functionList";
 //---------------------------------------------
 
 export default combineReducers({
   //list reducers here for access in store.js
-  functionReducer,
-  moduleReducer,
-  requirementReducer,
+  //functionReducer,
+  //moduleReducer,
+  //requirementReducer,
+  functionList,
 })
