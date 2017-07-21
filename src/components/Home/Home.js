@@ -12,32 +12,28 @@ import PhaseOne from '../PhaseOne/PhaseOne.js';
 import PhaseTwo from '../PhaseTwo/PhaseTwo.js';
 import PhaseThree from '../PhaseThree/PhaseThree.js';
 
+import Project from '../Project/Project.js';
+
 import SideBar from '../SideBar/Sidebar.js';
-import TopNav from '../SideBar/navbar.js';
 import Breadcrumbs from '../breadcrumbs.js';
 import {PageHeader,Button,Grid,Row,Col,Nav,NavItem} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 
 const Home = ({match}) =>(
   <div>
 
-    <Breadcrumbs/>
-    <Row>
-      <Col xs={3} md={3}>
-        <SideBar match={match.url}/>
-      </Col>
-      <Col xs={9} md={9}>
-        <div className="pre-scrollable">
-          <Route path={`${match.url}/Overview`} component={Overview}/>
-
-          <Route path={`${match.url}/PhaseOne`} component={PhaseOne}/>
-          <Route path={`${match.url}/PhaseTwo`} component={PhaseTwo}/>
-          <Route path={`${match.url}/PhaseThree`} component={PhaseThree}/>
-
-          <Route path={`${match.url}/Files`} component={Files}/>
-          <Route path={`${match.url}/About`} component={About}/>
-        </div>
-      </Col>
-    </Row>
+    <h1>CooL:SLiCE</h1>
+    <p>This web tool was devloped to...</p>
+    <LinkContainer to={`/Project`}>
+      <Button>Get Started!</Button>
+    </LinkContainer>
+    <br/>
+    <h4>Design</h4>
+    <p>Use CAD to design 3D virtual modules of your products...</p>
+    <h4>S-PASS</h4>
+    <p>Use the sustainable product architecture and supplier selection tool to evaluate existing architectures and find replacement supplierand architectures</p>
+    <h4>MAT</h4>
+    <p>Use the Manufacturing Analysis Tool to look at the manfacturing details of your design</p>
 
   </div>
 )
