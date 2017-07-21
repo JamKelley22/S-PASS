@@ -8,36 +8,34 @@ import PhaseOne from './PhaseOne/PhaseOne.js';
 import PhaseTwo from './PhaseTwo/PhaseTwo.js';
 import PhaseThree from './PhaseThree/PhaseThree.js';
 
-import SideBar from './SideBar/Sidebar.js';
 import Home from './Home/Home.js';
+import Resources from './Resources/Resources.js';
+import Project from './Project/Project.js';
+import View from './View/View.js';
+import Login from './Login/Login.js';
+
+import SideBar from './SideBar/Sidebar.js';
 import TopNav from './SideBar/navbar.js';
 import Breadcrumbs from './breadcrumbs.js';
 import {PageHeader,Button,Grid,Row,Col,Nav,NavItem} from 'react-bootstrap';
 
 
 const App = () => (
-  <Grid>
-    <PageHeader>
-      <TopNav/>
-    </PageHeader>
-    <Breadcrumbs/>
-    <Row>
-      <Col xs={3} md={3}>
-        <SideBar/>
-      </Col>
-      <Col xs={9} md={9}>
-        <div className="pre-scrollable">
-          <Route exact path="/" component={Home}/>
-          <Route path="/Layout" component={Layout}/>
-          <Route path="/MasashiRouter" component={MasashiRouter}/>
-          <Route path="/Home" component={Home}/>
-          <Route path="/PhaseOne" component={PhaseOne}/>
-          <Route path="/PhaseTwo" component={PhaseTwo}/>
-          <Route path="/PhaseThree" component={PhaseThree}/>
-        </div>
-      </Col>
-    </Row>
-  </Grid>
+  <div>
+    <Grid>
+      <PageHeader>
+        <TopNav/>
+      </PageHeader>
+      <Route exact path="/" component={Home}/>
+      <Route path="/Home" component={Home}/>
+      <Route path="/Resources" component={Resources}/>
+      <Route path="/Project" component={Project}/>
+      <Route path="/View" component={View}/>
+      <Route path="/Login" component={Login}/>
+    </Grid>
+  </div>
+
+
 )
 
 export default App;

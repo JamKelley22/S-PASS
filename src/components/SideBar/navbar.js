@@ -19,21 +19,21 @@ const NavBar = () => (
           <NavItem><span className="navItem">Home</span></NavItem>
         </LinkContainer>
 
-        <LinkContainer to="/">
+        <LinkContainer to="/Resources">
           <NavItem><span className="navItem">Resources</span></NavItem>
         </LinkContainer>
 
-        <LinkContainer to="/">
+        <LinkContainer to="/Project">
           <NavItem><span className="navItem">Project</span></NavItem>
         </LinkContainer>
 
         <NavDropdown title="Account" id="accountdDropdown">
 
-          <LinkContainer to="/">
+          <LinkContainer to="/View">
             <MenuItem><span className="navItemSmall">View</span></MenuItem>
           </LinkContainer>
 
-          <LinkContainer to="/">
+          <LinkContainer to="/Login">
             <MenuItem><span className="navItemSmall">Login</span></MenuItem>
           </LinkContainer>
 

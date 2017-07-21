@@ -8,6 +8,7 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import App from "./components/App";
 import Layout from "./components/Layout"
 import store from "./store";
+import { browserHistory, routes } from 'react-router'
 
 //Connects to index.html
 const app = document.getElementById('app')
@@ -15,7 +16,7 @@ const app = document.getElementById('app')
 //Connects store and Layout to render.
 ReactDOM.render(
   <Provider store={store}>
-    <Router >
+    <Router history={browserHistory} routes={routes}>
       <App/>
     </Router>
   </Provider>,app);

@@ -1,30 +1,44 @@
 import React from 'react';
 import other from './other.css';
 
-const Home = () =>(
+import {Link,Route} from 'react-router-dom';
+import MasashiRouter from '../MasashiTest/MasashiTest.js';
+
+import Overview from './Overview.js';
+import Files from './Files.js';
+import About from './About.js';
+//
+import PhaseOne from '../PhaseOne/PhaseOne.js';
+import PhaseTwo from '../PhaseTwo/PhaseTwo.js';
+import PhaseThree from '../PhaseThree/PhaseThree.js';
+
+import SideBar from '../SideBar/Sidebar.js';
+import TopNav from '../SideBar/navbar.js';
+import Breadcrumbs from '../breadcrumbs.js';
+import {PageHeader,Button,Grid,Row,Col,Nav,NavItem} from 'react-bootstrap';
+
+const Home = ({match}) =>(
   <div>
-    <h1>Here is the home page!</h1>
-    <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis elit, lobortis ut placerat vitae, dignissim ac magna. Aliquam erat volutpat. Phasellus ut ullamcorper enim. Cras aliquam tincidunt consequat. Vivamus sit amet dapibus neque, ac convallis enim. Nulla est diam, aliquam ac facilisis id, luctus sagittis augue. Mauris imperdiet ultricies neque ac mollis. Nunc bibendum lorem sit amet dictum aliquet. Aliquam non justo mauris. Phasellus cursus metus at iaculis accumsan. Nullam hendrerit bibendum nisi vel pretium. Maecenas euismod lacus dictum nulla volutpat, vel efficitur libero vehicula. Curabitur elementum sapien eu eros elementum vulputate. Ut sed orci pellentesque, tristique ligula id, consectetur sem. Aenean placerat eget ligula id fringilla.
 
-    Curabitur mollis velit nec arcu tristique, vel molestie felis commodo. Sed sodales tortor nulla. Integer vitae ullamcorper massa. Suspendisse aliquet consequat purus, nec volutpat quam pretium eu. Quisque posuere nulla in massa rhoncus fringilla. Sed venenatis, mauris sit amet scelerisque posuere, orci nisl pretium lorem, at accumsan velit lorem et dui. Proin finibus tempus dolor in malesuada. Ut tempus condimentum tellus, nec pharetra mauris mattis sit amet. Cras pretium lectus eu turpis sodales, at molestie nibh pellentesque. Pellentesque nec sagittis quam. Mauris sit amet fermentum nisl, ac rhoncus tellus.
+    <Breadcrumbs/>
+    <Row>
+      <Col xs={3} md={3}>
+        <SideBar match={match.url}/>
+      </Col>
+      <Col xs={9} md={9}>
+        <div className="pre-scrollable">
+          <Route path={`${match.url}/Overview`} component={Overview}/>
 
-    Curabitur ultricies iaculis nisi, eget elementum diam malesuada quis. Sed id urna eget massa imperdiet finibus vitae in orci. Morbi congue porta ornare. Nullam a augue quis urna lobortis molestie. Quisque accumsan laoreet ante non facilisis. Cras eu nisi et quam viverra varius sed ut enim. Cras sit amet massa egestas, luctus ipsum a, blandit ante. Quisque ac condimentum justo. Nullam turpis ligula, pharetra eget ipsum eget, malesuada blandit neque. Quisque ultrices nulla id arcu vulputate feugiat at porttitor magna. In ultricies, elit ac elementum vulputate, diam leo aliquet ligula, nec hendrerit lacus nulla vel nunc. Duis lacus sem, condimentum venenatis mollis semper, posuere cursus est. Phasellus sed pretium mauris. Morbi elementum lacus sed odio tempus tempor.
+          <Route path={`${match.url}/PhaseOne`} component={PhaseOne}/>
+          <Route path={`${match.url}/PhaseTwo`} component={PhaseTwo}/>
+          <Route path={`${match.url}/PhaseThree`} component={PhaseThree}/>
 
-    Cras a nisi hendrerit turpis laoreet consequat venenatis nec metus. Duis pulvinar feugiat risus ac placerat. Pellentesque ullamcorper arcu eu lacus pretium, semper laoreet enim fermentum. Cras ac sem et felis volutpat hendrerit. Nunc rutrum, urna nec luctus venenatis, est sem vulputate ex, eget dapibus eros metus eu enim. Mauris mauris lorem, mollis eget elementum non, semper a metus. Sed a tempor urna. Praesent sollicitudin ligula sit amet lectus pulvinar tempor. Curabitur eleifend mi eget lorem porta suscipit. Proin ipsum sapien, egestas vitae elit eu, efficitur molestie sapien. Vestibulum congue metus tortor, non molestie felis scelerisque varius. Nunc eget tempor felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis eu justo viverra, aliquam neque eu, cursus leo.
+          <Route path={`${match.url}/Files`} component={Files}/>
+          <Route path={`${match.url}/About`} component={About}/>
+        </div>
+      </Col>
+    </Row>
 
-    Vivamus sodales justo eu leo porta molestie. Sed lacinia id velit bibendum condimentum. Sed fringilla velit egestas commodo iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce blandit turpis risus. Nam rhoncus commodo rutrum. Vestibulum nec enim viverra, tristique eros sed, pulvinar augue. Morbi ex massa, sollicitudin eu convallis vel, vestibulum ut diam. Praesent in tortor et metus congue tempus. Nam a risus ante. Phasellus lobortis tincidunt risus, ut auctor purus facilisis a. Morbi congue semper justo, sed interdum odio auctor eget. Etiam rutrum ultrices nisi, ac sagittis massa accumsan sed. Mauris non suscipit urna. Proin in feugiat sem.
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis elit, lobortis ut placerat vitae, dignissim ac magna. Aliquam erat volutpat. Phasellus ut ullamcorper enim. Cras aliquam tincidunt consequat. Vivamus sit amet dapibus neque, ac convallis enim. Nulla est diam, aliquam ac facilisis id, luctus sagittis augue. Mauris imperdiet ultricies neque ac mollis. Nunc bibendum lorem sit amet dictum aliquet. Aliquam non justo mauris. Phasellus cursus metus at iaculis accumsan. Nullam hendrerit bibendum nisi vel pretium. Maecenas euismod lacus dictum nulla volutpat, vel efficitur libero vehicula. Curabitur elementum sapien eu eros elementum vulputate. Ut sed orci pellentesque, tristique ligula id, consectetur sem. Aenean placerat eget ligula id fringilla.
-
-    Curabitur mollis velit nec arcu tristique, vel molestie felis commodo. Sed sodales tortor nulla. Integer vitae ullamcorper massa. Suspendisse aliquet consequat purus, nec volutpat quam pretium eu. Quisque posuere nulla in massa rhoncus fringilla. Sed venenatis, mauris sit amet scelerisque posuere, orci nisl pretium lorem, at accumsan velit lorem et dui. Proin finibus tempus dolor in malesuada. Ut tempus condimentum tellus, nec pharetra mauris mattis sit amet. Cras pretium lectus eu turpis sodales, at molestie nibh pellentesque. Pellentesque nec sagittis quam. Mauris sit amet fermentum nisl, ac rhoncus tellus.
-
-    Curabitur ultricies iaculis nisi, eget elementum diam malesuada quis. Sed id urna eget massa imperdiet finibus vitae in orci. Morbi congue porta ornare. Nullam a augue quis urna lobortis molestie. Quisque accumsan laoreet ante non facilisis. Cras eu nisi et quam viverra varius sed ut enim. Cras sit amet massa egestas, luctus ipsum a, blandit ante. Quisque ac condimentum justo. Nullam turpis ligula, pharetra eget ipsum eget, malesuada blandit neque. Quisque ultrices nulla id arcu vulputate feugiat at porttitor magna. In ultricies, elit ac elementum vulputate, diam leo aliquet ligula, nec hendrerit lacus nulla vel nunc. Duis lacus sem, condimentum venenatis mollis semper, posuere cursus est. Phasellus sed pretium mauris. Morbi elementum lacus sed odio tempus tempor.
-
-    Cras a nisi hendrerit turpis laoreet consequat venenatis nec metus. Duis pulvinar feugiat risus ac placerat. Pellentesque ullamcorper arcu eu lacus pretium, semper laoreet enim fermentum. Cras ac sem et felis volutpat hendrerit. Nunc rutrum, urna nec luctus venenatis, est sem vulputate ex, eget dapibus eros metus eu enim. Mauris mauris lorem, mollis eget elementum non, semper a metus. Sed a tempor urna. Praesent sollicitudin ligula sit amet lectus pulvinar tempor. Curabitur eleifend mi eget lorem porta suscipit. Proin ipsum sapien, egestas vitae elit eu, efficitur molestie sapien. Vestibulum congue metus tortor, non molestie felis scelerisque varius. Nunc eget tempor felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis eu justo viverra, aliquam neque eu, cursus leo.
-
-    Vivamus sodales justo eu leo porta molestie. Sed lacinia id velit bibendum condimentum. Sed fringilla velit egestas commodo iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce blandit turpis risus. Nam rhoncus commodo rutrum. Vestibulum nec enim viverra, tristique eros sed, pulvinar augue. Morbi ex massa, sollicitudin eu convallis vel, vestibulum ut diam. Praesent in tortor et metus congue tempus. Nam a risus ante. Phasellus lobortis tincidunt risus, ut auctor purus facilisis a. Morbi congue semper justo, sed interdum odio auctor eget. Etiam rutrum ultrices nisi, ac sagittis massa accumsan sed. Mauris non suscipit urna. Proin in feugiat sem.
-    </p>
   </div>
 )
 

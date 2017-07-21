@@ -4,29 +4,29 @@ import {Link} from 'react-router-dom';
 import React from 'react';
 import {LinkContainer} from 'react-router-bootstrap';
 
-const SideBar = () => (
+const SideBar = ({match}) =>(
   <Nav bsStyle="pills" stacked>
-    <LinkContainer to="/Home">
+    <LinkContainer to={`${match}/Overview`}>
       <NavItem><span className="navItem">Overview</span></NavItem>
     </LinkContainer>
 
     <NavDropdown className="navItem" title="Phases" id="Phases">
-      <LinkContainer to="/PhaseOne">
+      <LinkContainer to={`${match}/PhaseOne`}>
         <MenuItem><span className="navItemSmall">Phase 1</span></MenuItem>
       </LinkContainer>
-      <LinkContainer to="/PhaseTwo">
+      <LinkContainer to={`${match}/PhaseTwo`}>
         <MenuItem><span className="navItemSmall">Phase 2</span></MenuItem>
       </LinkContainer>
-      <LinkContainer to="/PhaseThree">
+      <LinkContainer to={`${match}/PhaseThree`}>
         <MenuItem><span className="navItemSmall">Phase 3</span></MenuItem>
       </LinkContainer>
 
     </NavDropdown>
-    <LinkContainer to="/Files">
+    <LinkContainer to={`${match}/Files`}>
       <NavItem><span className="navItem">Project Files</span></NavItem>
     </LinkContainer>
 
-    <LinkContainer to="/About">
+    <LinkContainer to={`${match}/About`}>
       <NavItem><span className="navItem">About</span></NavItem>
     </LinkContainer>
   </Nav>
