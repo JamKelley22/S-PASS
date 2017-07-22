@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
+import './client.css'
 
 import { BrowserRouter as Router} from 'react-router-dom';
 
@@ -17,6 +18,6 @@ const app = document.getElementById('app')
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory} routes={routes}>
-      <App/>
+      <App className='app'/>
     </Router>
   </Provider>,app);

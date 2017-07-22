@@ -21,7 +21,7 @@ import {PageHeader,Button,Grid,Row,Col,Nav,NavItem} from 'react-bootstrap';
 
 
 const App = () => (
-  <div>
+  <div className='main'>
     <Grid>
       <PageHeader>
         <TopNav/>
