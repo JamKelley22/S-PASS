@@ -27,3 +27,9 @@
 p {
   font-size: 12px;
 }
+th {
+  max-width: 100px;
+}
+tr {
+  max-width: 150px;
+}

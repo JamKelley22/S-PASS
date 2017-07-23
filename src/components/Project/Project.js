@@ -25,7 +25,7 @@ const Project = ({match}) =>(
     <h3>CooL:SLiCE projects...</h3>
 
     <Panel className='p1'>
-    <Image src={FolderPic} alt="242x200"/>
+    {/*<Image src={FolderPic} alt="242x200"/>
 
       <Grid>
         <Row>
@@ -66,6 +66,27 @@ const Project = ({match}) =>(
           </Col>
         </Row>
       </Grid>
+    */}
+
+    <Table>
+      <tbody>
+        <tr>
+          <th><Glyphicon glyph="folder-close" className='folder-close'/></th>
+        </tr>
+        <tr>
+        <LinkContainer to={'/PhaseOne'}>
+          <th><Glyphicon glyph="inbox" className='leaf'/></th>
+        </LinkContainer>
+        <LinkContainer to={'/PhaseOne'}>
+          <th><Glyphicon glyph="leaf" className='leaf'/></th>
+        </LinkContainer>
+        <LinkContainer to={'/PhaseOne'}>
+          <th><Glyphicon glyph="wrench" className='leaf'/></th>
+        </LinkContainer>
+        </tr>
+      </tbody>
+    </Table>
+
     </Panel>
 
 
