@@ -10,9 +10,9 @@ const tooltip = (
 export default class PhaseOneInput extends React.Component{
 
 
-  createListItems() {
-    if(this.props.functions){
-    return this.props.functions.map((functions) => {
+  createListItems(input) {
+    if(input){
+    return input.map((functions) => {
       return(
         <ListGroupItem key={functions} href="#link1">
           {functions}
@@ -32,50 +32,30 @@ export default class PhaseOneInput extends React.Component{
   render(){
     return(
       <div>
+        <h1>Functions</h1>
         <ListGroup>
-          {this.createListItems()}
+          {this.createListItems(this.props.functions)}
           <ListGroupItem>
-          <NameForm functions = {this.props.functions} submit={this.props.addFunction}/>
+            <NameForm functions = {this.props.functions} submit={this.props.addFunction}/>
           </ListGroupItem>
         </ListGroup>
 
-        <Table striped bordered condensed hover>
-          <thead>
-            <tr>
-              <th>#</th>
-              <OverlayTrigger placement="top" overlay={tooltip}>
-              <th>Function</th>
-              </OverlayTrigger>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Masashi</td>
-              <td>Schafer</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-          </tbody>
-        </Table>
+        <h1>Modules</h1>
+        <ListGroup>
+          {this.createListItems(this.props.modules)}
+          <ListGroupItem>
+            <NameForm functions = {this.props.modules} submit={this.props.addModule}/>
+          </ListGroupItem>
+        </ListGroup>
+
+        <h1>Requirements</h1>
+        <ListGroup>
+          {this.createListItems(this.props.requirements)}
+          <ListGroupItem>
+            <NameForm functions = {this.props.requirements} submit={this.props.addRequirement}/>
+          </ListGroupItem>
+        </ListGroup>
       </div>
     );
   }
 }
-/*
-<Button
-  bsStyle="success"
-  bsSize="xsmall"
-  className="btn pull-right"
-  onClick={() => this.props.addFunction("New Function")}
-  >
-    Add
-  </Button>
-  */

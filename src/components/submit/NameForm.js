@@ -3,7 +3,7 @@ import React from 'react';
 export default class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {value:''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,8 +16,12 @@ export default class NameForm extends React.Component {
   handleSubmit(event) {
     console.log(this.state.value);
     if(this.props.functions.indexOf(this.state.value)==-1){
+      console.log('h',this.state.value,'h');
       this.props.submit(this.state.value);
       event.preventDefault();
+    }
+    else if(this.state.value==null ||this.state.value!=""){
+      alert("Cannot leave function name blank");
     }
     else{
       //Add alert here

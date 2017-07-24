@@ -2,16 +2,15 @@
 import {combineReducers} from "redux";
 
 //Import all needed reducers here!-------------
-import functionReducer from "./functionTableReducer";
-import moduleReducer from "./moduleTableReducer";
-import requirementReducer from "./requirementTableReducer";
 import functionList from "./functionList";
+import moduleList from "./moduleList";
+import requirementList from "./requirementList";
 //---------------------------------------------
 
 export default combineReducers({
   //list reducers here for access in store.js
-  //functionReducer,
-  //moduleReducer,
-  //requirementReducer,
+  requirementList,
   functionList,
+  moduleList,
+
 })

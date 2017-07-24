@@ -5,7 +5,6 @@ import React from "react";
 import {Link} from 'react-router';
 import {connect} from "react-redux"; //Connects the store to application.
 
-import {addFunction} from "../actions/functionTableAction";
 //bootstrap
 import {Button, Grid, Col, Row,PageHeader} from 'react-bootstrap';
 import './Layout.css';
@@ -14,17 +13,17 @@ import './Layout.css';
 //Calling store.functionReducer.functionName accesses the default component for
 //functionReducer called functionName
 //***note: may want to change name in store from functionReducer to myFunction***
-@connect((store) => {
+/*@connect((store) => {
   return{
     myFunctionName: store.functionReducer.functionName,
   };
 })
-
+*/
 export default class Layout extends React.Component{
   render(){
     //Must call in order to access props from store.
     //**note: must be same name as listed above!!!**
-    const {myFunctionName} = this.props;
+    //const {myFunctionName} = this.props;
 
 
     return(
@@ -33,7 +32,7 @@ export default class Layout extends React.Component{
             <h1>
               Layout Page
             </h1>
-            <h1>{myFunctionName}</h1>
+            <h1>myFunctionName</h1>
           </Row>
           <Row>
             <Col>
