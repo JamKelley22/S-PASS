@@ -1,12 +1,11 @@
-//Default decalration for list of functions.
 const initialState=
-["Function1","Function2","Function3","Function4","Function5"]
+["Requirement1","Requirement2","Requirement3","Requirement4","Requirement5"]
 
 
 export default function(state = initialState, action){
       switch(action.type){
-        case "ADD_FUNCTION":
-          console.log("Adding Function");
+        case "ADD_REQUIREMENT":
+          console.log("Adding Requirement");
           return [...state,action.payload]
           break;
       }

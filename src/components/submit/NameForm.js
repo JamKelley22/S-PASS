@@ -8,7 +8,6 @@ export default class NameForm extends React.Component {
       value: '',
       alertVisible: false,
       alertTitle: 'Its Empty...',
-      alertMessage: ''
   };
 
     this.handleChange = this.handleChange.bind(this);
@@ -28,7 +27,8 @@ export default class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state.value);
+    //console.log(this.state.value);
+    //console.log("VALUE:",this.state.value,":END");
     if(this.props.functions.indexOf(this.state.value)==-1){
       //alert(this.state.value.length);
       if(this.state.value.length > 0) {
@@ -37,14 +37,10 @@ export default class NameForm extends React.Component {
         event.preventDefault();
       }
       else {
-        alert("Empty");//NOt Working
         this.setState({alertVisible: true, alertTitle: 'Its Empty...', alertMessage: 'Try again with a longer function name'});
       }
     }
     else{
-      //Add alert here
-      //alert("Function \""+this.state.value+"\" already exists");
-      alert("Dup");
       this.setState({alertVisible: true, alertTitle: 'Thats a duplicate!', alertMessage: 'Try again with a unique function name'});
       event.preventDefault();
     }
@@ -64,7 +60,7 @@ export default class NameForm extends React.Component {
       return (
         <div>
         <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss}>
-          <h4>Thats a duplicate!</h4>
+          <h4>{this.state.alertTitle}</h4>
           <p>Try again with a unique function name</p>
           <p>
             <Button onClick={this.handleAlertDismiss}>Hide Alert</Button>

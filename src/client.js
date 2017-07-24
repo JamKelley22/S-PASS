@@ -7,7 +7,6 @@ import { BrowserRouter as Router} from 'react-router-dom';
 
 //Connects react entry
 import App from "./components/App";
-import Layout from "./components/Layout"
 import store from "./store";
 import { browserHistory, routes } from 'react-router'
 

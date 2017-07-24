@@ -3,7 +3,6 @@ import React from 'react';
 import SideBar from '../SideBar/Sidebar.js';
 import Home from '../Home/Home.js';
 import TopNav from '../SideBar/navbar.js';
-import Layout from '../Layout.js';
 import MasashiRouter from '../MasashiTest/MasashiTest.js';
 
 import {Link,Route} from 'react-router-dom';
@@ -17,7 +16,6 @@ const Resources = () =>(
     <Col xs={9} md={9}>
       <div className="pre-scrollable">
         <Route exact path="/" component={Home}/>
-        <Route path="/Layout" component={Layout}/>
         <Route path="/MasashiRouter" component={MasashiRouter}/>
       </div>
     </Col>

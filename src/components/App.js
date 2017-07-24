@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from './Layout.js';
 import './App.css';
 import {Link,Route} from 'react-router-dom';
 import MasashiRouter from './MasashiTest/MasashiTest.js';
