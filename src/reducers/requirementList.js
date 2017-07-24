@@ -1,5 +1,5 @@
 const initialState=
-["Requirement1","Requirement2","Requirement3","Requirement4","Requirement5"]
+["Energy Efficiency","Durability","Low Environmental impact"]
 
 
 export default function(state = initialState, action){

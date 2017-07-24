@@ -29,7 +29,11 @@ class PhaseOne extends React.Component{
           />
         </Tab>
         <Tab eventKey={2} title="Output">
-          <PhaseOneOuput/>
+          <PhaseOneOuput
+            functionMatrix={this.props.functionMatrix}
+            functions={this.props.functions}
+            modules={this.props.modules}
+          />
         </Tab>
       </Tabs>
     );

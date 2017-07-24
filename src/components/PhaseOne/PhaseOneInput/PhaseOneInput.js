@@ -2,7 +2,6 @@ import React from 'react';
 import {Table, Tooltip,OverlayTrigger,ListGroup,ListGroupItem,Button} from 'react-bootstrap';
 import NameForm from '../../submit/NameForm.js';
 
-
 const tooltip = (
   <Tooltip id="tooltip"><strong>Your Name</strong></Tooltip>
 );

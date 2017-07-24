@@ -1,6 +1,11 @@
 //Default decalration for list of functions.
 const initialState=
-["Function1","Function2","Function3","Function4","Function5"];
+["Transform energy to torque",
+"Accept recharge from external electric power",
+"Provide propulsion",
+"Protect motors and rotors from external impacts",
+"Allow for reuse or recycling"
+];
 
 
 export default function(state = initialState, action){

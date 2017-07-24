@@ -14,5 +14,4 @@ export default combineReducers({
   functionList,
   moduleList,
   functionMatrix,
-
 })
