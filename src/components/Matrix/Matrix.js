@@ -11,11 +11,11 @@ export default class notATest extends React.Component{
     return(
       <div >
           <h1>{this.props.title}</h1>
-          <Table responsive striped bordered hover className = "table-responsive">
+          <Table responsive striped bordered hover className="myMatrix">
           <thead>
             <tr>
               <td></td>{colNames.map(function(name,index) {
-                return <td key={ index }>{name}</td>;
+                return <td className = "table-responsive" key={ index }>{name}</td>;
               })}
             </tr>
           </thead>
