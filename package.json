@@ -22,6 +22,7 @@
     "express": "^4.15.3",
     "file-loader": "^0.11.2",
     "history": "^4.6.3",
+    "mathjs": "^3.14.2",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.6.1",

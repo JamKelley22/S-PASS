@@ -17,6 +17,7 @@ class PhaseOne extends React.Component{
       <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
 
         <Tab eventKey={1} title="Input">
+          {this.props.functionMatrix._data[1][1]}
           <PhaseOneInput
             addFunction={this.props.addFunction}
             functions={this.props.functions}
@@ -24,6 +25,7 @@ class PhaseOne extends React.Component{
             addModule={this.props.addModule}
             requirements={this.props.requirements}
             addRequirement={this.props.addRequirement}
+            funtionMatrix={this.props.functionMatrix}
           />
         </Tab>
         <Tab eventKey={2} title="Output">
@@ -39,6 +41,7 @@ function mapStateToProps(state){
     functions: state.functionList,
     modules:state.moduleList,
     requirements:state.requirementList,
+    functionMatrix: state.functionMatrix,
   };
 }
 

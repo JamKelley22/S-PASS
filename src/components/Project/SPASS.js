@@ -24,7 +24,6 @@ const SPASS = ({match}) =>(
     <SideBar match={match}/>
 
 
-
     <div id='content'>
       <Route path="/SPASS/Overview" component={Overview}/>
 

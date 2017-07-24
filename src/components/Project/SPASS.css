@@ -9,4 +9,7 @@
 #content {
   padding-left: 10px;
   float: left;
+  min-width: 80%;
+  overflow-y: scroll;
+  max-height: 80%;
 }
