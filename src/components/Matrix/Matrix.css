@@ -1,11 +1,65 @@
-.table-responsive{
-  width :80% ;
-  overflow-x: scroll;
-  border-collapse: collapse;
-  margin: 0px;
+#myDiv {
+  width: 100%;
+}
+
+#myTable{
+  width:100%;
+}
+#colNames{
+  min-width: 130px;
+}
+
+#colCell{
+  word-wrap: break-word;
+  width: 10em;
+  line-height: 20px;
+  overflow: hidden;
+  height: 40px;
+  text-overflow: ellipsis;
 
 }
 
-.myMatrix {
-  width: 100%;
+#myScroll{
+  width: 90%;
+  overflow-x: auto;
+}
+
+/* styles for '...' */
+.block-with-text {
+  /* hide text if it more than N lines  */
+  overflow: hidden;
+  /* for set '...' in absolute position */
+  position: relative;
+  /* use this value to count block height */
+  line-height: 1.2em;
+  /* max-height = line-height (1.2) * lines max number (3) */
+  max-height: 2.4em;
+  /* fix problem when last visible word doesn't adjoin right side  */
+    padding-right: 1em;
+
+
+
+}
+.block-with-text:before {
+  /* points in the end */
+  content: '...';
+  color: gray;
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
+}
+.block-with-text:after {
+  /* points in the end */
+  content: '';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of text */
+  right: 0;
+  width: 1em;
+  /* set width and height */
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
 }

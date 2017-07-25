@@ -37,11 +37,13 @@ export default class NameForm extends React.Component {
         event.preventDefault();
       }
       else {
-        this.setState({alertVisible: true, alertTitle: 'Its Empty...', alertMessage: 'Try again with a longer function name'});
+        this.setState({alertVisible: true, alertTitle: 'Its Empty...',
+        alertMessage: 'Try again with a longer function name'});
       }
     }
     else{
-      this.setState({alertVisible: true, alertTitle: 'Thats a duplicate!', alertMessage: 'Try again with a unique function name'});
+      this.setState({alertVisible: true, alertTitle: 'Thats a duplicate!',
+      alertMessage: 'Try again with a unique function name'});
       event.preventDefault();
     }
       this.state.value = "";

@@ -1,6 +1,9 @@
 import React from 'react';
 import {Table, Tooltip,OverlayTrigger,ListGroup,ListGroupItem,Button} from 'react-bootstrap';
 import NameForm from '../../submit/NameForm.js';
+import MatrixDisplay from '../../Matrix/Matrix.js';
+import '../../Matrix/Matrix.css';
+import ListStuff from '../../ListStuff/ListStuff.js';
 
 const tooltip = (
   <Tooltip id="tooltip"><strong>Your Name</strong></Tooltip>
@@ -8,17 +11,26 @@ const tooltip = (
 
 export default class PhaseOneInput extends React.Component{
 
+  constructor(props) {
+    super(props);
+  this.handleRemove = this.handleRemove.bind(this);
+}
+  handleRemove(index){
+    //console.log('HERE: '+index);
+    return this.props.remove(index)
+  }
 
   createListItems(input) {
     if(input){
-    return input.map((functions) => {
+    return input.map((functions,index) => {
       return(
         <ListGroupItem key={functions} href="#link1">
-          {functions}
+          {functions}{index}
           <Button
             bsStyle="danger"
             bsSize="xsmall"
             className="btn pull-right"
+            onClick={()=> this.handleRemove(index)}
           >
             delete
           </Button>
@@ -31,29 +43,47 @@ export default class PhaseOneInput extends React.Component{
   render(){
     return(
       <div>
-        <h1>Functions</h1>
-        <ListGroup>
-          {this.createListItems(this.props.functions)}
-          <ListGroupItem>
-            <NameForm functions = {this.props.functions} submit={this.props.addFunction}/>
-          </ListGroupItem>
-        </ListGroup>
+        <ListStuff
+          list={this.props.functions}
+          title="Functions"
+          removeList={this.props.removeFunction}
+          addList={this.props.addFunction}
+        />
 
-        <h1>Modules</h1>
-        <ListGroup>
-          {this.createListItems(this.props.modules)}
-          <ListGroupItem>
-            <NameForm functions = {this.props.modules} submit={this.props.addModule}/>
-          </ListGroupItem>
-        </ListGroup>
+        <ListStuff
+          list={this.props.modules}
+          title="Modules"
+          removeList={this.props.removeFunction}
+          addList={this.props.addModule}
+        />
 
-        <h1>Requirements</h1>
-        <ListGroup>
-          {this.createListItems(this.props.requirements)}
-          <ListGroupItem>
-            <NameForm functions = {this.props.requirements} submit={this.props.addRequirement}/>
-          </ListGroupItem>
-        </ListGroup>
+        <ListStuff
+          list={this.props.requirements}
+          title="Requirements"
+          removeList={this.props.removeFunction}
+          addList={this.props.addRequirement}
+        />
+
+        <MatrixDisplay
+          title = "Requirements vs. Functions"
+          matrixContent={this.props.requirementFunctionMatrix._data}
+          colNames={this.props.functions}
+          rowNames={this.props.requirements}
+        />
+
+        <MatrixDisplay
+          title = "Functions vs. Modules"
+          matrixContent={this.props.functionModuleMatrix._data}
+          colNames={this.props.modules}
+          rowNames={this.props.functions}
+        />
+
+        <MatrixDisplay
+          title = "Modules vs. Product Architecture"
+          matrixContent={this.props.moduleArchitectureMatrix._data}
+          colNames={this.props.productArchitecture}
+          rowNames={this.props.modules}
+        />
       </div>
     );
   }

@@ -5,7 +5,10 @@ import {combineReducers} from "redux";
 import functionList from "./functionList";
 import moduleList from "./moduleList";
 import requirementList from "./requirementList";
-import functionMatrix from "./functionMatrix";
+import productArchitecture from "./productArchitecture";
+import requirementFunctionMatrix from "./requirementFunctionMatrix";
+import functionModuleMatrix from "./functionModuleMatrix";
+import moduleArchitectureMatrix from "./moduleArchitectureMatrix";
 //---------------------------------------------
 
 export default combineReducers({
@@ -13,5 +16,8 @@ export default combineReducers({
   requirementList,
   functionList,
   moduleList,
-  functionMatrix,
+  requirementFunctionMatrix,
+  productArchitecture,
+  functionModuleMatrix,
+  moduleArchitectureMatrix,
 })

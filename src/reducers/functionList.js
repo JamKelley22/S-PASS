@@ -4,15 +4,21 @@ const initialState=
 "Accept recharge from external electric power",
 "Provide propulsion",
 "Protect motors and rotors from external impacts",
-"Allow for reuse or recycling"
+"Allow for reuse or recycling",
 ];
-
 
 export default function(state = initialState, action){
       switch(action.type){
         case "ADD_FUNCTION":
           console.log("Adding Function");
           return [...state,action.payload]
+          break;
+        case "REMOVE_FUNCTION":
+          console.log("Removing Function");
+          //var removed = [...state];
+          //removed.splice(action.payload,action.payload);
+          return[...state.slice(0,action.payload),
+                ...state.slice(action.payload+1,state.length)]
           break;
       }
 
