@@ -3,8 +3,10 @@ import {Breadcrumb} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import React from 'react';
 
+import './Breadcrumbs.css';
+
 const Breadcrumbs = () => (
-  <Breadcrumb>
+  <Breadcrumb id='breadcrumbs'>
       <Breadcrumb.Item href="#">
         Home
       </Breadcrumb.Item>

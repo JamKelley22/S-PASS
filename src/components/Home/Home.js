@@ -20,7 +20,7 @@ import other from './other.css';
 
 const Home = ({match}) =>(
   <div>
-    <Jumbotron className='jumbotron'>
+    <Jumbotron className='jumbotron' id='jumbo'>
       <div id='centerText'>
         <h2>CooL:SLiCE</h2>
         <h5>This web tool was devloped to...</h5>
@@ -31,7 +31,7 @@ const Home = ({match}) =>(
     </Jumbotron>
 
     <div className='homebg'>
-      <Panel className='p1'>
+      <Panel id='p1'>
         <div id='centerText'>
           <h4><Glyphicon glyph="inbox" /> Design</h4>
           <p>Use CAD to design 3D virtual modules of your products...</p>

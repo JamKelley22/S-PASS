@@ -15,7 +15,7 @@ import About from './About.js';
 
 import Breadcrumbs from '../Breadcrumbs.js';
 
-import './SPASS.css';
+import './Dashboard/SPASS.css';
 
 const Phases = ({match}) =>(
   <div>

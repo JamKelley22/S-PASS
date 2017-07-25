@@ -9,9 +9,13 @@ h2, h5 {
   color:#E4E9C5;
 }
 
-.p1 {
+#p1 {
   background-color: #F0F0D5;
   border-radius: 0px;
+  width: 100%;
+}
+.panel-body {
+  width: 100%;
 }
 .homebg {
   background-image:url('../../Images/stairs.png');
@@ -21,13 +25,21 @@ h2, h5 {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.jumbotron {
+#jumbo {
   margin-bottom: 0px;
   margin-top: 0px;
   border-radius: 0 !important;
+
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%;
+}
+.jumbotron jumbotron {
+  padding-left: 0px;
 }
 #centerText {
-  padding-left: 100px;
+  text-align: left;
+  margin-left: 20%;
 }
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: #B9CA57 !important;

@@ -1,14 +1,13 @@
 import React from 'react';
 import {Link,Route} from 'react-router-dom';
 
-import SideBar from '../SideBar/SideBar.js';
+import Overview from '../Overview.js';
 
-import Overview from './Overview.js';
+import Files from '../Files.js';
+import About from '../About.js';
 
-import Files from './Files.js';
-import About from './About.js';
-
-import Breadcrumbs from '../Breadcrumbs.js';
+import Breadcrumbs from '../../Breadcrumbs.js';
+import SideBar from '../../SideBar/SideBar.js';
 
 import './SPASS.css';
 
