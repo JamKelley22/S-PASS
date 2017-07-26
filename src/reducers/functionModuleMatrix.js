@@ -10,16 +10,19 @@ const initialState = math.matrix([
 export default function(state = initialState, action){
   switch(action.type){
     case "ADD_ROW_FUN_MOD":
-    console.log("ADDING A ROW");
     var newMat = math.matrix(state._data);
-    //newMat.resize([2,2]);
-    console.log(newMat);
-    console.log(state._size[0]+1);
-    console.log(state._size[1]);
     newMat.resize([(state._size[0]+1),state._size[1]]);
-    console.log(newMat);
     return newMat;
     break;
+    case "REMOVE_ROW_FUN_MOD":{
+      var newMat = {...math.matrix(state._data)};
+      newMat._data.splice(action.payload,1);
+      newMat._size[0]-=1;
+      var data = newMat._data;
+      var size = newMat._size;
+      return {...state,_data:data,_size:size};
+      break;
+    }
   }
   return state;
 }

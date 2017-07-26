@@ -81,6 +81,7 @@ export default class PhaseOneInput extends React.Component{
           removeList={this.props.removeFunction}
           addList={this.props.addFunction}
           addMatRow={this.props.addRowFMMat}
+          removeMatRow={this.props.removeRowFMMat}
         />
 
         Please enter all modules (eg. knob) and indicate whether they are used in each product (Used or Not Used).

@@ -4,3 +4,10 @@ export const addRowFMMat = () =>{
     //payload:index
   }
 };
+
+export const removeRowFMMat = (index) =>{
+  return{
+    type:"REMOVE_ROW_FUN_MOD",
+    payload:index
+  }
+};
