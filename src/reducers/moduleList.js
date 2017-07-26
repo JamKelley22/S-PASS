@@ -14,6 +14,13 @@ export default function(state = initialState, action){
           console.log("Adding Module");
           return [...state,action.payload]
           break;
+        case "REMOVE_MODULE":
+          console.log("Removing Module");
+          //var removed = [...state];
+          //removed.splice(action.payload,action.payload);
+          return[...state.slice(0,action.payload),
+                ...state.slice(action.payload+1,state.length)]
+          break;
       }
 
     return state;

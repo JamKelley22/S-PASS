@@ -5,9 +5,9 @@ import {Tabs,Tab,Button} from 'react-bootstrap';
 
 import {connect} from "react-redux"; //Connects the store to application.
 import {bindActionCreators} from 'redux';
-import {addRequirement} from '../../actions/requirementListActions.js';
+import {addRequirement,removeRequirement} from '../../actions/requirementListActions.js';
 import {removeFunction,addFunction} from '../../actions/functionListActions.js';
-import {addModule} from '../../actions/moduleListActions.js';
+import {addModule,removeModule} from '../../actions/moduleListActions.js';
 
 
 class PhaseOne extends React.Component{
@@ -26,6 +26,8 @@ class PhaseOne extends React.Component{
             addRequirement={this.props.addRequirement}
             productArchitecture={this.props.productArchitecture}
             removeFunction={this.props.removeFunction}
+            removeModule={this.props.removeModule}
+            removeRequirement={this.props.removeRequirement}
 
 
             requirementFunctionMatrix={this.props.requirementFunctionMatrix}
@@ -62,7 +64,9 @@ function matchDispatchToProps(dispatch){
     addFunction : addFunction,
     addModule: addModule,
     removeFunction:removeFunction,
-    addRequirement: addRequirement
+    addRequirement: addRequirement,
+    removeRequirement: removeRequirement,
+    removeModule: removeModule
   },dispatch)
 }
 

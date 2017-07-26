@@ -4,3 +4,12 @@ export const addModule = (ModuleName) =>{
     payload:ModuleName
   }
 };
+
+export const removeModule = (index) =>{
+  console.log("You are removing a function");
+  //console.log(FunctionName);
+  return{
+    type:"REMOVE_MODULE",
+    payload:index
+  }
+};

@@ -30,6 +30,7 @@ export default class ListStuff extends React.Component{
   createListItems(input,name) {
     if(input){
     return input.map((functions,index) => {
+<<<<<<< HEAD
       { if(index == 0) {
           return (
             <div>
@@ -49,6 +50,10 @@ export default class ListStuff extends React.Component{
           );
         }
         else if(index%2 != 0) {
+=======
+
+        if(index%2 != 0) {
+>>>>>>> addedDeletes
           return(
             <ListGroupItem key={functions} id='group' href="#link1">
               {index+1}. {functions}
