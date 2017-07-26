@@ -110,4 +110,15 @@ h4 {
 }
 #brownText {
   color: #54513D;
+  display: inline-block;
+}
+.fa-angle-double-right {
+  display: none;
+  color: #54513D;
+  display: inline-block;
+  float: right;
+  transition: left 1s;
+}
+.fa-angle-double-right:hover {
+  left: 20px;
 }
