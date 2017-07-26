@@ -13,32 +13,15 @@ import {addRowFMMat} from '../../actions/functionModuleAction.js';
 import {addRowMAMat} from '../../actions/moduleArchitectureAction.js';
 
 
-class PhaseOne extends React.Component{
+class PhaseOneIn extends React.Component{
 
   render(){
     return(
+<<<<<<< HEAD
       <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
         <Tab eventKey={1} title="Input">
           <PhaseOneInput
-            addFunction={this.props.addFunction}
-            functions={this.props.functions}
-            modules={this.props.modules}
-            addModule={this.props.addModule}
-            requirements={this.props.requirements}
-            addRequirement={this.props.addRequirement}
-            productArchitecture={this.props.productArchitecture}
-            removeFunction={this.props.removeFunction}
-            removeModule={this.props.removeModule}
-            removeRequirement={this.props.removeRequirement}
-            addRowRFMat={this.props.addRowRFMat}
-            addRowFMMat={this.props.addRowFMMat}
-            addRowMAMat={this.props.addRowMAMat}
-            removeRowRFMat={this.props.removeRowRFMat}
 
-
-            requirementFunctionMatrix={this.props.requirementFunctionMatrix}
-            functionModuleMatrix={this.props.functionModuleMatrix}
-            moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
           />
         </Tab>
         <Tab eventKey={2} title="Output">
@@ -49,6 +32,28 @@ class PhaseOne extends React.Component{
           />
         </Tab>
       </Tabs>
+=======
+      <PhaseOneInput
+      addFunction={this.props.addFunction}
+      functions={this.props.functions}
+      modules={this.props.modules}
+      addModule={this.props.addModule}
+      requirements={this.props.requirements}
+      addRequirement={this.props.addRequirement}
+      productArchitecture={this.props.productArchitecture}
+      removeFunction={this.props.removeFunction}
+      removeModule={this.props.removeModule}
+      removeRequirement={this.props.removeRequirement}
+      addRowRFMat={this.props.addRowRFMat}
+      addRowFMMat={this.props.addRowFMMat}
+      addRowMAMat={this.props.addRowMAMat}
+      removeRowRFMat={this.props.removeRowRFMat}
+
+
+      requirementFunctionMatrix={this.props.requirementFunctionMatrix}
+      functionModuleMatrix={this.props.functionModuleMatrix}
+      moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
+      />
     );
   }
 }
@@ -81,4 +86,4 @@ function matchDispatchToProps(dispatch){
 }
 
 
-export default connect(mapStateToProps,matchDispatchToProps)(PhaseOne);
+export default connect(mapStateToProps,matchDispatchToProps)(PhaseOneIn);

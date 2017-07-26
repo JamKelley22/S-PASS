@@ -5,9 +5,15 @@ import SideBar from '../SideBar/SideBar.js';
 
 import Overview from './Overview.js';
 
-import PhaseOne from '../PhaseOne/PhaseOne.js';
-import PhaseTwo from '../PhaseTwo/PhaseTwo.js';
-import PhaseThree from '../PhaseThree/PhaseThree.js';
+import PhaseOneInput from '../PhaseOne/PhaseOne.js';
+import PhaseOneOutput from '../PhaseOne/PhaseOneOut.js';
+
+import PhaseTwoInput from '../PhaseTwo/PhaseTwo.js';
+import PhaseTwoOutput from '../PhaseTwo/PhaseTwoOut.js';
+
+import PhaseThreeInput from '../PhaseThree/PhaseThree.js';
+import PhaseThreeOutput from '../PhaseThree/PhaseThreeOut.js';
+
 import PhasesSideBar from '../SideBar/PhasesSideBar.js';
 
 import Files from './Files.js';
@@ -30,9 +36,14 @@ const Phases = ({match}) =>(
     <PhasesSideBar match={match}/>
 
     <div id='content'>
-      <Route path="/Phases/PhaseOne" component={PhaseOne}/>
-      <Route path="/Phases/PhaseTwo" component={PhaseTwo}/>
-      <Route path="/Phases/PhaseThree" component={PhaseThree}/>
+      <Route path="/Phases/PhaseOne/Input" component={PhaseOneInput}/>
+      <Route path="/Phases/PhaseOne/Output" component={PhaseOneOutput}/>
+
+      <Route path="/Phases/PhaseTwo/Input" component={PhaseTwoInput}/>
+      <Route path="/Phases/PhaseTwo/Output" component={PhaseTwoOutput}/>
+
+      <Route path="/Phases/PhaseThree/Input" component={PhaseThreeInput}/>
+      <Route path="/Phases/PhaseThree/Output" component={PhaseThreeOutput}/>
     </div>
   </div>
 )
