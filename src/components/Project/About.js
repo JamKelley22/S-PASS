@@ -1,8 +1,16 @@
 import React from 'react';
+import {Image} from 'react-bootstrap';
 
 
 const About = ({match}) =>(
-  <h1>About</h1>
+  <div id='top'>
+
+  </div>
+
+  <div id='bottom'>
+    <Image src={require()}>
+  </div>
+
 )
 
 export default About;

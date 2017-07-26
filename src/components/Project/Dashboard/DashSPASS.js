@@ -10,7 +10,7 @@ const Test = ({match}) =>(
     <h3><i className="fa fa-leaf"/> S-PASS</h3>
 
     <div id='phase'>
-      <p>Phase 1: Requirements</p><p>Edit <i className="fa fa-edit"/></p>
+      <p>Phase 1: Requirements</p>
       <div id='phaseContent'>
         <div id='phaseText'>
         Requirements: 6<br/>
@@ -22,7 +22,7 @@ const Test = ({match}) =>(
     </div>
 
     <div id='phase'>
-      <p>Phase 2: New Modules</p><p>Edit <i className="fa fa-edit"/></p>
+      <p>Phase 2: New Modules</p>
       <div id='phaseContent'>
         <i className="fa fa-bar-chart" id='phaseGlyph'/>
       </div>
@@ -30,7 +30,7 @@ const Test = ({match}) =>(
     </div>
 
     <div id='phase'>
-      <p>Phase 3: Selection</p><p>Edit <i className="fa fa-edit"/></p>
+      <p>Phase 3: Selection</p>
       <div id='phaseContent'>
         <i className="fa fa-pie-chart" id='phaseGlyph'/>
       </div>
