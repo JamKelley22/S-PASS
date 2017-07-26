@@ -8,6 +8,9 @@ import {bindActionCreators} from 'redux';
 import {addRequirement,removeRequirement} from '../../actions/requirementListActions.js';
 import {removeFunction,addFunction} from '../../actions/functionListActions.js';
 import {addModule,removeModule} from '../../actions/moduleListActions.js';
+import {addRowRFMat,removeRowRFMat} from '../../actions/requirementFunctionAction.js';
+import {addRowFMMat} from '../../actions/functionModuleAction.js';
+import {addRowMAMat} from '../../actions/moduleArchitectureAction.js';
 
 
 class PhaseOne extends React.Component{
@@ -16,7 +19,6 @@ class PhaseOne extends React.Component{
     return(
       <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
         <Tab eventKey={1} title="Input">
-          {this.props.requirementFunctionMatrix._data[1][1]}
           <PhaseOneInput
             addFunction={this.props.addFunction}
             functions={this.props.functions}
@@ -28,6 +30,10 @@ class PhaseOne extends React.Component{
             removeFunction={this.props.removeFunction}
             removeModule={this.props.removeModule}
             removeRequirement={this.props.removeRequirement}
+            addRowRFMat={this.props.addRowRFMat}
+            addRowFMMat={this.props.addRowFMMat}
+            addRowMAMat={this.props.addRowMAMat}
+            removeRowRFMat={this.props.removeRowRFMat}
 
 
             requirementFunctionMatrix={this.props.requirementFunctionMatrix}
@@ -66,7 +72,11 @@ function matchDispatchToProps(dispatch){
     removeFunction:removeFunction,
     addRequirement: addRequirement,
     removeRequirement: removeRequirement,
-    removeModule: removeModule
+    removeModule: removeModule,
+    addRowRFMat: addRowRFMat,
+    addRowFMMat: addRowFMMat,
+    addRowMAMat: addRowMAMat,
+    removeRowRFMat: removeRowRFMat
   },dispatch)
 }
 

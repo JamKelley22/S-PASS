@@ -28,6 +28,7 @@ export default class notATest extends React.Component{
 
   something(name,i,j){
     var person = prompt("Please enter the function name:", "Function");
+    var index =[i,j];
     //@Sushi This is where you would send the action or something.
     //I think you have everything you need?
   }
