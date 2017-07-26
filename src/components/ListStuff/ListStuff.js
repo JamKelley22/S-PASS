@@ -32,13 +32,26 @@ export default class ListStuff extends React.Component{
     return input.map((functions,index) => {
       { if(index == 0) {
           return (
-            <ListGroupItem id='group' className='odd'><h4>{name}</h4></ListGroupItem>
+            <div>
+              <ListGroupItem id='group' className='odd'><h4>{name}</h4></ListGroupItem>
+              <ListGroupItem key={functions} id='group' href="#link1">
+                1. {functions}
+                <Button
+                  bsStyle="danger"
+                  bsSize="xsmall"
+                  className="btn pull-right"
+                  onClick={()=> this.handleRemove(0)}
+                >
+                  delete
+                </Button>
+              </ListGroupItem>
+            </div>
           );
         }
         else if(index%2 != 0) {
           return(
             <ListGroupItem key={functions} id='group' href="#link1">
-              {index}. {functions}{index}
+              {index+1}. {functions}
               <Button
                 bsStyle="danger"
                 bsSize="xsmall"
@@ -52,7 +65,7 @@ export default class ListStuff extends React.Component{
       }
       return(
         <ListGroupItem key={functions} id='group' className='odd' href="#link1">
-          {index}. {functions}{index}
+          {index+1}. {functions}
           <Button
             bsStyle="danger"
             bsSize="xsmall"
