@@ -30,12 +30,8 @@ export default class ListStuff extends React.Component{
   createListItems(input,name) {
     if(input){
     return input.map((functions,index) => {
-      { if(index == 0) {
-          return (
-            <ListGroupItem id='group' className='odd'><h4>{name}</h4></ListGroupItem>
-          );
-        }
-        else if(index%2 != 0) {
+
+        if(index%2 != 0) {
           return(
             <ListGroupItem key={functions} id='group' href="#link1">
               {index}. {functions}{index}
