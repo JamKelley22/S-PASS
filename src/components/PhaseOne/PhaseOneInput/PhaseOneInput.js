@@ -90,7 +90,7 @@ export default class PhaseOneInput extends React.Component{
         <ListStuff
           list={this.props.requirements}
           title="Requirements"
-          removeList={this.props.removeFunction}
+          removeList={this.props.removeRequirement}
           addList={this.props.addRequirement}
         />
 
@@ -102,7 +102,7 @@ export default class PhaseOneInput extends React.Component{
         <ListStuff
           list={this.props.modules}
           title="Modules"
-          removeList={this.props.removeFunction}
+          removeList={this.props.removeModule}
           addList={this.props.addModule}
         />
 
