@@ -7,24 +7,6 @@ export default class notATest extends React.Component{
     super(props);
     this.something = this.something.bind(this);
   }
-/*
-  constructor(props) {
-    super(props);
-  this.combineData = this.combineData.bind(this);
-}
-*/
-/*
-  combineData(matrix,row){
-    var i;
-    var newMat=[...matrix];
-    //console.log(row);
-    console.log(matrix);
-    for(i=0;i<row.length;i++){
-      newMat[i].unshift(row[i]);
-    }
-    return newMat
-  }
-*/
 
   something(name,i,j){
     var person = prompt("Please enter the function name:", "Function");
@@ -36,9 +18,6 @@ export default class notATest extends React.Component{
   render(){
     var something = this.something;
     var matrixContent = this.props.matrixContent;
-    //var rowNames =this.props.rowNames;
-    //var colNames = this.props.colNames;
-    //var newMat=this.combineData(this.props.matrixContent,this.props.rowNames)//[["test","test1"],["Hello","Me"]],["Added One","added two"]);
 
     return(
 
@@ -76,28 +55,7 @@ export default class notATest extends React.Component{
                   })}</tr>})}
             </tbody>
           </Table>
-          <li>
-          {this.props.rowNames}
-          </li>
       </div>
   );
   }
 }
-/*
-
-
-      //test1
-
-      {newMat.map((nested,index)=>
-        {return <tr>
-          <OverlayTrigger placement="top" overlay={
-            <Tooltip id="tooltip"><strong>{newMat[index][0]}</strong></Tooltip>
-          }>
-            <th ><div className="block-with-text">{this.props.rowNames[index]}
-            </div></th>
-            </OverlayTrigger>
-            {nested.slice(nested.length).map((name,index)=>
-              {return <td key={ index }>
-              {name}</td>;
-            })}</tr>})}
-*/

@@ -7,12 +7,14 @@ const initialState = math.matrix([
 
 export default function(state = initialState, action){
   switch(action.type){
+
       case "ADD_ROW_REQ_FUN":{
         var newMat = math.matrix(state._data);
         newMat.resize([(state._size[0]+1),state._size[1]]);
         return newMat;
         break;
       }
+      
       case "REMOVE_ROW_REQ_FUN":{
         var newMat = {...math.matrix(state._data)};
         newMat._data.splice(action.payload,1);

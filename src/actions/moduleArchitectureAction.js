@@ -4,3 +4,10 @@ export const addRowMAMat = () =>{
     //payload:index
   }
 };
+
+export const removeRowMAMat = (index) =>{
+  return{
+    type:"REMOVE_ROW_MOD_ARC",
+    payload:index
+  }
+};

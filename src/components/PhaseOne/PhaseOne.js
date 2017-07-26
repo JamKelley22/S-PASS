@@ -10,7 +10,7 @@ import {removeFunction,addFunction} from '../../actions/functionListActions.js';
 import {addModule,removeModule} from '../../actions/moduleListActions.js';
 import {addRowRFMat,removeRowRFMat} from '../../actions/requirementFunctionAction.js';
 import {addRowFMMat,removeRowFMMat} from '../../actions/functionModuleAction.js';
-import {addRowMAMat} from '../../actions/moduleArchitectureAction.js';
+import {addRowMAMat,removeRowMAMat} from '../../actions/moduleArchitectureAction.js';
 
 
 class PhaseOneIn extends React.Component{
@@ -33,6 +33,7 @@ class PhaseOneIn extends React.Component{
       addRowMAMat={this.props.addRowMAMat}
       removeRowRFMat={this.props.removeRowRFMat}
       removeRowFMMat={this.props.removeRowFMMat}
+      removeRowMAMat={this.props.removeRowMAMat}
 
 
       requirementFunctionMatrix={this.props.requirementFunctionMatrix}
@@ -67,7 +68,8 @@ function matchDispatchToProps(dispatch){
     addRowFMMat: addRowFMMat,
     addRowMAMat: addRowMAMat,
     removeRowRFMat: removeRowRFMat,
-    removeRowFMMat: removeRowFMMat
+    removeRowFMMat: removeRowFMMat,
+    removeRowMAMat: removeRowMAMat
   },dispatch)
 }
 

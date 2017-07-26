@@ -110,6 +110,7 @@ export default class PhaseOneInput extends React.Component{
           removeList={this.props.removeModule}
           addList={this.props.addModule}
           addMatRow={this.props.addRowMAMat}
+          removeMatRow={this.props.removeRowMAMat}
         />
 
         <h3>Step 2: Product Contribution Estimation</h3>
