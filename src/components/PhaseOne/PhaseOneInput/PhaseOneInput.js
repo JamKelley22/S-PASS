@@ -80,6 +80,7 @@ export default class PhaseOneInput extends React.Component{
           title="Functions"
           removeList={this.props.removeFunction}
           addList={this.props.addFunction}
+          addMatRow={this.props.addRowFMMat}
         />
 
         Please enter all modules (eg. knob) and indicate whether they are used in each product (Used or Not Used).
@@ -92,6 +93,8 @@ export default class PhaseOneInput extends React.Component{
           title="Requirements"
           removeList={this.props.removeRequirement}
           addList={this.props.addRequirement}
+          addMatRow={this.props.addRowRFMat}
+          removeMatRow={this.props.removeRowRFMat}
         />
 
         Please enter all requirements (eg. Use of renewable energy)
@@ -99,11 +102,13 @@ export default class PhaseOneInput extends React.Component{
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
           <i className="fa fa-search" id='pad'/>
         </div>
+
         <ListStuff
           list={this.props.modules}
           title="Modules"
           removeList={this.props.removeModule}
           addList={this.props.addModule}
+          addMatRow={this.props.addRowMAMat}
         />
 
         <h3>Step 2: Product Contribution Estimation</h3>

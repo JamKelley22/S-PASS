@@ -16,7 +16,9 @@ export default class ListStuff extends React.Component{
   }
   handleRemove(index){
     //console.log('HERE: '+index);
-    return this.props.removeList(index)
+    console.log("MY INDEX:"+index+"!!!!!!!!!")
+    this.props.removeList(index);
+    this.props.removeMatRow(index);
   }
 
   showNameForm() {
@@ -95,7 +97,8 @@ export default class ListStuff extends React.Component{
       <ListGroupItem id='group'>
         <i className="fa fa-minus-circle" onClick={this.hideNameForm.bind(this)}
         id='minusSign'></i>Cancel
-        <NameForm functions = {this.props.list} submit={this.props.addList}/>
+        <NameForm functions = {this.props.list} submit={this.props.addList}
+          addMatRow={this.props.addMatRow}/>
       </ListGroupItem>
     );
   }
