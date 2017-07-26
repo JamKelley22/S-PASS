@@ -8,5 +8,7 @@ h3 {
 #product1, #product2 {
   display: inline-block;
 }
-ashImage {
+#scroll {
+  max-height: 90%;
+  overflow-y: auto;
 }

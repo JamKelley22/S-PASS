@@ -12,9 +12,9 @@ export default class ProjectSideBar extends React.Component{
     super(props);
     this.state = {
       phase: [
-        {name: '1. Requirements', link: '/Phases/PhaseOne', open: false},
+        {name: '1. Requirements', link: '/Phases/PhaseOne', open: true},
         {name: '2. New Modules', link: '/Phases/PhaseTwo', open: false},
-        {name: '3. Selection', link: '/Phases/PhaseThree', open: true}
+        {name: '3. Selection', link: '/Phases/PhaseThree', open: false}
       ]
     };
     this.toggleDropdown = this.toggleDropdown.bind(this);

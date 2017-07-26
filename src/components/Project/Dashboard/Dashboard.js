@@ -22,6 +22,8 @@ const Dashboard = ({match}) =>(
       </div>
     </div>
 
+    <div id='proj'>Project</div>
+
     <DashboardSideBar match={match}/>
 
     <div id='content'>
@@ -31,12 +33,8 @@ const Dashboard = ({match}) =>(
           <h3><i className="fa fa-cube"/> Design</h3>
 
           <div id='Product1'>
-            <p id='fLeft'>Product 1: Quad-copter</p><p id='fRight'>Edit <i className="fa fa-edit"/></p>
+            <p id='fLeft'>Product 1: Quad-copter</p>
             <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
-          </div>
-          <div id='Product2'>
-            <p id='fLeft'>Product 1: Quad-copter</p><p id='fRight'>Edit <i className="fa fa-edit"/></p>
-            <Image id='dashImage' src={require('../../../Images/drone2.jpg')} alt='Hexa-copter'/>
           </div>
 
         </div>

@@ -56,7 +56,7 @@ export default class PhaseOneInput extends React.Component{
 
   render(){
     return(
-      <div>
+      <div id='scroll'>
 
       <Modal show={this.state.showModal} onHide={this.hideHelp}>
         <Help/>

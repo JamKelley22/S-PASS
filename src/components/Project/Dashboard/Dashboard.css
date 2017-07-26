@@ -1,6 +1,7 @@
 .colorBar {
   height: 40px;
   background-color:#54513D;
+  margin-bottom: 10px;
 }
 .colorBarText p{
   color: white;
@@ -76,4 +77,9 @@ p {
 }
 #fRight {
   float: right;
+}
+#proj {
+  position: relative;
+  top: 0px;
+  left:10px;
 }

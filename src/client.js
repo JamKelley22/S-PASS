@@ -16,7 +16,8 @@ const app = document.getElementById('app')
 //Connects store and Layout to render.
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory} routes={routes}>
+    <Router history={browserHistory}>
       <App className='app'/>
     </Router>
-  </Provider>,app);
+  </Provider>,app
+);
