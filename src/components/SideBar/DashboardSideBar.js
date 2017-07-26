@@ -24,7 +24,7 @@ const DashboardSideBar = ({match}) =>(
 
       <LinkContainer to={'/SPASS/Overview'}>
         <div>
-          <div id='spassTab'><h4><i id='brownText' className="fa fa-leaf"/> SPASS</h4></div>
+          <div id='spassTab'><h4><i id='brownText' className="fa fa-leaf"/> SPASS <i className="fa fa-angle-double-right"/></h4></div>
         </div>
       </LinkContainer>
 
