@@ -36,6 +36,14 @@ h4 {
   margin-bottom: 0px;
   margin-top: 0px;
   padding: 10px;
+
+  padding-left: 1px;
+  text-align: left;
+  color: #E4E9C5;
+  margin-top: 0px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 #designTab {
   width : 100%;
@@ -43,11 +51,17 @@ h4 {
   background-color: #AEC23F;
   color: #54513D;
 }
+#designTab:hover {
+  background-color: #8b9b31;
+}
 #spassTab {
   width : 100%;
   padding: 10px;
   background-color: #9DC64D;
   color: #54513D;
+}
+#spassTab:hover {
+  background-color: #86ad38;
 }
 #matTab {
   width : 100%;
@@ -55,9 +69,42 @@ h4 {
   background-color: #C5EA6F;
   color: #54513D;
 }
+#matTab:hover {
+  background-color: #b8e64d;
+}
 #settingsTab {
   width : 100%;
   padding: 10px;
   background-color: #54513D;
   color: white;
+}
+#settingsTab:hover {
+  background-color: #3b392b;
+}
+
+#tab {
+  width : 100%;
+  padding: 10px;
+  background-color: #54513D;
+  color: white;
+}
+#tab:hover {
+  background-color: #3b392b;
+}
+#ford:focus {
+  background-color: white;
+  color: #54513D;;
+}
+
+#tabS {
+  max-width: 80%;
+  margin-left: 20%;
+  font-size: 11px;
+  width : 100%;
+  padding: 10px;
+  background-color: #54513D;
+  color: white;
+}
+#tabS:hover {
+  background-color: #3b392b;
 }

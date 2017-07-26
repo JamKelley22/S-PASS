@@ -10,24 +10,14 @@ import {removeFunction,addFunction} from '../../actions/functionListActions.js';
 import {addModule} from '../../actions/moduleListActions.js';
 
 
-class PhaseOneIn extends React.Component{
+class PhaseOneOut extends React.Component{
 
   render(){
     return(
-      <PhaseOneInput
-        addFunction={this.props.addFunction}
+      <PhaseOneOuput
+        requirementFunctionMatrix={this.props.requirementFunctionMatrix}
         functions={this.props.functions}
         modules={this.props.modules}
-        addModule={this.props.addModule}
-        requirements={this.props.requirements}
-        addRequirement={this.props.addRequirement}
-        productArchitecture={this.props.productArchitecture}
-        removeFunction={this.props.removeFunction}
-
-
-        requirementFunctionMatrix={this.props.requirementFunctionMatrix}
-        functionModuleMatrix={this.props.functionModuleMatrix}
-        moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
       />
     );
   }
@@ -55,4 +45,4 @@ function matchDispatchToProps(dispatch){
 }
 
 
-export default connect(mapStateToProps,matchDispatchToProps)(PhaseOneIn);
+export default connect(mapStateToProps,matchDispatchToProps)(PhaseOneOut);

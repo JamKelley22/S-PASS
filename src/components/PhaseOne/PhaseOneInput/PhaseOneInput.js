@@ -65,11 +65,10 @@ export default class PhaseOneInput extends React.Component{
         </Modal.Footer>
       </Modal>
 
-        <p id='fLeft'>Product 1: Quad-copter</p><p id='fRight'>Edit <i className="fa fa-edit"/></p>
+      <div id='product1'>
+        <p>Product 1: Quad-copter</p><p>Edit <i className="fa fa-edit"/></p>
         <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
-        <p id='fLeft'>Product 1: Quad-copter</p><p id='fRight'>Edit <i className="fa fa-edit"/></p>
-        <Image id='dashImage' src={require('../../../Images/drone2.jpg')} alt='Hexa-copter'/>
-
+      </div>
         <h3>Step 1: Enter product details</h3>
         Please enter all functions (eg. Recharging battery)
         <div className='pull-right'>

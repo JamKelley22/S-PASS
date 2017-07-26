@@ -18,25 +18,25 @@ const DashboardSideBar = ({match}) =>(
 
       <LinkContainer to={'/Dashboard/Design'}>
         <div>
-          <div id='designTab'><h4><Glyphicon glyph="inbox"/> Design</h4></div>
+          <div id='designTab'><h4><i className="fa fa-cube"/> Design</h4></div>
         </div>
       </LinkContainer>
 
       <LinkContainer to={'/SPASS/Overview'}>
         <div>
-          <div id='spassTab'><h4><Glyphicon glyph="leaf" /> SPASS</h4></div>
+          <div id='spassTab'><h4><i className="fa fa-leaf"/> SPASS</h4></div>
         </div>
       </LinkContainer>
 
       <LinkContainer to={'/Dashboard/MAT'}>
         <div>
-          <div id='matTab'><h4><Glyphicon glyph="wrench"/> MAT</h4></div>
+          <div id='matTab'><h4><i className="fa fa-wrench"/> MAT</h4></div>
         </div>
       </LinkContainer>
 
       <LinkContainer to={'/Dashboard/Settings'}>
         <div>
-          <div id='settingsTab'><h4><Glyphicon glyph="list"/> Settings</h4></div>
+          <div id='settingsTab'><h4><i className="fa fa-list"/> Settings</h4></div>
         </div>
       </LinkContainer>
     </div>

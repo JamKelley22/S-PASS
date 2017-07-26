@@ -6,28 +6,71 @@ import {LinkContainer} from 'react-router-bootstrap';
 
 import './SideBar.css'
 
-const ProjectSideBar = ({match}) =>(
+export default class ProjectSideBar extends React.Component{
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      phase: [
+        {name: '1. Requirements', link: '/Phases/PhaseOne', open: false},
+        {name: '2. New Modules', link: '/Phases/PhaseTwo', open: false},
+        {name: '3. Selection', link: '/Phases/PhaseThree', open: true}
+      ]
+    };
+    this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  <div className='sidebar'>
-    <div id='green'>
-      <h2 id='center'>Phases</h2>
-    </div>
+  toggleDropdown(i) {
+    var ph = this.state.phase[i];
+    ph.open = !ph.open;
+    this.forceUpdate();
+  }
 
-    <div className='sideContent'>
+  handleClick(i) {
+    this.toggleDropdown(i);
+  }
 
-      <LinkContainer to={'/Phases/PhaseOne'}>
-        <Panel header={'1. Requirements'}/>
-      </LinkContainer>
+  render(){
 
-      <LinkContainer to={'/Phases/PhaseTwo'}>
-        <Panel header={'2. New Modules'}/>
-      </LinkContainer>
+    return(
 
-      <LinkContainer to={'/Phases/PhaseThree'}>
-        <Panel header={'3. Selection'}/>
-      </LinkContainer>
-    </div>
-  </div>
-)
-export default ProjectSideBar;
+      <div className='sidebar'>
+        <div id='green'>
+          <h2 id='noBottomMargin'>Phases</h2>
+        </div>
+
+        <div className='sideContent'>
+        {this.state.phase.map((currElement, index) => {
+          var i = index;
+          var ph = this.state.phase[i];
+          if(ph.open) {
+            return(
+              <div>
+                <div id='ford' onClick={() => this.handleClick(i)}>
+                  <div id='tab'>{ph.name} <i className="fa fa-angle-down"/></div>
+                </div>
+                <LinkContainer to={ph.link+'/Input'}>
+                  <div id='tabS'>Input</div>
+                </LinkContainer>
+
+                <LinkContainer to={ph.link+'/Output'}>
+                  <div id='tabS'>Output</div>
+                </LinkContainer>
+              </div>
+            )
+          }
+          else{
+            return(
+              <div id='ford' onClick={() => this.handleClick(i)}>
+                <div id='tab'>{ph.name} <i className="fa fa-angle-right"/></div>
+              </div>
+            )
+          }
+        })}
+
+        </div>
+      </div>
+    );
+  }
+}
