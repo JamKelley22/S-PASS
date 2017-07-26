@@ -11,10 +11,14 @@
   float: left;
   min-width: 80%;
   max-width: 80%;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 95%;
 }
 #brown {
   color: #54513D;
   margin: 0px;
+}
+.tab-content {
+    overflow-y: auto;
+    max-height: 90%;
 }

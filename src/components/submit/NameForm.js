@@ -1,5 +1,6 @@
 import React from 'react';
-import {Alert,Button} from 'react-bootstrap';
+import {Alert,Button,FormGroup,FormControl,ControlLabel} from 'react-bootstrap';
+import './NameForm.css'
 
 export default class NameForm extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class NameForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAlertDismiss = this.handleAlertDismiss.bind(this);
     this.handleAlertShow = this.handleAlertShow.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   getInitialState() {
@@ -26,6 +28,13 @@ export default class NameForm extends React.Component {
     this.setState({value: event.target.value});
   }
 
+  handleKeyPress (event){
+    if (event.key === 'Enter') {
+      this.handleSubmit();
+      event.preventDefault();
+    }
+  }
+
   handleSubmit(event) {
     //console.log(this.state.value);
     //console.log("VALUE:",this.state.value,":END");
@@ -34,7 +43,6 @@ export default class NameForm extends React.Component {
       if(this.state.value.length > 0) {
         this.setState({alertVisible: false});
         this.props.submit(this.state.value);
-        event.preventDefault();
       }
       else {
         this.setState({alertVisible: true, alertTitle: 'Its Empty...',
@@ -71,7 +79,6 @@ export default class NameForm extends React.Component {
 
           <form onSubmit={this.handleSubmit}>
             <label>
-              Name:
               <input type="text" value={this.state.value} onChange={this.handleChange} />
             </label>
             <input type="submit" value="Submit" />
@@ -82,12 +89,23 @@ export default class NameForm extends React.Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
+        <form>
+          <FormGroup bsSize="small" id='formGroup'>
+            <FormControl
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+              onKeyPress={this.handleKeyPress}
+            />
+          </FormGroup>
+
+          <Button
+            id='submit'
+            bsStyle="success"
+            bsSize="xsmall"
+            onClick={this.handleSubmit}>
+            Submit
+          </Button>
         </form>
       </div>
     );

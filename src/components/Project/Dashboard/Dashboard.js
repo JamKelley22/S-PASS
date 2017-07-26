@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link,Route} from 'react-router-dom';
-import {Image} from 'react-bootstrap';
+import {Image,Glyphicon} from 'react-bootstrap';
 
 import DashboardSideBar from '../../SideBar/DashboardSideBar.js';
 
@@ -12,6 +12,7 @@ import Settings from './Settings.js';
 import Breadcrumbs from '../../Breadcrumbs.js';
 
 import './Dashboard.css';
+import DashSPASS from './DashSPASS.js';
 
 const Dashboard = ({match}) =>(
   <div>
@@ -21,23 +22,33 @@ const Dashboard = ({match}) =>(
       </div>
     </div>
 
-    <Breadcrumbs/>
-
     <DashboardSideBar match={match}/>
 
     <div id='content'>
       <div id='Dashboard'>
         <h2 id='dash'>Dashboard</h2>
         <div id='Design'>
-          <h3>Design</h3>
-          <p>Product 1: Quad-copter</p><p>Edit</p>
-          <Image/>
-        </div>
-        <div id='SPASS'>
+          <h3><i className="fa fa-cube"/> Design</h3>
+
+          <div id='Product1'>
+            <p id='fLeft'>Product 1: Quad-copter</p><p id='fRight'>Edit <i className="fa fa-edit"/></p>
+            <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
+          </div>
+          <div id='Product2'>
+            <p id='fLeft'>Product 1: Quad-copter</p><p id='fRight'>Edit <i className="fa fa-edit"/></p>
+            <Image id='dashImage' src={require('../../../Images/drone2.jpg')} alt='Hexa-copter'/>
+          </div>
 
         </div>
+
+
+        <DashSPASS/>
+
+
         <div id='MAT'>
-
+          <h3><i className="fa fa-wrench"/> MAT</h3>
+          <i className="fa fa-area-chart" id='matGlyph'/>
+          <i className="fa fa-bar-chart" id='matGlyph'/>
         </div>
       </div>
       <Route path='/Dashboard/Design' component={Design}/>

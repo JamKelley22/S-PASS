@@ -1,17 +1,9 @@
 import React from 'react';
 import './App.css';
-import {Link,Route} from 'react-router-dom';
-import MasashiRouter from './MasashiTest/MasashiTest.js';
+import {Route} from 'react-router-dom';
 //
-import Overview from './Project/Overview.js';
-import Files from './Project/Files.js';
-import About from './Project/About.js';
 import SPASS from './Project/Dashboard/SPASS.js'
 import Dashboard from './Project/Dashboard/Dashboard.js'
-
-import PhaseOne from './PhaseOne/PhaseOne.js';
-import PhaseTwo from './PhaseTwo/PhaseTwo.js';
-import PhaseThree from './PhaseThree/PhaseThree.js';
 
 import Phases from './Project/Phases.js';
 
@@ -21,10 +13,8 @@ import Project from './Project/Project.js';
 import View from './View/View.js';
 import Login from './Login/Login.js';
 
-import SideBar from './SideBar/Sidebar.js';
 import TopNav from './SideBar/navbar.js';
-import Breadcrumbs from './breadcrumbs.js';
-import {PageHeader,Button,Grid,Row,Col,Nav,NavItem} from 'react-bootstrap';
+import {PageHeader,Grid} from 'react-bootstrap';
 
 
 const App = () => (

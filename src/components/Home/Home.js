@@ -33,13 +33,13 @@ const Home = ({match}) =>(
     <div className='homebg'>
       <Panel id='p1'>
         <div id='centerText'>
-          <h4><Glyphicon glyph="inbox" /> Design</h4>
+          <h3><i className="fa fa-cube"/> Design</h3>
           <p>Use CAD to design 3D virtual modules of your products...</p>
 
-          <h4><Glyphicon glyph="leaf" /> S-PASS</h4>
+          <h3><i className="fa fa-leaf"/> S-PASS</h3>
           <p>Use the sustainable product architecture and supplier selection tool to evaluate existing architectures and find replacement supplierand architectures</p>
 
-          <h4><Glyphicon glyph="wrench" /> MAT</h4>
+          <h3><i className="fa fa-wrench"/> MAT</h3>
           <p>Use the Manufacturing Analysis Tool to look at the manfacturing details of your design</p>
         </div>
 

@@ -7,16 +7,73 @@
   padding: 10px;
 }
 #content {
-  padding-left: 10px;
+  padding-left: 0px;
   float: left;
-  min-width: 80%;
-  overflow-y: scroll;
-  max-height: 80%;
+  overflow-y: hidden;
+  max-height: 100%;
+  max-width: 80%;
+  height: 100%;
 }
 #dash {
   margin: 0px;
   color: #54513D;
+  padding-left: 10px;
 }
 #SPASS {
   background-color: #E4E9C5;
+  max-height: 33%;
+  padding-left: 10px;
+  overflow-y:hidden;
+}
+#Design, #MAT {
+  max-height: 33%;
+  overflow-y:auto;
+  padding-left: 10px;
+}
+p {
+  display: inline-block;
+  padding: 5px;
+}
+#Product1, #Product2 {
+  display: inline-block;
+  padding: 10px;
+}
+#phase {
+  display: inline-block;
+  padding: 10px;
+  width: 33%;
+  height: 50%;
+}
+#dashImage {
+  width: 180px;
+  display: block;
+  margin: 0px;
+}
+#phaseContent {
+  background-color: #F0F0D5;
+  width: 100%;
+  height: 20%;
+  display: block;
+}
+#pbar {
+
+}
+#phaseGlyph {
+  padding: 2px 0;
+  font-size: 9vh;
+  color: #DDDDA2;
+  display: table;
+  margin: 0 auto;
+}
+#matGlyph {
+  padding: 20px;
+  font-size: 12vh;
+  color: #DDDDA2;
+  display: inline-block;
+}
+#phaseText {
+  font-size: 2vh;
+}
+#fRight {
+  float: right;
 }

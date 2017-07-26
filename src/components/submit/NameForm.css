@@ -1,0 +1,8 @@
+#submit {
+  display: inline-block;
+  float: right;
+}
+#formGroup {
+  display: inline-block;
+  width: 80%;
+}

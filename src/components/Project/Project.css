@@ -24,34 +24,87 @@
 #leaf {
   color: #89B700;
 }
-#box {
+.fa-folder {
+  position: relative;
+  top: 30px;
+  z-index: 0;
+  transition: top .2s;
+  transition: color .1s;
+}
+
+.fa-folder:hover {
+  top: 20px;
+}
+.projectPanel {
+  position: relative;
+  margin-bottom: 0px;
+  padding: 0px;
+  background-color: #EEF1BC;
+  z-index: 1;
+}
+.fa-cube {
+  float: left;
+  padding: 5px;
   color: #A9CE64;
+  transition: color .2s;
 }
-.fIcon {
-  font-size: 12px;
+.fa-cube:hover {
+  color: #93c23d;
+}
+.fa-leaf {
   float: left;
+  padding: 5px;
+  color: #89B700;
+  transition: color .2s;
+}
+.fa-leaf:hover {
+  color: #739900;
+}
+.fa-wrench {
+  float: left;
+  padding: 5px;
   color: #C5EA6F;
-  padding: 5px;
+  transition: color .2s;
 }
-.newFIcon {
-  font-size: 12px;
-  float: left;
-  color: gray;
-  padding: 5px;
+.fa-wrench:hover {
+  color: #b8e100;
 }
-.fIcon:hover {
-  font-size: 13px;
+#newBox {
+  color: gray !important;
+  transition: color .2s;
 }
-.newFIcon:hover {
-  font-size: 13px;
-  color: green;
+#newBox:hover {
+  color: #93c23d !important;
 }
-.plusSign {
+#newLeaf {
+  color: gray !important;
+  transition: color .2s;
+}
+#newLeaf:hover {
+  color: #93c23d !important;
+}
+#newWrench {
+  color: gray !important;
+  transition: color .2s;
+}
+#newWrench:hover {
+  color: #93c23d !important;
+}
+#plusSign {
   padding: 5px;
   color: #7C7B70;
+  transition: color .2s;
 }
-.plusSign:hover {
+#plusSign:hover {
   color: #89B700;
+}
+#minusSign {
+  padding: 5px;
+  color: #7C7B70;
+  transition: color .2s;
+}
+#minusSign:hover {
+  color: red;
 }
 p {
   font-size: 12px;
@@ -67,11 +120,6 @@ p {
   margin-left: 30%;
   margin-right: 30%;
 }
-.projectPanel {
-  margin-bottom: 0px;
-  padding: 0px;
-  background-color: #EEF1BC;
-}
 .panel-body {
   padding: 3px;
   display: inline-block;
@@ -79,5 +127,6 @@ p {
 .p1 {
   background-color: #F4F4E1;
   height: 100%;
+  z-index: -1;
 }
-#newBox:hover {color: #A9CE64;} #newLeaf:hover {color: #89B700;} #newWrench:hover {color: #C5EA6F;}
+ #newLeaf:hover {color: #89B700;} #newWrench:hover {color: #C5EA6F;}

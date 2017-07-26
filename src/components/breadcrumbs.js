@@ -7,14 +7,17 @@ import './Breadcrumbs.css';
 
 const Breadcrumbs = () => (
   <Breadcrumb id='breadcrumbs'>
-      <Breadcrumb.Item href="#">
+      <Breadcrumb.Item >
         Home
       </Breadcrumb.Item>
-      <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">
-        Library
+      <Breadcrumb.Item >
+        Dashboard
+      </Breadcrumb.Item>
+      <Breadcrumb.Item >
+        Projects
       </Breadcrumb.Item>
       <Breadcrumb.Item active>
-        Data
+        Phases
       </Breadcrumb.Item>
     </Breadcrumb>
 )

@@ -57,27 +57,27 @@ const Project = ({match}) =>(
 const Folder = ({match}) =>(
   <div className='folder'>
 
-  <LinkContainer to={'/Project/#'}>
-    <Glyphicon glyph="folder-close" id='folder-close'/>
-  </LinkContainer>
+  <Link to={'/Project/#'}>
+    <i className="fa fa-folder" id='folder-close'></i>
+  </Link>
 
   <Panel className='projectPanel'>
-    Project
+    <p>Project</p>
   </Panel>
 
   <div className='folderIcons'>
 
-    <LinkContainer to={'/Project'}>
-      <div><Glyphicon glyph="inbox" className='fIcon' id='box'/></div>
-    </LinkContainer>
+    <Link to={'/Project'}>
+      <i className="fa fa-cube" id='fIcon'></i>
+    </Link>
 
-    <LinkContainer to={'/Project'}>
-      <div><Glyphicon glyph="leaf" className='fIcon' id='leaf'/></div>
-    </LinkContainer>
+    <Link to={'/Project'}>
+      <i className="fa fa-leaf" id='fIcon'></i>
+    </Link>
 
-    <LinkContainer to={'/Project'}>
-      <div><Glyphicon glyph="wrench" className='fIcon'/></div>
-    </LinkContainer>
+    <Link to={'/Project'}>
+      <i className="fa fa-wrench" id='fIcon'></i>
+    </Link>
 
   </div>
 
@@ -86,30 +86,30 @@ const Folder = ({match}) =>(
 const NewFolder = ({match}) =>(
   <div className='folder'>
 
-  <LinkContainer to={'/Dashboard'}>
-    <Glyphicon glyph="folder-close" id='folder-close'/>
-  </LinkContainer>
+  <Link to={'/Dashboard'}>
+    <i className="fa fa-folder" id='folder-close'></i>
+  </Link>
 
   <Panel className='projectPanel'>
-    New Project
-    <LinkContainer to={'/Dashboard'}>
-      <span><Glyphicon glyph="plus-sign" className='plusSign'/></span>
-    </LinkContainer>
+    <p>New Project</p>
+    <Link to={'/Dashboard'}>
+      <i className="fa fa-plus-circle" id='plusSign'></i>
+    </Link>
   </Panel>
 
   <div className='folderIcons'>
 
-    <LinkContainer to={'/Project'}>
-      <div><Glyphicon glyph="inbox" className='newFIcon' id='newBox'/></div>
-    </LinkContainer>
+    <Link to={'/Project'}>
+      <i className="fa fa-cube" id='newBox'></i>
+    </Link>
 
-    <LinkContainer to={'/Project'}>
-      <div><Glyphicon glyph="leaf" className='newFIcon' id='newLeaf'/></div>
-    </LinkContainer>
+    <Link to={'/Project'}>
+      <i className="fa fa-leaf" id='newLeaf'></i>
+    </Link>
 
-    <LinkContainer to={'/Project'}>
-      <div><Glyphicon glyph="wrench" className='newFIcon' id='newWrench'/></div>
-    </LinkContainer>
+    <Link to={'/Project'}>
+      <i className="fa fa-wrench" id='newWrench'></i>
+    </Link>
 
   </div>
 

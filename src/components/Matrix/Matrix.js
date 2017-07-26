@@ -3,6 +3,10 @@ import {Table,OverlayTrigger,Tooltip} from 'react-bootstrap';
 import './Matrix.css';
 
 export default class notATest extends React.Component{
+  constructor(props) {
+    super(props);
+    this.something = this.something.bind(this);
+  }
 /*
   constructor(props) {
     super(props);
@@ -21,7 +25,15 @@ export default class notATest extends React.Component{
     return newMat
   }
 */
+
+  something(name,i,j){
+    var person = prompt("Please enter the function name:", "Function");
+    //@Sushi This is where you would send the action or something.
+    //I think you have everything you need?
+  }
+
   render(){
+    var something = this.something;
     var matrixContent = this.props.matrixContent;
     //var rowNames =this.props.rowNames;
     //var colNames = this.props.colNames;
@@ -49,16 +61,16 @@ export default class notATest extends React.Component{
             </tr>
           </thead>
             <tbody>
-            {matrixContent.map((nested,index)=>
+            {matrixContent.map((nested,indexI)=>
               {return <tr>
                 <OverlayTrigger placement="top" overlay={
-                  <Tooltip id="tooltip"><strong>{this.props.rowNames[index]}</strong></Tooltip>
+                  <Tooltip id="tooltip"><strong>{this.props.rowNames[indexI]}</strong></Tooltip>
                 }>
-                  <th ><div className="block-with-text">{this.props.rowNames[index]}
+                  <th ><div className="block-with-text">{this.props.rowNames[indexI]}
                   </div></th>
                   </OverlayTrigger>
-                  {nested.map((name,index)=>
-                    {return <td key={ index }>
+                  {nested.map((name,indexJ)=>
+                    {return <td key={ indexJ } onClick={() => something(name,indexI,indexJ)}>
                     {name}</td>;
                   })}</tr>})}
             </tbody>
