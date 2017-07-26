@@ -17,22 +17,6 @@ class PhaseOneIn extends React.Component{
 
   render(){
     return(
-<<<<<<< HEAD
-      <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-        <Tab eventKey={1} title="Input">
-          <PhaseOneInput
-
-          />
-        </Tab>
-        <Tab eventKey={2} title="Output">
-          <PhaseOneOuput
-            requirementFunctionMatrix={this.props.requirementFunctionMatrix}
-            functions={this.props.functions}
-            modules={this.props.modules}
-          />
-        </Tab>
-      </Tabs>
-=======
       <PhaseOneInput
       addFunction={this.props.addFunction}
       functions={this.props.functions}

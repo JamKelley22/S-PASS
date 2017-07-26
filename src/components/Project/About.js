@@ -3,12 +3,14 @@ import {Image} from 'react-bootstrap';
 
 
 const About = ({match}) =>(
-  <div id='top'>
+  <div>
+    <div id='top'>
 
-  </div>
+    </div>
 
-  <div id='bottom'>
-    <Image src={require()}>
+    <div id='bottom'>
+
+    </div>
   </div>
 
 )
