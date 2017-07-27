@@ -11,3 +11,10 @@ export const removeRowMAMat = (index) =>{
     payload:index
   }
 };
+
+  export const editCellMAMat = (i,j,data) =>{
+    return{
+      type:"EDIT_CELL_MOD_ARC",
+      payload:[i,j,data]
+    }
+};
