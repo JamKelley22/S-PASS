@@ -12,7 +12,6 @@ class PhaseOneOut extends React.Component{
   render(){
     return(
       <div>
-      {console.log(this.props.functions)}
       <PhaseOneOuput
         functions= {this.props.functions}
         productArchitecture={this.props.productArchitecture}
