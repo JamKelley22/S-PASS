@@ -12,6 +12,8 @@ export default class PhaseOneOutput extends React.Component{
     //var math=require('mathjs');
     this.math = require('mathjs');
     this.matrixMult = this.matrixMult.bind(this);
+    this.findRelation = this.findRelation.bind(this);
+    this.functionProduct = this.functionProduct.bind(this);
   }
 
   matrixMult(mat1,mat2){
@@ -24,9 +26,24 @@ export default class PhaseOneOutput extends React.Component{
   findRelation(mat){
     var newMat = this.math.matrix(mat);
     newMat.forEach(function(value,index,matrix){
-      console.log('value:',value,'index ',index);
+      if(value!=0){
+        newMat._data[index[0]][index[1]]=1;
+      }
     });
+    return newMat._data;
   }
+
+  functionProduct(funMod,prodArch){
+    var mat1 = this.math.matrix(this.matrixMult(funMod,prodArch));
+    var mat2 = this.math.matrix(this.matrixMult(this.findRelation(funMod),prodArch));
+    mat1.forEach(function(value,index,matrix){
+      if(mat2._data[index[0]][index[1]]!=0){
+        mat1._data[index[0]][index[1]]=mat1._data[index[0]][index[1]]/mat2._data[index[0]][index[1]];
+      }
+    });
+    return mat1._data;
+  }
+
 
   render(){
 
@@ -37,9 +54,18 @@ export default class PhaseOneOutput extends React.Component{
           title="Function vs. Product"
           colNames={this.props.productArchitecture}
           rowNames={this.props.functions}
-          matrixContent={this.matrixMult(
+          matrixContent={this.functionProduct(
             this.props.functionModuleMatrix._data,
             this.props.moduleArchitectureMatrix._data)}
+        />
+
+        <MatrixDisplay
+          title="Requirement vs. Product"
+          colNames={this.props.productArchitecture}
+          rowNames={this.props.requirements}
+          matrixContent={this.matrixMult(this.props.requirementFunctionMatrix,
+            this.functionProduct(this.props.functionModuleMatrix._data,
+            this.props.moduleArchitectureMatrix._data))}
         />
       </div>
     );

@@ -17,6 +17,8 @@ class PhaseOneOut extends React.Component{
         productArchitecture={this.props.productArchitecture}
         functionModuleMatrix={this.props.functionModuleMatrix}
         moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
+        requirements = {this.props.requirements}
+        requirementFunctionMatrix={this.props.requirementFunctionMatrix}
       />
       </div>
     );
