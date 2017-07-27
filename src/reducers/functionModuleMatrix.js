@@ -43,6 +43,16 @@ export default function(state = initialState, action){
       return newMat;
       break;
     }
+
+    case "EDIT_CELL_FUN_MOD":{
+      var newMat = math.matrix(state._data);
+      console.log(action.payload[0]);
+      console.log(action.payload[1]);
+      console.log(action.payload[2]);
+      newMat._data[action.payload[0]][action.payload[1]]=action.payload[2];
+      return {...state,_data:newMat._data};
+      break;
+    }
   }
   return state;
 }

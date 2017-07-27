@@ -46,7 +46,7 @@ export default class notATest extends React.Component{
             {matrixContent.map((nested,indexI)=>
               {return <tr>
                 <OverlayTrigger placement="top" overlay={
-                  <Tooltip id="tooltip"><strong>{this.props.rowNames[indexI]}</strong></Tooltip>
+                  <Tooltip id="tooltip">{console.log("Made it:\n"+this.props.rowNames)}<strong>{this.props.rowNames[indexI]}</strong>{console.log("Did I make it?")}</Tooltip>
                 }>
                   <th ><div className="block-with-text">{this.props.rowNames[indexI]}
                   </div></th>

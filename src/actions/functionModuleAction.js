@@ -25,3 +25,10 @@ export const addColFMMat = () =>{
     //payload:index
   }
 };
+
+export const editCellFMMat = (i,j,data) =>{
+  return{
+    type:"EDIT_CELL_FUN_MOD",
+    payload:[i,j,data]
+  }
+};

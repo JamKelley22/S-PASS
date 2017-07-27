@@ -5,20 +5,21 @@ import {Tabs,Tab,Button} from 'react-bootstrap';
 
 import {connect} from "react-redux"; //Connects the store to application.
 import {bindActionCreators} from 'redux';
-import {addRequirement} from '../../actions/requirementListActions.js';
-import {removeFunction,addFunction} from '../../actions/functionListActions.js';
-import {addModule} from '../../actions/moduleListActions.js';
 
 
 class PhaseOneOut extends React.Component{
 
   render(){
     return(
+      <div>
+      {console.log(this.props.functions)}
       <PhaseOneOuput
-        requirementFunctionMatrix={this.props.requirementFunctionMatrix}
-        functions={this.props.functions}
-        modules={this.props.modules}
+        functions= {this.props.functions}
+        productArchitecture={this.props.productArchitecture}
+        functionModuleMatrix={this.props.functionModuleMatrix}
+        moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
       />
+      </div>
     );
   }
 }
@@ -35,14 +36,4 @@ function mapStateToProps(state){
   };
 }
 
-function matchDispatchToProps(dispatch){
-  return bindActionCreators({
-    addFunction : addFunction,
-    addModule: addModule,
-    removeFunction:removeFunction,
-    addRequirement: addRequirement
-  },dispatch)
-}
-
-
-export default connect(mapStateToProps,matchDispatchToProps)(PhaseOneOut);
+export default connect(mapStateToProps)(PhaseOneOut);
