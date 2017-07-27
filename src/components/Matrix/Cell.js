@@ -1,48 +1,64 @@
 import React from 'react';
-import {Table} from 'react-bootstrap';
+import {Button, Table, OverlayTrigger, Popover, FormGroup, FormControl, Form} from 'react-bootstrap';
 
 export default class Cell extends React.Component{
   constructor(props) {
     super(props);
-    this.getCellInputFromUser = this.getCellInputFromUser.bind(this);
+    this.state = {
+      editing: false,
+      error: false,
+      value: '',
+      popTitle: 'Enter new cell value:'
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  getCellInputFromUser(name,i,j){
-    if(this.props.canEditCells) {
-      var first = true;
-      var msg = 'Enter new cell value:';
-      do {
-        if(!first) {
-          msg = 'Invalid input. Please enter a non-negative number';
-        }
-        var validInput = false;
-        var input = prompt(msg);
-        if(!isNaN(input) && input > -1) {
-          validInput = true;
-        }
-        first = false;
-      }while(!validInput);
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
 
-      console.log(input);
-      if(input == null || input == '') {//User Pressed Cancel
-        console.log('Input Canceled');
-      }
-      else {//User Pressed OK
-        this.props.editCell(i,j,input);
-      }
-
-      //@Sushi This is where you would send the action or something.
-      //I think you have everything you need?
+  handleSubmit(i,j,event) {
+    this.setState({popTitle: 'Enter new cell value:'});
+    if(!isNaN(this.state.value) & parseInt(this.state.value) > -1) {
+      this.props.editCell(i,j,this.state.value);
+      this.refs.overlay.hide();
+      this.setState({value: ''});
     }
+    else {
+      this.setState({popTitle: 'Invalid input. Please enter a non-negative number'});
+    }
+    event.preventDefault();
   }
 
   render(){
     var getCellInputFromUser = this.getCellInputFromUser;
+    const popoverClick = (
+      <Popover id="popover-trigger-click-root-close" title={this.state.popTitle}>
+        <form onSubmit={() => this.handleSubmit(this.props.indexI,this.props.indexJ,event)}>
+          <label>
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Ok" />
+        </form>
 
-    return(
-      <td key={ this.props.indexJ } onClick={() => getCellInputFromUser(this.props.name,this.props.indexI,this.props.indexJ)}>
-      {this.props.name}</td>
+      </Popover>
     );
+
+    if(this.props.canEditCells) {
+      return(
+        <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+          <td key={ this.props.indexJ } >
+          {this.props.name}</td>
+        </OverlayTrigger>
+      );
+    }
+    else {
+      return(
+          <td key={ this.props.indexJ } >
+          {this.props.name}</td>
+      );
+    }
 
   }
 }
