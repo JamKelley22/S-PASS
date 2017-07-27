@@ -5,20 +5,25 @@ import './Matrix.css';
 export default class notATest extends React.Component{
   constructor(props) {
     super(props);
-    this.something = this.something.bind(this);
+    this.getCellInput = this.getCellInput.bind(this);
   }
 
-  something(name,i,j){
-    var person = prompt("Please enter the function name:", "Function");
-    console.log(person);
-    var index =[i,j];
-    this.props.editCell(i,j,person);
+  getCellInput(name,i,j){
+    var input = prompt("Enter new cell value:", "");
+    console.log(input);
+    if(input == null || input == '') {//User Pressed Cancel
+      console.log('Input Canceled');
+    }
+    else {//User Pressed OK
+      this.props.editCell(i,j,input);
+    }
+
     //@Sushi This is where you would send the action or something.
     //I think you have everything you need?
   }
 
   render(){
-    var something = this.something;
+    var getCellInput = this.getCellInput;
     var matrixContent = this.props.matrixContent;
 
     return(
@@ -52,7 +57,7 @@ export default class notATest extends React.Component{
                   </div></th>
                   </OverlayTrigger>
                   {nested.map((name,indexJ)=>
-                    {return <td key={ indexJ } onClick={() => something(name,indexI,indexJ)}>
+                    {return <td key={ indexJ } onClick={() => getCellInput(name,indexI,indexJ)}>
                     {name}</td>;
                   })}</tr>})}
             </tbody>
