@@ -42,6 +42,7 @@ class PhaseOneIn extends React.Component{
       removeColFMMat={this.props.removeColFMMat}
       addColFMMat={this.props.addColFMMat}
       editCellRFMat={this.props.editCellRFMat}
+      
 
 
       requirementFunctionMatrix={this.props.requirementFunctionMatrix}

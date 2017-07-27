@@ -129,6 +129,7 @@ export default class PhaseOneInput extends React.Component{
           colNames={this.props.functions}
           rowNames={this.props.requirements}
           editCell={this.props.editCellRFMat}
+          canEditCells={true}//Must Specify that cells in the matrix are editable, else they are not
         />
 
         <MatrixDisplay
