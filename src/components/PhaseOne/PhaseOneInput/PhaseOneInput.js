@@ -82,6 +82,8 @@ export default class PhaseOneInput extends React.Component{
           addList={this.props.addFunction}
           addMatRow={this.props.addRowFMMat}
           removeMatRow={this.props.removeRowFMMat}
+          removeMatCol={this.props.removeColRFMat}
+          addMatCol={this.props.addColRFMat}
         />
 
         Please enter all modules (eg. knob) and indicate whether they are used in each product (Used or Not Used).
@@ -111,6 +113,8 @@ export default class PhaseOneInput extends React.Component{
           addList={this.props.addModule}
           addMatRow={this.props.addRowMAMat}
           removeMatRow={this.props.removeRowMAMat}
+          removeMatCol={this.props.removeColFMMat}
+          addMatCol={this.props.addColFMMat}
         />
 
         <h3>Step 2: Product Contribution Estimation</h3>
@@ -124,6 +128,7 @@ export default class PhaseOneInput extends React.Component{
           matrixContent={this.props.requirementFunctionMatrix._data}
           colNames={this.props.functions}
           rowNames={this.props.requirements}
+          editCell={this.props.editCellRFMat}
         />
 
         <MatrixDisplay

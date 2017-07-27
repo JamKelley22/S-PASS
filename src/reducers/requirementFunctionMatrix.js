@@ -14,14 +14,42 @@ export default function(state = initialState, action){
         return newMat;
         break;
       }
-      
+
       case "REMOVE_ROW_REQ_FUN":{
-        var newMat = {...math.matrix(state._data)};
+        var newMat = math.matrix(state._data);//{...math.matrix(state._data)};
         newMat._data.splice(action.payload,1);
         newMat._size[0]-=1;
         var data = newMat._data;
         var size = newMat._size;
         return {...state,_data:data,_size:size};
+        break;
+      }
+
+      case "REMOVE_COL_REQ_FUN":{
+        var newMat = {...math.matrix(state._data)};
+        var i;
+        for(i=0;i<newMat._size[0];i++){
+          newMat._data[i].splice(action.payload,1);
+        }
+        newMat._size[1]-=1;
+        return {...state,_data:newMat._data,_size: newMat._size};
+        break;
+      }
+
+      case "ADD_COL_REQ_FUN":{
+        var newMat = math.matrix(state._data);
+        newMat.resize([(state._size[0]),state._size[1]+1]);
+        return newMat;
+        break;
+      }
+
+      case "EDIT_CELL_REQ_FUN":{
+        var newMat = math.matrix(state._data);
+        console.log(action.payload[0]);
+        console.log(action.payload[1]);
+        console.log(action.payload[2]);
+        newMat._data[action.payload[0]][action.payload[1]]=action.payload[2];
+        return {...state,_data:newMat._data};
         break;
       }
   }

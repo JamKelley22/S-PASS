@@ -27,6 +27,7 @@ export default function(state = initialState, action){
       return {...state,_data:data,_size:size};
       break;
     }
+
   }
   return state;
 }

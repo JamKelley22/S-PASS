@@ -8,9 +8,12 @@ import {bindActionCreators} from 'redux';
 import {addRequirement,removeRequirement} from '../../actions/requirementListActions.js';
 import {removeFunction,addFunction} from '../../actions/functionListActions.js';
 import {addModule,removeModule} from '../../actions/moduleListActions.js';
-import {addRowRFMat,removeRowRFMat} from '../../actions/requirementFunctionAction.js';
-import {addRowFMMat,removeRowFMMat} from '../../actions/functionModuleAction.js';
-import {addRowMAMat,removeRowMAMat} from '../../actions/moduleArchitectureAction.js';
+import {addRowRFMat,removeRowRFMat,removeColRFMat,addColRFMat,editCellRFMat
+} from '../../actions/requirementFunctionAction.js';
+import {addRowFMMat,removeRowFMMat,removeColFMMat,addColFMMat
+} from '../../actions/functionModuleAction.js';
+import {addRowMAMat,removeRowMAMat
+} from '../../actions/moduleArchitectureAction.js';
 
 
 class PhaseOneIn extends React.Component{
@@ -34,6 +37,11 @@ class PhaseOneIn extends React.Component{
       removeRowRFMat={this.props.removeRowRFMat}
       removeRowFMMat={this.props.removeRowFMMat}
       removeRowMAMat={this.props.removeRowMAMat}
+      removeColRFMat={this.props.removeColRFMat}
+      addColRFMat={this.props.addColRFMat}
+      removeColFMMat={this.props.removeColFMMat}
+      addColFMMat={this.props.addColFMMat}
+      editCellRFMat={this.props.editCellRFMat}
 
 
       requirementFunctionMatrix={this.props.requirementFunctionMatrix}
@@ -69,7 +77,13 @@ function matchDispatchToProps(dispatch){
     addRowMAMat: addRowMAMat,
     removeRowRFMat: removeRowRFMat,
     removeRowFMMat: removeRowFMMat,
-    removeRowMAMat: removeRowMAMat
+    removeRowMAMat: removeRowMAMat,
+    removeColRFMat: removeColRFMat,
+    addColRFMat: addColRFMat,
+    removeColFMMat: removeColFMMat,
+    addColFMMat: addColFMMat,
+    editCellRFMat: editCellRFMat
+
   },dispatch)
 }
 

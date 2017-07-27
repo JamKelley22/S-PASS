@@ -19,6 +19,7 @@ export default class ListStuff extends React.Component{
     console.log("MY INDEX:"+index+"!!!!!!!!!")
     this.props.removeList(index);
     this.props.removeMatRow(index);
+    this.props.removeMatCol(index);
   }
 
   showNameForm() {
@@ -98,7 +99,8 @@ export default class ListStuff extends React.Component{
         <i className="fa fa-minus-circle" onClick={this.hideNameForm.bind(this)}
         id='minusSign'></i>Cancel
         <NameForm functions = {this.props.list} submit={this.props.addList}
-          addMatRow={this.props.addMatRow}/>
+          addMatRow={this.props.addMatRow} addMatCol={this.props.addMatCol}
+        />
       </ListGroupItem>
     );
   }

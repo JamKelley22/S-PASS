@@ -10,7 +10,9 @@ export default class notATest extends React.Component{
 
   something(name,i,j){
     var person = prompt("Please enter the function name:", "Function");
+    console.log(person);
     var index =[i,j];
+    this.props.editCell(i,j,person);
     //@Sushi This is where you would send the action or something.
     //I think you have everything you need?
   }
