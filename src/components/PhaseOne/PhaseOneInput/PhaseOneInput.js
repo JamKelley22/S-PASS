@@ -138,6 +138,7 @@ export default class PhaseOneInput extends React.Component{
           colNames={this.props.modules}
           rowNames={this.props.functions}
           editCell={this.props.editCellFMMat}
+          canEditCells={true}
         />
 
         <MatrixDisplay
@@ -146,6 +147,7 @@ export default class PhaseOneInput extends React.Component{
           colNames={this.props.productArchitecture}
           rowNames={this.props.modules}
           editCell={this.props.editCellMAMat}
+          canEditCells={true}
         />
       </div>
     );
