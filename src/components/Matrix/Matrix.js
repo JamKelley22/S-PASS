@@ -5,11 +5,24 @@ import './Matrix.css';
 export default class notATest extends React.Component{
   constructor(props) {
     super(props);
-    this.getCellInput = this.getCellInput.bind(this);
+    this.getCellInputFromUser = this.getCellInputFromUser.bind(this);
   }
 
-  getCellInput(name,i,j){
-    var input = prompt("Enter new cell value:", "");
+  getCellInputFromUser(name,i,j){
+    var first = true;
+    var msg = 'Enter new cell value:';
+    do {
+      if(!first) {
+        msg = 'Invalid input. Please enter a non-negative number';
+      }
+      var validInput = false;
+      var input = prompt(msg);
+      if(!isNaN(input) && input > -1) {
+        validInput = true;
+      }
+      first = false;
+    }while(!validInput);
+
     console.log(input);
     if(input == null || input == '') {//User Pressed Cancel
       console.log('Input Canceled');
@@ -23,7 +36,7 @@ export default class notATest extends React.Component{
   }
 
   render(){
-    var getCellInput = this.getCellInput;
+    var getCellInputFromUser = this.getCellInputFromUser;
     var matrixContent = this.props.matrixContent;
 
     return(
@@ -57,7 +70,7 @@ export default class notATest extends React.Component{
                   </div></th>
                   </OverlayTrigger>
                   {nested.map((name,indexJ)=>
-                    {return <td key={ indexJ } onClick={() => getCellInput(name,indexI,indexJ)}>
+                    {return <td key={ indexJ } onClick={() => getCellInputFromUser(name,indexI,indexJ)}>
                     {name}</td>;
                   })}</tr>})}
             </tbody>
