@@ -1,0 +1,14 @@
+.popover-content {
+  padding: 0px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+#greenPercentTab {
+  background-color: #DDDDA2;
+}
+#greenPercentTab:hover {
+  background-color: #cfcf7d;
+}
+#percentTab:hover {
+  background-color: #f1f1da;
+}
