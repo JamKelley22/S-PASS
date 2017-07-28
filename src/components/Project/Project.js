@@ -68,24 +68,12 @@ const Project = ({match}) =>(
       </Grid>
     */}
 
-    <Table>
-      <tbody>
-        <tr>
-          <th><Glyphicon glyph="folder-close" className='folder-close'/></th>
-        </tr>
-        <tr>
-        <LinkContainer to={'/PhaseOne'}>
-          <th><Glyphicon glyph="inbox" className='leaf'/></th>
-        </LinkContainer>
-        <LinkContainer to={'/PhaseOne'}>
-          <th><Glyphicon glyph="leaf" className='leaf'/></th>
-        </LinkContainer>
-        <LinkContainer to={'/PhaseOne'}>
-          <th><Glyphicon glyph="wrench" className='leaf'/></th>
-        </LinkContainer>
-        </tr>
-      </tbody>
-    </Table>
+    <div className='rowC'>
+    <Folder className='folder'/>
+    <Folder className='folder'/>
+    <Folder className='folder'/>
+
+    </div>
 
     </Panel>
 
@@ -106,6 +94,29 @@ const Project = ({match}) =>(
         </div>
       </Col>
     </Row>*/}
+
+  </div>
+)
+
+const Folder = ({match}) =>(
+  <div className='folder'>
+
+  <Glyphicon glyph="folder-close" className='folder-close'/>
+  <Table>
+    <tbody>
+      <tr>
+      <LinkContainer to={'/PhaseOne'}>
+        <th><Glyphicon glyph="inbox" className='leaf'/></th>
+      </LinkContainer>
+      <LinkContainer to={'/PhaseOne'}>
+        <th><Glyphicon glyph="leaf" className='leaf'/></th>
+      </LinkContainer>
+      <LinkContainer to={'/PhaseOne'}>
+        <th><Glyphicon glyph="wrench" className='leaf'/></th>
+      </LinkContainer>
+      </tr>
+    </tbody>
+  </Table>
 
   </div>
 )
