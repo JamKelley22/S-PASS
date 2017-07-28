@@ -5,13 +5,14 @@ export default class Cell extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      editing: false,
       error: false,
+      errorMsg: '',
       value: '',
       popTitle: 'Enter new cell value:'
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.checkError = this.checkError.bind(this);
   }
 
   handleChange(event) {
@@ -28,30 +29,60 @@ export default class Cell extends React.Component{
     else {
       this.setState({popTitle: 'Invalid input. Please enter a non-negative number'});
     }
+    this.checkError();
     event.preventDefault();
+  }
+
+  checkError() {
+    if(parseInt(this.state.value) > this.props.maxNumber || this.state.value == '') {
+      this.setState({error: true, errorMsg: 'value out of acceptable range. Range: 0-' + this.props.maxNumber});
+    }
+    else {
+      this.setState({error: false});
+    }
   }
 
   render(){
     var getCellInputFromUser = this.getCellInputFromUser;
     const popoverClick = (
-      <Popover id="popover-trigger-click-root-close" title={this.state.popTitle}>
-        <form onSubmit={() => this.handleSubmit(this.props.indexI,this.props.indexJ,event)}>
+      <Popover id="popoverClick" title={this.state.popTitle}>
+
+        <form action="#" onSubmit={() => this.handleSubmit(this.props.indexI,this.props.indexJ,event)}>
           <label>
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <InputBox
+              value={this.state.value}
+              handleChange={this.handleChange}
+            />
           </label>
           <input type="submit" value="Ok" />
         </form>
 
       </Popover>
     );
-
+    const errorHover = (
+      <Popover id="popoverError" title={'Error'}>
+        Message: {this.state.errorMsg}
+      </Popover>
+    );
     if(this.props.canEditCells) {
-      return(
-        <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-          <td key={ this.props.indexJ } >
-          {this.props.name}</td>
-        </OverlayTrigger>
-      );
+      if(this.state.error) {
+        return(
+          <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+            <OverlayTrigger ref="overlay" trigger="hover" rootClose placement="bottom" overlay={errorHover}>
+              <td style={{backgroundColor: 'red'}} key={ this.props.indexJ } >
+              {this.props.name}</td>
+            </OverlayTrigger>
+          </OverlayTrigger>
+        );
+      }
+      else {
+        return(
+          <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+            <td key={ this.props.indexJ } >
+            {this.props.name}</td>
+          </OverlayTrigger>
+        );
+      }
     }
     else {
       return(
@@ -60,5 +91,22 @@ export default class Cell extends React.Component{
       );
     }
 
+  }
+}
+
+export class InputBox extends React.Component{
+  componentDidMount(){
+    this.nameInput.focus();
+  }
+  render() {
+    return(
+      <input
+        ref='input'
+        type="text"
+        value={this.props.value}
+        onChange={this.props.handleChange}
+        ref={(input) => { this.nameInput = input; }}
+      />
+    );
   }
 }

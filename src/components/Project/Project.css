@@ -11,7 +11,9 @@
     transition: border 0.2s ease-in-out;
 }
 .colorBar {
-  height: 40px;
+  height: 5%;
+  max-height: 5%;
+  margin: 0px;
   background-color:#54513D;
 }
 #folder-close {
@@ -119,6 +121,9 @@ p {
 .centerText {
   margin-left: 30%;
   margin-right: 30%;
+  height: 15%;
+  max-height: 15%;
+  overflow: hidden;
 }
 .panel-body {
   padding: 3px;
@@ -126,7 +131,15 @@ p {
 }
 .p1 {
   background-color: #F4F4E1;
-  height: 100%;
+  height: 80%;
   z-index: -1;
+}
+h3 {
+  margin: 0px;
+}
+#allProject {
+  max-height: 100%;
+  height: 100%;
+  overflow-y: hidden;
 }
  #newLeaf:hover {color: #89B700;} #newWrench:hover {color: #C5EA6F;}

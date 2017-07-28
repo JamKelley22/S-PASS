@@ -1,5 +1,5 @@
 .navItemSmall {
-  font-size: 8px;
+  font-size: 11px;
   padding-left: 20px;
   color:#54513D;
 }
@@ -9,11 +9,16 @@
 }
 .navItem {
   color:#54513D;
-  font-size: 11px;
+  font-size: 12px;
 }
 .li:active {
     background-color: #B9CA57 !important;
 }
 .bar {
   padding-right: 20px;
+}
+#HSM {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
 }

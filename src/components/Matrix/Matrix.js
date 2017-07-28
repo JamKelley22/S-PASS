@@ -48,7 +48,8 @@ export default class notATest extends React.Component{
                       name={name}
                       canEditCells = {this.props.canEditCells}
                       editCell = {this.props.editCell}
-                      onClick={() => getCellInputFromUser(name,indexI,indexJ)}/>
+                      maxNumber={this.props.maxNumber}
+                      />
                   })}</tr>})}
             </tbody>
           </Table>

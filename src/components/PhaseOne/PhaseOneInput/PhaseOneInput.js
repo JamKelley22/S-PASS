@@ -130,6 +130,7 @@ export default class PhaseOneInput extends React.Component{
           rowNames={this.props.requirements}
           editCell={this.props.editCellRFMat}
           canEditCells={true}//Must Specify that cells in the matrix are editable, else they are not
+          maxNumber={5}
         />
 
         <MatrixDisplay
@@ -139,6 +140,7 @@ export default class PhaseOneInput extends React.Component{
           rowNames={this.props.functions}
           editCell={this.props.editCellFMMat}
           canEditCells={true}
+          maxNumber={10}
         />
 
         <MatrixDisplay
@@ -148,6 +150,7 @@ export default class PhaseOneInput extends React.Component{
           rowNames={this.props.modules}
           editCell={this.props.editCellMAMat}
           canEditCells={true}
+          maxNumber={1}
         />
       </div>
     );

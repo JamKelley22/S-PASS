@@ -1,5 +1,7 @@
 .colorBar {
-  height: 40px;
+  height: 5%;
+  max-height: 5%;
+  margin: 0px;
   background-color:#54513D;
 }
 .colorBarText p{
@@ -7,11 +9,10 @@
   padding: 10px;
 }
 #content {
-  padding-left: 10px;
+  padding-left: 20px;
   float: left;
   min-width: 80%;
   max-width: 80%;
-  overflow-y: auto;
   max-height: 95%;
 }
 #brown {

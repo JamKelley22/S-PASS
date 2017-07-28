@@ -21,19 +21,19 @@ import {PageHeader,Grid} from 'react-bootstrap';
 const App = () => (
   <div className='main'>
     <Grid>
-      <PageHeader>
-        <TopNav/>
-      </PageHeader>
-      <Route exact path="/" component={Home}/>
-      <Route path="/Home" component={Home}/>
-      <Route path="/Resources" component={Resources}/>
-      <Route path="/Project" component={Project}/>
-      <Route path="/View" component={View}/>
-      <Route path="/Login" component={Login}/>
-      <Route path="/SPASS" component={SPASS}/>
-      <Route path="/Dashboard" component={Dashboard}/>
+        <TopNav id='topGear'/>
+      <div id='belowTheBelt'>
+        <Route exact path="/" component={Home}/>
+        <Route path="/Home" component={Home}/>
+        <Route path="/Resources" component={Resources}/>
+        <Route path="/Project" component={Project}/>
+        <Route path="/View" component={View}/>
+        <Route path="/Login" component={Login}/>
+        <Route path="/SPASS" component={SPASS}/>
+        <Route path="/Dashboard" component={Dashboard}/>
 
-      <Route path="/Phases" component={Phases}/>
+        <Route path="/Phases" component={Phases}/>
+      </div>
     </Grid>
   </div>
 

@@ -53,6 +53,7 @@ h4 {
 }
 #designTab:hover {
   background-color: #8b9b31;
+  cursor: pointer;
 }
 #spassTab {
   width : 100%;
@@ -62,6 +63,7 @@ h4 {
 }
 #spassTab:hover {
   background-color: #86ad38;
+  cursor: pointer;
 }
 #matTab {
   width : 100%;
@@ -71,6 +73,7 @@ h4 {
 }
 #matTab:hover {
   background-color: #b8e64d;
+  cursor: pointer;
 }
 #settingsTab {
   width : 100%;
@@ -80,6 +83,7 @@ h4 {
 }
 #settingsTab:hover {
   background-color: #3b392b;
+  cursor: pointer;
 }
 
 #tab {
@@ -90,6 +94,7 @@ h4 {
 }
 #tab:hover {
   background-color: #3b392b;
+  cursor: pointer;
 }
 #ford:focus {
   background-color: white;
@@ -107,14 +112,13 @@ h4 {
 }
 #tabS:hover {
   background-color: #3b392b;
+  cursor: pointer;
 }
 #brownText {
   color: #54513D;
   display: inline-block;
 }
 .fa-angle-double-right {
-  display: none;
-  color: #54513D;
   display: inline-block;
   float: right;
   transition: left 1s;

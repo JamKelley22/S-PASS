@@ -17,7 +17,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 import FolderPic from '../../Images/folder.png';
 
 const Project = ({match}) =>(
-  <div>
+  <div id ='allProject'>
 
     <div className='colorBar'/>
 
@@ -28,8 +28,6 @@ const Project = ({match}) =>(
 
     <Panel className='p1'>
 
-      <Folder className='folder'/>
-      <Folder className='folder'/>
       <NewFolder className='folder'/>
 
     </Panel>
@@ -99,15 +97,15 @@ const NewFolder = ({match}) =>(
 
   <div className='folderIcons'>
 
-    <Link to={'/Project'}>
+    <Link to={'/Dashboard/Design'}>
       <i className="fa fa-cube" id='newBox'></i>
     </Link>
 
-    <Link to={'/Project'}>
+    <Link to={'/SPASS/Overview'}>
       <i className="fa fa-leaf" id='newLeaf'></i>
     </Link>
 
-    <Link to={'/Project'}>
+    <Link to={'/Dashboard/MAT'}>
       <i className="fa fa-wrench" id='newWrench'></i>
     </Link>
 
