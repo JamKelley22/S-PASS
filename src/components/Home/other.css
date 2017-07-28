@@ -18,9 +18,18 @@ h2, h5 {
   padding-top: 200px;
   padding-bottom: 200px;
   background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .jumbotron {
   margin-bottom: 0px;
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
+  margin-top: 0px;
+  border-radius: 0 !important;
+}
+.centerText {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #B9CA57 !important;
 }

@@ -10,3 +10,20 @@
     -o-transition: border 0.2s ease-in-out;
     transition: border 0.2s ease-in-out;
 }
+.colorBar {
+  height: 40px;
+  background-color:#54513D;
+}
+.folder-close {
+    font-size: 180px;
+}
+.leaf {
+  font-size: 12px;
+  float: left;
+}
+.leaf:hover {
+  font-size: 15px;
+}
+p {
+  font-size: 12px;
+}

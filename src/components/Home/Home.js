@@ -24,24 +24,27 @@ import other from './other.css';
 const Home = ({match}) =>(
   <div>
     <Jumbotron className='jumbotron'>
-      <h2>CooL:SLiCE</h2>
-      <h5>This web tool was devloped to...</h5>
-      <LinkContainer to={`/Project`}>
-        <Button bsStyle="success">Get Started!</Button>
-      </LinkContainer>
+      <div className='centerText'>
+        <h2>CooL:SLiCE</h2>
+        <h5>This web tool was devloped to...</h5>
+        <LinkContainer to={`/Project`}>
+          <Button bsStyle="primary">Get Started!</Button>
+        </LinkContainer>
+      </div>
     </Jumbotron>
 
     <div className='homebg'>
       <Panel className='p1'>
+        <div className='centerText'>
+          <h4><Glyphicon glyph="inbox" /> Design</h4>
+          <p>Use CAD to design 3D virtual modules of your products...</p>
 
-        <h4><Glyphicon glyph="inbox" /> Design</h4>
-        <p>Use CAD to design 3D virtual modules of your products...</p>
+          <h4><Glyphicon glyph="leaf" /> S-PASS</h4>
+          <p>Use the sustainable product architecture and supplier selection tool to evaluate existing architectures and find replacement supplierand architectures</p>
 
-        <h4><Glyphicon glyph="leaf" /> S-PASS</h4>
-        <p>Use the sustainable product architecture and supplier selection tool to evaluate existing architectures and find replacement supplierand architectures</p>
-
-        <h4><Glyphicon glyph="wrench" /> MAT</h4>
-        <p>Use the Manufacturing Analysis Tool to look at the manfacturing details of your design</p>
+          <h4><Glyphicon glyph="wrench" /> MAT</h4>
+          <p>Use the Manufacturing Analysis Tool to look at the manfacturing details of your design</p>
+        </div>
 
       </Panel>
     </div>
