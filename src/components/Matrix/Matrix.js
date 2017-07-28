@@ -6,6 +6,30 @@ import Cell from './Cell.js';
 export default class notATest extends React.Component{
   constructor(props) {
     super(props);
+    this.state = {
+      rowSum: 0
+    };
+  }
+
+  componentDidMount(){
+    //alert(this.props.matrixContent.length + ' ' + this.props.matrixContent[0].length);
+    /*
+    var matrixContent = this.props.matrixContent;
+    var total = 0;
+
+    for (var i = 0, len = matrixContent.length; i < len; i++) {
+      for (var j = 0, len = matrixContent[i].length; j < len-2; j++) {
+        total += parseFloat(matrixContent[i][j]);
+        //alert(parseFloat(matrixContent[i][j]));
+      }
+    }
+
+    this.setState({rowSum: total});
+    */
+  }
+
+  componentDidUpdate(){
+
   }
 
   render(){
@@ -50,7 +74,10 @@ export default class notATest extends React.Component{
                       editCell = {this.props.editCell}
                       maxNumber={this.props.maxNumber}
                       />
-                  })}</tr>})}
+                  }
+                )}
+
+                  </tr>})}
             </tbody>
           </Table>
       </div>

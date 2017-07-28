@@ -60,8 +60,8 @@ export default class Cell extends React.Component{
       </Popover>
     );
     const errorHover = (
-      <Popover id="popoverError" title={'Error'}>
-        Message: {this.state.errorMsg}
+      <Popover style={{backgroundColor: '#ffcccc'}} id="popoverError">
+        Error: {this.state.errorMsg}
       </Popover>
     );
     if(this.props.canEditCells) {
@@ -69,7 +69,7 @@ export default class Cell extends React.Component{
         return(
           <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
             <OverlayTrigger ref="overlay" trigger="hover" rootClose placement="bottom" overlay={errorHover}>
-              <td style={{backgroundColor: 'red'}} key={ this.props.indexJ } >
+              <td style={{backgroundColor: '#ff9999'}} key={ this.props.indexJ } >
               {this.props.name}</td>
             </OverlayTrigger>
           </OverlayTrigger>
