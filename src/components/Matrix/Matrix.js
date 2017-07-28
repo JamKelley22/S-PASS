@@ -73,6 +73,7 @@ export default class notATest extends React.Component{
                       canEditCells = {this.props.canEditCells}
                       editCell = {this.props.editCell}
                       maxNumber={this.props.maxNumber}
+                      isBinary={this.props.isBinary}
                       />
                   }
                 )}
