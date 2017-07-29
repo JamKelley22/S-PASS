@@ -16,14 +16,12 @@ export default class notATest extends React.Component{
     /*
     var matrixContent = this.props.matrixContent;
     var total = 0;
-
     for (var i = 0, len = matrixContent.length; i < len; i++) {
       for (var j = 0, len = matrixContent[i].length; j < len-2; j++) {
         total += parseFloat(matrixContent[i][j]);
         //alert(parseFloat(matrixContent[i][j]));
       }
     }
-
     this.setState({rowSum: total});
     */
   }
@@ -34,7 +32,7 @@ export default class notATest extends React.Component{
 
   render(){
     var matrixContent = this.props.matrixContent;
-
+    //alert(this.props.dropDownChoices);
     return(
 
       <div id="myScroll">
@@ -72,8 +70,11 @@ export default class notATest extends React.Component{
                       name={name}
                       canEditCells = {this.props.canEditCells}
                       editCell = {this.props.editCell}
-                      maxNumber={this.props.maxNumber}
-                      isBinary={this.props.isBinary}
+
+                      numberType= {this.props.numberType}
+                      editType= {this.props.editType}
+                      dropDownChoices={this.props.dropDownChoices}
+
                       />
                   }
                 )}

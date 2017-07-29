@@ -130,8 +130,21 @@ export default class PhaseOneInput extends React.Component{
           rowNames={this.props.requirements}
           editCell={this.props.editCellRFMat}
           canEditCells={true}//Must Specify that cells in the matrix are editable, else they are not
-          maxNumber={5}
-          isBinary={false}
+          numberType='%' // | bin | % | # |
+          editType='dropDown'// | dropDown | input |
+          dropDownChoices={[
+            ['0','Imposible to contribute'],
+            ['10','Nearly impossible to contribute'],
+            ['20','Very unlikely to contribute'],
+            ['30','Quite unlikely to contribute'],
+            ['40','Possible to contribute'],
+            ['50','Even chance to contribute'],
+            ['60','Better than even chance to contribute'],
+            ['70','Quite likely to contribute'],
+            ['80','Very likely to contribute'],
+            ['90','Nearly certain to contribute'],
+            ['100','Certain to contribute']
+          ]}
         />
 
         <MatrixDisplay
@@ -141,8 +154,9 @@ export default class PhaseOneInput extends React.Component{
           rowNames={this.props.functions}
           editCell={this.props.editCellFMMat}
           canEditCells={true}
-          maxNumber={10}
-          isBinary={false}
+          numberType='#' // | bin | % | # |
+          editType='input'// | dropDown | input |
+          dropDownChoices={null}
         />
 
         <MatrixDisplay
@@ -151,9 +165,10 @@ export default class PhaseOneInput extends React.Component{
           colNames={this.props.productArchitecture}
           rowNames={this.props.modules}
           editCell={this.props.editCellMAMat}
-          canEditCells={true}
-          maxNumber={1}
-          isBinary={true}
+          canEditCells={false}
+          numberType='bin' // | bin | % | # |
+          editType='dropDown'// | dropDown | input |
+          dropDownChoices={null}
         />
       </div>
     );
