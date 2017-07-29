@@ -27,8 +27,13 @@ export default class PhaseTwo extends React.Component{
     this.something = this.something.bind(this);
   }
 
-  something(value){
-    alert(value);
+  something(name,i,j){
+    var txt;
+    var person = prompt("Please enter the function name:", "Function");
+    var s2 = this.state.stations;
+    s2[i][j] = person;
+    this.setState({stations: s2});
+    //this.setState({stations: this.state.stations.push('A')});
   }
 
   getInitialState() {
@@ -47,13 +52,12 @@ export default class PhaseTwo extends React.Component{
   render(){
 
     var something = this.something;
-    var users = this.state.stations.map(function(nested) {
 
-      return <tr>{nested.map(function(name,index) {
-        return <td key={index} onClick={() => something(name)}>{name}</td>;
+    var users = this.state.stations.map(function(nested,indexI) {
+      return <tr>{nested.map(function(name,indexJ) {
+        return <td key={indexJ} onClick={() => something(name,indexI,indexJ)}>{name}</td>;
       })}
       </tr>
-
     });
 
     var single = ['1','2','3'];

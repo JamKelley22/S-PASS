@@ -3,10 +3,10 @@ import './Project.css'
 
 import ProjectSideBar from '../SideBar/ProjectSideBar.js';
 
-import Design from './Design.js';
-import SPASS from './SPASS.js';
-import MAT from './MAT.js';
-import Settings from './Settings.js';
+import Design from './Dashboard/Design.js';
+import SPASS from './Dashboard/SPASS.js';
+import MAT from './Dashboard/MAT.js';
+import Settings from './Dashboard/Settings.js';
 
 import {Link,Route} from 'react-router-dom';
 import Breadcrumbs from '../breadcrumbs.js';
@@ -88,7 +88,7 @@ const NewFolder = ({match}) =>(
 
   <Panel className='projectPanel'>
     New Project
-    <LinkContainer to={'/SPASS'}>
+    <LinkContainer to={'/Dashboard'}>
       <span><Glyphicon glyph="plus-sign" className='plusSign'/></span>
     </LinkContainer>
   </Panel>
