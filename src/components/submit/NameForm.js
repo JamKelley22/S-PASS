@@ -4,7 +4,12 @@ import {Alert,Button} from 'react-bootstrap';
 export default class NameForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: '', alertVisible: false};
+    this.state = {
+      value: '',
+      alertVisible: false,
+      alertTitle: 'Its Empty...',
+      alertMessage: ''
+  };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,13 +30,21 @@ export default class NameForm extends React.Component {
   handleSubmit(event) {
     console.log(this.state.value);
     if(this.props.functions.indexOf(this.state.value)==-1){
-      this.props.submit(this.state.value);
-      event.preventDefault();
+      //alert(this.state.value.length);
+      if(this.state.value.length > 0) {
+        this.props.submit(this.state.value);
+        event.preventDefault();
+      }
+      else {
+        alert("Empty");//NOt Working
+        this.setState({alertVisible: true, alertTitle: 'Its Empty...', alertMessage: 'Try again with a longer function name'});
+      }
     }
     else{
       //Add alert here
       //alert("Function \""+this.state.value+"\" already exists");
-      this.setState({alertVisible: true});
+      alert("Dup");
+      this.setState({alertVisible: true, alertTitle: 'Thats a duplicate!', alertMessage: 'Try again with a unique function name'});
       event.preventDefault();
     }
       this.state.value = "";
@@ -50,11 +63,9 @@ export default class NameForm extends React.Component {
       return (
         <div>
         <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss}>
-          <h4>Oh snap! You got an error!</h4>
-          <p>Change this and that and try again.</p>
+          <h4>Thats a duplicate!</h4>
+          <p>Try again with a unique function name</p>
           <p>
-            <Button bsStyle="danger">Take this action</Button>
-            <span> or </span>
             <Button onClick={this.handleAlertDismiss}>Hide Alert</Button>
           </p>
         </Alert>
