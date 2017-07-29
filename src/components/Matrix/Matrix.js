@@ -12,8 +12,8 @@ export default class notATest extends React.Component{
       <div >
           <h1>{this.props.title}</h1>
 
-          <div class="table-responsive">
-            <Table  responsive striped bordered hover class="table">
+          <div className="table-responsive">
+            <Table  responsive striped bordered hover className="table">
               <thead>
                 <tr>
                   <td></td>{colNames.map(function(name,index) {
