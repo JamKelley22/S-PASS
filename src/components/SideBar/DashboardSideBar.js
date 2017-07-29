@@ -11,24 +11,24 @@ const ProjectSideBar = ({match}) =>(
 
   <div className='sidebar'>
     <div id='green'>
-      <h2 id='center'>Phases</h2>
+      <h2 id='center'>Tools</h2>
     </div>
 
     <div className='sideContent'>
 
-      <LinkContainer to={'/Project/Dashboard/Design'}>
+      <LinkContainer to={'/Dashboard/Design'}>
         <Panel header={'Design'}/>
       </LinkContainer>
 
-      <LinkContainer to={'/Project/Dashboard/SPASS'}>
+      <LinkContainer to={'/SPASS/Overview'}>
         <Panel header={'SPASS'}/>
       </LinkContainer>
 
-      <LinkContainer to={'/Project/Dashboard/MAT'}>
+      <LinkContainer to={'/Dashboard/MAT'}>
         <Panel header={'MAT'}/>
       </LinkContainer>
 
-      <LinkContainer to={'/Project/Dashboard/Settings'}>
+      <LinkContainer to={'/Dashboard/Settings'}>
         <Panel header={'Settings'}/>
       </LinkContainer>
     </div>
