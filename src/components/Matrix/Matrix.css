@@ -1,5 +1,8 @@
 .table-responsive{
-  max-width : "100%";
-  overflow-x: scroll;
+  min-width : "100%";
+  overflow-x: visible;
   border-collapse: collapse;
+}
+.table{
+  width : 2000px;
 }

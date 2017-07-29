@@ -13,14 +13,48 @@ import {Table} from 'react-bootstrap';
 })
 
 export default class PhaseTwo extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '1',
+      stations: [
+        ['station one','000','453'],
+        ['station two','001'],
+        ['station two','001'],
+        ['station two','001']
+      ]
+    };
+    this.something = this.something.bind(this);
+  }
+
+  something(value){
+    alert(value);
+  }
+
+  getInitialState() {
+    return {
+      value: '1',
+      stations: [
+        ['station one','000','453'],
+        ['station two','001'],
+        ['station two','001'],
+        ['station two','001']
+      ]
+    };
+  }
+
+
   render(){
 
-    var stations = [
-      ['station one','000','453'],
-      ['station two','001'],
-      ['station two','001'],
-      ['station two','001']
-    ];
+    var something = this.something;
+    var users = this.state.stations.map(function(nested) {
+
+      return <tr>{nested.map(function(name,index) {
+        return <td key={index} onClick={() => something(name)}>{name}</td>;
+      })}
+      </tr>
+
+    });
 
     var single = ['1','2','3'];
     var singles = [
@@ -38,13 +72,8 @@ export default class PhaseTwo extends React.Component{
           <Tab eventKey={2} title="Output">
 
           <Table striped bordered condensed hover><tbody>
-            {stations.map(function(nested) {
-              return <tr>{nested.map(function(name,index) {
-                return <td key={ index }>{name}</td>;
-              })}</tr>
-            })}
+            {users}
           </tbody></Table>
-
 
 
           </Tab>
