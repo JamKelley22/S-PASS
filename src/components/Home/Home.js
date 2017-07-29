@@ -4,9 +4,6 @@ import React from 'react';
 import {Link,Route} from 'react-router-dom';
 import MasashiRouter from '../MasashiTest/MasashiTest.js';
 
-import Overview from './Overview.js';
-import Files from './Files.js';
-import About from './About.js';
 //
 import PhaseOne from '../PhaseOne/PhaseOne.js';
 import PhaseTwo from '../PhaseTwo/PhaseTwo.js';
@@ -24,7 +21,7 @@ import other from './other.css';
 const Home = ({match}) =>(
   <div>
     <Jumbotron className='jumbotron'>
-      <div className='centerText'>
+      <div id='centerText'>
         <h2>CooL:SLiCE</h2>
         <h5>This web tool was devloped to...</h5>
         <LinkContainer to={`/Project`}>
@@ -35,7 +32,7 @@ const Home = ({match}) =>(
 
     <div className='homebg'>
       <Panel className='p1'>
-        <div className='centerText'>
+        <div id='centerText'>
           <h4><Glyphicon glyph="inbox" /> Design</h4>
           <p>Use CAD to design 3D virtual modules of your products...</p>
 

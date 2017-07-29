@@ -1,0 +1,12 @@
+.colorBar {
+  height: 40px;
+  background-color:#54513D;
+}
+.colorBarText p{
+  color: white;
+  padding: 10px;
+}
+#content {
+  padding-left: 10px;
+  float: left;
+}

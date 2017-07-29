@@ -5,6 +5,11 @@ import SideBar from '../SideBar/SideBar.js';
 
 import Overview from './Overview.js';
 
+import PhaseOne from '../PhaseOne/PhaseOne.js';
+import PhaseTwo from '../PhaseTwo/PhaseTwo.js';
+import PhaseThree from '../PhaseThree/PhaseThree.js';
+import PhasesSideBar from '../SideBar/PhasesSideBar.js';
+
 import Files from './Files.js';
 import About from './About.js';
 
@@ -12,7 +17,7 @@ import Breadcrumbs from '../Breadcrumbs.js';
 
 import './SPASS.css';
 
-const SPASS = ({match}) =>(
+const Phases = ({match}) =>(
   <div>
     <div className='colorBar'>
       <div className='colorBarText'>
@@ -21,24 +26,15 @@ const SPASS = ({match}) =>(
     </div>
 
     <Breadcrumbs/>
-    <SideBar match={match}/>
 
-
+    <PhasesSideBar match={match}/>
 
     <div id='content'>
-      <Route path="/SPASS/Overview" component={Overview}/>
-
-
-      {/*<Route path="/SPASS/PhaseOne" component={PhaseOne}/>
-      <Route path="/SPASS/PhaseTwo" component={PhaseTwo}/>
-      <Route path="/SPASS/PhaseThree" component={PhaseThree}/>*/}
-
-      <Route path="/SPASS/Files" component={Files}/>
-      <Route path="/SPASS/About" component={About}/>
+      <Route path="/Phases/PhaseOne" component={PhaseOne}/>
+      <Route path="/Phases/PhaseTwo" component={PhaseTwo}/>
+      <Route path="/Phases/PhaseThree" component={PhaseThree}/>
     </div>
   </div>
-
-
 )
 
-export default SPASS;
+export default Phases;

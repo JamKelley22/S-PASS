@@ -4,15 +4,23 @@ import './App.css';
 import {Link,Route} from 'react-router-dom';
 import MasashiRouter from './MasashiTest/MasashiTest.js';
 //
+import Overview from './Project/Overview.js';
+import Files from './Project/Files.js';
+import About from './Project/About.js';
+import SPASS from './Project/SPASS.js'
+
 import PhaseOne from './PhaseOne/PhaseOne.js';
 import PhaseTwo from './PhaseTwo/PhaseTwo.js';
 import PhaseThree from './PhaseThree/PhaseThree.js';
+
+import Phases from './Project/Phases.js';
 
 import Home from './Home/Home.js';
 import Resources from './Resources/Resources.js';
 import Project from './Project/Project.js';
 import View from './View/View.js';
 import Login from './Login/Login.js';
+
 
 import SideBar from './SideBar/Sidebar.js';
 import TopNav from './SideBar/navbar.js';
@@ -32,6 +40,9 @@ const App = () => (
       <Route path="/Project" component={Project}/>
       <Route path="/View" component={View}/>
       <Route path="/Login" component={Login}/>
+      <Route path="/SPASS" component={SPASS}/>
+
+      <Route path="/Phases" component={Phases}/>
     </Grid>
   </div>
 

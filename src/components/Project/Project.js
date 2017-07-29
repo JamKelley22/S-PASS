@@ -14,66 +14,23 @@ import Breadcrumbs from '../breadcrumbs.js';
 import {Button,Grid,Row,Col,Nav,NavItem,Thumbnail,Panel,Image,Glyphicon,Table} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 
-import FolderPic from '../../Images/folder.png'
+import FolderPic from '../../Images/folder.png';
 
 const Project = ({match}) =>(
   <div>
 
     <div className='colorBar'/>
 
-    <h1>Projects</h1>
-    <h3>CooL:SLiCE projects...</h3>
+    <div className='centerText'>
+      <h1>Projects</h1>
+      <h3>CooL:SLiCE projects...</h3>
+    </div>
 
     <Panel className='p1'>
-    {/*<Image src={FolderPic} alt="242x200"/>
 
-      <Grid>
-        <Row>
-          <Col xs={6} md={4}>
-            <Thumbnail alt="242x200">
-              <h3>Company X Drone Design</h3>
-              <p>Description</p>
-              <p>
-              <LinkContainer to={`${match}/PhaseOne`}>
-                <Button bsStyle="primary">Start</Button>
-              </LinkContainer>
-                <Button bsStyle="default">Button</Button>
-              </p>
-            </Thumbnail>
-          </Col>
-
-          <Col xs={6} md={4}>
-
-            <Table>
-              <tbody>
-                <tr>
-                  <th><Glyphicon glyph="folder-close" className='folder-close'/></th>
-                </tr>
-                <tr>
-                <LinkContainer to={'/PhaseOne'}>
-                  <th><Glyphicon glyph="inbox" className='leaf'/></th>
-                </LinkContainer>
-                <LinkContainer to={'/PhaseOne'}>
-                  <th><Glyphicon glyph="leaf" className='leaf'/></th>
-                </LinkContainer>
-                <LinkContainer to={'/PhaseOne'}>
-                  <th><Glyphicon glyph="wrench" className='leaf'/></th>
-                </LinkContainer>
-                </tr>
-              </tbody>
-            </Table>
-
-          </Col>
-        </Row>
-      </Grid>
-    */}
-
-    <div className='rowC'>
-    <Folder className='folder'/>
-    <Folder className='folder'/>
-    <Folder className='folder'/>
-
-    </div>
+      <Folder className='folder'/>
+      <Folder className='folder'/>
+      <NewFolder className='folder'/>
 
     </Panel>
 
@@ -97,26 +54,60 @@ const Project = ({match}) =>(
 
   </div>
 )
-
 const Folder = ({match}) =>(
   <div className='folder'>
 
   <Glyphicon glyph="folder-close" className='folder-close'/>
-  <Table>
-    <tbody>
-      <tr>
-      <LinkContainer to={'/PhaseOne'}>
-        <th><Glyphicon glyph="inbox" className='leaf'/></th>
-      </LinkContainer>
-      <LinkContainer to={'/PhaseOne'}>
-        <th><Glyphicon glyph="leaf" className='leaf'/></th>
-      </LinkContainer>
-      <LinkContainer to={'/PhaseOne'}>
-        <th><Glyphicon glyph="wrench" className='leaf'/></th>
-      </LinkContainer>
-      </tr>
-    </tbody>
-  </Table>
+
+  <Panel className='projectPanel'>
+    Project
+  </Panel>
+
+  <div className='folderIcons'>
+
+    <LinkContainer to={'/Project'}>
+      <div><Glyphicon glyph="inbox" className='fIcon' id='box'/></div>
+    </LinkContainer>
+
+    <LinkContainer to={'/Project'}>
+      <div><Glyphicon glyph="leaf" className='fIcon' id='leaf'/></div>
+    </LinkContainer>
+
+    <LinkContainer to={'/Project'}>
+      <div><Glyphicon glyph="wrench" className='fIcon'/></div>
+    </LinkContainer>
+
+  </div>
+
+  </div>
+)
+const NewFolder = ({match}) =>(
+  <div className='folder'>
+
+  <Glyphicon glyph="folder-close" className='folder-close'/>
+
+  <Panel className='projectPanel'>
+    New Project
+    <LinkContainer to={'/SPASS'}>
+      <span><Glyphicon glyph="plus-sign" className='plusSign'/></span>
+    </LinkContainer>
+  </Panel>
+
+  <div className='folderIcons'>
+
+    <LinkContainer to={'/Project'}>
+      <div><Glyphicon glyph="inbox" className='newFIcon' id='newBox'/></div>
+    </LinkContainer>
+
+    <LinkContainer to={'/Project'}>
+      <div><Glyphicon glyph="leaf" className='newFIcon' id='newLeaf'/></div>
+    </LinkContainer>
+
+    <LinkContainer to={'/Project'}>
+      <div><Glyphicon glyph="wrench" className='newFIcon' id='newWrench'/></div>
+    </LinkContainer>
+
+  </div>
 
   </div>
 )

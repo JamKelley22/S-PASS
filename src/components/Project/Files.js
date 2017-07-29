@@ -1,5 +1,4 @@
 import React from 'react';
-import other from './other.css';
 
 
 const Files = ({match}) =>(

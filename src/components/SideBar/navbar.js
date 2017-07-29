@@ -13,7 +13,7 @@ const NavBar = () => (
         <Image className="logo" alt="coolslice" src={require('../../Images/coolslice.png')}/>
         </LinkContainer>
       </Col>
-      <Nav bsStyle="pills" pullRight>
+      <Nav bsStyle="pills" className='bar' pullRight>
 
         <LinkContainer to="/Home">
           <NavItem><span className="navItem">Home</span></NavItem>

@@ -16,13 +16,39 @@
 }
 .folder-close {
     font-size: 120px;
+    color: #7C7B70;
 }
-.leaf {
+#leaf {
+  color: #89B700;
+}
+#box {
+  color: #A9CE64;
+}
+.fIcon {
   font-size: 12px;
   float: left;
+  color: #C5EA6F;
+  padding: 5px;
 }
-.leaf:hover {
-  font-size: 15px;
+.newFIcon {
+  font-size: 12px;
+  float: left;
+  color: gray;
+  padding: 5px;
+}
+.fIcon:hover {
+  font-size: 13px;
+}
+.newFIcon:hover {
+  font-size: 13px;
+  color: green;
+}
+.plusSign {
+  padding: 5px;
+  color: #7C7B70;
+}
+.plusSign:hover {
+  color: #89B700;
 }
 p {
   font-size: 12px;
@@ -32,4 +58,22 @@ p {
 }
 .folder {
   display: inline-block;
+  padding: 20px;
 }
+.centerText {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.projectPanel {
+  margin-bottom: 0px;
+  padding: 0px;
+  background-color: #EEF1BC;
+}
+.panel-body {
+  padding: 3px;
+  display: inline-block;
+}
+.p1 {
+  background-color: #F4F4E1;
+}
+#newBox:hover {color: #A9CE64;} #newLeaf:hover {color: #89B700;} #newWrench:hover {color: #C5EA6F;}

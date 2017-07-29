@@ -14,3 +14,6 @@
 .li:active {
     background-color: #B9CA57 !important;
 }
+.bar {
+  padding-right: 20px;
+}
