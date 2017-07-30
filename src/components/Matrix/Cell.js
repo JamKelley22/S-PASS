@@ -29,11 +29,11 @@ export default class Cell extends React.Component{
   handleSubmit(i,j,event) {
     this.setState({popTitle: 'Enter new cell value:'});
     if(!isNaN(this.state.value) & parseFloat(this.state.value) > -1) {
-      this.setState({number: parseFloat(this.state.value)});
-      alert(typeof(this.state.number));
-      this.props.editCell(i,j,this.state.number);
-      this.refs.overlay.hide();
-      this.setState({value: ''});
+      this.setState({number: parseFloat(this.state.value)},function() {
+        this.props.editCell(i,j,this.state.number);
+        this.refs.overlay.hide();
+        this.setState({value: ''});
+      });
     }
     else {
       this.setState({popTitle: 'Invalid input. Please enter a non-negative number'});
@@ -55,7 +55,7 @@ export default class Cell extends React.Component{
 
   handleDropdownSubmit(num) {
     this.setState({number: num},function() {
-      alert(typeof(this.state.number/100.0));
+      //alert(typeof(this.state.number/100.0));
       this.props.editCell(this.props.indexI,this.props.indexJ,this.state.number/100.0);///////////////////////////////////////////
     });
     this.refs.overlay.hide();
