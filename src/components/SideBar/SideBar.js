@@ -16,8 +16,8 @@ const SideBar = ({match}) =>(
 
     <div className='sideContent'>
 
-      <LinkContainer to={'/SPASS/Overview'}>
-        <div id='tab'><i className="fa fa-pie-chart"/> Overview</div>
+      <LinkContainer to={'/SPASS/About'}>
+        <div id='tab'><i className="fa fa-comment"/> About</div>
       </LinkContainer>
 
       <LinkContainer to={'/Phases'}>
@@ -28,9 +28,7 @@ const SideBar = ({match}) =>(
         <div id='tab'><i className="fa fa-file-text"/> Files</div>
       </LinkContainer>
 
-      <LinkContainer to={'/SPASS/About'}>
-        <div id='tab'><i className="fa fa-comment"/> About</div>
-      </LinkContainer>
+
     </div>
   </div>
 )

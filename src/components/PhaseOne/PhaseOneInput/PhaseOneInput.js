@@ -2,6 +2,8 @@ import React from 'react';
 import {Table, Tooltip,OverlayTrigger,ListGroup,ListGroupItem,Button,Image,Grid,Row,Col,Modal,Popover} from 'react-bootstrap';
 import NameForm from '../../submit/NameForm.js';
 import MatrixDisplay from '../../Matrix/Matrix.js';
+import SumDisplay from '../../Matrix/SumDisplay.js';
+import Test from '../../Matrix/Test.js';
 import '../../Matrix/Matrix.css';
 import ListStuff from '../../ListStuff/ListStuff.js';
 import './PhaseOneInput.css';
@@ -56,6 +58,7 @@ export default class PhaseOneInput extends React.Component{
 
   render(){
     return(
+
       <div id='scroll'>
 
       <Modal show={this.state.showModal} onHide={this.hideHelp}>
@@ -70,6 +73,20 @@ export default class PhaseOneInput extends React.Component{
         <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
       </div>
         <h3>Step 1: Enter product details</h3>
+        Please enter all modules (eg. knob) and indicate whether they are used in each product (Used or Not Used).
+        <div className='pull-right'>
+          <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
+          <i className="fa fa-search" id='pad'/>
+        </div>
+        <ListStuff
+          list={this.props.requirements}
+          title="Requirements"
+          removeList={this.props.removeRequirement}
+          addList={this.props.addRequirement}
+          addMatRow={this.props.addRowRFMat}
+          removeMatRow={this.props.removeRowRFMat}
+        />
+
         Please enter all functions (eg. Recharging battery)
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
@@ -84,20 +101,6 @@ export default class PhaseOneInput extends React.Component{
           removeMatRow={this.props.removeRowFMMat}
           removeMatCol={this.props.removeColRFMat}
           addMatCol={this.props.addColRFMat}
-        />
-
-        Please enter all modules (eg. knob) and indicate whether they are used in each product (Used or Not Used).
-        <div className='pull-right'>
-          <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-          <i className="fa fa-search" id='pad'/>
-        </div>
-        <ListStuff
-          list={this.props.requirements}
-          title="Requirements"
-          removeList={this.props.removeRequirement}
-          addList={this.props.addRequirement}
-          addMatRow={this.props.addRowRFMat}
-          removeMatRow={this.props.removeRowRFMat}
         />
 
         Please enter all requirements (eg. Use of renewable energy)
@@ -123,41 +126,67 @@ export default class PhaseOneInput extends React.Component{
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
           <i className="fa fa-search" id='pad'/>
         </div>
-        <MatrixDisplay
-          title = "Requirements vs. Functions"
-          matrixContent={this.props.requirementFunctionMatrix._data}
-          colNames={this.props.functions}
-          rowNames={this.props.requirements}
-          editCell={this.props.editCellRFMat}
-          canEditCells={true}//Must Specify that cells in the matrix are editable, else they are not
-          numberType='%' // | bin | % | # |
-          editType='dropDown'// | dropDown | input |
-          dropDownChoices={[
-            ['0','Imposible to contribute'],
-            ['10','Nearly impossible to contribute'],
-            ['20','Very unlikely to contribute'],
-            ['30','Quite unlikely to contribute'],
-            ['40','Possible to contribute'],
-            ['50','Even chance to contribute'],
-            ['60','Better than even chance to contribute'],
-            ['70','Quite likely to contribute'],
-            ['80','Very likely to contribute'],
-            ['90','Nearly certain to contribute'],
-            ['100','Certain to contribute']
-          ]}
-        />
 
-        <MatrixDisplay
-          title = "Functions vs. Modules"
-          matrixContent={this.props.functionModuleMatrix._data}
-          colNames={this.props.modules}
-          rowNames={this.props.functions}
-          editCell={this.props.editCellFMMat}
-          canEditCells={true}
-          numberType='#' // | bin | % | # |
-          editType='input'// | dropDown | input |
-          dropDownChoices={null}
-        />
+        <div id='matrixRow'>
+          <div id='matrixDisplay'>
+            <MatrixDisplay
+              title = "Requirements vs. Functions"
+              matrixContent={this.props.requirementFunctionMatrix._data}
+              colNames={this.props.functions}
+              rowNames={this.props.requirements}
+              editCell={this.props.editCellRFMat}
+              bgColor={'#9DC64D'}
+              canEditCells={true}//Must Specify that cells in the matrix are editable, else they are not
+              numberType='%' // | bin | % | # |
+              editType='dropDown'// | dropDown | input |
+              dropDownChoices={[
+                ['0','Imposible to contribute'],
+                ['10','Nearly impossible to contribute'],
+                ['20','Very unlikely to contribute'],
+                ['30','Quite unlikely to contribute'],
+                ['40','Possible to contribute'],
+                ['50','Even chance to contribute'],
+                ['60','Better than even chance to contribute'],
+                ['70','Quite likely to contribute'],
+                ['80','Very likely to contribute'],
+                ['90','Nearly certain to contribute'],
+                ['100','Certain to contribute']
+              ]}
+            />
+          </div>
+
+          <div id='sumDisplay'>
+            <SumDisplay
+              matrixContent={this.props.requirementFunctionMatrix._data}
+              maxNumber={1}
+            />
+          </div>
+
+        </div>
+
+        <div id='matrixRow'>
+          <div id='matrixDisplay'>
+            <MatrixDisplay
+              title = "Functions vs. Modules"
+              matrixContent={this.props.functionModuleMatrix._data}
+              colNames={this.props.modules}
+              rowNames={this.props.functions}
+              editCell={this.props.editCellFMMat}
+              bgColor={'#9DC64D'}
+              canEditCells={true}
+              numberType='#' // | bin | % | # |
+              editType='input'// | dropDown | input |
+              dropDownChoices={null}
+            />
+          </div>
+
+          <div id='sumDisplay'>
+            <SumDisplay
+              matrixContent={this.props.functionModuleMatrix._data}
+            />
+          </div>
+        </div>
+
 
         <MatrixDisplay
           title = "Modules vs. Product Architecture"
@@ -165,11 +194,17 @@ export default class PhaseOneInput extends React.Component{
           colNames={this.props.productArchitecture}
           rowNames={this.props.modules}
           editCell={this.props.editCellMAMat}
+          bgColor={'#9DC64D'}
           canEditCells={false}
           numberType='bin' // | bin | % | # |
           editType='dropDown'// | dropDown | input |
           dropDownChoices={null}
         />
+
+        <div id='lowerButtons'>
+          <Button>Back</Button>
+          <Button>Continue</Button>
+        </div>
       </div>
     );
   }

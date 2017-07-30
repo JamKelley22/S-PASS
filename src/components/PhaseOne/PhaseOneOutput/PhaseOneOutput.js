@@ -57,6 +57,7 @@ export default class PhaseOneOutput extends React.Component{
           matrixContent={this.functionProduct(
             this.props.functionModuleMatrix._data,
             this.props.moduleArchitectureMatrix._data)}
+          bgColor={'#7C7B50'}
         />
 
         <MatrixDisplay
@@ -66,6 +67,13 @@ export default class PhaseOneOutput extends React.Component{
           matrixContent={this.matrixMult(this.props.requirementFunctionMatrix,
             this.functionProduct(this.props.functionModuleMatrix._data,
             this.props.moduleArchitectureMatrix._data))}
+          bgColor={'#7C7B50'}
+
+          editCell={null}
+          canEditCells={false}
+          numberType='bin' // | bin | % | # |
+          editType='input'// | dropDown | input |
+          dropDownChoices={null}
         />
       </div>
     );

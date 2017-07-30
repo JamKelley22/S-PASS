@@ -40,7 +40,7 @@ export default class notATest extends React.Component{
           <Table responsive striped bordered condensed hover id="myTable">
           <thead>
             <tr>
-              <th></th>
+              <th style={{border: 'none', backgroundColor:this.props.bgColor}}>{this.props.title}</th>
               {this.props.colNames.map((name,index)=> {
                 return <OverlayTrigger placement="top" overlay={
                   <Tooltip id="tooltip"><strong>{name}</strong></Tooltip>
@@ -60,7 +60,7 @@ export default class notATest extends React.Component{
                 <OverlayTrigger placement="top" overlay={
                   <Tooltip id="tooltip"><strong>{this.props.rowNames[indexI]}</strong></Tooltip>
                 }>
-                  <th ><div className="block-with-text">{this.props.rowNames[indexI]}
+                  <th style={{backgroundColor: this.props.bgColor}}><div className="block-with-text">{this.props.rowNames[indexI]}
                   </div></th>
                   </OverlayTrigger>
                   {nested.map((name,indexJ)=>

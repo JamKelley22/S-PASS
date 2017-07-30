@@ -32,6 +32,7 @@ const Home = ({match}) =>(
 
     <div className='homebg'>
       <Panel id='p1'>
+
         <div id='centerText'>
           <h3><i className="fa fa-cube"/> Design</h3>
           <p>Use CAD to design 3D virtual modules of your products...</p>

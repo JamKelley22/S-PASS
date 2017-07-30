@@ -50,6 +50,7 @@ h4 {
   padding: 10px;
   background-color: #AEC23F;
   color: #54513D;
+  cursor: not-allowed !important;
 }
 #designTab:hover {
   background-color: #8b9b31;
@@ -70,6 +71,7 @@ h4 {
   padding: 10px;
   background-color: #C5EA6F;
   color: #54513D;
+  cursor: not-allowed !important;
 }
 #matTab:hover {
   background-color: #b8e64d;

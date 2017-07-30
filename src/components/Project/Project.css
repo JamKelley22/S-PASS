@@ -1,15 +1,3 @@
-.thumbnail {
-    display: block;
-    padding: 4px;
-    margin-bottom: 20px;
-    line-height: 1.42857;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    -webkit-transition: border 0.2s ease-in-out;
-    -o-transition: border 0.2s ease-in-out;
-    transition: border 0.2s ease-in-out;
-}
 .colorBar {
   height: 5%;
   max-height: 5%;
@@ -17,7 +5,7 @@
   background-color:#54513D;
 }
 #folder-close {
-    font-size: 120px;
+    font-size: 215px;
     color: #7C7B70;
 }
 #folder-close:hover {
@@ -28,14 +16,14 @@
 }
 .fa-folder {
   position: relative;
-  top: 30px;
+  top: 70px;
   z-index: 0;
-  transition: top .2s;
-  transition: color .1s;
+  -webkit-transition: top .25s, color .25s; /* For Safari 3.1 to 6.0 */
+  transition: top .25s, color .25s;
 }
 
 .fa-folder:hover {
-  top: 20px;
+  top: 60px;
 }
 .projectPanel {
   position: relative;
@@ -43,6 +31,7 @@
   padding: 0px;
   background-color: #EEF1BC;
   z-index: 1;
+  width: 200px;
 }
 .fa-cube {
   float: left;

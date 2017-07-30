@@ -6,7 +6,7 @@ export default class Cell extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      //error: false,
+      error: false,
       errorMsg: '',
       value: '',
       number: 0,
@@ -15,7 +15,7 @@ export default class Cell extends React.Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     //this.checkError = this.checkError.bind(this);
-    this.handlePercentSubmit = this.handlePercentSubmit.bind(this);
+    this.handleDropdownSubmit = this.handleDropdownSubmit.bind(this);
     this.getPopover = this.getPopover.bind(this);
     this.getCellToReturn = this.getCellToReturn.bind(this);
 
@@ -28,8 +28,10 @@ export default class Cell extends React.Component{
 
   handleSubmit(i,j,event) {
     this.setState({popTitle: 'Enter new cell value:'});
-    if(!isNaN(this.state.value) & parseInt(this.state.value) > -1) {
-      this.props.editCell(i,j,this.state.value);
+    if(!isNaN(this.state.value) & parseFloat(this.state.value) > -1) {
+      this.setState({number: parseFloat(this.state.value)});
+      alert(typeof(this.state.number));
+      this.props.editCell(i,j,this.state.number);
       this.refs.overlay.hide();
       this.setState({value: ''});
     }
@@ -51,9 +53,10 @@ export default class Cell extends React.Component{
   }
   */
 
-  handlePercentSubmit(num) {
+  handleDropdownSubmit(num) {
     this.setState({number: num},function() {
-      this.props.editCell(this.props.indexI,this.props.indexJ,this.state.number);
+      alert(typeof(this.state.number/100.0));
+      this.props.editCell(this.props.indexI,this.props.indexJ,this.state.number/100.0);///////////////////////////////////////////
     });
     this.refs.overlay.hide();
   }
@@ -72,7 +75,7 @@ export default class Cell extends React.Component{
           return (
             <Popover id="popoverClick" title={this.state.popTitle}>
               <DropDownChoose
-                handlePercentSubmit={this.handlePercentSubmit}
+                handleDropdownSubmit={this.handleDropdownSubmit}
                 value={this.state.value}
                 dropDownChoices={this.props.dropDownChoices}
               />
@@ -189,23 +192,23 @@ export class InputBox extends React.Component{
 export class DropDownChoose extends React.Component{
   constructor(props) {
     super(props);
-    this.getPercents = this.getPercents.bind(this);
+    this.getChoices = this.getChoices.bind(this);
   }
 
-  getPercents() {
+  getChoices() {
     const choices = this.props.dropDownChoices;
     return(
     choices.map((name,index)=> {
       if(index%2 == 0) {
         return <div id='greenPercentTab'
-        onClick={() => this.props.handlePercentSubmit(choices[index][0])}
+        onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
         >
           {choices[index][0] + '%' + '\t' + choices[index][1]}
         </div>;
       }
       else {
         return <div id='percentTab'
-        onClick={() => this.props.handlePercentSubmit(choices[index][0])}
+        onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
         >
           {choices[index][0] + '%' + '\t' + choices[index][1]}
         </div>;
@@ -219,7 +222,7 @@ export class DropDownChoose extends React.Component{
 
     return(
       <div>
-        <div>{this.getPercents()}</div>
+        <div>{this.getChoices()}</div>
       </div>
     );
   }
