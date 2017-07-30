@@ -20,36 +20,49 @@ class PhaseThree extends React.Component{
 
   render(){
     return(
-      <PhaseThreeInput
-      addFunction={this.props.addFunction}
-      functions={this.props.functions}
-      modules={this.props.modules}
-      addModule={this.props.addModule}
-      requirements={this.props.requirements}
-      addRequirement={this.props.addRequirement}
-      productArchitecture={this.props.productArchitecture}
-      removeFunction={this.props.removeFunction}
-      removeModule={this.props.removeModule}
-      removeRequirement={this.props.removeRequirement}
-      addRowRFMat={this.props.addRowRFMat}
-      addRowFMMat={this.props.addRowFMMat}
-      addRowMAMat={this.props.addRowMAMat}
-      removeRowRFMat={this.props.removeRowRFMat}
-      removeRowFMMat={this.props.removeRowFMMat}
-      removeRowMAMat={this.props.removeRowMAMat}
-      removeColRFMat={this.props.removeColRFMat}
-      addColRFMat={this.props.addColRFMat}
-      removeColFMMat={this.props.removeColFMMat}
-      addColFMMat={this.props.addColFMMat}
-      editCellRFMat={this.props.editCellRFMat}
-      editCellMAMat={this.props.editCellMAMat}
-      editCellFMMat={this.props.editCellFMMat}
+      <div>
+        <PhaseThreeInput
+        addFunction={this.props.addFunction}
+        functions={this.props.functions}
+        modules={this.props.modules}
+        addModule={this.props.addModule}
+        requirements={this.props.requirements}
+        addRequirement={this.props.addRequirement}
+        productArchitecture={this.props.productArchitecture}
+        removeFunction={this.props.removeFunction}
+        removeModule={this.props.removeModule}
+        removeRequirement={this.props.removeRequirement}
+        addRowRFMat={this.props.addRowRFMat}
+        addRowFMMat={this.props.addRowFMMat}
+        addRowMAMat={this.props.addRowMAMat}
+        removeRowRFMat={this.props.removeRowRFMat}
+        removeRowFMMat={this.props.removeRowFMMat}
+        removeRowMAMat={this.props.removeRowMAMat}
+        removeColRFMat={this.props.removeColRFMat}
+        addColRFMat={this.props.addColRFMat}
+        removeColFMMat={this.props.removeColFMMat}
+        addColFMMat={this.props.addColFMMat}
+        editCellRFMat={this.props.editCellRFMat}
+        editCellMAMat={this.props.editCellMAMat}
+        editCellFMMat={this.props.editCellFMMat}
 
 
-      requirementFunctionMatrix={this.props.requirementFunctionMatrix}
-      functionModuleMatrix={this.props.functionModuleMatrix}
-      moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
-      />
+        requirementFunctionMatrix={this.props.requirementFunctionMatrix}
+        functionModuleMatrix={this.props.functionModuleMatrix}
+        moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
+        />
+
+        <div>
+        <PhaseThreeOutput
+          functions= {this.props.functions}
+          productArchitecture={this.props.productArchitecture}
+          functionModuleMatrix={this.props.functionModuleMatrix}
+          moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
+          requirements = {this.props.requirements}
+          requirementFunctionMatrix={this.props.requirementFunctionMatrix}
+        />
+        </div>
+      </div>
     );
   }
 }
