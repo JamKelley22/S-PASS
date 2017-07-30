@@ -9,19 +9,11 @@
   min-width: 130px;
 }
 
-#colCell{
-  word-wrap: break-word;
-  width: 10em;
-  line-height: 20px;
-  overflow: hidden;
-  height: 40px;
-  text-overflow: ellipsis;
-
-}
-
 #myScroll{
-  width: 90%;
+  width: 100%;
   overflow-x: auto;
+  margin-right: 0px;
+
 }
 
 /* styles for '...' */
@@ -31,9 +23,10 @@
   /* for set '...' in absolute position */
   position: relative;
   /* use this value to count block height */
-  line-height: 1.2em;
-  /* max-height = line-height (1.2) * lines max number (3) */
-  max-height: 2.4em;
+
+height: 45px;
+max-height: 45px;
+
   /* fix problem when last visible word doesn't adjoin right side  */
     padding-right: 1em;
 
@@ -59,8 +52,6 @@
   right: 0;
   width: 1em;
   /* set width and height */
-  height: 1em;
-  margin-top: 0.2em;
   background: white;
 }
 .table{

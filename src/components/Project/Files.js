@@ -2,7 +2,10 @@ import React from 'react';
 
 
 const Files = ({match}) =>(
-  <h1>Files</h1>
+  <div>
+    <h1>Files</h1>
+    <h2>Case Study here</h2>
+  </div>
 )
 
 export default Files;
