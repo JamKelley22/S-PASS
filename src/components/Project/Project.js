@@ -23,7 +23,7 @@ const Project = ({match}) =>(
 
     <div className='centerText'>
       <h1>Projects</h1>
-      <h3>CooL:SLiCE projects...</h3>
+      <p>All your CooL:SLiCE projects in one place.</p>
     </div>
 
     <Panel className='p1'>

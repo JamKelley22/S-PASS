@@ -20,8 +20,12 @@ export default class PhaseOneOutput extends React.Component{
     var newMat1 = this.math.matrix(mat1);
     var newMat2 = this.math.matrix(mat2);
     var newMat = this.math.multiply(newMat1,newMat2);
-    return newMat._data;
+    var matMult = this.math.matrix(newMat);
+    matMult.forEach(function(value,index,matrix){
+      matMult._data[index[0]][index[1]]=matMult._data[index[0]][index[1]].toFixed(2);
+    });
 
+    return matMult._data;
   }
 
   findRelation(myMat){
