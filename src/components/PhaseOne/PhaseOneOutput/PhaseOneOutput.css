@@ -22,9 +22,3 @@ h3 {
   display: inline-block;
     overflow: hidden;
 }
-#sumDisplay {
-  display: inline;
-    float: right;
-    top: 70px;
-    position:absolute;
-}

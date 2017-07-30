@@ -27,8 +27,6 @@ export default class PhaseOneOutput extends React.Component{
 
       matMult._data[index[0]][index[1]]=matMult._data[index[0]][index[1]].toFixed(2);
     });
-    console.log('mat1');
-    console.log(mat1);
 
     return matMult._data;
   }

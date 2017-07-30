@@ -3,12 +3,17 @@
   max-height: 100px;
   overflow-y: auto;
 }
-#greenPercentTab {
-  background-color: #DDDDA2;
-}
-#greenPercentTab:hover {
-  background-color: #cfcf7d;
+#percentTab {
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 30px;
 }
 #percentTab:hover {
   background-color: #f1f1da;
+}
+#percentTab:after
+{
+    content:' ';
+    display:block;
+    border:.5px solid black;
 }

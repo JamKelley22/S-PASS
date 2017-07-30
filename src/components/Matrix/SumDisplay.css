@@ -1,4 +1,14 @@
-.myTable tr {
-  height: 56px;
+.myTable td {
+  height: 55.2px;
   border: none !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+#line {
+
+}
+#item {
+  min-height: 56.2;
+  height: 56.2;
+  float: left;
 }

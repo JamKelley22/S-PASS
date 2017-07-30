@@ -10,7 +10,8 @@ export default class Cell extends React.Component{
       errorMsg: '',
       value: '',
       number: 0,
-      popTitle: 'Enter new cell value:'
+      popTitle: 'Enter new cell value:',
+      cellBG: 'white'
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,6 +19,9 @@ export default class Cell extends React.Component{
     this.handleDropdownSubmit = this.handleDropdownSubmit.bind(this);
     this.getPopover = this.getPopover.bind(this);
     this.getCellToReturn = this.getCellToReturn.bind(this);
+    this.highlightCell = this.highlightCell.bind(this);
+    this.normalizeCell = this.normalizeCell.bind(this);
+
 
 
   }
@@ -102,6 +106,18 @@ export default class Cell extends React.Component{
 
   }
 
+  highlightCell() {
+    this.setState({
+      cellBG: '#C5EA6F'
+    });
+  }
+
+  normalizeCell() {
+    this.setState({
+      cellBG: 'white'
+    });
+  }
+
   //| dropDown | input |
   getCellToReturn() {
     const popoverClick = this.getPopover();
@@ -109,8 +125,8 @@ export default class Cell extends React.Component{
       switch (this.props.numberType) {
         case '#':
           return(
-            <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td key={ this.props.indexJ } >
+            <OverlayTrigger onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
               {this.props.name}</td>
             </OverlayTrigger>
           );
@@ -118,8 +134,8 @@ export default class Cell extends React.Component{
 
         case 'bin':
           return(
-            <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td key={ this.props.indexJ } >
+            <OverlayTrigger onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
               {this.props.name}</td>
             </OverlayTrigger>
           );
@@ -127,8 +143,8 @@ export default class Cell extends React.Component{
 
         case '%':
           return(
-            <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td key={ this.props.indexJ } >
+            <OverlayTrigger onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
               {this.props.name}%</td>
             </OverlayTrigger>
           );
@@ -137,8 +153,8 @@ export default class Cell extends React.Component{
 
         default:
           return(
-            <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td key={ this.props.indexJ } >
+            <OverlayTrigger onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
               {this.props.name}</td>
             </OverlayTrigger>
           );
@@ -199,20 +215,12 @@ export class DropDownChoose extends React.Component{
     const choices = this.props.dropDownChoices;
     return(
     choices.map((name,index)=> {
-      if(index%2 == 0) {
-        return <div id='percentTab'
-        onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
-        >
-          {choices[index][0] + '%' + '\t' + choices[index][1]}
-        </div>;
-      }
-      else {
-        return <div id='percentTab'
-        onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
-        >
-          {choices[index][0] + '%' + '\t' + choices[index][1]}
-        </div>;
-      }
+      return <div id='percentTab'
+      onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
+      >
+        {choices[index][0] + '%' + '\t' + choices[index][1]}
+      </div>;
+
 
     })
 

@@ -73,7 +73,7 @@ export default class SumDisplay extends React.Component{
     */
     return(
       <Table className="myTable">
-        <thead><tr id='line'><td>SUM</td></tr></thead>
+        <thead><tr id='line'><td id='item'></td></tr></thead>
         <tbody>
           {this.getSumColumnCells()}
         </tbody>
