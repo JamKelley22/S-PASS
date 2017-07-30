@@ -1,6 +1,6 @@
 .sidebar {
   width: 20%;
-  background-color: #54513D;
+  background-color: #41463f;
   float: left;
   height: 100%;
 }
@@ -24,11 +24,13 @@
   background-color: #89B700;
 }
 #brown {
-  background-color: #54513D;
+  background-color: #aaa77d;
 }
 h4 {
   margin-left: 20%;
 }
+
+
 #sideBtn:hover {
   background-color: #44513D;
 }
@@ -48,43 +50,36 @@ h4 {
 #designTab {
   width : 100%;
   padding: 10px;
-  background-color: #AEC23F;
-  color: #54513D;
+  color: rgba(255, 255, 255, 0.6);
   cursor: not-allowed !important;
 }
 #designTab:hover {
-  background-color: #8b9b31;
   cursor: pointer;
 }
 #spassTab {
   width : 100%;
   padding: 10px;
-  background-color: #9DC64D;
-  color: #54513D;
+  color: rgba(255, 255, 255, 0.6);
 }
 #spassTab:hover {
-  background-color: #86ad38;
+  background-color: #6a634d;
   cursor: pointer;
 }
 #matTab {
   width : 100%;
   padding: 10px;
-  background-color: #C5EA6F;
-  color: #54513D;
+  color: rgba(255, 255, 255, 0.6);
   cursor: not-allowed !important;
 }
 #matTab:hover {
-  background-color: #b8e64d;
   cursor: pointer;
 }
 #settingsTab {
   width : 100%;
-  padding: 10px;
-  background-color: #54513D;
-  color: white;
+  padding: 18px;
+  color: rgba(255, 255, 255, 0.6);
 }
 #settingsTab:hover {
-  background-color: #3b392b;
   cursor: pointer;
 }
 
@@ -116,10 +111,29 @@ h4 {
   background-color: #3b392b;
   cursor: pointer;
 }
+
 #brownText {
-  color: #54513D;
+  color: rgba(0,0,0,0.7);
+  display: inline-block;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 10px;
+
+  padding-left: 1px;
+  text-align: left;
+
+  margin-top: 0px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+#whiteText {
+  color: rgba(255, 255, 255, 0.6);
   display: inline-block;
 }
+
 .fa-angle-double-right {
   display: inline-block;
   float: right;
