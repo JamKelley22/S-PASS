@@ -11,9 +11,9 @@ export default class PhaseOneOutput extends React.Component{
     super(props);
     //var math=require('mathjs');
     this.math = require('mathjs');
-    this.matrixMult = this.matrixMult.bind(this);
-    this.findRelation = this.findRelation.bind(this);
-    this.functionProduct = this.functionProduct.bind(this);
+    this.matrixMult = this.matrixMult;
+    this.findRelation = this.findRelation;
+    this.functionProduct = this.functionProduct;
   }
 
   matrixMult(mat1,mat2){
@@ -24,31 +24,46 @@ export default class PhaseOneOutput extends React.Component{
 
   }
 
-  findRelation(mat){
-    var newMat = this.math.matrix(mat);
-    newMat.forEach(function(value,index,matrix){
+  findRelation(myMat){
+    //var newMat = this.math.matrix(mat);
+    var newMat = myMat.map(function(arr) {
+    return arr.slice();
+    });
+    var relationMat = this.math.matrix(newMat);
+    relationMat.forEach(function(value,index,matrix){
       if(value!=0){
-        newMat._data[index[0]][index[1]]=1;
+        relationMat._data[index[0]][index[1]]=1;
       }
     });
-    return newMat._data;
+    return relationMat._data;
   }
 
-  functionProduct(funMod,prodArch){
-    var mat1 = this.math.matrix(this.matrixMult(funMod,prodArch));
-    var mat2 = this.math.matrix(this.matrixMult(this.findRelation(funMod),prodArch));
-    //alert('assigned vars');
-    mat1.forEach(function(value,index,matrix){
-      console.log('value' + value);
-      console.log('index' + index);
-      console.log('matrix' + matrix);
-      if(mat2._data[index[0]][index[1]]!=0){
-        mat1._data[index[0]][index[1]]=mat1._data[index[0]][index[1]]/mat2._data[index[0]][index[1]];
+  functionProduct(funMod,modArch){
+    //Deep copy of matrices.
+    var newFunMod = funMod.map(function(arr) {
+    return arr.slice();
+    });
+    var newModArch = modArch.map(function(arr) {
+    return arr.slice();
+    });
+
+    var relation = this.findRelation(newFunMod);
+    var mat1= this.matrixMult(newFunMod,newModArch);
+    var mat2 =this.matrixMult(relation,newModArch);
+    console.log(mat1);
+    var matOutput = this.math.matrix(mat1);
+    matOutput.forEach(function(value,index,matrix){
+      if(mat2[index[0]][index[1]]!=0){
+        var temp = matOutput._data[index[0]][index[1]];
+        matOutput._data[index[0]][index[1]]=temp/mat2[index[0]][index[1]];
+        matOutput._data[index[0]][index[1]]=matOutput._data[index[0]][index[1]].toFixed(2);
+        console.log(matOutput._data[index[0]][index[1]]);
       }
     });
-    //alert('finished forEach');
-    return mat1._data;
+
+    return matOutput._data;
   }
+
 
 
   render(){
@@ -86,5 +101,16 @@ export default class PhaseOneOutput extends React.Component{
   }
 }
 /*
+this.functionProduct(
+  this.props.functionModuleMatrix._data,
+  this.props.moduleArchitectureMatrix._data)
+mat 1:
+this.functionProduct(
+  this.props.functionModuleMatrix._data,
+  this.props.moduleArchitectureMatrix._data)
+mat 2:
+this.matrixMult(this.props.requirementFunctionMatrix,
+  this.functionProduct(this.props.functionModuleMatrix._data,
+  this.props.moduleArchitectureMatrix._data))
 
 */
