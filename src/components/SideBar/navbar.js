@@ -30,18 +30,6 @@ const NavBar = () => (
             <NavItem><span className="navItem">Project</span></NavItem>
           </LinkContainer>
 
-          <NavDropdown title="Account" id="accountdDropdown">
-
-            <LinkContainer to="/View">
-              <MenuItem><span className="navItemSmall">View</span></MenuItem>
-            </LinkContainer>
-
-            <LinkContainer to="/Login">
-              <MenuItem><span className="navItemSmall">Login</span></MenuItem>
-            </LinkContainer>
-
-          </NavDropdown>
-
         </Nav>
       </Row>
     </Grid>

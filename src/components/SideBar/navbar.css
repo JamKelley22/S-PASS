@@ -31,12 +31,13 @@
 }*/
 
 .navItem:active {
-  background-color: #B9CA57;
+
 }
 
 
 #HSM {
-  overflow-y: auto;
+  overflow-y: visible;
   overflow-x: hidden;
   padding: 10px;
+  padding-right: 3%;
 }
