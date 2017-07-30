@@ -200,7 +200,7 @@ export class DropDownChoose extends React.Component{
     return(
     choices.map((name,index)=> {
       if(index%2 == 0) {
-        return <div id='greenPercentTab'
+        return <div id='percentTab'
         onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
         >
           {choices[index][0] + '%' + '\t' + choices[index][1]}
@@ -213,6 +213,7 @@ export class DropDownChoose extends React.Component{
           {choices[index][0] + '%' + '\t' + choices[index][1]}
         </div>;
       }
+
     })
 
   );

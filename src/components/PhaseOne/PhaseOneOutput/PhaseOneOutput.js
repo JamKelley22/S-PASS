@@ -43,6 +43,8 @@ export default class PhaseOneOutput extends React.Component{
   }
 
   functionProduct(funMod,modArch){
+    console.log(funMod);
+    console.log(modArch);
     //Deep copy of matrices.
     var newFunMod = funMod.map(function(arr) {
     return arr.slice();
