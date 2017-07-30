@@ -28,3 +28,7 @@ h3 {
     top: 56.2px;
     position:absolute;
 }
+#lowerButtons .btn{
+  background-color: blue;
+  color: white;
+}

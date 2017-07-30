@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {Tabs,Tab} from 'react-bootstrap';
-
+import {Tabs,Tab,Button} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 import {connect} from "react-redux"; //Connects the store to application.
 import {Table} from 'react-bootstrap';
 import MatrixDisplay from '../Matrix/Matrix.js';
@@ -117,6 +117,12 @@ export default class PhaseThreeOutput extends React.Component{
           editType='input'// | dropDown | input |
           dropDownChoices={null}
         />
+
+        <div id='lowerButtons'>
+          <LinkContainer to='/Phases/PhaseThree/Input'>
+            <Button>Back</Button>
+          </LinkContainer>
+        </div>
 
       </div>
     );

@@ -202,13 +202,11 @@ export default class PhaseOneInput extends React.Component{
           dropDownChoices={null}
         />
 
-
-          <LinkContainer to='/Phases/PhaseOne/'>
-            <Button>Back</Button>
-          </LinkContainer>
+        <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseOne/Output'>
             <Button>Continue</Button>
           </LinkContainer>
+        </div>
 
 
       </div>

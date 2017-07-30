@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {Tabs,Tab} from 'react-bootstrap';
-
+import {Tabs,Tab,Button} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 import {connect} from "react-redux"; //Connects the store to application.
 import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup} from 'react-bootstrap';
 
@@ -23,6 +23,16 @@ export default class PhaseTwo extends React.Component{
 
     return(
       <div>
+
+
+      <div id='lowerButtons'>
+        <LinkContainer to='/Phases/PhaseOne/Output'>
+          <Button>Back</Button>
+        </LinkContainer>
+        <LinkContainer to='/Phases/PhaseTwo/Output'>
+          <Button>Continue</Button>
+        </LinkContainer>
+      </div>
 
       </div>
     );

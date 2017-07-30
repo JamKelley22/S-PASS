@@ -1,5 +1,6 @@
 import React from 'react';
 import {Table, Tooltip,OverlayTrigger,ListGroup,ListGroupItem,Button,Image,Grid,Row,Col,Modal,Popover} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 import NameForm from '../submit/NameForm.js';
 import MatrixDisplay from '../Matrix/Matrix.js';
 import SumDisplay from '../Matrix/SumDisplay.js';
@@ -136,8 +137,12 @@ export default class PhaseOneInput extends React.Component{
         />
 
         <div id='lowerButtons'>
-          <Button>Back</Button>
-          <Button>Continue</Button>
+          <LinkContainer to='/Phases/PhaseTwo/Output'>
+            <Button>Back</Button>
+          </LinkContainer>
+          <LinkContainer to='/Phases/PhaseThree/Output'>
+            <Button>Continue</Button>
+          </LinkContainer>
         </div>
       </div>
     );
