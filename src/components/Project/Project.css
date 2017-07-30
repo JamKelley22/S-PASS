@@ -47,11 +47,11 @@
 .fa-cube {
   float: left;
   padding: 5px;
-  color: #A9CE64;
+  color: #505f2d;
   transition: color .2s;
 }
 .fa-cube:hover {
-  color: #93c23d;
+  color: #505f2d;
 }
 .fa-leaf {
   float: left;
@@ -134,9 +134,24 @@ p {
   height: 80%;
   z-index: -1;
 }
+
 h3 {
+  font-family: "museo-sans", sans-serif;
+  font-weight: 300;
+  line-height: 120%;
   margin: 0px;
 }
+
+h1 {
+  font-family: "museo-sans", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+
 #allProject {
   max-height: 100%;
   height: 100%;
