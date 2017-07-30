@@ -27,7 +27,7 @@ const Dashboard = ({match}) =>(
 
     <div id='content'>
       <div id='Dashboard'>
-        <h2 id='brown'>Dashboard</h2>
+        <h2 id='dash'>Dashboard</h2>
         <div id='Design'>
           <h3>Design</h3>
           <p>Product 1: Quad-copter</p><p>Edit</p>

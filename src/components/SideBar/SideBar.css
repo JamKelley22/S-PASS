@@ -23,6 +23,41 @@
 #green {
   background-color: #89B700;
 }
-.sideContent {
+#brown {
+  background-color: #54513D;
+}
+h4 {
   margin-left: 20%;
+}
+#sideBtn:hover {
+  background-color: #44513D;
+}
+#noBottomMargin {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 10px;
+}
+#designTab {
+  width : 100%;
+  padding: 10px;
+  background-color: #AEC23F;
+  color: #54513D;
+}
+#spassTab {
+  width : 100%;
+  padding: 10px;
+  background-color: #9DC64D;
+  color: #54513D;
+}
+#matTab {
+  width : 100%;
+  padding: 10px;
+  background-color: #C5EA6F;
+  color: #54513D;
+}
+#settingsTab {
+  width : 100%;
+  padding: 10px;
+  background-color: #54513D;
+  color: white;
 }
