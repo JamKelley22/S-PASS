@@ -10,7 +10,6 @@ import './PhaseOneOutput.css'
 export default class PhaseOneOutput extends React.Component{
   constructor(props) {
     super(props);
-    //var math=require('mathjs');
     this.math = require('mathjs');
     this.matrixMult = this.matrixMult;
     this.findRelation = this.findRelation;
@@ -22,7 +21,8 @@ export default class PhaseOneOutput extends React.Component{
     var newMat1 = this.math.matrix(mat1);
     var newMat2 = this.math.matrix(mat2);
     var newMat = this.math.multiply(newMat1,newMat2);
-    var matMult = this.math.matrix(newMat);
+
+    var matMult = this.math.matrix(newMat._data);
     matMult.forEach(function(value,index,matrix){
 
       matMult._data[index[0]][index[1]]=matMult._data[index[0]][index[1]].toFixed(2);
@@ -32,7 +32,6 @@ export default class PhaseOneOutput extends React.Component{
   }
 
   findRelation(myMat){
-    //var newMat = this.math.matrix(mat);
     var newMat = myMat.map(function(arr) {
     return arr.slice();
     });
@@ -46,38 +45,27 @@ export default class PhaseOneOutput extends React.Component{
   }
 
   functionProduct(funMod,modArch){
-    //console.log(funMod);
-    //console.log(modArch);
-    //Deep copy of matrices.
     var newFunMod = funMod.map(function(arr) {
     return arr.slice();
     });
+
     var newModArch = modArch.map(function(arr) {
     return arr.slice();
     });
-    console.log('newFunMod');
-    console.log(newFunMod);
-    console.log('newModArch');
-    console.log(newModArch);
-
     var relation = this.findRelation(newFunMod);
     var mat1= this.matrixMult(newFunMod,newModArch);
     var mat2 =this.matrixMult(relation,newModArch);
-    //console.log(mat1);
     var matOutput = this.math.matrix(mat1);
     matOutput.forEach(function(value,index,matrix){
       if(mat2[index[0]][index[1]]!=0){
         var temp = matOutput._data[index[0]][index[1]];
         matOutput._data[index[0]][index[1]]=temp/mat2[index[0]][index[1]];
         matOutput._data[index[0]][index[1]]=matOutput._data[index[0]][index[1]].toFixed(2);
-        //console.log(matOutput._data[index[0]][index[1]]);
       }
     });
 
     return matOutput._data;
   }
-
-
 
   render(){
 
@@ -98,7 +86,7 @@ export default class PhaseOneOutput extends React.Component{
           title="Requirement vs. Product"
           colNames={this.props.productArchitecture}
           rowNames={this.props.requirements}
-          matrixContent={this.matrixMult(this.props.requirementFunctionMatrix,
+          matrixContent={this.matrixMult(this.props.requirementFunctionMatrix._data,
             this.functionProduct(this.props.functionModuleMatrix._data,
             this.props.moduleArchitectureMatrix._data))}
           bgColor={'#7C7B50'}
@@ -113,17 +101,3 @@ export default class PhaseOneOutput extends React.Component{
     );
   }
 }
-/*
-this.functionProduct(
-  this.props.functionModuleMatrix._data,
-  this.props.moduleArchitectureMatrix._data)
-mat 1:
-this.functionProduct(
-  this.props.functionModuleMatrix._data,
-  this.props.moduleArchitectureMatrix._data)
-mat 2:
-this.matrixMult(this.props.requirementFunctionMatrix,
-  this.functionProduct(this.props.functionModuleMatrix._data,
-  this.props.moduleArchitectureMatrix._data))
-
-*/
