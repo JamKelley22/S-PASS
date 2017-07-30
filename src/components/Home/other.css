@@ -15,7 +15,7 @@ h5 {
   max-width: 500px;
   line-height: 130%;
   margin-left: 40px;
-
+  margin-top: 20px;
 }
 
 h2 {
@@ -25,6 +25,7 @@ h2 {
   font-weight: 700;
   font-size: 32px;
   margin-left: 40px;
+
 }
 
 h3 {
@@ -33,6 +34,7 @@ h3 {
   font-weight: 700;
   font-size: 26px;
   opacity: 0.7;
+  margin-top: 30px;
 }
 
 p {
@@ -42,6 +44,7 @@ p {
   font-size: 16px;
   opacity: 0.9;
   max-width: 500px;
+  margin-top: 10px;
 }
 
 #p1 {
@@ -49,6 +52,8 @@ p {
   opacity: 1.0;
   border-radius: 0px;
   width: 100%;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 .panel-body {
   width: 100%;
@@ -70,6 +75,7 @@ p {
   padding-right: 0px;
   width: 100%;
 }
+
 .jumbotron jumbotron {
   padding-left: 0px;
 }
@@ -87,5 +93,5 @@ p {
     border-radius: 3px;
     box-shadow: 0 1px 10px 0 rgba(0,0,0,0.2), 0 2px 12px 0 rgba(0,0,0,0.19);
     margin-left: 40px;
-
+    margin-top: 10px;
 }
