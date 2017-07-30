@@ -11,8 +11,8 @@ import PhaseOneOutput from '../PhaseOne/PhaseOneOut.js';
 import PhaseTwoInput from '../PhaseTwo/PhaseTwo.js';
 import PhaseTwoOutput from '../PhaseTwo/PhaseTwoOut.js';
 
-import PhaseThreeInput from '../PhaseThree/PhaseThree.js';
-import PhaseThreeOutput from '../PhaseThree/PhaseThreeOutput.js';
+import PhaseThreeInput from '../PhaseThree/PhaseThreeIn.js';
+import PhaseThreeOutput from '../PhaseThree/PhaseThreeOut.js';
 
 import PhasesSideBar from '../SideBar/PhasesSideBar.js';
 

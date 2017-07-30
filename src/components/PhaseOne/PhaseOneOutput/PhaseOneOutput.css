@@ -1,0 +1,30 @@
+h3 {
+  color: #706F47;
+  font-weight: bold;
+}
+#pad {
+  padding: 5px;
+}
+#product1, #product2 {
+  display: inline-block;
+}
+#scroll {
+  max-height: 100%;
+  overflow-y: auto;
+}
+#matrixRow {
+  max-width: 100%;
+  position:relative;
+    overflow:auto;
+    white-space: nowrap;
+}
+#matrixDisplay {
+  display: inline-block;
+    overflow: hidden;
+}
+#sumDisplay {
+  display: inline;
+    float: right;
+    top: 70px;
+    position:absolute;
+}

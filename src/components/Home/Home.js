@@ -7,7 +7,7 @@ import MasashiRouter from '../MasashiTest/MasashiTest.js';
 //
 import PhaseOne from '../PhaseOne/PhaseOne.js';
 import PhaseTwo from '../PhaseTwo/PhaseTwo.js';
-import PhaseThree from '../PhaseThree/PhaseThree.js';
+import PhaseThree from '../PhaseThree/PhaseThreeIn.js';
 
 import Project from '../Project/Project.js';
 

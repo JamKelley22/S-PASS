@@ -6,6 +6,7 @@ import {connect} from "react-redux"; //Connects the store to application.
 import {Table} from 'react-bootstrap';
 import MatrixDisplay from '../../Matrix/Matrix.js';
 import '../../Matrix/Matrix.css';
+import './PhaseOneOutput.css'
 export default class PhaseOneOutput extends React.Component{
   constructor(props) {
     super(props);
@@ -17,13 +18,17 @@ export default class PhaseOneOutput extends React.Component{
   }
 
   matrixMult(mat1,mat2){
+
     var newMat1 = this.math.matrix(mat1);
     var newMat2 = this.math.matrix(mat2);
     var newMat = this.math.multiply(newMat1,newMat2);
     var matMult = this.math.matrix(newMat);
     matMult.forEach(function(value,index,matrix){
+
       matMult._data[index[0]][index[1]]=matMult._data[index[0]][index[1]].toFixed(2);
     });
+    console.log('mat1');
+    console.log(mat1);
 
     return matMult._data;
   }
@@ -43,8 +48,8 @@ export default class PhaseOneOutput extends React.Component{
   }
 
   functionProduct(funMod,modArch){
-    console.log(funMod);
-    console.log(modArch);
+    //console.log(funMod);
+    //console.log(modArch);
     //Deep copy of matrices.
     var newFunMod = funMod.map(function(arr) {
     return arr.slice();
@@ -52,18 +57,22 @@ export default class PhaseOneOutput extends React.Component{
     var newModArch = modArch.map(function(arr) {
     return arr.slice();
     });
+    console.log('newFunMod');
+    console.log(newFunMod);
+    console.log('newModArch');
+    console.log(newModArch);
 
     var relation = this.findRelation(newFunMod);
     var mat1= this.matrixMult(newFunMod,newModArch);
     var mat2 =this.matrixMult(relation,newModArch);
-    console.log(mat1);
+    //console.log(mat1);
     var matOutput = this.math.matrix(mat1);
     matOutput.forEach(function(value,index,matrix){
       if(mat2[index[0]][index[1]]!=0){
         var temp = matOutput._data[index[0]][index[1]];
         matOutput._data[index[0]][index[1]]=temp/mat2[index[0]][index[1]];
         matOutput._data[index[0]][index[1]]=matOutput._data[index[0]][index[1]].toFixed(2);
-        console.log(matOutput._data[index[0]][index[1]]);
+        //console.log(matOutput._data[index[0]][index[1]]);
       }
     });
 
@@ -75,7 +84,7 @@ export default class PhaseOneOutput extends React.Component{
   render(){
 
     return(
-      <div id="myDiv">
+      <div id="scroll">
         <h1>PhaseOneOutput</h1>
         <MatrixDisplay
           title="Function vs. Product"
