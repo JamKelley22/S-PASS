@@ -21,6 +21,7 @@ export default class PhaseOneOutput extends React.Component{
     var newMat2 = this.math.matrix(mat2);
     var newMat = this.math.multiply(newMat1,newMat2);
     return newMat._data;
+
   }
 
   findRelation(mat){
@@ -36,11 +37,16 @@ export default class PhaseOneOutput extends React.Component{
   functionProduct(funMod,prodArch){
     var mat1 = this.math.matrix(this.matrixMult(funMod,prodArch));
     var mat2 = this.math.matrix(this.matrixMult(this.findRelation(funMod),prodArch));
+    //alert('assigned vars');
     mat1.forEach(function(value,index,matrix){
+      console.log('value' + value);
+      console.log('index' + index);
+      console.log('matrix' + matrix);
       if(mat2._data[index[0]][index[1]]!=0){
         mat1._data[index[0]][index[1]]=mat1._data[index[0]][index[1]]/mat2._data[index[0]][index[1]];
       }
     });
+    //alert('finished forEach');
     return mat1._data;
   }
 
