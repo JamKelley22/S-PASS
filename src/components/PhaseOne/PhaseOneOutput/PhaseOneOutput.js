@@ -6,6 +6,7 @@ import {connect} from "react-redux"; //Connects the store to application.
 import {Table} from 'react-bootstrap';
 import MatrixDisplay from '../../Matrix/Matrix.js';
 import '../../Matrix/Matrix.css';
+import './PhaseOneOutput.css'
 export default class PhaseOneOutput extends React.Component{
   constructor(props) {
     super(props);
@@ -16,14 +17,18 @@ export default class PhaseOneOutput extends React.Component{
   }
 
   matrixMult(mat1,mat2){
+
     var newMat1 = this.math.matrix(mat1);
     var newMat2 = this.math.matrix(mat2);
     var newMat = this.math.multiply(newMat1,newMat2);
 
     var matMult = this.math.matrix(newMat._data);
     matMult.forEach(function(value,index,matrix){
+
       matMult._data[index[0]][index[1]]=matMult._data[index[0]][index[1]].toFixed(2);
     });
+    console.log('mat1');
+    console.log(mat1);
 
     return matMult._data;
   }
@@ -67,7 +72,7 @@ export default class PhaseOneOutput extends React.Component{
   render(){
 
     return(
-      <div id="myDiv">
+      <div id="scroll">
         <h1>PhaseOneOutput</h1>
         <MatrixDisplay
           title="Function vs. Product"

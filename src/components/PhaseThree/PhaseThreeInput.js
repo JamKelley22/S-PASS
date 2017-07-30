@@ -4,7 +4,7 @@ import NameForm from '../submit/NameForm.js';
 import MatrixDisplay from '../Matrix/Matrix.js';
 import SumDisplay from '../Matrix/SumDisplay.js';
 import Test from '../Matrix/Test.js';
-import '../Matrix/Matrix.css';
+import './PhaseThree.css';
 import ListStuff from '../ListStuff/ListStuff.js';
 
 

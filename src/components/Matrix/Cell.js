@@ -54,7 +54,7 @@ export default class Cell extends React.Component{
   */
 
   handleDropdownSubmit(num) {
-    this.setState({number: num},function() {
+    this.setState({number: parseFloat(num)},function() {
       //alert(typeof(this.state.number/100.0));
       this.props.editCell(this.props.indexI,this.props.indexJ,this.state.number/100.0);///////////////////////////////////////////
     });
