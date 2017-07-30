@@ -90,7 +90,7 @@ export default class ListStuff extends React.Component{
       return(
         <ListGroupItem id='group'>
           <i className="fa fa-plus-circle" onClick={this.showNameForm.bind(this)}
-          id='plusSign'></i>Add a function
+          id='plusSign'></i>Add a {this.props.title.substring(0,this.props.title.length-1)}
         </ListGroupItem>
       );
     }

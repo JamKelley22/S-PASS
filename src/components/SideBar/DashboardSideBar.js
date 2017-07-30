@@ -16,23 +16,23 @@ const DashboardSideBar = ({match}) =>(
 
     <div className='sideContent'>
 
-      <LinkContainer to={'/Dashboard/Design'}>
+
         <div>
           <div id='designTab'><h4><i id='brownText' className="fa fa-cube"/> Design</h4></div>
         </div>
-      </LinkContainer>
 
-      <LinkContainer to={'/SPASS/Overview'}>
+
+      <LinkContainer to={'/SPASS/About'}>
         <div>
           <div id='spassTab'><h4><i id='brownText' className="fa fa-leaf"/> SPASS <i className="fa fa-angle-double-right"/></h4></div>
         </div>
       </LinkContainer>
 
-      <LinkContainer to={'/Dashboard/MAT'}>
+
         <div>
           <div id='matTab'><h4><i id='brownText' className="fa fa-wrench"/> MAT</h4></div>
         </div>
-      </LinkContainer>
+
 
       <LinkContainer to={'/Dashboard/Settings'}>
         <div>

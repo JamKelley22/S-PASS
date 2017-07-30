@@ -65,6 +65,7 @@ p {
   background-size: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
 }
 #jumbo {
   margin-bottom: 0px;

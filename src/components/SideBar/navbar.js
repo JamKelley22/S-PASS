@@ -12,7 +12,7 @@ const NavBar = () => (
         <Col xs={1}>
           <div style={{cursor: 'pointer'}}>
             <LinkContainer to="/">
-            <Image className="logo" alt="coolslice" src={require('../../Images/coolslice.png')}/>
+            <Image  className="logo" alt="coolslice" src={require('../../Images/CooLSLiCE_60px.png')}/>
             </LinkContainer>
           </div>
         </Col>

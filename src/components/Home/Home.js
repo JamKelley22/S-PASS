@@ -35,6 +35,7 @@ const Home = ({match}) =>(
 
     <div className='homebg'>
       <Panel id='p1'>
+
         <div id='centerText'>
           <h3><i className="fa fa-cube"/> Design</h3>
           <p>Use a built in CAD program to vizualize and design 3D virtual product models and architectures.</p>

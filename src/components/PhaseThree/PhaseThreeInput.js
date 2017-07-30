@@ -1,12 +1,12 @@
 import React from 'react';
 import {Table, Tooltip,OverlayTrigger,ListGroup,ListGroupItem,Button,Image,Grid,Row,Col,Modal,Popover} from 'react-bootstrap';
-import NameForm from '../../submit/NameForm.js';
-import MatrixDisplay from '../../Matrix/Matrix.js';
-import SumDisplay from '../../Matrix/SumDisplay.js';
-import Test from '../../Matrix/Test.js';
-import '../../Matrix/Matrix.css';
-import ListStuff from '../../ListStuff/ListStuff.js';
-import './PhaseOneInput.css';
+import NameForm from '../submit/NameForm.js';
+import MatrixDisplay from '../Matrix/Matrix.js';
+import SumDisplay from '../Matrix/SumDisplay.js';
+import Test from '../Matrix/Test.js';
+import '../Matrix/Matrix.css';
+import ListStuff from '../ListStuff/ListStuff.js';
+
 
 const tooltip = (
   <Tooltip id="tooltip"><strong>Your Name</strong></Tooltip>
@@ -68,60 +68,6 @@ export default class PhaseOneInput extends React.Component{
         </Modal.Footer>
       </Modal>
 
-      <div id='product1'>
-        <p>Product 1: Quad-copter</p><p>Edit <i className="fa fa-edit"/></p>
-        <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
-      </div>
-        <h3>Step 1: Enter product details</h3>
-        Please enter all modules (eg. knob) and indicate whether they are used in each product (Used or Not Used).
-        <div className='pull-right'>
-          <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-          <i className="fa fa-search" id='pad'/>
-        </div>
-        <ListStuff
-          list={this.props.requirements}
-          title="Requirements"
-          removeList={this.props.removeRequirement}
-          addList={this.props.addRequirement}
-          addMatRow={this.props.addRowRFMat}
-          removeMatRow={this.props.removeRowRFMat}
-        />
-
-        Please enter all functions (eg. Recharging battery)
-        <div className='pull-right'>
-          <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-          <i className="fa fa-search" id='pad'/>
-        </div>
-        <ListStuff
-          list={this.props.functions}
-          title="Functions"
-          removeList={this.props.removeFunction}
-          addList={this.props.addFunction}
-          addMatRow={this.props.addRowFMMat}
-          removeMatRow={this.props.removeRowFMMat}
-          removeMatCol={this.props.removeColRFMat}
-          addMatCol={this.props.addColRFMat}
-        />
-
-        Please enter all requirements (eg. Use of renewable energy)
-        <div className='pull-right'>
-          <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-          <i className="fa fa-search" id='pad'/>
-        </div>
-
-        <ListStuff
-          list={this.props.modules}
-          title="Modules"
-          removeList={this.props.removeModule}
-          addList={this.props.addModule}
-          addMatRow={this.props.addRowMAMat}
-          removeMatRow={this.props.removeRowMAMat}
-          removeMatCol={this.props.removeColFMMat}
-          addMatCol={this.props.addColFMMat}
-        />
-
-        <h3>Step 2: Product Contribution Estimation</h3>
-        Please estimate to what extent each product functio_n contributes to achieve each enviromental sustainability requirement.
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
           <i className="fa fa-search" id='pad'/>
@@ -130,7 +76,7 @@ export default class PhaseOneInput extends React.Component{
         <div id='matrixRow'>
           <div id='matrixDisplay'>
             <MatrixDisplay
-              title = "Requirements vs. Functions"
+              title = "Functions vs.Modules"
               matrixContent={this.props.requirementFunctionMatrix._data}
               colNames={this.props.functions}
               rowNames={this.props.requirements}
@@ -155,19 +101,12 @@ export default class PhaseOneInput extends React.Component{
             />
           </div>
 
-          <div id='sumDisplay'>
-            <SumDisplay
-              matrixContent={this.props.requirementFunctionMatrix._data}
-              maxNumber={1}
-            />
-          </div>
-
         </div>
 
         <div id='matrixRow'>
           <div id='matrixDisplay'>
             <MatrixDisplay
-              title = "Functions vs. Modules"
+              title = "Supplier vs. Modules"
               matrixContent={this.props.functionModuleMatrix._data}
               colNames={this.props.modules}
               rowNames={this.props.functions}
@@ -180,11 +119,6 @@ export default class PhaseOneInput extends React.Component{
             />
           </div>
 
-          <div id='sumDisplay'>
-            <SumDisplay
-              matrixContent={this.props.functionModuleMatrix._data}
-            />
-          </div>
         </div>
 
 

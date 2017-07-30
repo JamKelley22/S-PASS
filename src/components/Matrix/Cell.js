@@ -14,8 +14,11 @@ export default class Cell extends React.Component{
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.checkError = this.checkError.bind(this);
-    this.handlePercentSubmit = this.handlePercentSubmit.bind(this);
+    //this.checkError = this.checkError.bind(this);
+    this.handleDropdownSubmit = this.handleDropdownSubmit.bind(this);
+    this.getPopover = this.getPopover.bind(this);
+    this.getCellToReturn = this.getCellToReturn.bind(this);
+
 
   }
 
@@ -25,18 +28,21 @@ export default class Cell extends React.Component{
 
   handleSubmit(i,j,event) {
     this.setState({popTitle: 'Enter new cell value:'});
-    if(!isNaN(this.state.value) & parseInt(this.state.value) > -1) {
-      this.props.editCell(i,j,this.state.value);
+    if(!isNaN(this.state.value) & parseFloat(this.state.value) > -1) {
+      this.setState({number: parseFloat(this.state.value)});
+      alert(typeof(this.state.number));
+      this.props.editCell(i,j,this.state.number);
       this.refs.overlay.hide();
       this.setState({value: ''});
     }
     else {
       this.setState({popTitle: 'Invalid input. Please enter a non-negative number'});
     }
-    this.checkError();
+    //this.checkError();
     event.preventDefault();
   }
 
+  /*
   checkError() {
     if(parseInt(this.state.value) > this.props.maxNumber || this.state.value == '') {
       this.setState({error: true, errorMsg: 'value out of acceptable range. Range: 0-' + this.props.maxNumber});
@@ -45,94 +51,125 @@ export default class Cell extends React.Component{
       this.setState({error: false});
     }
   }
+  */
 
-  handlePercentSubmit(num) {
+  handleDropdownSubmit(num) {
     this.setState({number: num},function() {
-      this.props.editCell(this.props.indexI,this.props.indexJ,this.state.number);
+      alert(typeof(this.state.number/100.0));
+      this.props.editCell(this.props.indexI,this.props.indexJ,this.state.number/100.0);///////////////////////////////////////////
     });
     this.refs.overlay.hide();
   }
 
-  render(){
-    var getCellInputFromUser = this.getCellInputFromUser;
+  handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      this.handleSubmit(this.props.indexI,this.props.indexJ,event)
+      event.preventDefault();
+    }
+  }
+
+  getPopover() {
     var popoverClick = null;
-    if(!this.props.isBinary) {
-      popoverClick = (
-        <Popover id="popoverClick" title={this.state.popTitle}>
-          <DropDownChoose
-            handlePercentSubmit={this.handlePercentSubmit}
-            value={this.state.value}
-          />
-        </Popover>
-      );
-    }
-    else {
-      popoverClick = (
-        <Popover id="popoverClick" title={this.state.popTitle}>
-          <form action="#" onSubmit={() => this.handleSubmit(this.props.indexI,this.props.indexJ,event)}>
-            <label>
-              <InputBox
+    switch(this.props.editType) {
+        case 'dropDown':
+          return (
+            <Popover id="popoverClick" title={this.state.popTitle}>
+              <DropDownChoose
+                handleDropdownSubmit={this.handleDropdownSubmit}
                 value={this.state.value}
-                handleChange={this.handleChange}
+                dropDownChoices={this.props.dropDownChoices}
               />
-            </label>
-            <input type="submit" value="Ok" />
-          </form>
-        </Popover>
-      );
-    }
-    const errorHover = (
-      <Popover style={{backgroundColor: '#ffcccc'}} id="popoverError">
-        Error: {this.state.errorMsg}
-      </Popover>
-    );
-    if(this.props.isBinary) {
-      if(this.props.canEditCells) {
-        if(this.state.error) {
-          return(
-            <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <OverlayTrigger ref="overlay" trigger="hover" rootClose placement="bottom" overlay={errorHover}>
-                <td style={{backgroundColor: '#ff9999'}} key={ this.props.indexJ } >
-                {this.props.name}</td>
-              </OverlayTrigger>
-            </OverlayTrigger>
+            </Popover>
           );
-        }
-        else {
+          break;
+        case 'input':
+          return (
+            <Popover id="popoverClick" title={this.state.popTitle}>
+              <form action="#">
+                <label>
+                  <InputBox
+                    value={this.state.value}
+                    handleChange={this.handleChange}
+                    handleKeyPress={this.handleKeyPress.bind(this)}
+                  />
+                </label>
+                <Button onClick={() => this.handleSubmit(this.props.indexI,this.props.indexJ,event)}>Ok</Button>
+              </form>
+            </Popover>
+          );
+          break;
+    }
+
+  }
+
+  //| dropDown | input |
+  getCellToReturn() {
+    const popoverClick = this.getPopover();
+    if(this.props.canEditCells) {
+      switch (this.props.numberType) {
+        case '#':
           return(
             <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
               <td key={ this.props.indexJ } >
               {this.props.name}</td>
             </OverlayTrigger>
           );
-        }
-      }
-      else {
-        return(
-            <td key={ this.props.indexJ } >
-            {this.props.name}</td>
-        );
+          break;
+
+        case 'bin':
+          return(
+            <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td key={ this.props.indexJ } >
+              {this.props.name}</td>
+            </OverlayTrigger>
+          );
+          break;
+
+        case '%':
+          return(
+            <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td key={ this.props.indexJ } >
+              {this.props.name}%</td>
+            </OverlayTrigger>
+          );
+          break;
+
+
+        default:
+          return(
+            <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td key={ this.props.indexJ } >
+              {this.props.name}</td>
+            </OverlayTrigger>
+          );
+          break;
       }
     }
     else {
-      if(this.props.canEditCells) {
-        return(
-          <OverlayTrigger ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-            <td key={ this.props.indexJ } >
-            {this.props.name}%</td>
-          </OverlayTrigger>
-        );
-      }
-      else {
-        return(
-            <td key={ this.props.indexJ } >
-            {this.props.name}%</td>
-        );
-      }
+      return(
+        <td key={ this.props.indexJ } >
+        {this.props.name}</td>
+      );
     }
+  }
+
+  render(){
+    var getCellInputFromUser = this.getCellInputFromUser;
+    /*
+    const errorHover = (
+      <Popover style={{backgroundColor: '#ffcccc'}} id="popoverError">
+        //Error: {this.state.errorMsg}
+      </Popover>
+    );
+    */
+
+    return(
+      this.getCellToReturn()
+    );
 
   }
 }
+
 
 export class InputBox extends React.Component{
   componentDidMount(){
@@ -141,6 +178,7 @@ export class InputBox extends React.Component{
   render() {
     return(
       <input
+        onKeyPress={this.props.handleKeyPress}
         ref='input'
         type="text"
         value={this.props.value}
@@ -154,42 +192,25 @@ export class InputBox extends React.Component{
 export class DropDownChoose extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {
-      percents: [
-        ['0','Imposible to contribute'],
-        ['10','Nearly impossible to contribute'],
-        ['20','Very unlikely to contribute'],
-        ['30','Quite unlikely to contribute'],
-        ['40','Possible to contribute'],
-        ['50','Even chance to contribute'],
-        ['60','Better than even chance to contribute'],
-        ['70','Quite likely to contribute'],
-        ['80','Very likely to contribute'],
-        ['90','Nearly certain to contribute'],
-        ['100','Certain to contribute']
-      ]
-    };
-    this.getPercents = this.getPercents.bind(this);
-  }
-  componentDidMount(){
-
+    this.getChoices = this.getChoices.bind(this);
   }
 
-  getPercents() {
+  getChoices() {
+    const choices = this.props.dropDownChoices;
     return(
-    this.state.percents.map((name,index)=> {
+    choices.map((name,index)=> {
       if(index%2 == 0) {
         return <div id='greenPercentTab'
-        onClick={() => this.props.handlePercentSubmit(this.state.percents[index][0])}
+        onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
         >
-          {this.state.percents[index][0] + '%' + '\t' + this.state.percents[index][1]}
+          {choices[index][0] + '%' + '\t' + choices[index][1]}
         </div>;
       }
       else {
         return <div id='percentTab'
-        onClick={() => this.props.handlePercentSubmit(this.state.percents[index][0])}
+        onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
         >
-          {this.state.percents[index][0] + '%' + '\t' + this.state.percents[index][1]}
+          {choices[index][0] + '%' + '\t' + choices[index][1]}
         </div>;
       }
     })
@@ -201,7 +222,7 @@ export class DropDownChoose extends React.Component{
 
     return(
       <div>
-        <div>{this.getPercents()}</div>
+        <div>{this.getChoices()}</div>
       </div>
     );
   }
