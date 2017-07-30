@@ -14,9 +14,12 @@
   height: 40px;
   background-color:#54513D;
 }
-.folder-close {
+#folder-close {
     font-size: 120px;
     color: #7C7B70;
+}
+#folder-close:hover {
+    color: #89B700;
 }
 #leaf {
   color: #89B700;
@@ -75,5 +78,6 @@ p {
 }
 .p1 {
   background-color: #F4F4E1;
+  height: 100%;
 }
 #newBox:hover {color: #A9CE64;} #newLeaf:hover {color: #89B700;} #newWrench:hover {color: #C5EA6F;}

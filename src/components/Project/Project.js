@@ -57,7 +57,9 @@ const Project = ({match}) =>(
 const Folder = ({match}) =>(
   <div className='folder'>
 
-  <Glyphicon glyph="folder-close" className='folder-close'/>
+  <LinkContainer to={'/Project/#'}>
+    <Glyphicon glyph="folder-close" id='folder-close'/>
+  </LinkContainer>
 
   <Panel className='projectPanel'>
     Project
@@ -84,7 +86,9 @@ const Folder = ({match}) =>(
 const NewFolder = ({match}) =>(
   <div className='folder'>
 
-  <Glyphicon glyph="folder-close" className='folder-close'/>
+  <LinkContainer to={'/Dashboard'}>
+    <Glyphicon glyph="folder-close" id='folder-close'/>
+  </LinkContainer>
 
   <Panel className='projectPanel'>
     New Project

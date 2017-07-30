@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import React from 'react';
 
 const Breadcrumbs = () => (
-  <Breadcrumb>
+  <Breadcrumb className='breadcrumbs'>
       <Breadcrumb.Item href="#">
         Home
       </Breadcrumb.Item>

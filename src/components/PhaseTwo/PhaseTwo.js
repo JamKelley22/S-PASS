@@ -3,7 +3,7 @@ import React from 'react';
 import {Tabs,Tab} from 'react-bootstrap';
 
 import {connect} from "react-redux"; //Connects the store to application.
-import {Table} from 'react-bootstrap';
+import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup} from 'react-bootstrap';
 
 
 
@@ -28,10 +28,19 @@ export default class PhaseTwo extends React.Component{
   }
 
   something(name,i,j){
+    <OverlayTrigger placement="right" overlay={tooltip}>
+    /*
+      <form>
+      <FormGroup bsSize="small">
+        <FormControl type="text" placeholder="Small text" />
+      </FormGroup>
+      </form>
+      */
+    </OverlayTrigger>
     var txt;
-    var person = prompt("Please enter the function name:", "Function");
+    //var person = prompt("Please enter the function name:", "Function");
     var s2 = this.state.stations;
-    s2[i][j] = person;
+    //s2[i][j] = person;
     this.setState({stations: s2});
     //this.setState({stations: this.state.stations.push('A')});
   }
@@ -86,3 +95,7 @@ export default class PhaseTwo extends React.Component{
     );
   }
 }
+
+const tooltip = (
+  <Tooltip id="tooltip"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
+);
