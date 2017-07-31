@@ -8,6 +8,5 @@ export default function(state = initialState, action){
           return [...state,action.payload]
           break;
       }
-
     return state;
 }

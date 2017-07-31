@@ -15,12 +15,9 @@ export default function(state = initialState, action){
           break;
         case "REMOVE_FUNCTION":
           console.log("Removing Function");
-          //var removed = [...state];
-          //removed.splice(action.payload,action.payload);
           return[...state.slice(0,action.payload),
                 ...state.slice(action.payload+1,state.length)]
           break;
       }
-
     return state;
 }

@@ -79,7 +79,7 @@ export default class PhaseOneInput extends React.Component{
             <MatrixDisplay
               title = "Functions vs.Modules"
               matrixContent={this.props.requirementFunctionMatrix._data}
-              colNames={this.props.functions}
+              colNames={this.props.selectedAlternates}
               rowNames={this.props.requirements}
               editCell={this.props.editCellRFMat}
               bgColor={'#9DC64D'}
@@ -109,8 +109,8 @@ export default class PhaseOneInput extends React.Component{
             <MatrixDisplay
               title = "Supplier vs. Modules"
               matrixContent={this.props.functionModuleMatrix._data}
-              colNames={this.props.modules}
-              rowNames={this.props.functions}
+              colNames={this.props.selectedAlternates}
+              rowNames={this.props.supplierList}
               editCell={this.props.editCellFMMat}
               bgColor={'#9DC64D'}
               canEditCells={true}
@@ -126,7 +126,7 @@ export default class PhaseOneInput extends React.Component{
         <MatrixDisplay
           title = "Modules vs. Product Architecture"
           matrixContent={this.props.moduleArchitectureMatrix._data}
-          colNames={this.props.productArchitecture}
+          colNames={this.props.newArchitectureList}
           rowNames={this.props.modules}
           editCell={this.props.editCellMAMat}
           bgColor={'#9DC64D'}
