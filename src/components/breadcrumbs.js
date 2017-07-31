@@ -5,7 +5,51 @@ import React from 'react';
 
 import './Breadcrumbs.css';
 
-const Breadcrumbs = () => (
+export default class Breadcrumbs extends React.Component{
+  constructor(props) {
+    super(props);
+    this.getCrumbs = this.getCrumbs.bind(this);
+  }
+
+  render() {
+    var arr = this.props.crumbs;
+    if (typeof arr == 'undefined') {
+      arr = [
+        ['Home','/'],
+        ['Dashboard','/Dashboard'],
+        ['Projects','/Project'],
+        ['Phases', '/Phases']
+      ]
+    }
+    return(
+      <Breadcrumb id='breadcrumbs'>
+      {arr.map((el, indexI) => {
+        var link = arr[indexI][1];
+        var name = arr[indexI][0];
+        if(indexI < arr.length - 1) {
+          return(
+              <Breadcrumb.Item >
+              <Link to={link}>
+                {name}
+              </Link>
+              </Breadcrumb.Item>
+          );
+        }
+        else {
+          return(
+            <Breadcrumb.Item active>
+              {name}
+            </Breadcrumb.Item>
+          );
+        }
+      })}
+      </Breadcrumb>
+    );
+  }
+
+}
+
+  {/*
   <Breadcrumb id='breadcrumbs'>
       <Breadcrumb.Item >
       <Link to={'/'}>
@@ -15,7 +59,7 @@ const Breadcrumbs = () => (
 
       <Breadcrumb.Item >
       <Link to={'/Dashboard'}>
-        Dashboard
+        Project
       </Link>
       </Breadcrumb.Item>
 
@@ -28,6 +72,8 @@ const Breadcrumbs = () => (
         Phases
       </Breadcrumb.Item>
     </Breadcrumb>
+
+
 )
 
-export default Breadcrumbs;
+export default Breadcrumbs;*/}
