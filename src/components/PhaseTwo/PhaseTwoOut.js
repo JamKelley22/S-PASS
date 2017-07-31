@@ -4,7 +4,7 @@ import {Tabs,Tab,Button} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import {connect} from "react-redux"; //Connects the store to application.
 import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup} from 'react-bootstrap';
-
+import MSFilterMatrix from '../Matrix/MSFilterMatrix.js';
 
 
 @connect((store) => {
@@ -24,6 +24,13 @@ export default class PhaseTwoOut extends React.Component{
     return(
       <div>
 
+      <MSFilterMatrix
+        title = {'Alternate Module'}
+        names = {['A1', 'A2', 'A3']}
+        values = {[false,true,true]}
+      />
+
+      <h1>New Architectures & Suppliers Output</h1>
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseTwo/Input'>

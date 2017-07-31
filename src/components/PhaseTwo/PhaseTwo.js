@@ -90,77 +90,83 @@ class PhaseTwo extends React.Component{
 
     return(
       <div>
-        <UniqueDropdown
-          title={'Alternate Modules'}
-          dropDownChoices = {this.makeList(this.props.altModuleData)}
-          dataValues = {this.props.selectedAlternates}
-          addData = {this.props.addAlternate}
-          removeData = {this.props.removeAlternate}
-        />
 
-        <UniqueDropdown
-          title={'Alternate Suppliers'}
-          dropDownChoices = {this.makeList(this.props.supplierData)}
-          dataValues = {this.props.selectedSuppliers}
-          addData = {this.props.addSupplier}
-          removeData = {this.props.removeSupplier}
-        />
+      <h1>New Architectures & Suppliers Input</h1>
 
-        <CustomPhaseTwoMatrix
-          ModuleThresh = {ModuleThresh}
-          SupplierThresh = {SupplierThresh}
-          dropDownChoices={[
-            ['0 Imposible to contribute'],
-            ['10 Nearly impossible to contribute'],
-            ['20 Very unlikely to contribute'],
-            ['30 Quite unlikely to contribute'],
-            ['40 Possible to contribute'],
-            ['50 Even chance to contribute'],
-            ['60 Better than even chance to contribute'],
-            ['70 Quite likely to contribute'],
-            ['80 Very likely to contribute'],
-            ['90 Nearly certain to contribute'],
-            ['100 Certain to contribute']
-          ]}
-          editCell = {this.props.editThreshold}
-        />
+      <UniqueDropdown
+        title={'Alternate Modules'}
+        dropDownChoices = {this.makeList(this.props.altModuleData)}
+        dataValues = {this.props.selectedAlternates}
+        addData = {this.props.addAlternate}
+        removeData = {this.props.removeAlternate}
+      />
 
-        <MatrixDisplay
-          title="Supplier Related Environmental Indicators"
-          colNames={["Possibility of RoHS","Recycling Rate","Satisfaction Level of Using Renewable Materials"]}
-          rowNames={this.props.selectedSuppliers}
-          matrixContent={this.makeSupplierMatrix(this.props.selectedSuppliers,this.props.supplierData)}
-          bgColor={'#7C7B50'}
+      <UniqueDropdown
+        title={'Alternate Suppliers'}
+        dropDownChoices = {this.makeList(this.props.supplierData)}
+        dataValues = {this.props.selectedSuppliers}
+        addData = {this.props.addSupplier}
+        removeData = {this.props.removeSupplier}
+      />
 
-          editCell={null}
-          canEditCells={false}
-          numberType='bin' // | bin | % | # |
-          editType='input'// | dropDown | input |
-          dropDownChoices={null}
-        />
+      <CustomPhaseTwoMatrix
+        ModuleThresh = {ModuleThresh}
+        SupplierThresh = {SupplierThresh}
+        dropDownChoices={[
+          ['0 Imposible to contribute'],
+          ['10 Nearly impossible to contribute'],
+          ['20 Very unlikely to contribute'],
+          ['30 Quite unlikely to contribute'],
+          ['40 Possible to contribute'],
+          ['50 Even chance to contribute'],
+          ['60 Better than even chance to contribute'],
+          ['70 Quite likely to contribute'],
+          ['80 Very likely to contribute'],
+          ['90 Nearly certain to contribute'],
+          ['100 Certain to contribute']
+        ]}
+        editCell = {this.props.editThreshold}
+      />
 
-        <MatrixDisplay
-          title="Supplier Related Environmental Indicators"
-          colNames={["ISO 14001","Use of Recycled Materials","Environmental Friendly Packaging"]}
-          rowNames={this.props.selectedAlternates}
-          matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
-          bgColor={'#7C7B50'}
+      <MatrixDisplay
+        title="Supplier Related Environmental Indicators"
+        colNames={["Possibility of RoHS","Recycling Rate","Satisfaction Level of Using Renewable Materials"]}
+        rowNames={this.props.selectedSuppliers}
+        matrixContent={this.makeSupplierMatrix(this.props.selectedSuppliers,this.props.supplierData)}
+        bgColor={'#7C7B50'}
 
-          editCell={null}
-          canEditCells={false}
-          numberType='bin' // | bin | % | # |
-          editType='input'// | dropDown | input |
-          dropDownChoices={null}
-        />
+        editCell={null}
+        canEditCells={false}
+        numberType='bin' // | bin | % | # |
+        editType='input'// | dropDown | input |
+        dropDownChoices={null}
+      />
 
-        <div id='lowerButtons'>
-          <LinkContainer to='/Phases/PhaseOne/Output'>
-            <Button>Back</Button>
-          </LinkContainer>
-          <LinkContainer to='/Phases/PhaseTwo/Output'>
-            <Button>Continue</Button>
-          </LinkContainer>
-        </div>
+      <MatrixDisplay
+        title="Supplier Related Environmental Indicators"
+        colNames={["ISO 14001","Use of Recycled Materials","Environmental Friendly Packaging"]}
+        rowNames={this.props.selectedAlternates}
+        matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
+        bgColor={'#7C7B50'}
+
+        editCell={null}
+        canEditCells={false}
+        numberType='bin' // | bin | % | # |
+        editType='input'// | dropDown | input |
+        dropDownChoices={null}
+      />
+
+      <div id='lowerButtons'>
+        <LinkContainer to='/Phases/PhaseOne/Output'>
+          <Button>Back</Button>
+        </LinkContainer>
+        <LinkContainer to='/Phases/PhaseTwo/Output'>
+          <Button>Continue</Button>
+        </LinkContainer>
+      </div>
+
+
+
       </div>
     );
   }
