@@ -27,6 +27,7 @@
 height: 45px;
 max-height: 45px;
 
+
   /* fix problem when last visible word doesn't adjoin right side  */
     padding-right: 1em;
 
@@ -56,4 +57,10 @@ max-height: 45px;
 }
 .table{
   width : 2000px;
+}
+
+#myCustomTable td {
+  text-align: center;
+  color: black;
+  vertical-align: middle;
 }
