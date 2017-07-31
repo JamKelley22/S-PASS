@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table,OverlayTrigger,Tooltip} from 'react-bootstrap';
+import {Table,OverlayTrigger,Tooltip,Popover} from 'react-bootstrap';
 import './Matrix.css';
 import Cell from './Cell.js';
 
@@ -7,39 +7,89 @@ export default class CustomPhaseTwoMatrix extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-
+      value: '',
+      number: 0,
+      threshs: [
+        this.props.ModuleThresh.hazard,
+        this.props.ModuleThresh.recycle,
+        this.props.ModuleThresh.renew,
+        this.props.SupplierThresh.iso,
+        this.props.SupplierThresh.recycle,
+        this.props.SupplierThresh.pack
+      ],
+      index: -1
     };
+    this.handleDropdownSubmit = this.handleDropdownSubmit.bind(this);
+    this.getPopover = this.getPopover.bind(this);
+    this.getCellsToReturn = this.getCellsToReturn.bind(this);
+    //this.highlightCell = this.highlightCell.bind(this);
+    //this.normalizeCell = this.normalizeCell.bind(this);
+
+
+
   }
-  //this.props.ModuleThresh
-  //this.props.SupplierThresh
 
-  /*
-  var ModuleThresh = {
-    hazard: 0,
-    recycle: .5,
-    renew: 0
-  };
+  handleDropdownSubmit(num) {
+    const set = this.state.threshs;
+    set[this.state.index] = parseFloat(num);
+    this.setState({threshs: set},function() {
+      //Where infor is to be sent out
+      //this.props.editCell(this.props.indexI,this.props.indexJ,this.state.number);
+    });
 
-  var SupplierThresh = {
-    iso: 0,
-    recycle: .5,
-    pack: 0
-  };
-  */
+    this.refs.overlay0.hide();
+    this.refs.overlay1.hide();
+    this.refs.overlay2.hide();
+    this.refs.overlay3.hide();
+    this.refs.overlay4.hide();
+    this.refs.overlay5.hide();
+  }
 
-  /*
-  <Cell
-    indexJ={indexJ}
-    indexI={indexI}
-    name={name}
-    canEditCells = {this.props.canEditCells}
-    editCell = {this.props.editCell}
+  getPopover() {
+    return(
+      <Popover id="popoverClick" title={'Title'}>
+        <DropDownChoose
+          handleDropdownSubmit={this.handleDropdownSubmit}
+          value={this.state.value}
+          dropDownChoices={this.props.dropDownChoices}
+          threshIndex={this.state.index}
+        />
+      </Popover>
+    );
+  }
 
-    numberType= {this.props.numberType}
-    editType= {this.props.editType}
-    dropDownChoices={this.props.dropDownChoices}
-    />
-    */
+  getCellsToReturn() {
+    const popoverClick = this.getPopover();
+    return(
+      <tbody>
+        <td>Value</td>
+        <OverlayTrigger onEnter={() => this.setState({index: 0})} ref="overlay0" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+        <td>{this.state.threshs[0]}</td>
+        </OverlayTrigger>
+
+        <OverlayTrigger onEnter={() => this.setState({index: 1})} ref="overlay1" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+        <td>{this.state.threshs[1]*100}%</td>
+        </OverlayTrigger>
+
+        <OverlayTrigger onEnter={() => this.setState({index: 2})} ref="overlay2" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+        <td>{this.state.threshs[2]}</td>
+        </OverlayTrigger>
+
+        <OverlayTrigger onEnter={() => this.setState({index: 3})} ref="overlay3" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+        <td>{this.state.threshs[3]}</td>
+        </OverlayTrigger>
+
+        <OverlayTrigger onEnter={() => this.setState({index: 4})} ref="overlay4" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+        <td>{this.state.threshs[4]}</td>
+        </OverlayTrigger>
+
+        <OverlayTrigger onEnter={() => this.setState({index: 5})} ref="overlay5" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+        <td>{this.state.threshs[5]*100}%</td>
+        </OverlayTrigger>
+      </tbody>
+    );
+  }
+
 
   render() {
     return(
@@ -65,20 +115,67 @@ export default class CustomPhaseTwoMatrix extends React.Component{
 
         </thead>
 
-        <tbody>
-          <td>Value</td>
-          <td>{this.props.ModuleThresh.hazard}</td>
-          <td>{this.props.ModuleThresh.recycle}</td>
-          <td>{this.props.ModuleThresh.renew}</td>
-          <td>{this.props.SupplierThresh.iso}</td>
-          <td>{this.props.SupplierThresh.recycle}</td>
-          <td>{this.props.SupplierThresh.pack}</td>
-        </tbody>
+        {this.getCellsToReturn()}
+
         </Table>
       </div>
 
     );
   }
 
+}
 
+export class DropDownChoose extends React.Component{
+  constructor(props) {
+    super(props);
+    this.getChoices = this.getChoices.bind(this);
+  }
+
+  getChoices() {
+    if(this.props.threshIndex == 0 || this.props.threshIndex == 2 || this.props.threshIndex == 4) {
+      var choices = [1,2,3,4,5];
+      return (
+        choices.map((name,index)=> {
+          return <div
+          onClick={() => this.props.handleDropdownSubmit(index+1)}>
+            {index+1}
+          </div>;
+        })
+      );
+    }
+    else if(this.props.threshIndex == 1 || this.props.threshIndex == 5) {
+      var choices = [0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1];
+      return (
+        choices.map((name,index)=> {
+          return <div
+          onClick={() => this.props.handleDropdownSubmit(name)}>
+            {name*100}%
+          </div>;
+        })
+      );
+    }
+    else {
+      return (
+        <div>
+          <div
+            onClick={() => this.props.handleDropdownSubmit(0)}>
+            True
+          </div>
+          <div
+            onClick={() => this.props.handleDropdownSubmit(1)}>
+            False
+          </div>
+        </div>
+      );
+    }
+}
+
+  render() {
+
+    return(
+      <div>
+        <div>{this.getChoices()}</div>
+      </div>
+    );
+  }
 }

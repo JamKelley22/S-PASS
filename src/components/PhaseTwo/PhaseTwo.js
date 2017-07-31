@@ -108,6 +108,19 @@ class PhaseTwo extends React.Component{
       <CustomPhaseTwoMatrix
         ModuleThresh = {ModuleThresh}
         SupplierThresh = {SupplierThresh}
+        dropDownChoices={[
+          ['0 Imposible to contribute'],
+          ['10 Nearly impossible to contribute'],
+          ['20 Very unlikely to contribute'],
+          ['30 Quite unlikely to contribute'],
+          ['40 Possible to contribute'],
+          ['50 Even chance to contribute'],
+          ['60 Better than even chance to contribute'],
+          ['70 Quite likely to contribute'],
+          ['80 Very likely to contribute'],
+          ['90 Nearly certain to contribute'],
+          ['100 Certain to contribute']
+        ]}
       />
 
       <MatrixDisplay
