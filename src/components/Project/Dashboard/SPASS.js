@@ -15,11 +15,7 @@ const SPASS = ({match}) =>(
   <div>
     <div className='colorBar'>
       <div className='colorBarText'>
-<<<<<<< HEAD
-        <p style={{paddingTop: '0px', paddingBottom: '0px'}}>Company X -- Drone Design</p>
-=======
-        <p>Company X—Drone Design</p>
->>>>>>> NatalieBranch2
+        <p style={{paddingTop: '0px', paddingBottom: '0px'}}>Company X—Drone Design</p>
       </div>
     </div>
 
