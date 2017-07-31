@@ -145,7 +145,7 @@ export default class Cell extends React.Component{
           return(
             <OverlayTrigger onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
               <td style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
-              {this.props.name}%</td>
+              {this.props.name * 100}%</td>
             </OverlayTrigger>
           );
           break;
