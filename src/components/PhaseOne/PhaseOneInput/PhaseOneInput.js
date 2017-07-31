@@ -71,7 +71,7 @@ export default class PhaseOneInput extends React.Component{
 
       <div id='product1'>
       <h1>Requirements Input</h1>
-        <p>Product 1: Quad-copter</p><p>Edit <i className="fa fa-edit"/></p>
+        <p>Product 1: Quad-copter</p><p id='noClick'>Edit <i id='noClick' className="fa fa-edit"/></p>
         <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
       </div>
 
@@ -89,7 +89,6 @@ export default class PhaseOneInput extends React.Component{
         </p>
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-          <i className="fa fa-search" id='pad'/>
         </div>
         <ListStuff
           list={this.props.requirements}
@@ -106,7 +105,6 @@ export default class PhaseOneInput extends React.Component{
         </p>
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-          <i className="fa fa-search" id='pad'/>
         </div>
         <ListStuff
           list={this.props.functions}
@@ -121,7 +119,6 @@ export default class PhaseOneInput extends React.Component{
 
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-          <i className="fa fa-search" id='pad'/>
         </div>
 
         <ListStuff
@@ -145,7 +142,6 @@ export default class PhaseOneInput extends React.Component{
 
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-          <i className="fa fa-search" id='pad'/>
         </div>
 
         <div id='matrixRow'>
