@@ -29,6 +29,11 @@ export default class PhaseTwoOut extends React.Component{
         names = {['A1', 'A2', 'A3']}
         values = {[false,true,true]}
       />
+      <MSFilterMatrix
+        title = {'Supplier'}
+        names = {['S1', 'S2', 'S3']}
+        values = {[true,false,false]}
+      />
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseTwo/Input'>

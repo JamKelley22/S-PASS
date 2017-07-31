@@ -58,9 +58,16 @@ export default class Cell extends React.Component{
   */
 
   handleDropdownSubmit(num) {
-    this.setState({number: parseFloat(num)},function() {
+    var parseNum = parseFloat(num);
+    switch (this.props.numberType) {
+      case '%':
+        parseNum = parseNum / 100.0;
+        break;
+      default:
+    }
+    this.setState({number: parseNum},function() {
       //alert(typeof(this.state.number/100.0));
-      this.props.editCell(this.props.indexI,this.props.indexJ,this.state.number/100.0);///////////////////////////////////////////
+      this.props.editCell(this.props.indexI,this.props.indexJ,parseNum);///////////////////////////////////////////
     });
     this.refs.overlay.hide();
   }
@@ -82,6 +89,7 @@ export default class Cell extends React.Component{
                 handleDropdownSubmit={this.handleDropdownSubmit}
                 value={this.state.value}
                 dropDownChoices={this.props.dropDownChoices}
+                numberType={this.props.numberType}
               />
             </Popover>
           );
@@ -213,18 +221,43 @@ export class DropDownChoose extends React.Component{
 
   getChoices() {
     const choices = this.props.dropDownChoices;
-    return(
-    choices.map((name,index)=> {
-      return <div id='percentTab'
-      onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
-      >
-        {choices[index][0] + '%' + '\t' + choices[index][1]}
-      </div>;
+    switch(this.props.numberType) {
+      case '%':
+        return(
+          choices.map((name,index)=> {
+            return <div id='percentTab'
+            onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
+            >
+              {choices[index][0] + '%' + '\t' + choices[index][1]}
+            </div>;
+          })
+        );
+      break;
 
+      case 'bin':
+        return(
+          choices.map((name,index)=> {
+            return <div id='percentTab'
+            onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
+            >
+              {choices[index][0] + '\t' + choices[index][1]}
+            </div>;
+          })
+        );
+      break;
 
-    })
-
-  );
+      case '#':
+        return(
+          choices.map((name,index)=> {
+            return <div id='percentTab'
+            onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
+            >
+              {choices[index][0] + '\t' + choices[index][1]}
+            </div>;
+          })
+        );
+      break;
+    }
 }
 
   render() {
