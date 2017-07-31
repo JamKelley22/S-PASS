@@ -1,7 +1,16 @@
 h3 {
   color: #706F47;
   font-weight: bold;
+  padding-left: 20px;
 }
+
+h1 {
+  padding-left: 20px;
+}
+p {
+  padding-left: 20px;
+}
+
 #pad {
   padding: 5px;
 }

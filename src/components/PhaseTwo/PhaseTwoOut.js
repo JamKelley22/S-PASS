@@ -30,6 +30,8 @@ export default class PhaseTwoOut extends React.Component{
         values = {[false,true,true]}
       />
 
+      <h1>New Architectures & Suppliers Output</h1>
+
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseTwo/Input'>
           <Button>Back</Button>

@@ -72,7 +72,22 @@ export default class PhaseOneOutput extends React.Component{
 
     return(
       <div id="scroll">
-        <h1>PhaseOneOutput</h1>
+        <h1>Requirements Output</h1>
+
+        <h4>0:No Relation</h4>
+        <h4>1:Very Poor</h4>
+        <h4>2:Poor</h4>
+        <h4>3:Fair</h4>
+        <h4>4:Good</h4>
+        <h4>5:Very Good</h4>
+
+        <p>
+        Below are the average functional satisfaction levels for new product architectures.
+        </p>
+        <p>
+        Note that functions in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
+        </p>
+
         <MatrixDisplay
           title="Function vs. Product"
           colNames={this.props.productArchitecture}
@@ -82,6 +97,12 @@ export default class PhaseOneOutput extends React.Component{
             this.props.moduleArchitectureMatrix._data)}
           bgColor={'#7C7B50'}
         />
+
+
+<p>
+Below is the satisfaction level of each environmental sustainability requirement for current products. Requirements in red indicate that these requirements are not sufficiently satisfied (less than 3) in at least one of the current products.
+</p>
+
 
         <MatrixDisplay
           title="Requirement vs. Product"
