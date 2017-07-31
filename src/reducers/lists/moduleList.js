@@ -22,6 +22,5 @@ export default function(state = initialState, action){
                 ...state.slice(action.payload+1,state.length)]
           break;
       }
-
     return state;
 }

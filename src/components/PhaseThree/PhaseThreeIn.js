@@ -23,7 +23,7 @@ class PhaseThreeIn extends React.Component{
       <div>
         <PhaseThreeInput
         addFunction={this.props.addFunction}
-        functions={this.props.functions}
+
         modules={this.props.modules}
         addModule={this.props.addModule}
         requirements={this.props.requirements}
@@ -50,6 +50,11 @@ class PhaseThreeIn extends React.Component{
         requirementFunctionMatrix={this.props.requirementFunctionMatrix}
         functionModuleMatrix={this.props.functionModuleMatrix}
         moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
+
+        selectedAlternates={this.props.selectedAlternates}
+        functions={this.props.functions}
+        supplierList={this.props.supplierList}
+        newArchitectureList = {this.props.newArchitectureList}
         />
       </div>
     );
@@ -58,13 +63,18 @@ class PhaseThreeIn extends React.Component{
 
 function mapStateToProps(state){
   return{
-    functions: state.functionList,
+
     modules:state.moduleList,
     requirements:state.requirementList,
     productArchitecture: state.productArchitecture,
     requirementFunctionMatrix: state.requirementFunctionMatrix,
     functionModuleMatrix: state.functionModuleMatrix,
     moduleArchitectureMatrix: state.moduleArchitectureMatrix,
+
+    selectedAlternates: state.selectedAlternates,
+    functions: state.functionList,
+    supplierList:state.supplierList,
+    newArchitectureList: state.newArchitectureList,
   };
 }
 
@@ -89,6 +99,8 @@ function matchDispatchToProps(dispatch){
     editCellRFMat: editCellRFMat,
     editCellMAMat: editCellMAMat,
     editCellFMMat: editCellFMMat,
+
+
 
   },dispatch)
 }

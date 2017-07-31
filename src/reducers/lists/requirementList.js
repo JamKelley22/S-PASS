@@ -8,7 +8,7 @@ export default function(state=initialState, action){
           console.log("Adding Requirement");
           return [...state,action.payload]
           break;
-        case "REMOVE_REQUIREMENT":
+        case "REMOVE_REQUIREMENT":{
           console.log("Removing Requirement");
           //var removed = [...state];
           //removed.splice(action.payload,action.payload);
@@ -16,6 +16,6 @@ export default function(state=initialState, action){
                 ...state.slice(action.payload+1,state.length)]
           break;
       }
-
+    }
     return state;
 }
