@@ -69,6 +69,8 @@ export default class PhaseOneInput extends React.Component{
         </Modal.Footer>
       </Modal>
 
+      <h1>Selection Input</h1>
+
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
           <i className="fa fa-search" id='pad'/>

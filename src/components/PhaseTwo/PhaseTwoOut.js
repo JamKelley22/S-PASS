@@ -24,6 +24,7 @@ export default class PhaseTwoOut extends React.Component{
     return(
       <div>
 
+      <h1>New Architectures & Suppliers Output</h1>
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseTwo/Input'>

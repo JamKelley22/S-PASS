@@ -41,6 +41,7 @@ class PhaseTwo extends React.Component{
     console.log(ModuleThresh);
     return(
       <div>
+      <h1>New Architectures & Suppliers Input</h1>
 
       <UniqueDropdown
         title={'Alternate Modules'}

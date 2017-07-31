@@ -73,6 +73,7 @@ export default class PhaseThreeOutput extends React.Component{
 
       <div id='scroll'>
 
+        <h1>Selection Output</h1>
         <h1>Average functional satisfaction levels for new produt architectures</h1>
         <MatrixDisplay
           title="Function vs. Architecture"

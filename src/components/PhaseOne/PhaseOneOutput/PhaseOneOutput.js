@@ -72,7 +72,7 @@ export default class PhaseOneOutput extends React.Component{
 
     return(
       <div id="scroll">
-        <h1>Requirement Results</h1>
+        <h1>Requirements Output</h1>
 
         <h4>0:No Relation</h4>
         <h4>1:Very Poor</h4>
