@@ -2,13 +2,15 @@
 import {combineReducers} from "redux";
 
 //Import all needed reducers here!-------------
-import functionList from "./functionList";
-import moduleList from "./moduleList";
-import requirementList from "./requirementList";
-import productArchitecture from "./productArchitecture";
-import requirementFunctionMatrix from "./requirementFunctionMatrix";
-import functionModuleMatrix from "./functionModuleMatrix";
-import moduleArchitectureMatrix from "./moduleArchitectureMatrix";
+import functionList from "./lists/functionList";
+import moduleList from "./lists/moduleList";
+import requirementList from "./lists/requirementList";
+import productArchitecture from "./matrices/productArchitecture";
+import requirementFunctionMatrix from "./matrices/requirementFunctionMatrix";
+import functionModuleMatrix from "./matrices/functionModuleMatrix";
+import moduleArchitectureMatrix from "./matrices/moduleArchitectureMatrix";
+import altModuleData from "./data/altModuleData";
+import supplierData from "./data/supplierData";
 //---------------------------------------------
 
 export default combineReducers({
@@ -20,4 +22,6 @@ export default combineReducers({
   productArchitecture,
   functionModuleMatrix,
   moduleArchitectureMatrix,
+  supplierData,
+  altModuleData,
 })
