@@ -5,6 +5,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 import UniqueDropdown from './UniqueDropdown.js';
 import {addAlternate,removeAlternate} from '../../actions/selectedAlternatesActions.js';
 import {bindActionCreators} from 'redux';
+import CustomPhaseTwoMatrix from '../Matrix/CustomPhaseTwoMatrix.js';
 
 
 class PhaseTwo extends React.Component{
@@ -26,6 +27,18 @@ class PhaseTwo extends React.Component{
 
 
   render(){
+    let ModuleThresh = {
+      hazard: 0,
+      recycle: .5,
+      renew: 0
+    }
+    let SupplierThresh = {
+      iso: 0,
+      recycle: .5,
+      pack: 0
+    }
+    console.log('modThresh');
+    console.log(ModuleThresh);
     return(
       <div>
 
@@ -35,6 +48,22 @@ class PhaseTwo extends React.Component{
         dataValues = {this.props.selectedAlternates}
         addData = {this.props.addAlternate}
       />
+
+      <CustomPhaseTwoMatrix
+        ModuleThresh = {ModuleThresh}
+        SupplierThresh = {SupplierThresh}
+      />
+
+      <div id='lowerButtons'>
+        <LinkContainer to='/Phases/PhaseOne/Output'>
+          <Button>Back</Button>
+        </LinkContainer>
+        <LinkContainer to='/Phases/PhaseTwo/Output'>
+          <Button>Continue</Button>
+        </LinkContainer>
+      </div>
+
+
 
       </div>
     );
