@@ -5,7 +5,6 @@ import {LinkContainer} from 'react-router-bootstrap';
 import UniqueDropdown from './UniqueDropdown.js';
 import CustomPhaseTwoMatrix from '../Matrix/CustomPhaseTwoMatrix.js';
 
-
 class PhaseTwo extends React.Component{
 
   render(){
