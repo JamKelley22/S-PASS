@@ -24,7 +24,7 @@ const SideBar = ({match}) =>(
         <div id='tab'><i className="fa fa-comment"/> About</div>
       </LinkContainer>
 
-      <LinkContainer to={'/Phases'}>
+      <LinkContainer to={'/Phases/PhaseOne/Input'}>
         <div id='tab'><i className="fa fa-calendar"/> Phases</div>
       </LinkContainer>
 
