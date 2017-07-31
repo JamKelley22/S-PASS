@@ -18,7 +18,7 @@ const Dashboard = ({match}) =>(
   <div>
     <div className='colorBar'>
       <div className='colorBarText'>
-        <p style={{paddingTop: '0px', paddingBottom: '0px'}}>Company X -- Drone Design</p>
+        <p style={{paddingTop: '0px', paddingBottom: '0px'}}>Company X—Drone Design</p>
       </div>
     </div>
 

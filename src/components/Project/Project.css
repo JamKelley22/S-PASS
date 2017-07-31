@@ -1,3 +1,15 @@
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border 0.2s ease-in-out;
+    -o-transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease-in-out;
+}
 .colorBar {
   height: 5%;
   max-height: 5%;
@@ -5,7 +17,7 @@
   background-color:#54513D;
 }
 #folder-close {
-    font-size: 215px;
+    font-size: 120px;
     color: #7C7B70;
 }
 #folder-close:hover {
@@ -16,14 +28,14 @@
 }
 .fa-folder {
   position: relative;
-  top: 70px;
+  top: 30px;
   z-index: 0;
-  -webkit-transition: top .25s, color .25s; /* For Safari 3.1 to 6.0 */
-  transition: top .25s, color .25s;
+  transition: top .2s;
+  transition: color .1s;
 }
 
 .fa-folder:hover {
-  top: 60px;
+  top: 20px;
 }
 .projectPanel {
   position: relative;
@@ -31,7 +43,6 @@
   padding: 0px;
   background-color: #EEF1BC;
   z-index: 1;
-  width: 200px;
 }
 .fa-cube {
   float: left;
@@ -42,10 +53,11 @@
 .fa-cube:hover {
   color: #505f2d;
 }
+
 .fa-leaf {
   float: left;
   padding: 5px;
-  color: #89B700;
+  color: #a2b427;
   transition: color .2s;
 }
 .fa-leaf:hover {
@@ -54,7 +66,7 @@
 .fa-wrench {
   float: left;
   padding: 5px;
-  color: #C5EA6F;
+  color: #818b46;
   transition: color .2s;
 }
 .fa-wrench:hover {
