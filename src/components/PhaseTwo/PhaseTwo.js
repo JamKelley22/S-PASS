@@ -9,6 +9,7 @@ import {bindActionCreators} from 'redux';
 import CustomPhaseTwoMatrix from '../Matrix/CustomPhaseTwoMatrix.js';
 import MatrixDisplay from '../Matrix/Matrix.js';
 import '../Matrix/Matrix.css';
+import {editThreshold} from '../../actions/thresholdsActions.js';
 
 
 class PhaseTwo extends React.Component{
@@ -77,91 +78,89 @@ class PhaseTwo extends React.Component{
 
   render(){
     let ModuleThresh = {
-      hazard: 0,
-      recycle: .5,
-      renew: 0
+      hazard: this.props.thresholds[0].hazardousMaterialUse,
+      recycle: this.props.thresholds[0].recyclability,
+      renew: this.props.thresholds[0].renewableMaterialUse
     }
     let SupplierThresh = {
-      iso: 0,
-      recycle: .5,
-      pack: 0
+      iso: (this.props.thresholds[1].ISO? 1: 0),
+      recycle: this.props.thresholds[1].recycledMaterials,
+      pack: this.props.thresholds[1].packageRecycling
     }
 
     return(
       <div>
-      <UniqueDropdown
-        title={'Alternate Modules'}
-        dropDownChoices = {this.makeList(this.props.altModuleData)}
-        dataValues = {this.props.selectedAlternates}
-        addData = {this.props.addAlternate}
-        removeData = {this.props.removeAlternate}
-      />
+        <UniqueDropdown
+          title={'Alternate Modules'}
+          dropDownChoices = {this.makeList(this.props.altModuleData)}
+          dataValues = {this.props.selectedAlternates}
+          addData = {this.props.addAlternate}
+          removeData = {this.props.removeAlternate}
+        />
 
-      <UniqueDropdown
-        title={'Alternate Suppliers'}
-        dropDownChoices = {this.makeList(this.props.supplierData)}
-        dataValues = {this.props.selectedSuppliers}
-        addData = {this.props.addSupplier}
-        removeData = {this.props.removeSupplier}
-      />
+        <UniqueDropdown
+          title={'Alternate Suppliers'}
+          dropDownChoices = {this.makeList(this.props.supplierData)}
+          dataValues = {this.props.selectedSuppliers}
+          addData = {this.props.addSupplier}
+          removeData = {this.props.removeSupplier}
+        />
 
-      <CustomPhaseTwoMatrix
-        ModuleThresh = {ModuleThresh}
-        SupplierThresh = {SupplierThresh}
-        dropDownChoices={[
-          ['0 Imposible to contribute'],
-          ['10 Nearly impossible to contribute'],
-          ['20 Very unlikely to contribute'],
-          ['30 Quite unlikely to contribute'],
-          ['40 Possible to contribute'],
-          ['50 Even chance to contribute'],
-          ['60 Better than even chance to contribute'],
-          ['70 Quite likely to contribute'],
-          ['80 Very likely to contribute'],
-          ['90 Nearly certain to contribute'],
-          ['100 Certain to contribute']
-        ]}
-      />
+        <CustomPhaseTwoMatrix
+          ModuleThresh = {ModuleThresh}
+          SupplierThresh = {SupplierThresh}
+          dropDownChoices={[
+            ['0 Imposible to contribute'],
+            ['10 Nearly impossible to contribute'],
+            ['20 Very unlikely to contribute'],
+            ['30 Quite unlikely to contribute'],
+            ['40 Possible to contribute'],
+            ['50 Even chance to contribute'],
+            ['60 Better than even chance to contribute'],
+            ['70 Quite likely to contribute'],
+            ['80 Very likely to contribute'],
+            ['90 Nearly certain to contribute'],
+            ['100 Certain to contribute']
+          ]}
+          editCell = {this.props.editThreshold}
+        />
 
-      <MatrixDisplay
-        title="Supplier Related Environmental Indicators"
-        colNames={["Possibility of RoHS","Recycling Rate","Satisfaction Level of Using Renewable Materials"]}
-        rowNames={this.props.selectedSuppliers}
-        matrixContent={this.makeSupplierMatrix(this.props.selectedSuppliers,this.props.supplierData)}
-        bgColor={'#7C7B50'}
+        <MatrixDisplay
+          title="Supplier Related Environmental Indicators"
+          colNames={["Possibility of RoHS","Recycling Rate","Satisfaction Level of Using Renewable Materials"]}
+          rowNames={this.props.selectedSuppliers}
+          matrixContent={this.makeSupplierMatrix(this.props.selectedSuppliers,this.props.supplierData)}
+          bgColor={'#7C7B50'}
 
-        editCell={null}
-        canEditCells={false}
-        numberType='bin' // | bin | % | # |
-        editType='input'// | dropDown | input |
-        dropDownChoices={null}
-      />
+          editCell={null}
+          canEditCells={false}
+          numberType='bin' // | bin | % | # |
+          editType='input'// | dropDown | input |
+          dropDownChoices={null}
+        />
 
-      <MatrixDisplay
-        title="Supplier Related Environmental Indicators"
-        colNames={["ISO 14001","Use of Recycled Materials","Environmental Friendly Packaging"]}
-        rowNames={this.props.selectedAlternates}
-        matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
-        bgColor={'#7C7B50'}
+        <MatrixDisplay
+          title="Supplier Related Environmental Indicators"
+          colNames={["ISO 14001","Use of Recycled Materials","Environmental Friendly Packaging"]}
+          rowNames={this.props.selectedAlternates}
+          matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
+          bgColor={'#7C7B50'}
 
-        editCell={null}
-        canEditCells={false}
-        numberType='bin' // | bin | % | # |
-        editType='input'// | dropDown | input |
-        dropDownChoices={null}
-      />
+          editCell={null}
+          canEditCells={false}
+          numberType='bin' // | bin | % | # |
+          editType='input'// | dropDown | input |
+          dropDownChoices={null}
+        />
 
-      <div id='lowerButtons'>
-        <LinkContainer to='/Phases/PhaseOne/Output'>
-          <Button>Back</Button>
-        </LinkContainer>
-        <LinkContainer to='/Phases/PhaseTwo/Output'>
-          <Button>Continue</Button>
-        </LinkContainer>
-      </div>
-
-
-
+        <div id='lowerButtons'>
+          <LinkContainer to='/Phases/PhaseOne/Output'>
+            <Button>Back</Button>
+          </LinkContainer>
+          <LinkContainer to='/Phases/PhaseTwo/Output'>
+            <Button>Continue</Button>
+          </LinkContainer>
+        </div>
       </div>
     );
   }
@@ -173,6 +172,7 @@ function mapStateToProps(state){
     altModuleData: state.altModuleData,
     selectedAlternates: state.selectedAlternates,
     selectedSuppliers: state.selectedSuppliers,
+    thresholds: state.thresholds,
   };
 }
 
@@ -182,6 +182,7 @@ function matchDispatchToProps(dispatch){
     removeAlternate: removeAlternate,
     addSupplier: addSupplier,
     removeSupplier: removeSupplier,
+    editThreshold : editThreshold,
 
   },dispatch)
 }

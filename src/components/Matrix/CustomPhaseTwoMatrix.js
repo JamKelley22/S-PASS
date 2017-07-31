@@ -34,7 +34,8 @@ export default class CustomPhaseTwoMatrix extends React.Component{
     set[this.state.index] = parseFloat(num);
     this.setState({threshs: set},function() {
       //Where infor is to be sent out
-      //this.props.editCell(this.props.indexI,this.props.indexJ,this.state.number);
+    this.props.editCell(this.state.index, num);
+
     });
 
     this.refs.overlay0.hide();
@@ -158,11 +159,11 @@ export class DropDownChoose extends React.Component{
       return (
         <div>
           <div
-            onClick={() => this.props.handleDropdownSubmit(0)}>
+            onClick={() => this.props.handleDropdownSubmit(1)}>
             True
           </div>
           <div
-            onClick={() => this.props.handleDropdownSubmit(1)}>
+            onClick={() => this.props.handleDropdownSubmit(0)}>
             False
           </div>
         </div>
