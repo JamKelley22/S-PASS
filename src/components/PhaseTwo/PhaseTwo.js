@@ -14,6 +14,7 @@ class PhaseTwo extends React.Component{
       <UniqueDropdown
         title={'Title I'}
         dropDownChoices = {['A','B','C']}
+        dataValues = {['X', 'Y', 'Z']}
       />
 
       </div>

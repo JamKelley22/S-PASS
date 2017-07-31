@@ -27,6 +27,20 @@ export default class CustomPhaseTwoMatrix extends React.Component{
   };
   */
 
+  /*
+  <Cell
+    indexJ={indexJ}
+    indexI={indexI}
+    name={name}
+    canEditCells = {this.props.canEditCells}
+    editCell = {this.props.editCell}
+
+    numberType= {this.props.numberType}
+    editType= {this.props.editType}
+    dropDownChoices={this.props.dropDownChoices}
+    />
+    */
+
   render() {
     return(
 
@@ -36,11 +50,20 @@ export default class CustomPhaseTwoMatrix extends React.Component{
         <Table responsive striped bordered condensed hover id="myTable">
         <thead>
           <tr>
+            <td>Threshold Determination</td>
+            <td>Module Related Environmental Indicators</td>
+            <td>Supplier Related Environmental Indicators</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Haz</td>
+          </tr>
 
         </thead>
 
         <tbody>
-        
+
         </tbody>
         </Table>
       </div>
