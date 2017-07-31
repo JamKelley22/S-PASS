@@ -11,7 +11,7 @@ const SideBar = ({match}) =>(
 
   <div className='sidebar'>
     <div id='green'>
-      <h2 id='noBottomMargin'>S-PASS</h2>
+      <h3 id='center' id='brownText'><i id='brownText' className="fa fa-arrow-left"/>S-PASS</h3>
     </div>
 
     <div className='sideContent'>
