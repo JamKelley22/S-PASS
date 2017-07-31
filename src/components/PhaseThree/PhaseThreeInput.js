@@ -147,10 +147,13 @@ Estimate how well each product module satisfies each product function. Base this
           rowNames={this.props.modules}
           editCell={this.props.editCellMAMat}
           bgColor={'#9DC64D'}
-          canEditCells={false}
+          canEditCells={true}
           numberType='bin' // | bin | % | # |
           editType='dropDown'// | dropDown | input |
-          dropDownChoices={null}
+          dropDownChoices={[
+            ['0',''],
+            ['1','']
+          ]}
         />
 
         <div id='lowerButtons'>
