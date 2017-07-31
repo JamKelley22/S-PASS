@@ -11,26 +11,26 @@ const DashboardSideBar = ({match}) =>(
 
   <div className='sidebar'>
     <div id='brown'>
-      <h2 id='center' id='noBottomMargin'>Tools</h2>
+      <h3 id='center' id='brownText'><i id='brownText' className="fa fa-arrow-left"/>Projects</h3>
     </div>
 
     <div className='sideContent'>
 
 
         <div>
-          <div id='designTab'><h4><i id='brownText' className="fa fa-cube"/> Design</h4></div>
+          <div id='designTab'><h4><i id='whiteText' className="fa fa-cube"/> Design</h4></div>
         </div>
 
 
       <LinkContainer to={'/SPASS/About'}>
         <div>
-          <div id='spassTab'><h4><i id='brownText' className="fa fa-leaf"/> SPASS <i className="fa fa-angle-double-right"/></h4></div>
+          <div id='spassTab'><h4><i id='whiteText' className="fa fa-leaf"/> SPASS <i className="fa fa-angle-double-right"/></h4></div>
         </div>
       </LinkContainer>
 
 
         <div>
-          <div id='matTab'><h4><i id='brownText' className="fa fa-wrench"/> MAT</h4></div>
+          <div id='matTab'><h4><i id='whiteText' className="fa fa-wrench"/> MAT</h4></div>
         </div>
 
 

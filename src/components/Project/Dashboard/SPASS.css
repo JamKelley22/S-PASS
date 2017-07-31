@@ -2,11 +2,12 @@
   height: 5%;
   max-height: 5%;
   margin: 0px;
-  background-color:#54513D;
+  background-color:#d2d2b1;
 }
 .colorBarText p{
-  color: white;
+  color: rgba(0,0,0,0.7);
   padding: 10px;
+  font-weight: 700;
 }
 #content {
   padding-left: 20px;
@@ -34,4 +35,11 @@
   width: 100%;
   height: 20%;
   display: block;
+  font-size: 12;
+  overflow: hidden;
+}
+
+#bold {
+  font-weight: 700;
+  color: rgba(0,0,0,0.6);
 }

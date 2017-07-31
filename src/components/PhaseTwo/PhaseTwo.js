@@ -1,27 +1,13 @@
 import React from 'react';
-
-import {Tabs,Tab,Button} from 'react-bootstrap';
-import {LinkContainer} from 'react-router-bootstrap';
 import {connect} from "react-redux"; //Connects the store to application.
 import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup} from 'react-bootstrap';
 import UniqueDropdown from './UniqueDropdown.js';
 
 
 
-@connect((store) => {
-  return{
-  };
-})
-
-export default class PhaseTwo extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+class PhaseTwo extends React.Component{
 
   render(){
-
     return(
       <div>
 
@@ -29,6 +15,11 @@ export default class PhaseTwo extends React.Component{
         title={'Title I'}
         dropDownChoices = {['A','B','C']}
       />
+
+      <h1>Hi masashi</h1>
+      {this.props.supplierData[0].name}
+      {console.log(this.props.supplierData)}
+      {console.log(this.props.altModuleData)}
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseOne/Output'>
@@ -39,11 +30,18 @@ export default class PhaseTwo extends React.Component{
         </LinkContainer>
       </div>
 
+
+
       </div>
     );
   }
 }
 
-const tooltip = (
-  <Tooltip id="tooltip"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
-);
+function mapStateToProps(state){
+  return{
+    supplierData: state.supplierData,
+    altModuleData: state.altModuleData,
+  };
+}
+
+export default connect(mapStateToProps)(PhaseTwo);

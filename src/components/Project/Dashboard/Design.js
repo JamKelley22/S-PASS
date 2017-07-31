@@ -5,7 +5,7 @@ import './SPASS.css';
 
 const Design = ({match}) =>(
   <div>
-    <h1>Design</h1>
+    <h1>Design—Coming Soon!</h1>
   </div>
 )
 
