@@ -221,20 +221,9 @@ const Help = ({match}) =>(
     </Modal.Header>
 
     <Modal.Body>
-      <h4>Requirements Table</h4>
-        <p>Specify requirements for environmentally responsible drone design below. Requirements must be equal in number and relevant to functions.<OverlayTrigger overlay={
-          <Popover
-            id="popover-basic"
-            placement="right"
-            positionLeft={200}
-            positionTop={50}
-            title="Popover right"
-            >
-            This is a Popover
-          </Popover>
-        }><a href="#">popover</a></OverlayTrigger>
-           here
-        </p>
+    <h4>Requirements Table</h4>
+      <p>Specify the requirements for environmentally responsible design for your product below. Requirements must be equal in number and relevant to your functions.
+      </p>
     </Modal.Body>
   </div>
 )
