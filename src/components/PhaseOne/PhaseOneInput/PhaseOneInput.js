@@ -202,17 +202,20 @@ Estimate to what extent each product module satisfies each product function usin
               bgColor={'#9DC64D'}
               canEditCells={true}
               numberType='#' // | bin | % | # |
-              editType='input'// | dropDown | input |
-              dropDownChoices={null}
+              editType='dropDown'// | dropDown | input |
+              dropDownChoices={[
+                ['0',''],
+                ['1',''],
+                ['2',''],
+                ['3',''],
+                ['4',''],
+                ['5','']
+              ]}
             />
           </div>
 
 
-          <div id='sumDisplay'>
-            <SumDisplay
-              matrixContent={this.props.functionModuleMatrix._data}
-            />
-          </div>
+
         </div>
 
         <div>
@@ -229,10 +232,13 @@ Estimate to what extent each product module satisfies each product function usin
           rowNames={this.props.modules}
           editCell={this.props.editCellMAMat}
           bgColor={'#9DC64D'}
-          canEditCells={false}
+          canEditCells={true}
           numberType='bin' // | bin | % | # |
           editType='dropDown'// | dropDown | input |
-          dropDownChoices={null}
+          dropDownChoices={[
+            ['0','not used'],
+            ['1','used']
+          ]}
         />
 
         <div id='lowerButtons'>
