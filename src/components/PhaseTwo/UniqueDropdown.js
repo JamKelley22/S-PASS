@@ -29,6 +29,7 @@ export default class DropDownChoose extends React.Component{
       this.setState({
         listValues: newArr
       });
+      this.props.addData(value);
     }
     //call some action
   }

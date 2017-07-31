@@ -3,9 +3,28 @@ import {connect} from "react-redux"; //Connects the store to application.
 import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup, Button} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import UniqueDropdown from './UniqueDropdown.js';
+import {addAlternate,removeAlternate} from '../../actions/selectedAlternatesActions.js';
+import {bindActionCreators} from 'redux';
 import CustomPhaseTwoMatrix from '../Matrix/CustomPhaseTwoMatrix.js';
 
+
 class PhaseTwo extends React.Component{
+  constructor(props) {
+    super(props);
+    this.math = require('mathjs');
+    this.makeList = this.makeList;
+  }
+
+  makeList(data){
+      let dataList = [];
+      for(var key in data){
+        //console.log(data[key].name);
+        dataList.push(data[key].name);
+      }
+      //console.log(dataList);
+      return dataList;
+  }
+
 
   render(){
     let ModuleThresh = {
@@ -24,9 +43,10 @@ class PhaseTwo extends React.Component{
       <div>
 
       <UniqueDropdown
-        title={'Title I'}
-        dropDownChoices = {['A','B','C']}
-        dataValues = {['X', 'Y', 'Z']}
+        title={'Alternate Modules'}
+        dropDownChoices = {this.makeList(this.props.altModuleData)}
+        dataValues = {this.props.selectedAlternates}
+        addData = {this.props.addAlternate}
       />
 
       <CustomPhaseTwoMatrix
@@ -67,7 +87,17 @@ function mapStateToProps(state){
   return{
     supplierData: state.supplierData,
     altModuleData: state.altModuleData,
+    selectedAlternates: state.selectedAlternates,
   };
 }
 
-export default connect(mapStateToProps)(PhaseTwo);
+function matchDispatchToProps(dispatch){
+  return bindActionCreators({
+    addAlternate: addAlternate,
+    removeAlternate: removeAlternate,
+
+  },dispatch)
+}
+
+
+export default connect(mapStateToProps,matchDispatchToProps)(PhaseTwo);
