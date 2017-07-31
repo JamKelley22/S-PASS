@@ -137,6 +137,8 @@ export default class PhaseOneInput extends React.Component{
         <p>
         <b>Below: </b>
         Using the given interpretation of contribution probabilities, estimate to what extent each product function contributes to achieve each environmental sustainability requirement. Note that all empty cell values should have values, and the sum of all columns for each row should be 100%.
+        <Image src={require('../../../Images/interpretation_of_contribution_probabilities.png')} alt='Quad-copter'/>
+
         </p>
 
         <div className='pull-right'>
