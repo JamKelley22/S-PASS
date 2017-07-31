@@ -110,7 +110,7 @@ export default class PhaseOneInput extends React.Component{
               title = "Supplier vs. Modules"
               matrixContent={this.props.functionModuleMatrix._data}
               colNames={this.props.selectedAlternates}
-              rowNames={this.props.supplierList}
+              rowNames={this.props.selectedSuppliers}
               editCell={this.props.editCellFMMat}
               bgColor={'#9DC64D'}
               canEditCells={true}

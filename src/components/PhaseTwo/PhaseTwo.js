@@ -4,8 +4,11 @@ import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup
 import {LinkContainer} from 'react-router-bootstrap';
 import UniqueDropdown from './UniqueDropdown.js';
 import {addAlternate,removeAlternate} from '../../actions/selectedAlternatesActions.js';
+import {addSupplier,removeSupplier} from '../../actions/supplierListActions.js';
 import {bindActionCreators} from 'redux';
 import CustomPhaseTwoMatrix from '../Matrix/CustomPhaseTwoMatrix.js';
+import MatrixDisplay from '../Matrix/Matrix.js';
+import '../Matrix/Matrix.css';
 
 
 class PhaseTwo extends React.Component{
@@ -13,6 +16,8 @@ class PhaseTwo extends React.Component{
     super(props);
     this.math = require('mathjs');
     this.makeList = this.makeList;
+    this.makeSupplierMatrix = this.makeSupplierMatrix;
+    this.makeAlternateMatrix = this.makeAlternateMatrix;
   }
 
   makeList(data){
@@ -20,9 +25,53 @@ class PhaseTwo extends React.Component{
       for(var key in data){
         //console.log(data[key].name);
         dataList.push(data[key].name);
+
       }
       //console.log(dataList);
       return dataList;
+  }
+
+  makeSupplierMatrix(selectedSuppliers,supplierData){
+    let supplierMatrix = [];
+    for(var supplier in selectedSuppliers){
+      for(var key in supplierData){
+        //console.log(supplier);
+        if(selectedSuppliers[supplier]==supplierData[key].name){
+          var temp = supplierData[key].packageRecycling*100;
+          let tempString = temp.toString() + "%";
+          supplierMatrix.push([
+            (supplierData[key].ISO? "Yes":"No"),
+            supplierData[key].recycledMaterials,
+            tempString
+          ]);
+        }
+      }
+    }
+    console.log("Supplier Matrix");
+    console.log(supplierMatrix);
+    return(supplierMatrix);
+  }
+
+  makeAlternateMatrix(selectedAlternates,alternateData){
+    let alternateMatrix = [];
+    for(var alternate in selectedAlternates){
+      for(var key in alternateData){
+        //console.log(supplier);
+        if(selectedAlternates[alternate]==alternateData[key].name){
+          var temp = alternateData[key].recyclingRate*100;
+          console.log(temp);
+          let tempString = temp.toString() + "%";
+          alternateMatrix.push([
+            alternateData[key].RoHS,
+            tempString,
+            alternateData[key].renewableMaterials
+          ]);
+        }
+      }
+    }
+    console.log("alternateMatrix");
+    console.log(alternateMatrix);
+    return(alternateMatrix);
   }
 
 
@@ -37,21 +86,56 @@ class PhaseTwo extends React.Component{
       recycle: .5,
       pack: 0
     }
-    console.log('modThresh');
-    console.log(ModuleThresh);
+
     return(
       <div>
-
       <UniqueDropdown
         title={'Alternate Modules'}
         dropDownChoices = {this.makeList(this.props.altModuleData)}
         dataValues = {this.props.selectedAlternates}
         addData = {this.props.addAlternate}
+        removeData = {this.props.removeAlternate}
+      />
+
+      <UniqueDropdown
+        title={'Alternate Suppliers'}
+        dropDownChoices = {this.makeList(this.props.supplierData)}
+        dataValues = {this.props.selectedSuppliers}
+        addData = {this.props.addSupplier}
+        removeData = {this.props.removeSupplier}
       />
 
       <CustomPhaseTwoMatrix
         ModuleThresh = {ModuleThresh}
         SupplierThresh = {SupplierThresh}
+      />
+
+      <MatrixDisplay
+        title="Supplier Related Environmental Indicators"
+        colNames={["Possibility of RoHS","Recycling Rate","Satisfaction Level of Using Renewable Materials"]}
+        rowNames={this.props.selectedSuppliers}
+        matrixContent={this.makeSupplierMatrix(this.props.selectedSuppliers,this.props.supplierData)}
+        bgColor={'#7C7B50'}
+
+        editCell={null}
+        canEditCells={false}
+        numberType='bin' // | bin | % | # |
+        editType='input'// | dropDown | input |
+        dropDownChoices={null}
+      />
+
+      <MatrixDisplay
+        title="Supplier Related Environmental Indicators"
+        colNames={["ISO 14001","Use of Recycled Materials","Environmental Friendly Packaging"]}
+        rowNames={this.props.selectedAlternates}
+        matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
+        bgColor={'#7C7B50'}
+
+        editCell={null}
+        canEditCells={false}
+        numberType='bin' // | bin | % | # |
+        editType='input'// | dropDown | input |
+        dropDownChoices={null}
       />
 
       <div id='lowerButtons'>
@@ -75,6 +159,7 @@ function mapStateToProps(state){
     supplierData: state.supplierData,
     altModuleData: state.altModuleData,
     selectedAlternates: state.selectedAlternates,
+    selectedSuppliers: state.selectedSuppliers,
   };
 }
 
@@ -82,6 +167,8 @@ function matchDispatchToProps(dispatch){
   return bindActionCreators({
     addAlternate: addAlternate,
     removeAlternate: removeAlternate,
+    addSupplier: addSupplier,
+    removeSupplier: removeSupplier,
 
   },dispatch)
 }

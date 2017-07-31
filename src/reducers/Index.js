@@ -12,7 +12,7 @@ import moduleArchitectureMatrix from "./matrices/moduleArchitectureMatrix";
 import altModuleData from "./data/altModuleData";
 import supplierData from "./data/supplierData";
 import selectedAlternates from "./lists/selectedAlternates";
-import supplierList from "./lists/supplierList";
+import selectedSuppliers from "./lists/selectedSuppliers";
 import newArchitectureList from "./lists/newArchitectureList";
 //---------------------------------------------
 
@@ -28,6 +28,6 @@ export default combineReducers({
   supplierData,
   altModuleData,
   selectedAlternates,
-  supplierList,
+  selectedSuppliers,
   newArchitectureList,
 })

@@ -24,18 +24,20 @@ export default class DropDownChoose extends React.Component{
       }
     });
     if(unique) {
+      this.props.addData(value);
       var newArr = this.state.listValues;
       newArr.push(value);
       this.setState({
         listValues: newArr
       });
-      this.props.addData(value);
+
     }
     //call some action
   }
 
   handleRemove(index) {
     var newArr = this.state.listValues;
+    this.props.removeData(index);
     newArr.splice(index, 1);
     this.setState({
       listValues: newArr

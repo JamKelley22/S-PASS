@@ -53,7 +53,7 @@ class PhaseThreeIn extends React.Component{
 
         selectedAlternates={this.props.selectedAlternates}
         functions={this.props.functions}
-        supplierList={this.props.supplierList}
+        selectedSuppliers={this.props.selectedSuppliers}
         newArchitectureList = {this.props.newArchitectureList}
         />
       </div>
@@ -73,7 +73,7 @@ function mapStateToProps(state){
 
     selectedAlternates: state.selectedAlternates,
     functions: state.functionList,
-    supplierList:state.supplierList,
+    selectedSuppliers:state.selectedSuppliers,
     newArchitectureList: state.newArchitectureList,
   };
 }

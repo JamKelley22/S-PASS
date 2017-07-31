@@ -3,11 +3,7 @@ const initialState=[]
 export default function(state = initialState, action){
       switch(action.type){
         case "ADD_ALTERNATE":{
-          if(state.length==1){
-            console.log("HERHERE");
-            console.log(state);
-            return state;
-          }
+
           console.log("Adding Alternate");
           return [...state,action.payload]
           break;
