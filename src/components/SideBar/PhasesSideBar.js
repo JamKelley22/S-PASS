@@ -37,7 +37,11 @@ export default class ProjectSideBar extends React.Component{
 
       <div className='sidebar'>
         <div id='green'>
-            <h3 id='center' id='brownText'><i id='brownText' className="fa fa-arrow-left"/>Phases</h3>
+            <h3 id='center' id='brownText'>
+            <Link to={'/SPASS/About'}>
+              <i id='brownText' className="fa fa-arrow-left"/>
+            </Link>
+            Phases</h3>
         </div>
 
         <div className='sideContent'>
