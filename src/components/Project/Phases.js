@@ -27,7 +27,7 @@ const Phases = ({match}) =>(
   <div>
     <div className='colorBar'>
       <div className='colorBarText'>
-        <p>Company X -- Drone Design</p>
+        <p>Company X—Drone Design</p>
       </div>
     </div>
 
