@@ -12,10 +12,10 @@ class DashSPASS extends React.Component{
     return(
       <div id='SPASS'>
 
-        <h3><i className="fa fa-leaf"/> S-PASS</h3>
+        <h3><i className="fa fa-leaf"/>S-PASS</h3>
 
         <div id='phase'>
-          <p>Phase 1: Requirements</p>
+          <p id='bold'>Phase 1: Requirements</p>
           <div id='phaseContent'>
             <div id='phaseText'>
             Requirements: {this.props.requirements.length}<br/>
@@ -27,7 +27,7 @@ class DashSPASS extends React.Component{
         </div>
 
         <div id='phase'>
-          <p>Phase 2: New Modules</p>
+          <p id='bold'>Phase 2: New Modules</p>
           <div id='phaseContent'>
             <i className="fa fa-bar-chart" id='phaseGlyph'/>
           </div>
@@ -35,7 +35,7 @@ class DashSPASS extends React.Component{
         </div>
 
         <div id='phase'>
-          <p>Phase 3: Selection</p>
+          <p id='bold'>Phase 3: Selection</p>
           <div id='phaseContent'>
             <i className="fa fa-pie-chart" id='phaseGlyph'/>
           </div>

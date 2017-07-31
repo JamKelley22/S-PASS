@@ -5,7 +5,7 @@ import './SPASS.css';
 
 const MAT = ({match}) =>(
   <div>
-    <h1>MAT</h1>
+    <h1>MAT—Coming soon!</h1>
   </div>
 )
 

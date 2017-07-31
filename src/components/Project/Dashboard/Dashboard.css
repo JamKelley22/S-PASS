@@ -3,6 +3,7 @@
   max-height: 5%;
   margin: 0px;
   background-color:#54513D;
+  /*#f1f1e7*/
 }
 .colorBarText p{
   color: white;
@@ -17,11 +18,11 @@
 }
 #dash {
   margin: 0px;
-  color: #54513D;
+  color: rgba(0,0,0, 0.7);
   padding-left: 10px;
 }
 #SPASS {
-  background-color: #E4E9C5;
+  background-color: #f1f1e7;
   max-height: 33%;
   padding-left: 10px;
   overflow-y:hidden;
@@ -74,6 +75,11 @@ p {
 }
 #phaseText {
   font-size: 2vh;
+  font-family: "museo-sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0,0,0,0.5);
+  padding: 10px;
 }
 #fRight {
   float: right;
