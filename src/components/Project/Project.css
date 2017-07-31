@@ -28,14 +28,14 @@
 }
 .fa-folder {
   position: relative;
-  top: 30px;
+  top: 100px;
   z-index: 0;
   transition: top .2s;
   transition: color .1s;
 }
 
 .fa-folder:hover {
-  top: 20px;
+  top: 70px;
 }
 .projectPanel {
   position: relative;

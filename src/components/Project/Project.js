@@ -1,8 +1,6 @@
 import React from 'react';
 import './Project.css'
 
-import ProjectSideBar from '../SideBar/ProjectSideBar.js';
-
 import Design from './Dashboard/Design.js';
 import SPASS from './Dashboard/SPASS.js';
 import MAT from './Dashboard/MAT.js';

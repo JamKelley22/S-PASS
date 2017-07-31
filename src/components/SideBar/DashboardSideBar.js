@@ -11,7 +11,11 @@ const DashboardSideBar = ({match}) =>(
 
   <div className='sidebar'>
     <div id='brown'>
-      <h3 id='center' id='brownText'><i id='brownText' className="fa fa-arrow-left"/>Projects</h3>
+      <h3 id='center' id='brownText'>
+      <Link to={'/Project'}>
+        <i id='brownText' className="fa fa-arrow-left"/>
+      </Link>
+      Projects</h3>
     </div>
 
     <div className='sideContent'>

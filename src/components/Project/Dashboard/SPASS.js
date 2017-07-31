@@ -19,7 +19,14 @@ const SPASS = ({match}) =>(
       </div>
     </div>
 
-    <Breadcrumbs/>
+    <Breadcrumbs
+      crumbs={[
+        ['Home','/'],
+        ['Projects','/Project'],
+        ['Dashboard','/Dashboard'],
+        ['S-PASS', '/SPASS/About']
+      ]}
+    />
     <SideBar match={match}/>
 
 
