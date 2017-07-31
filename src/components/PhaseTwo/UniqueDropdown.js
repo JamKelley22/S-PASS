@@ -6,7 +6,7 @@ export default class DropDownChoose extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      listValues: ['Z','X'],
+      listValues: this.props.dataValues,
       dropdownOpen: false
     };
     this.getChoices = this.getChoices.bind(this);
