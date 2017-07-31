@@ -75,6 +75,12 @@ export default class PhaseOneInput extends React.Component{
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
           <i className="fa fa-search" id='pad'/>
         </div>
+<p>
+<b>Below: </b>Use satisfaction level 1(poor)-5(excellent). note that at least one(current or alternative) module for each module type of the defined number of module types should b eincluded in the first row.
+</p>
+<p>
+Estimate how well each product module satisfies each product function. Base this on your own assumptions and the information provided. The functional satisfaction levels of the existing modules should be the same as those that you input for Phase 1. Any and all empty remaining cells should be “0”.
+</p>
 
         <div id='matrixRow'>
           <div id='matrixDisplay'>
@@ -106,6 +112,11 @@ export default class PhaseOneInput extends React.Component{
 
         </div>
 
+<p>
+<b>Below: </b>Identify each module’s supplier. Use 1 (related), 0 (not related). All remaining empty cells should be “0”.
+</p>
+
+
         <div id='matrixRow'>
           <div id='matrixDisplay'>
             <MatrixDisplay
@@ -123,6 +134,10 @@ export default class PhaseOneInput extends React.Component{
           </div>
 
         </div>
+
+        <p>
+        <b>Below: </b>Define each architecture with modules. Related or not related. Note that all required component types for each drone type, described in Table 1, should be configured in its product architecture through the identified modules. Define three product architectures by combining relevant modules. Each product architecture should represent a product and have different combination of the considered modules.
+        </p>
 
 
         <MatrixDisplay
