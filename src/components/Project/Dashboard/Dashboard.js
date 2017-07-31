@@ -18,7 +18,11 @@ const Dashboard = ({match}) =>(
   <div>
     <div className='colorBar'>
       <div className='colorBarText'>
+<<<<<<< HEAD
         <p style={{paddingTop: '0px', paddingBottom: '0px'}}>Company X—Drone Design</p>
+=======
+        <p>Company X—Drone Design</p>
+>>>>>>> NatalieBranch2
       </div>
     </div>
 
@@ -28,9 +32,9 @@ const Dashboard = ({match}) =>(
 
     <div id='content'>
       <div id='Dashboard'>
-        <h2 id='dash'>Dashboard</h2>
+        <h2 id='dash'>Project Dashboard</h2>
         <div id='Design'>
-          <h3><i className="fa fa-cube"/> Design</h3>
+          <h3><i className="fa fa-cube"/>Design</h3>
 
           <div id='Product1'>
             <p id='fLeft'>Product 1: Quad-copter</p>
