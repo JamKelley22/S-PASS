@@ -16,11 +16,6 @@ class PhaseTwo extends React.Component{
         dropDownChoices = {['A','B','C']}
       />
 
-
-
-
-
-
       </div>
     );
   }
