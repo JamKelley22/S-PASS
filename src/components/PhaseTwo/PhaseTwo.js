@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux"; //Connects the store to application.
-import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup,LinkContainer} from 'react-bootstrap';
+import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup, Button} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 import UniqueDropdown from './UniqueDropdown.js';
 
 
@@ -16,10 +17,6 @@ class PhaseTwo extends React.Component{
         dropDownChoices = {['A','B','C']}
       />
 
-      <h1>Hi masashi</h1>
-      {this.props.supplierData[0].name}
-      {console.log(this.props.supplierData)}
-      {console.log(this.props.altModuleData)}
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseOne/Output'>

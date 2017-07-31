@@ -3,7 +3,7 @@ import React from 'react';
 import {Tabs,Tab,Button} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import {connect} from "react-redux"; //Connects the store to application.
-import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup,LinkContainer} from 'react-bootstrap';
+import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup} from 'react-bootstrap';
 
 
 
