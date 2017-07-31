@@ -89,15 +89,20 @@ export default class ListStuff extends React.Component{
     if(this.state.nameFormVisible == false) {
       return(
         <ListGroupItem id='group'>
-          <i className="fa fa-plus-circle" onClick={this.showNameForm.bind(this)}
-          id='plusSign'></i>Add a {this.props.title.substring(0,this.props.title.length-1)}
+          <div id='clicker' onClick={this.showNameForm.bind(this)}>
+            <i className="fa fa-plus-circle"
+            id='plusSign'></i>
+            Add a {this.props.title.substring(0,this.props.title.length-1)}
+          </div>
         </ListGroupItem>
       );
     }
     return(
       <ListGroupItem id='group'>
-        <i className="fa fa-minus-circle" onClick={this.hideNameForm.bind(this)}
-        id='minusSign'></i>Cancel
+        <div id='clicker' onClick={this.hideNameForm.bind(this)} >
+          <i className="fa fa-minus-circle" onClick={this.hideNameForm.bind(this)}
+          id='minusSign'></i>Cancel
+        </div>
         <NameForm functions = {this.props.list} submit={this.props.addList}
           addMatRow={this.props.addMatRow} addMatCol={this.props.addMatCol}
         />

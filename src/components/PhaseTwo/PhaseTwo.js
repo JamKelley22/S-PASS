@@ -4,6 +4,7 @@ import {Tabs,Tab,Button} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import {connect} from "react-redux"; //Connects the store to application.
 import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup} from 'react-bootstrap';
+import UniqueDropdown from './UniqueDropdown.js';
 
 
 
@@ -24,6 +25,10 @@ export default class PhaseTwo extends React.Component{
     return(
       <div>
 
+      <UniqueDropdown
+        title={'Title I'}
+        dropDownChoices = {['A','B','C']}
+      />
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseOne/Output'>

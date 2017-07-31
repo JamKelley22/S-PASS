@@ -8,7 +8,6 @@ import './Breadcrumbs.css';
 export default class Breadcrumbs extends React.Component{
   constructor(props) {
     super(props);
-    this.getCrumbs = this.getCrumbs.bind(this);
   }
 
   render() {
