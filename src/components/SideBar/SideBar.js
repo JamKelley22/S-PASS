@@ -28,10 +28,7 @@ const SideBar = ({match}) =>(
         <div id='tab'><i className="fa fa-calendar"/> Phases</div>
       </LinkContainer>
 
-      <LinkContainer to={'/SPASS/Files'}>
-        <div id='tab'><i className="fa fa-file-text"/> Files</div>
-      </LinkContainer>
-
+      <div id='tab'><div id='noClick'><i className="fa fa-file-text"/> Files</div></div>
 
     </div>
   </div>

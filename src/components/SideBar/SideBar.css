@@ -173,3 +173,6 @@ h4 {
 .fa-angle-double-right:hover {
   left: 20px;
 }
+#noClick {
+  cursor: not-allowed !important;
+}

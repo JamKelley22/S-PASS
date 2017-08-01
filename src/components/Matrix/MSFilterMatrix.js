@@ -83,7 +83,9 @@ export default class MSFilterMatrix extends React.Component{
     return(
       <div>
         <Table responsive striped bordered condensed hover id="myTable">
-          <thead><tr><td>{this.props.title}</td><td>{this.props.title} Filtering Result</td></tr></thead>
+          <thead><tr id='msTopRow'>
+          <td>{this.props.title}</td><td>{this.props.title} Filtering Result</td>
+          </tr></thead>
           {this.getCols()}
         </Table>
       </div>

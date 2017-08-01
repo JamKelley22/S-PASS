@@ -65,3 +65,6 @@ max-height: 45px;
   vertical-align: middle;
   border: 1px solid black;
 }
+#msTopRow {
+  height: 100px;
+}
