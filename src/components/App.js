@@ -29,7 +29,7 @@ const App = () => (
         <Route path="/Project" component={Project}/>
         <Route path="/View" component={View}/>
         <Route path="/Login" component={Login}/>
-        <Route path="/SPASS" component={SPASS}/>
+        <Route path="/SPASS/About" component={SPASS}/>
         <Route path="/Dashboard" component={Dashboard}/>
 
         <Route path="/Phases" component={Phases}/>

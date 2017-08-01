@@ -6,6 +6,7 @@ import {connect} from "react-redux"; //Connects the store to application.
 import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup} from 'react-bootstrap';
 import MSFilterMatrix from '../Matrix/MSFilterMatrix.js';
 
+import './PhaseTwoOut.css';
 
 @connect((store) => {
   return{
@@ -24,16 +25,21 @@ export default class PhaseTwoOut extends React.Component{
     return(
       <div>
 
-      <MSFilterMatrix
-        title = {'Alternate Module'}
-        names = {['A1', 'A2', 'A3']}
-        values = {[false,true,true]}
-      />
-      <MSFilterMatrix
-        title = {'Supplier'}
-        names = {['S1', 'S2', 'S3']}
-        values = {[true,false,false]}
-      />
+      <div id='msMatrix'>
+        <MSFilterMatrix
+          title = {'Alternate Module'}
+          names = {['A1', 'A2', 'A3']}
+          values = {[false,true,true]}
+        />
+      </div>
+
+      <div id='msMatrix'>
+        <MSFilterMatrix
+          title = {'Supplier'}
+          names = {['S1', 'S2', 'S3']}
+          values = {[true,false,false]}
+        />
+      </div>
 
       <h1>New Architectures & Suppliers Output</h1>
 

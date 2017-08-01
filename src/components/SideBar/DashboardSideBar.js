@@ -10,7 +10,7 @@ const DashboardSideBar = ({match}) =>(
 
 
   <div className='sidebar'>
-    <div id='brown'>
+    <div id='greenTwo'>
       <h3 id='center' id='brownText'>
       <Link to={'/Project'}>
         <i id='brownText' className="fa fa-arrow-left"/>
@@ -20,27 +20,26 @@ const DashboardSideBar = ({match}) =>(
 
     <div className='sideContent'>
 
-
         <div>
-          <div id='designTab'><h4><i id='whiteText' className="fa fa-cube"/> Design</h4></div>
+          <div id='tab'><i id='whiteText' className="fa fa-cube"/> Design</div>
         </div>
 
 
       <LinkContainer to={'/SPASS/About'}>
         <div>
-          <div id='spassTab'><h4><i id='whiteText' className="fa fa-leaf"/> SPASS <i className="fa fa-angle-double-right"/></h4></div>
+          <div id='tab'><i id='whiteText' className="fa fa-leaf"/> SPASS <i className="fa fa-angle-double-right"/></div>
         </div>
       </LinkContainer>
 
 
         <div>
-          <div id='matTab'><h4><i id='whiteText' className="fa fa-wrench"/> MAT</h4></div>
+          <div id='tab'><i id='whiteText' className="fa fa-wrench"/> MAT</div>
         </div>
 
 
       <LinkContainer to={'/Dashboard/Settings'}>
         <div>
-          <div id='settingsTab'><h4><i className="fa fa-list"/> Settings</h4></div>
+          <div id='tab'><i id='whiteText' className="fa fa-list"/> Settings</div>
         </div>
       </LinkContainer>
     </div>
