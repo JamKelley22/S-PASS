@@ -55,6 +55,8 @@ class PhaseThreeIn extends React.Component{
         functions={this.props.functions}
         selectedSuppliers={this.props.selectedSuppliers}
         newArchitectureList = {this.props.newArchitectureList}
+
+        acceptedAlternates = {this.props.acceptedAlternates}
         />
       </div>
     );
@@ -75,6 +77,7 @@ function mapStateToProps(state){
     functions: state.functionList,
     selectedSuppliers:state.selectedSuppliers,
     newArchitectureList: state.newArchitectureList,
+    acceptedAlternates: state.acceptedAlternates,
   };
 }
 

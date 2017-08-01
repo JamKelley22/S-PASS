@@ -87,7 +87,7 @@ Estimate how well each product module satisfies each product function. Base this
             <MatrixDisplay
               title = "Functions vs.Modules"
               matrixContent={this.props.requirementFunctionMatrix._data}
-              colNames={this.props.selectedAlternates}
+              colNames={this.props.acceptedAlternates}
               rowNames={this.props.requirements}
               editCell={this.props.editCellRFMat}
               bgColor={'#9DC64D'}

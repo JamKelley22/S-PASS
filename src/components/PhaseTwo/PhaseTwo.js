@@ -10,6 +10,8 @@ import CustomPhaseTwoMatrix from '../Matrix/CustomPhaseTwoMatrix.js';
 import MatrixDisplay from '../Matrix/Matrix.js';
 import '../Matrix/Matrix.css';
 import {editThreshold} from '../../actions/thresholdsActions.js';
+import {thresholdCheck,findAlt,altRemoveIndex,altAddIndex} from '../../js/thresholdCheck.js';
+import {addAcceptedAlternate,removeAcceptedAlternate} from '../../actions/acceptedAlternatesActions.js';
 
 
 class PhaseTwo extends React.Component{
@@ -19,6 +21,9 @@ class PhaseTwo extends React.Component{
     this.makeList = this.makeList;
     this.makeSupplierMatrix = this.makeSupplierMatrix;
     this.makeAlternateMatrix = this.makeAlternateMatrix;
+    this.findAlt = findAlt.bind(this);
+    this.altRemoveIndex = altRemoveIndex.bind(this);
+    this.altAddIndex = altAddIndex.bind(this);
   }
 
   makeList(data){
@@ -82,6 +87,7 @@ class PhaseTwo extends React.Component{
       recycle: this.props.thresholds[0].recyclability,
       renew: this.props.thresholds[0].renewableMaterialUse
     }
+    let ModuleThreshArr = [ModuleThresh.hazard,ModuleThresh.recycle,ModuleThresh.renew]; //used for threshold check
     let SupplierThresh = {
       iso: (this.props.thresholds[1].ISO? 1: 0),
       recycle: this.props.thresholds[1].recycledMaterials,
@@ -92,13 +98,19 @@ class PhaseTwo extends React.Component{
       <div>
 
       <h1>New Architectures & Suppliers Input</h1>
-
+      {console.log(ModuleThreshArr)}
       <UniqueDropdown
         title={'Alternate Modules'}
         dropDownChoices = {this.makeList(this.props.altModuleData)}
         dataValues = {this.props.selectedAlternates}
         addData = {this.props.addAlternate}
         removeData = {this.props.removeAlternate}
+        data = {this.props.altModuleData} //Used for threshold check.
+        threshold = {ModuleThreshArr} //Used for threshod check.
+        findData = {this.findAlt}
+        addAcceptedData = {this.props.addAcceptedAlternate}
+        acceptedData = {this.props.acceptedAlternates}
+        removeAcceptedData = {this.props.removeAcceptedAlternate}
       />
 
       <UniqueDropdown
@@ -126,6 +138,13 @@ class PhaseTwo extends React.Component{
           ['100 Certain to contribute']
         ]}
         editCell = {this.props.editThreshold}
+        findRemoveIndex = {this.altRemoveIndex}
+        findAddIndex = {this.altAddIndex}
+        acceptedData = {this.props.acceptedAlternates}
+        data = {this.props.altModuleData}
+        selectedAlternates = {this.props.selectedAlternates}
+        addAcceptedAlternate = {this.props.addAcceptedAlternate}
+        removeAcceptedAlternate = {this.props.removeAcceptedAlternate}
       />
 
       <MatrixDisplay
@@ -179,6 +198,7 @@ function mapStateToProps(state){
     selectedAlternates: state.selectedAlternates,
     selectedSuppliers: state.selectedSuppliers,
     thresholds: state.thresholds,
+    acceptedAlternates: state.acceptedAlternates,
   };
 }
 
@@ -189,7 +209,8 @@ function matchDispatchToProps(dispatch){
     addSupplier: addSupplier,
     removeSupplier: removeSupplier,
     editThreshold : editThreshold,
-
+    addAcceptedAlternate: addAcceptedAlternate,
+    removeAcceptedAlternate: removeAcceptedAlternate,
   },dispatch)
 }
 

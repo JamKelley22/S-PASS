@@ -30,13 +30,36 @@ export default class CustomPhaseTwoMatrix extends React.Component{
   }
 
   handleDropdownSubmit(num) {
-    const set = this.state.threshs;
+    let set = this.state.threshs;
+
     set[this.state.index] = parseFloat(num);
     this.setState({threshs: set},function() {
       //Where infor is to be sent out
-    this.props.editCell(this.state.index, num);
-
+      this.props.editCell(this.state.index, num);
     });
+    let removeAltIndex=[];
+    let addAltIndex=[];
+    if(this.props.acceptedData.length!=0){
+      removeAltIndex = this.props.findRemoveIndex(this.props.data,this.state.threshs,this.props.acceptedData);//(this.props.data,this.state.threshs,this.props.acceptedData));
+      console.log(removeAltIndex);
+    }
+
+    if(this.props.selectedAlternates){
+      addAltIndex = this.props.findAddIndex(this.props.data,this.state.threshs,this.props.selectedAlternates,this.props.acceptedData);
+      console.log("==Add index start===");
+      console.log(addAltIndex);
+      console.log("==Add index end===");
+    }
+    let i=0;
+    for(i=0;i<removeAltIndex.length;i++){
+      console.log("AEHAEJFNLNFKAJSDNASJDFSDF")
+      console.log(removeAltIndex[i]);
+      this.props.removeAcceptedAlternate(removeAltIndex[i]);
+    }
+    for(i=0; i<addAltIndex.length;i++){
+      this.props.addAcceptedAlternate(addAltIndex[i]);
+    }
+
 
     this.refs.overlay0.hide();
     this.refs.overlay1.hide();

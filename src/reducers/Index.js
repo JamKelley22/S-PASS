@@ -15,6 +15,8 @@ import selectedAlternates from "./lists/selectedAlternates";
 import selectedSuppliers from "./lists/selectedSuppliers";
 import newArchitectureList from "./lists/newArchitectureList";
 import thresholds from "./data/thresholds";
+import acceptedAlternates from "./lists/acceptedAlternates";
+import functionAltModuleMatrix from "./matrices/functionAltModuleMatrix";
 //---------------------------------------------
 
 export default combineReducers({
@@ -32,4 +34,6 @@ export default combineReducers({
   selectedSuppliers,
   newArchitectureList,
   thresholds,
+  acceptedAlternates,
+  functionAltModuleMatrix,
 })
