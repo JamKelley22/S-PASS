@@ -11,6 +11,12 @@ export default function(state = initialState, action){
   switch(action.type){
 
     case "ADD_ROW_FUN_MOD":
+    if(state._size.length==1||isNaN(state._size[1])){
+      let newMat = math.matrix();
+      newMat.resize([1,0]);
+      console.log(newMat);
+      return newMat;
+    }
     var newMat = math.matrix(state._data);
     newMat.resize([(state._size[0]+1),state._size[1]]);
     return newMat;
@@ -39,6 +45,11 @@ export default function(state = initialState, action){
 
     case "ADD_COL_FUN_MOD":{
       var newMat = math.matrix(state._data);
+      if(newMat._size.length==1||isNaN(newMat._size[1])){
+        newMat.resize([0,1]);
+        console.log(newMat);
+        return newMat;
+      }
       newMat.resize([(state._size[0]),state._size[1]+1]);
       return newMat;
       break;

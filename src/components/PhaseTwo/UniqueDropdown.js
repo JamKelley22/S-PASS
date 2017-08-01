@@ -1,6 +1,7 @@
 import React from 'react';
 import './UniqueDropdown.css'
 import {Button,ListGroup,ListGroupItem} from 'react-bootstrap'
+import {thresholdCheck,unique} from '../../js/thresholdCheck.js'
 
 export default class DropDownChoose extends React.Component{
   constructor(props) {
@@ -9,6 +10,8 @@ export default class DropDownChoose extends React.Component{
       listValues: this.props.dataValues,
       dropdownOpen: false
     };
+    this.thresholdCheck = thresholdCheck.bind(this);//threshold check
+    //this.unique = unique.bind(this);//threshold check
     this.getChoices = this.getChoices.bind(this);
     this.getList = this.getList.bind(this);
     this.handleDropdownSubmit = this.handleDropdownSubmit.bind(this);
@@ -24,6 +27,21 @@ export default class DropDownChoose extends React.Component{
       }
     });
     if(unique) {
+      console.log("DATA=======================================================");
+      //console.log(this.props.data);
+      //console.log(this.props.findData(this.props.data,value));
+      console.log(this.thresholdCheck(this.props.findData(this.props.data,value),
+        this.props.threshold));
+      console.log("==========================================================");
+      if(this.thresholdCheck(this.props.findData(this.props.data,value),
+        this.props.threshold)){
+          console.log("Hello")
+          this.props.addAcceptedData(value);
+          //Add collumn here for fun alt mod matrix!!!!
+      }
+      else{
+        console.log("did not work");
+      }
       this.props.addData(value);
       var newArr = this.state.listValues;
       newArr.push(value);
@@ -38,6 +56,12 @@ export default class DropDownChoose extends React.Component{
   handleRemove(index) {
     var newArr = this.state.listValues;
     this.props.removeData(index);
+    //console.log("HELEOFJASFSAD"+newArr[index]);
+    if(this.props.acceptedData.includes(newArr[index])){
+      let newIndex = this.props.acceptedData.indexOf(newArr[index]);
+      console.log("Removing==========================="+newIndex);
+      this.props.removeAcceptedData(newIndex);
+    }
     newArr.splice(index, 1);
     this.setState({
       listValues: newArr
