@@ -39,7 +39,7 @@ const Dashboard = ({match}) =>(
           <h3><i className="fa fa-cube"/>Design</h3>
 
           <div id='Product1'>
-            <p id='fLeft'>Product 1: Quad-copter</p>
+            <p id='fLeft' style={{paddingLeft: '0px'}}>Product 1: Quad-copter</p>
             <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
           </div>
 

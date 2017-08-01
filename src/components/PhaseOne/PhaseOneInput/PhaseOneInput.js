@@ -71,7 +71,7 @@ export default class PhaseOneInput extends React.Component{
 
       <div id='product1'>
       <h1>Requirements Input</h1>
-        <p>Product 1: Quad-copter</p><p id='noClick'>Edit <i id='noClick' className="fa fa-edit"/></p>
+        <p style={{paddingLeft: '0px'}}>Product 1: Quad-copter</p><p id='noClick'>Edit <i id='noClick' className="fa fa-edit"/></p>
         <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
       </div>
 

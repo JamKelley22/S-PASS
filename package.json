@@ -45,6 +45,7 @@
     "postcss-value-parser": "^3.3.0",
     "qs": "^6.5.0",
     "react": "^15.6.1",
+    "react-background-image-loader": "0.0.5",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.6.1",
     "react-parallax": "^1.4.4",

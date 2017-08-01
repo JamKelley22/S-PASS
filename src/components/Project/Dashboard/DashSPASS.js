@@ -17,11 +17,9 @@ class DashSPASS extends React.Component{
         <div id='phase'>
           <p id='bold'>Phase 1: Requirements</p>
           <div id='phaseContent'>
-            <div id='phaseText'>
-            Requirements: {this.props.requirements.length}<br/>
-            Functions: {this.props.functions.length}<br/>
-            Modules: {this.props.modules.length}<br/>
-            </div>
+            <h6>Requirements: {this.props.requirements.length}</h6>
+            <h6>Functions: {this.props.functions.length}</h6>
+            <h6>Modules: {this.props.modules.length}</h6>
           </div>
           <ProgressBar bsStyle="success" id='pbar' now={60} />
         </div>

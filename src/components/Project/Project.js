@@ -12,8 +12,6 @@ import Breadcrumbs from '../breadcrumbs.js';
 import {Button,Grid,Row,Col,Nav,NavItem,Thumbnail,Panel,Image,Glyphicon,Table} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 
-import FolderPic from '../../Images/folder.png';
-
 const Project = ({match}) =>(
   <div id ='allProject'>
 
