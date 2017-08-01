@@ -38,7 +38,7 @@ export default class ProjectSideBar extends React.Component{
       <div className='sidebar'>
         <div id='green'>
             <h3 id='center' id='brownText'>
-            <Link to={'/SPASS/About'}>
+            <Link to={'SPASS/About'}>
               <i id='brownText' className="fa fa-arrow-left"/>
             </Link>
             Phases</h3>

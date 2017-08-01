@@ -124,7 +124,7 @@ p {
   margin-right: 30%;
   height: 15%;
   max-height: 15%;
-  overflow: hidden;
+  overflow:visible;
 }
 .panel-body {
   padding: 3px;
