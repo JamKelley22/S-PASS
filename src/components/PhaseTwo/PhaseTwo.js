@@ -182,7 +182,7 @@ class PhaseTwo extends React.Component{
         selectedSuppliers = {this.props.selectedSuppliers}
 
         //add and remove supplier data actions
-        addAcceptedSuppliers = {this.props.addAcceptedSupplier}
+        addAcceptedSupplier = {this.props.addAcceptedSupplier}
         removeAcceptedSupplier = {this.props.removeAcceptedSupplier}
         addColSaMMat = {this.props.addColSaMMat}
         removeColSaMMat = {this.props.removeColSaMMat}
