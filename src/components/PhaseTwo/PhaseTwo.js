@@ -10,8 +10,12 @@ import CustomPhaseTwoMatrix from '../Matrix/CustomPhaseTwoMatrix.js';
 import MatrixDisplay from '../Matrix/Matrix.js';
 import '../Matrix/Matrix.css';
 import {editThreshold} from '../../actions/thresholdsActions.js';
-import {thresholdCheck,findAlt,altRemoveIndex,altAddIndex} from '../../js/thresholdCheck.js';
+import {thresholdCheck,findAlt,altRemoveIndex,altAddIndex,findSup,supRemoveIndex,supAddIndex
+} from '../../js/thresholdCheck.js';
 import {addAcceptedAlternate,removeAcceptedAlternate} from '../../actions/acceptedAlternatesActions.js';
+import{addColSaMMat,removeColSaMMat} from '../../actions/supplierAltModuleActions.js';
+import {addAcceptedSupplier,removeAcceptedSupplier} from'../../actions/acceptedSupplierActions.js';
+import {addColFaMMat,removeColFaMMat} from '../../actions/functionAltModuleActions.js';
 
 
 class PhaseTwo extends React.Component{
@@ -24,6 +28,10 @@ class PhaseTwo extends React.Component{
     this.findAlt = findAlt.bind(this);
     this.altRemoveIndex = altRemoveIndex.bind(this);
     this.altAddIndex = altAddIndex.bind(this);
+    //supplier
+    this.findSup = findSup.bind(this);
+    this.supAddIndex = supAddIndex.bind(this);
+    this.supRemoveIndex = supRemoveIndex.bind(this);
   }
 
   makeList(data){
@@ -53,8 +61,8 @@ class PhaseTwo extends React.Component{
         }
       }
     }
-    console.log("Supplier Matrix");
-    console.log(supplierMatrix);
+    //console.log("Supplier Matrix");
+    //console.log(supplierMatrix);
     return(supplierMatrix);
   }
 
@@ -65,7 +73,7 @@ class PhaseTwo extends React.Component{
         //console.log(supplier);
         if(selectedAlternates[alternate]==alternateData[key].name){
           var temp = alternateData[key].recyclingRate*100;
-          console.log(temp);
+          //console.log(temp);
           let tempString = temp.toString() + "%";
           alternateMatrix.push([
             alternateData[key].RoHS,
@@ -75,8 +83,6 @@ class PhaseTwo extends React.Component{
         }
       }
     }
-    console.log("alternateMatrix");
-    console.log(alternateMatrix);
     return(alternateMatrix);
   }
 
@@ -93,6 +99,7 @@ class PhaseTwo extends React.Component{
       recycle: this.props.thresholds[1].recycledMaterials,
       pack: this.props.thresholds[1].packageRecycling
     }
+    let SupplierThreshArr=[SupplierThresh.iso,SupplierThresh.recycle,SupplierThresh.pack];
 
     return(
       <div>
@@ -111,14 +118,29 @@ class PhaseTwo extends React.Component{
         addAcceptedData = {this.props.addAcceptedAlternate}
         acceptedData = {this.props.acceptedAlternates}
         removeAcceptedData = {this.props.removeAcceptedAlternate}
+
+        //used for accepted matrixContent
+        addMatCol = {this.props.addColFaMMat}
+        addMatCol2 = {this.props.addColSaMMat}
       />
 
       <UniqueDropdown
+
         title={'Alternate Suppliers'}
         dropDownChoices = {this.makeList(this.props.supplierData)}
         dataValues = {this.props.selectedSuppliers}
         addData = {this.props.addSupplier}
         removeData = {this.props.removeSupplier}
+        data = {this.props.supplierData} //Used for threshold check.
+        threshold = {SupplierThreshArr} //Used for threshod check.
+        findData = {this.findSup}
+        addAcceptedData = {this.props.addAcceptedSupplier}
+        acceptedData = {this.props.acceptedSuppliers}
+        removeAcceptedData = {this.props.removeAcceptedSupplier}
+
+        //used for accepted matrixContent
+        addMatCol = {this.props.addColFaMMat}
+        addMatCol2 = {this.props.addColSaMMat}
       />
 
       <CustomPhaseTwoMatrix
@@ -138,20 +160,39 @@ class PhaseTwo extends React.Component{
           ['100 Certain to contribute']
         ]}
         editCell = {this.props.editThreshold}
-        findRemoveIndex = {this.altRemoveIndex}
-        findAddIndex = {this.altAddIndex}
-        acceptedData = {this.props.acceptedAlternates}
-        data = {this.props.altModuleData}
+        //====Alternate Modules====
+        findRemoveAltIndex = {this.altRemoveIndex}
+        findAddAltIndex = {this.altAddIndex}
+        acceptedAlternates = {this.props.acceptedAlternates}
+        altData = {this.props.altModuleData}
         selectedAlternates = {this.props.selectedAlternates}
         addAcceptedAlternate = {this.props.addAcceptedAlternate}
         removeAcceptedAlternate = {this.props.removeAcceptedAlternate}
+        addColFaMMat = {this.props.addColFaMMat}
+        removeColFaMMat = {this.props.removeColFaMMat}
+
+      //=======Suppliers=======
+        //custom functions
+        findRemoveSupIndex = {this.supRemoveIndex}
+        findAddSupIndex = {this.supAddIndex}
+
+        //suppler store data
+        acceptedSuppliers = {this.props.acceptedSuppliers}
+        supData = {this.props.supplierData}
+        selectedSuppliers = {this.props.selectedSuppliers}
+
+        //add and remove supplier data actions
+        addAcceptedSupplier = {this.props.addAcceptedSupplier}
+        removeAcceptedSupplier = {this.props.removeAcceptedSupplier}
+        addColSaMMat = {this.props.addColSaMMat}
+        removeColSaMMat = {this.props.removeColSaMMat}
       />
 
       <MatrixDisplay
-        title="Supplier Related Environmental Indicators"
+        title="Module Related Environmental Indicators"
         colNames={["Possibility of RoHS","Recycling Rate","Satisfaction Level of Using Renewable Materials"]}
-        rowNames={this.props.selectedSuppliers}
-        matrixContent={this.makeSupplierMatrix(this.props.selectedSuppliers,this.props.supplierData)}
+        rowNames={this.props.selectedAlternates}
+        matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
         bgColor={'#7C7B50'}
 
         editCell={null}
@@ -164,8 +205,8 @@ class PhaseTwo extends React.Component{
       <MatrixDisplay
         title="Supplier Related Environmental Indicators"
         colNames={["ISO 14001","Use of Recycled Materials","Environmental Friendly Packaging"]}
-        rowNames={this.props.selectedAlternates}
-        matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
+        rowNames={this.props.selectedSuppliers}
+        matrixContent={this.makeSupplierMatrix(this.props.selectedSuppliers,this.props.supplierData)}
         bgColor={'#7C7B50'}
 
         editCell={null}
@@ -199,18 +240,37 @@ function mapStateToProps(state){
     selectedSuppliers: state.selectedSuppliers,
     thresholds: state.thresholds,
     acceptedAlternates: state.acceptedAlternates,
+    acceptedSuppliers: state.acceptedSuppliers,
   };
 }
 
 function matchDispatchToProps(dispatch){
   return bindActionCreators({
+    //alternate module and accepted alternate module list actions
     addAlternate: addAlternate,
     removeAlternate: removeAlternate,
-    addSupplier: addSupplier,
-    removeSupplier: removeSupplier,
-    editThreshold : editThreshold,
     addAcceptedAlternate: addAcceptedAlternate,
     removeAcceptedAlternate: removeAcceptedAlternate,
+
+    //supplier list actions
+    addSupplier: addSupplier,
+    removeSupplier: removeSupplier,
+
+    //threshold edit
+    editThreshold : editThreshold,
+
+    //Function alternate
+    addColFaMMat: addColFaMMat,
+    removeColFaMMat: removeColFaMMat,
+
+    //accepted supplier actions
+    addAcceptedSupplier: addAcceptedSupplier,
+    removeAcceptedSupplier,removeAcceptedSupplier,
+
+    //supplier alternate module matrix actions
+    addColSaMMat:addColSaMMat,
+    removeColSaMMat: removeColSaMMat,
+
   },dispatch)
 }
 

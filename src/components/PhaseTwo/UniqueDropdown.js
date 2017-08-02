@@ -1,7 +1,7 @@
 import React from 'react';
 import './UniqueDropdown.css'
 import {Button,ListGroup,ListGroupItem} from 'react-bootstrap'
-import {thresholdCheck,unique} from '../../js/thresholdCheck.js'
+import {thresholdCheck} from '../../js/thresholdCheck.js'
 
 export default class DropDownChoose extends React.Component{
   constructor(props) {
@@ -38,6 +38,8 @@ export default class DropDownChoose extends React.Component{
           console.log("Hello")
           this.props.addAcceptedData(value);
           //Add collumn here for fun alt mod matrix!!!!
+          this.props.addMatCol();
+          if(this.props.addMatCol2){this.props.addMatCol2}
       }
       else{
         console.log("did not work");

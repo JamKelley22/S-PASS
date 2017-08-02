@@ -37,29 +37,49 @@ export default class CustomPhaseTwoMatrix extends React.Component{
       //Where infor is to be sent out
       this.props.editCell(this.state.index, num);
     });
+    //Declare arrays for index storage.
     let removeAltIndex=[];
     let addAltIndex=[];
-    if(this.props.acceptedData.length!=0){
-      removeAltIndex = this.props.findRemoveIndex(this.props.data,this.state.threshs,this.props.acceptedData);//(this.props.data,this.state.threshs,this.props.acceptedData));
-      console.log(removeAltIndex);
-    }
+    let removeSupIndex=[];
+    let addSupIndex=[];
 
-    if(this.props.selectedAlternates){
-      addAltIndex = this.props.findAddIndex(this.props.data,this.state.threshs,this.props.selectedAlternates,this.props.acceptedData);
-      console.log("==Add index start===");
-      console.log(addAltIndex);
-      console.log("==Add index end===");
+    //console.log("============++++++THESHS++++++=============");
+    //console.log(this.state.threshs);
+    if(this.props.acceptedAlternates.length!=0){
+      removeAltIndex = this.props.findRemoveAltIndex(this.props.altData,this.state.threshs,this.props.acceptedAlternates);
     }
+    if(this.props.selectedAlternates){
+      addAltIndex = this.props.findAddAltIndex(this.props.altData,this.state.threshs,this.props.selectedAlternates,this.props.acceptedAlternates);
+    }
+    if(this.props.acceptedSuppliers.length!=0){
+      removeSupIndex = this.props.findRemoveSupIndex(this.props.supData,this.state.threshs,this.props.acceptedSuppliers);
+    }
+    if(this.props.selectedSuppliers){
+      addSupIndex = this.props.findAddSupIndex(this.props.supData,this.state.threshs,this.props.selectedSuppliers,this.props.acceptedSuppliers);
+    }
+    console.log("========Add and remove suppliers array========");
+    console.log("remove");
+    console.log(removeSupIndex);
+    console.log("add");
+    console.log(addSupIndex);
     let i=0;
-    for(i=0;i<removeAltIndex.length;i++){
-      console.log("AEHAEJFNLNFKAJSDNASJDFSDF")
-      console.log(removeAltIndex[i]);
+    for(i=removeAltIndex.length-1; i>=0;i--){
       this.props.removeAcceptedAlternate(removeAltIndex[i]);
+      this.props.removeColFaMMat(removeAltIndex[i]);
     }
     for(i=0; i<addAltIndex.length;i++){
       this.props.addAcceptedAlternate(addAltIndex[i]);
+      this.props.addColFaMMat();
     }
-
+    //suppliers
+    for(i=removeSupIndex.length-1; i>=0;i--){
+      this.props.removeAcceptedSupplier(removeSupIndex[i]);
+      this.props.removeColSaMMat(removeSupIndex[i]);
+    }
+    for(i=0; i<addSupIndex.length;i++){
+      this.props.addAcceptedSupplier(addSupIndex[i]);
+      this.props.addColSaMMat();
+    }
 
     this.refs.overlay0.hide();
     this.refs.overlay1.hide();
