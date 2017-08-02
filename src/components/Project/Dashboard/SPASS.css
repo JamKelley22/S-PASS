@@ -15,6 +15,7 @@
   min-width: 80%;
   max-width: 80%;
   max-height: 95%;
+  overflow-y: auto;
 }
 #brown {
   color: #54513D;

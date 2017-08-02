@@ -97,6 +97,8 @@ export default class PhaseOneInput extends React.Component{
           addList={this.props.addRequirement}
           addMatRow={this.props.addRowRFMat}
           removeMatRow={this.props.removeRowRFMat}
+          //removeMatCol={this.props.removeColRFMat} Not Needed
+          //addMatCol={this.props.addColRFMat} Not Needed
         />
 
         <p>

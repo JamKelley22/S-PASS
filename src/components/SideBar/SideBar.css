@@ -112,11 +112,25 @@ h4 {
   background-color: rgba(0,0,0,0.2);
   cursor: pointer;
 }
+#tab:hover #doubleAngle{
+  color: #a2b427;
+  left: 80px;
+}
+#doubleAngle {
+  -webkit-transition: all 1s; /* Safari */
+    position: relative;
+    transition: all 1s;
+    left: 70; /* start out at position 0 */
+    top: -.5px;
+}
+.fa-angle-double-right {
+  display: inline-block;
+  top: 3px;
+}
 #ford:focus {
   background-color: white;
   color: #54513D;;
 }
-
 #tabS {
   max-width: 80%;
   margin-left: 20%;
@@ -163,16 +177,6 @@ h4 {
   padding-right: 0px;
 }
 
-.fa-angle-double-right {
-  display: inline-block;
-  float: right;
-  transition: left 1s;
-  position: relative;
-  top: 3px;
-}
-.fa-angle-double-right:hover {
-  left: 20px;
-}
-#noClick {
+#noClick, .noClick {
   cursor: not-allowed !important;
 }

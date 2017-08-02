@@ -21,27 +21,25 @@ const DashboardSideBar = ({match}) =>(
     <div className='sideContent'>
 
         <div>
-          <div id='tab'><i id='whiteText' className="fa fa-cube"/> Design</div>
+          <div id='tab' className='noClick'><i id='whiteText' className="fa fa-cube"/> Design</div>
         </div>
 
 
       <LinkContainer to={'/SPASS/About'}>
         <div>
-          <div id='tab'><i id='whiteText' className="fa fa-leaf"/> SPASS <i className="fa fa-angle-double-right"/></div>
+          <div id='tab'><i id='whiteText' className="fa fa-leaf"/> SPASS <i id='doubleAngle' className="fa fa-angle-double-right"/></div>
         </div>
       </LinkContainer>
 
 
         <div>
-          <div id='tab'><i id='whiteText' className="fa fa-wrench"/> MAT</div>
+          <div id='tab' className='noClick'><i id='whiteText' className="fa fa-wrench"/> MAT</div>
         </div>
 
 
-      <LinkContainer to={'/Dashboard/Settings'}>
         <div>
-          <div id='tab'><i id='whiteText' className="fa fa-list"/> Settings</div>
+          <div id='tab' className='noClick'><i id='whiteText' className="fa fa-list"/> Settings</div>
         </div>
-      </LinkContainer>
     </div>
   </div>
 )
