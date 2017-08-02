@@ -19,7 +19,7 @@ export default class ListStuff extends React.Component{
     console.log("MY INDEX:"+index+"!!!!!!!!!")
     this.props.removeList(index);
     this.props.removeMatRow(index);
-    this.props.removeMatCol(index);
+    if(this.props.removeMatCol){this.props.removeMatCol(index);}
     if(this.props.removeMatRow2){this.props.removeMatRow2(index);}
 
   }

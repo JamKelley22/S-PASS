@@ -10,10 +10,10 @@ import CustomPhaseTwoMatrix from '../Matrix/CustomPhaseTwoMatrix.js';
 import MatrixDisplay from '../Matrix/Matrix.js';
 import '../Matrix/Matrix.css';
 import {editThreshold} from '../../actions/thresholdsActions.js';
-import {thresholdCheck,findAlt,altRemoveIndex,altAddIndex,findSup
+import {thresholdCheck,findAlt,altRemoveIndex,altAddIndex,findSup,supRemoveIndex,supAddIndex
 } from '../../js/thresholdCheck.js';
 import {addAcceptedAlternate,removeAcceptedAlternate} from '../../actions/acceptedAlternatesActions.js';
-import{addColSaMMat} from '../../actions/supplierAltModuleActions.js';
+import{addColSaMMat,removeColSaMMat} from '../../actions/supplierAltModuleActions.js';
 import {addAcceptedSupplier,removeAcceptedSupplier} from'../../actions/acceptedSupplierActions.js';
 import {addColFaMMat,removeColFaMMat} from '../../actions/functionAltModuleActions.js';
 
@@ -30,6 +30,8 @@ class PhaseTwo extends React.Component{
     this.altAddIndex = altAddIndex.bind(this);
     //supplier
     this.findSup = findSup.bind(this);
+    this.supAddIndex = supAddIndex.bind(this);
+    this.supRemoveIndex = supRemoveIndex.bind(this);
   }
 
   makeList(data){
@@ -171,8 +173,8 @@ class PhaseTwo extends React.Component{
 
       //=======Suppliers=======
         //custom functions
-        //findRemoveSupIndex = {this.altRemoveIndex}
-        //findAddSupIndex = {this.altAddIndex}
+        findRemoveSupIndex = {this.supRemoveIndex}
+        findAddSupIndex = {this.supAddIndex}
 
         //suppler store data
         acceptedSuppliers = {this.props.acceptedSuppliers}
@@ -180,10 +182,10 @@ class PhaseTwo extends React.Component{
         selectedSuppliers = {this.props.selectedSuppliers}
 
         //add and remove supplier data actions
-        //addAcceptedSuppliers = {this.props.addAcceptedAlternate}
-        //removeAcceptedSupplier = {this.props.removeAcceptedAlternate}
-        //addColFaMMat = {this.props.addColFaMMat}
-        //removeColFaMMat = {this.props.removeColFaMMat}
+        addAcceptedSuppliers = {this.props.addAcceptedSupplier}
+        removeAcceptedSupplier = {this.props.removeAcceptedSupplier}
+        addColSaMMat = {this.props.addColSaMMat}
+        removeColSaMMat = {this.props.removeColSaMMat}
       />
 
       <MatrixDisplay
@@ -267,7 +269,7 @@ function matchDispatchToProps(dispatch){
 
     //supplier alternate module matrix actions
     addColSaMMat:addColSaMMat,
-
+    removeColSaMMat: removeColSaMMat,
 
   },dispatch)
 }
