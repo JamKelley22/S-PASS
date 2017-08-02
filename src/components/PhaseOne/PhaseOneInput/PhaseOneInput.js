@@ -118,6 +118,7 @@ export default class PhaseOneInput extends React.Component{
 
           removeMatRow2={this.props.removeRowFaMMat}//phase 3 input
           addMatRow2={this.props.addRowFaMMat}//phase 3 input
+
         />
 
         <div className='pull-right'>
@@ -133,6 +134,9 @@ export default class PhaseOneInput extends React.Component{
           removeMatRow={this.props.removeRowMAMat}
           removeMatCol={this.props.removeColFMMat}
           addMatCol={this.props.addColFMMat}
+
+          addMatRow3={this.props.addRowMPAMat}
+          removeMatRow3={this.props.removeRowMPAMat}
         />
 
         <h3>Step 2: Product Contribution Estimation</h3>

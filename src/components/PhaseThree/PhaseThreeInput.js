@@ -140,10 +140,10 @@ Estimate how well each product module satisfies each product function. Base this
 
         <MatrixDisplay
           title = "Modules vs. Product Architecture"
-          matrixContent={this.props.moduleArchitectureMatrix._data}
+          matrixContent={this.props.moduleProductArchitecture._data}
           colNames={this.props.newArchitectureList}
           rowNames={this.props.modules}
-          editCell={this.props.editCellMAMat}
+          editCell={this.props.editCellMPAMat}
           bgColor={'#9DC64D'}
           canEditCells={true}
           numberType='bin' // | bin | % | # |
