@@ -18,6 +18,7 @@ import thresholds from "./data/thresholds";
 import acceptedAlternates from "./lists/acceptedAlternates";
 import functionAltModuleMatrix from "./matrices/functionAltModuleMatrix";
 import acceptedSuppliers from "./lists/acceptedSuppliers";
+import supplierAltModuleMatrix from "./matrices/supplierAltModuleMatrix";
 //---------------------------------------------
 
 export default combineReducers({
@@ -38,4 +39,5 @@ export default combineReducers({
   acceptedAlternates,
   functionAltModuleMatrix,
   acceptedSuppliers,
+  supplierAltModuleMatrix,
 })

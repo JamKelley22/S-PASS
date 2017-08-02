@@ -121,7 +121,7 @@ Estimate how well each product module satisfies each product function. Base this
           <div id='matrixDisplay'>
             <MatrixDisplay
               title = "Supplier vs. Modules"
-              matrixContent={this.props.functionModuleMatrix._data}
+              matrixContent={this.props.supplierAltModuleMatrix._data}
               colNames={this.props.acceptedAlternates}
               rowNames={this.props.acceptedSuppliers}
               editCell={this.props.editCellFMMat}

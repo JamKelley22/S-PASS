@@ -40,6 +40,8 @@ initialState.resize([5,0]);
 
       case "ADD_COL_FUN_ALT_MOD":{
         var newMat = math.matrix(state._data);
+        console.log("----------Function Alt Matrix--------");
+        console.log(newMat._size.length);
         if(newMat._size.length==1||isNaN(newMat._size[1])){
           newMat.resize([0,1]);
           console.log(newMat);

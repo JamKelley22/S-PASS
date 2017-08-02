@@ -39,13 +39,21 @@ initialState.resize([0,0]);
       }
 
       case "ADD_COL_SUP_ALT_MOD":{
+        console.log("I AM IN THE REDUCER!!!!!");
+        console.log(state._data);
         var newMat = math.matrix(state._data);
-        if(newMat._size.length==1||isNaN(newMat._size[1])){
-          newMat.resize([0,1]);
+        console.log(newMat);
+        console.log(newMat._size.length);
+        //if(newMat._size.length==1||isNaN(newMat._size[1])){
+          console.log("I AM RESTARTING MATRIX");
+          //newMat.resize([0,1]);
+          console.log(newMat._size.length);
           console.log(newMat);
-          return newMat;
-        }
+        //  return newMat;
+        //}
         newMat.resize([(state._size[0]),state._size[1]+1]);
+        console.log("=============NEW SIZE================");
+        console.log(newMat._size);
         return newMat;
         break;
       }

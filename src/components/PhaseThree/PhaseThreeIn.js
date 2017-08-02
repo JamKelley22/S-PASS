@@ -62,6 +62,7 @@ class PhaseThreeIn extends React.Component{
         editCellFaMMat = {this.props.editCellFaMMat}
 
         acceptedSuppliers = {this.props.acceptedSuppliers}
+        supplierAltModuleMatrix = {this.props.supplierAltModuleMatrix}
         />
       </div>
     );
@@ -85,6 +86,8 @@ function mapStateToProps(state){
     acceptedAlternates: state.acceptedAlternates,
     functionAltModuleMatrix: state.functionAltModuleMatrix,
     acceptedSuppliers: state.acceptedSuppliers,
+
+    supplierAltModuleMatrix: state.supplierAltModuleMatrix,
   };
 }
 

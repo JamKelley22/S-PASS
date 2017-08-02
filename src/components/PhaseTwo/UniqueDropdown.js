@@ -38,9 +38,12 @@ export default class DropDownChoose extends React.Component{
           console.log("Hello")
           this.props.addAcceptedData(value);
           //Add collumn here for fun alt mod matrix!!!!
-          this.props.addMatCol();
-          if(this.props.addMatCol2){this.props.addMatCol2}
-      }
+          if(this.props.addMatRow){this.props.addMatRow();}
+          console.log("I MADE IT!!!!!!!!");
+          if(this.props.addMatCol){this.props.addMatCol();}
+          if(this.props.addMatCol2){this.props.addMatCol2();}
+          console.log("I ALSO MADE IT!!!!");
+        }
       else{
         console.log("did not work");
       }
@@ -61,8 +64,9 @@ export default class DropDownChoose extends React.Component{
     //console.log("HELEOFJASFSAD"+newArr[index]);
     if(this.props.acceptedData.includes(newArr[index])){
       let newIndex = this.props.acceptedData.indexOf(newArr[index]);
-      console.log("Removing==========================="+newIndex);
       this.props.removeAcceptedData(newIndex);
+      this.props.removeMatData(newIndex);
+      if(this.props.removeMatData2){this.props.removeMatData2(newIndex);}
     }
     newArr.splice(index, 1);
     this.setState({
