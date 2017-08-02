@@ -15,7 +15,7 @@ import {addRowFMMat,removeRowFMMat,removeColFMMat,addColFMMat,editCellFMMat
 import {addRowMAMat,removeRowMAMat,editCellMAMat
 } from '../../actions/moduleArchitectureAction.js';
 import {editCellFaMMat} from '../../actions/functionAltModuleActions.js';
-
+import {editCellMPAMat} from '../../actions/moduleProductArchitectureActions.js';
 
 class PhaseThreeIn extends React.Component{
 
@@ -62,6 +62,9 @@ class PhaseThreeIn extends React.Component{
         editCellFaMMat = {this.props.editCellFaMMat}
 
         acceptedSuppliers = {this.props.acceptedSuppliers}
+        supplierAltModuleMatrix = {this.props.supplierAltModuleMatrix}
+        moduleProductArchitecture={this.props.moduleProductArchitecture}
+        editCellMPAMat={this.props.editCellMPAMat}
         />
       </div>
     );
@@ -85,6 +88,9 @@ function mapStateToProps(state){
     acceptedAlternates: state.acceptedAlternates,
     functionAltModuleMatrix: state.functionAltModuleMatrix,
     acceptedSuppliers: state.acceptedSuppliers,
+
+    supplierAltModuleMatrix: state.supplierAltModuleMatrix,
+    moduleProductArchitecture: state.moduleProductArchitecture,
   };
 }
 
@@ -110,6 +116,7 @@ function matchDispatchToProps(dispatch){
     editCellMAMat: editCellMAMat,
     editCellFMMat: editCellFMMat,
     editCellFaMMat: editCellFaMMat,
+    editCellMPAMat: editCellMPAMat,
 
 
   },dispatch)

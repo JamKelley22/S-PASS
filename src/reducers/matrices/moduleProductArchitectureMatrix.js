@@ -1,11 +1,11 @@
 var math=require('mathjs');
 const initialState = math.matrix();
-initialState.resize([0,0]);
+initialState.resize([8,3]);
 
   export default function(state = initialState, action){
     switch(action.type){
 
-      case "ADD_ROW_SUP_ALT_MOD":
+      case "ADD_ROW_MOD_PROD_ARCH":
       if(state._size.length==1||isNaN(state._size[1])){
         let newMat = math.matrix();
         newMat.resize([1,0]);
@@ -17,7 +17,7 @@ initialState.resize([0,0]);
       return newMat;
       break;
 
-      case "REMOVE_ROW_SUP_ALT_MOD":{
+      case "REMOVE_ROW_MOD_PROD_ARCH":{
         var newMat = {...math.matrix(state._data)};
         newMat._data.splice(action.payload,1);
         newMat._size[0]-=1;
@@ -27,7 +27,7 @@ initialState.resize([0,0]);
         break;
       }
 
-      case "REMOVE_COL_SUP_ALT_MOD":{
+      case "REMOVE_COL_MOD_PROD_ARCH":{
         var newMat = {...math.matrix(state._data)};
         var i;
         for(i=0;i<newMat._size[0];i++){
@@ -38,27 +38,21 @@ initialState.resize([0,0]);
         break;
       }
 
-      case "ADD_COL_SUP_ALT_MOD":{
-        console.log("I AM IN THE REDUCER!!!!!");
-        console.log(state._data);
+      case "ADD_COL_MOD_PROD_ARCH":{
         var newMat = math.matrix(state._data);
-        console.log(newMat);
+        console.log("----------Function Alt Matrix--------");
         console.log(newMat._size.length);
-        //if(newMat._size.length==1||isNaN(newMat._size[1])){
-          console.log("I AM RESTARTING MATRIX");
-          //newMat.resize([0,1]);
-          console.log(newMat._size.length);
+        if(newMat._size.length==1||isNaN(newMat._size[1])){
+          newMat.resize([0,1]);
           console.log(newMat);
-        //  return newMat;
-        //}
+          return newMat;
+        }
         newMat.resize([(state._size[0]),state._size[1]+1]);
-        console.log("=============NEW SIZE================");
-        console.log(newMat._size);
         return newMat;
         break;
       }
 
-      case "EDIT_CELL_SUP_ALT_MOD":{
+      case "EDIT_CELL_MOD_PROD_ARCH":{
         var newMat = math.matrix(state._data);
         console.log(action.payload[0]);
         console.log(action.payload[1]);

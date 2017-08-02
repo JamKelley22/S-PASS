@@ -15,6 +15,7 @@ import {addRowFMMat,removeRowFMMat,removeColFMMat,addColFMMat,editCellFMMat
 import {addRowMAMat,removeRowMAMat,editCellMAMat
 } from '../../actions/moduleArchitectureAction.js';
 import {addRowFaMMat,removeRowFaMMat} from '../../actions/functionAltModuleActions.js';
+import {addRowMPAMat,removeRowMPAMat} from '../../actions/moduleProductArchitectureActions.js';
 
 
 class PhaseOneIn extends React.Component{
@@ -52,6 +53,9 @@ class PhaseOneIn extends React.Component{
       moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
       removeRowFaMMat={this.props.removeRowFaMMat}
       addRowFaMMat={this.props.addRowFaMMat}
+
+      removeRowMPAMat={this.props.removeRowMPAMat}
+      addRowMPAMat={this.props.addRowMPAMat}
       />
     );
   }
@@ -92,6 +96,8 @@ function matchDispatchToProps(dispatch){
     editCellFMMat: editCellFMMat,
     addRowFaMMat:addRowFaMMat,
     removeRowFaMMat:removeRowFaMMat,
+    removeRowMPAMat:removeRowMPAMat,
+    addRowMPAMat: addRowMPAMat,
 
 
   },dispatch)
