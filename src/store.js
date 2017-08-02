@@ -9,7 +9,7 @@ import thunk from "redux-thunk";
 import promise from "redux-promise-middleware";
 
 //Reducers that will be used on the store.
-import reducers from "./reducers";
+import reducers from "./reducers/Index.js";
 
 //History for router
 //export const history = syncHistoryWithStore(browserHistory, store);
