@@ -115,6 +115,9 @@ export default class PhaseOneInput extends React.Component{
           removeMatRow={this.props.removeRowFMMat}
           removeMatCol={this.props.removeColRFMat}
           addMatCol={this.props.addColRFMat}
+
+          removeMatRow2={this.props.removeRowFaMMat}//phase 3 input
+          addMatRow2={this.props.addRowFaMMat}//phase 3 input
         />
 
         <div className='pull-right'>

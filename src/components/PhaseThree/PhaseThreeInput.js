@@ -85,11 +85,11 @@ Estimate how well each product module satisfies each product function. Base this
         <div id='matrixRow'>
           <div id='matrixDisplay'>
             <MatrixDisplay
-              title = "Functions vs.Modules"
-              matrixContent={this.props.requirementFunctionMatrix._data}
+              title = "Functions vs. Modules"
+              matrixContent={this.props.functionAltModuleMatrix._data}
               colNames={this.props.acceptedAlternates}
-              rowNames={this.props.requirements}
-              editCell={this.props.editCellRFMat}
+              rowNames={this.props.functions}
+              editCell={this.props.editCellFaMMat}
               bgColor={'#9DC64D'}
               canEditCells={true}//Must Specify that cells in the matrix are editable, else they are not
               numberType='%' // | bin | % | # |
@@ -122,8 +122,8 @@ Estimate how well each product module satisfies each product function. Base this
             <MatrixDisplay
               title = "Supplier vs. Modules"
               matrixContent={this.props.functionModuleMatrix._data}
-              colNames={this.props.selectedAlternates}
-              rowNames={this.props.selectedSuppliers}
+              colNames={this.props.acceptedAlternates}
+              rowNames={this.props.acceptedSuppliers}
               editCell={this.props.editCellFMMat}
               bgColor={'#9DC64D'}
               canEditCells={true}
@@ -132,13 +132,11 @@ Estimate how well each product module satisfies each product function. Base this
               dropDownChoices={null}
             />
           </div>
-
         </div>
 
         <p>
         <b>Below: </b>Define each architecture with modules. Related or not related. Note that all required component types for each drone type, described in Table 1, should be configured in its product architecture through the identified modules. Define three product architectures by combining relevant modules. Each product architecture should represent a product and have different combination of the considered modules.
         </p>
-
 
         <MatrixDisplay
           title = "Modules vs. Product Architecture"

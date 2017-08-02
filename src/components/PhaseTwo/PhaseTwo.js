@@ -10,8 +10,12 @@ import CustomPhaseTwoMatrix from '../Matrix/CustomPhaseTwoMatrix.js';
 import MatrixDisplay from '../Matrix/Matrix.js';
 import '../Matrix/Matrix.css';
 import {editThreshold} from '../../actions/thresholdsActions.js';
-import {thresholdCheck,findAlt,altRemoveIndex,altAddIndex} from '../../js/thresholdCheck.js';
+import {thresholdCheck,findAlt,altRemoveIndex,altAddIndex,findSup
+} from '../../js/thresholdCheck.js';
 import {addAcceptedAlternate,removeAcceptedAlternate} from '../../actions/acceptedAlternatesActions.js';
+import {addColFaMMat} from '../../actions/functionAltModuleActions.js';
+import{addColSaMMat} from '../../actions/supplierAltModuleActions.js';
+import {addAcceptedSupplier,removeAcceptedSupplier} from'../../actions/acceptedSupplierActions.js';
 
 
 class PhaseTwo extends React.Component{
@@ -24,6 +28,8 @@ class PhaseTwo extends React.Component{
     this.findAlt = findAlt.bind(this);
     this.altRemoveIndex = altRemoveIndex.bind(this);
     this.altAddIndex = altAddIndex.bind(this);
+    //supplier
+    this.findSup = findSup.bind(this);
   }
 
   makeList(data){
@@ -93,6 +99,7 @@ class PhaseTwo extends React.Component{
       recycle: this.props.thresholds[1].recycledMaterials,
       pack: this.props.thresholds[1].packageRecycling
     }
+    let SupplierThreshArr=[SupplierThresh.iso,SupplierThresh.recycle,SupplierThresh.pack];
 
     return(
       <div>
@@ -111,14 +118,31 @@ class PhaseTwo extends React.Component{
         addAcceptedData = {this.props.addAcceptedAlternate}
         acceptedData = {this.props.acceptedAlternates}
         removeAcceptedData = {this.props.removeAcceptedAlternate}
-      />
 
+        //used for accepted matrixContent
+        addMatCol = {this.props.addColFaMMat}
+        addMatCol2 = {this.props.addColSaMMat}
+      />
+      {console.log("SUPPLIER THRESH ARR")}
+      {console.log(SupplierThreshArr)}
+      {console.log(this.props.supplierData)}
       <UniqueDropdown
+
         title={'Alternate Suppliers'}
         dropDownChoices = {this.makeList(this.props.supplierData)}
         dataValues = {this.props.selectedSuppliers}
         addData = {this.props.addSupplier}
         removeData = {this.props.removeSupplier}
+        data = {this.props.supplierData} //Used for threshold check.
+        threshold = {SupplierThreshArr} //Used for threshod check.
+        findData = {this.findSup}
+        addAcceptedData = {this.props.addAcceptedSupplier}
+        acceptedData = {this.props.acceptedSuppliers}
+        removeAcceptedData = {this.props.removeAcceptedSupplier}
+
+        //used for accepted matrixContent
+        addMatCol = {this.props.addColFaMMat}
+        addMatCol2 = {this.props.addColSaMMat}
       />
 
       <CustomPhaseTwoMatrix
@@ -145,13 +169,15 @@ class PhaseTwo extends React.Component{
         selectedAlternates = {this.props.selectedAlternates}
         addAcceptedAlternate = {this.props.addAcceptedAlternate}
         removeAcceptedAlternate = {this.props.removeAcceptedAlternate}
+        //supplier
+
       />
 
       <MatrixDisplay
-        title="Supplier Related Environmental Indicators"
+        title="Module Related Environmental Indicators"
         colNames={["Possibility of RoHS","Recycling Rate","Satisfaction Level of Using Renewable Materials"]}
-        rowNames={this.props.selectedSuppliers}
-        matrixContent={this.makeSupplierMatrix(this.props.selectedSuppliers,this.props.supplierData)}
+        rowNames={this.props.selectedAlternates}
+        matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
         bgColor={'#7C7B50'}
 
         editCell={null}
@@ -164,7 +190,7 @@ class PhaseTwo extends React.Component{
       <MatrixDisplay
         title="Supplier Related Environmental Indicators"
         colNames={["ISO 14001","Use of Recycled Materials","Environmental Friendly Packaging"]}
-        rowNames={this.props.selectedAlternates}
+        rowNames={this.props.selectedSuppliers}
         matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
         bgColor={'#7C7B50'}
 
@@ -211,6 +237,11 @@ function matchDispatchToProps(dispatch){
     editThreshold : editThreshold,
     addAcceptedAlternate: addAcceptedAlternate,
     removeAcceptedAlternate: removeAcceptedAlternate,
+    addColFaMMat: addColFaMMat,
+    addColSaMMat:addColSaMMat,
+    addAcceptedSupplier: addAcceptedSupplier,
+    removeAcceptedSupplier,removeAcceptedSupplier,
+
   },dispatch)
 }
 

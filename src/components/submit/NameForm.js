@@ -46,6 +46,7 @@ export default class NameForm extends React.Component {
         //add matrix row add
         this.props.addMatRow();
         this.props.addMatCol();
+        if(this.props.addMatRow2){this.props.addMatRow2();}
       }
       else {
         this.setState({alertVisible: true, alertTitle: 'Its Empty...',
