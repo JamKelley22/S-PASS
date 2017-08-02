@@ -45,10 +45,10 @@ export default class PhaseTwoOut extends React.Component{
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseTwo/Input'>
-          <Button>Back</Button>
+          <Button id='backBtn'>Back</Button>
         </LinkContainer>
         <LinkContainer to='/Phases/PhaseThree/Input'>
-          <Button>Continue</Button>
+          <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
         </LinkContainer>
       </div>
 

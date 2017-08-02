@@ -218,10 +218,10 @@ class PhaseTwo extends React.Component{
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseOne/Output'>
-          <Button>Back</Button>
+          <Button id='backBtn'>Back</Button>
         </LinkContainer>
         <LinkContainer to='/Phases/PhaseTwo/Output'>
-          <Button>Continue</Button>
+          <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
         </LinkContainer>
       </div>
 

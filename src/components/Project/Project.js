@@ -82,7 +82,7 @@ const NewFolder = ({match}) =>(
 
   <Link to={'/Dashboard'}>
     <i className="fa fa-folder" id='folder-close'></i>
-  </Link>
+
 
   <Panel className='projectPanel'>
     <p>Company X—Drone Design</p>
@@ -90,6 +90,7 @@ const NewFolder = ({match}) =>(
       <i className="fa fa-plus-circle" id='plusSign'></i>
     </Link>
   </Panel>
+  </Link>
 
   <div className='folderIcons'>
 

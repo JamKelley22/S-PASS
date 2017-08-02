@@ -60,7 +60,8 @@ export default class PhaseOneInput extends React.Component{
   render(){
     return(
 
-      <div id='scroll'>
+      <div className='scroll'>
+
 
       <Modal show={this.state.showModal} onHide={this.hideHelp}>
         <Help/>
@@ -156,10 +157,10 @@ Estimate how well each product module satisfies each product function. Base this
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseTwo/Output'>
-            <Button>Back</Button>
+            <Button id='backBtn'>Back</Button>
           </LinkContainer>
           <LinkContainer to='/Phases/PhaseThree/Output'>
-            <Button>Continue</Button>
+            <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
           </LinkContainer>
         </div>
       </div>

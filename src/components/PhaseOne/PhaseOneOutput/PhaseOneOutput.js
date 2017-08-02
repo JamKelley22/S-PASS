@@ -122,10 +122,10 @@ Below is the satisfaction level of each environmental sustainability requirement
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseOne/Input'>
-            <Button>Back</Button>
+            <Button id='backBtn'>Back</Button>
           </LinkContainer>
           <LinkContainer to='/Phases/PhaseTwo/Input'>
-            <Button>Continue</Button>
+            <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
           </LinkContainer>
         </div>
       </div>

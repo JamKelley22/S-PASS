@@ -73,8 +73,7 @@ export default class PhaseThreeOutput extends React.Component{
 
       <div id='scroll'>
 
-        <h1>Selection Output</h1>
-        <p>Below are the average functional satisfaction levels for new produt architectures</p>
+        <h1>Average functional satisfaction levels for new produt architectures</h1>
         <MatrixDisplay
           title="Function vs. Architecture"
           colNames={this.props.productArchitecture}
@@ -83,8 +82,15 @@ export default class PhaseThreeOutput extends React.Component{
             this.props.functionModuleMatrix._data,
             this.props.moduleArchitectureMatrix._data)}
           bgColor={'#7C7B50'}
+
+          editCell={null}
+          canEditCells={false}
+          numberType='bin' // | bin | % | # |
+          editType='input'// | dropDown | input |
+          dropDownChoices={null}
         />
 
+        <h1>Average requirement satisfaction levels for new produt architectures</h1>
         <MatrixDisplay
           title="Requirement vs. Architecture"
           colNames={this.props.productArchitecture}
@@ -101,7 +107,7 @@ export default class PhaseThreeOutput extends React.Component{
           dropDownChoices={null}
         />
 
-        <p>Below are the suppliers selected for new product architectures</p>
+        <h1>Suppliers selected for new product architectures</h1>
         <MatrixDisplay
           title="Supplier vs. Architecture"
           colNames={this.props.productArchitecture}
@@ -120,7 +126,7 @@ export default class PhaseThreeOutput extends React.Component{
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseThree/Input'>
-            <Button>Back</Button>
+            <Button id='backBtn'>Back</Button>
           </LinkContainer>
         </div>
 

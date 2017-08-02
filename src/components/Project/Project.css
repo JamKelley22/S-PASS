@@ -43,6 +43,10 @@
   padding: 0px;
   background-color: #EEF1BC;
   z-index: 1;
+  height: 100px;
+}
+.projectPanel p {
+  font-size: 16px;
 }
 .fa-cube {
   float: left;

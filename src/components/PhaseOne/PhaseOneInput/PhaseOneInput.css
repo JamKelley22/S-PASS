@@ -23,13 +23,15 @@ p {
 }
 #matrixRow {
   max-width: 100%;
+  width: 100%;
   position:relative;
     overflow:auto;
     white-space: nowrap;
 }
 #matrixDisplay {
+  width: 90%;
   display: inline-block;
-    overflow: hidden;
+    overflow-x: auto;
 }
 #sumDisplay {
   display: inline;
@@ -38,8 +40,15 @@ p {
     position:absolute;
 }
 #lowerButtons .btn{
-  background-color: #706F47;
   color: white;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+#continueBtn {
+  background-color: #9dc64d;
+}
+#backBtn {
+  background-color: #d2d2b1;
 }
 #noClick {
   cursor: not-allowed !important;

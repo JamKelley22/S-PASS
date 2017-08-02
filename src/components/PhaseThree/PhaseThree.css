@@ -25,7 +25,7 @@ p {
 }
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: #505f2d;;
+    background: #41463f;
 }
 #matrixRow {
   max-width: 100%;

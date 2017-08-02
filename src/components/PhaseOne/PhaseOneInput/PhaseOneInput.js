@@ -244,7 +244,7 @@ Estimate to what extent each product module satisfies each product function usin
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseOne/Output'>
-            <Button>Continue</Button>
+            <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
           </LinkContainer>
         </div>
 
