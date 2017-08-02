@@ -81,13 +81,6 @@ class PhaseTwo extends React.Component{
         }
       }
     }
-    //console.log("alternateMatrix");
-    //
-    //
-    //
-    //
-    //
-    //console.log(alternateMatrix);
     return(alternateMatrix);
   }
 
@@ -128,7 +121,7 @@ class PhaseTwo extends React.Component{
         addMatCol = {this.props.addColFaMMat}
         addMatCol2 = {this.props.addColSaMMat}
       />
-      
+
       <UniqueDropdown
 
         title={'Alternate Suppliers'}
@@ -198,7 +191,7 @@ class PhaseTwo extends React.Component{
         title="Supplier Related Environmental Indicators"
         colNames={["ISO 14001","Use of Recycled Materials","Environmental Friendly Packaging"]}
         rowNames={this.props.selectedSuppliers}
-        matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
+        matrixContent={this.makeSupplierMatrix(this.props.selectedSuppliers,this.props.supplierData)}
         bgColor={'#7C7B50'}
 
         editCell={null}
@@ -232,6 +225,7 @@ function mapStateToProps(state){
     selectedSuppliers: state.selectedSuppliers,
     thresholds: state.thresholds,
     acceptedAlternates: state.acceptedAlternates,
+    acceptedSuppliers: state.acceptedSuppliers,
   };
 }
 
