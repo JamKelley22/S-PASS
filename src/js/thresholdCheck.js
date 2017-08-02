@@ -27,9 +27,9 @@ export const findAlt = (data,name) =>{
 export const altRemoveIndex=(data,thresh,list)=>{
   let removeIndex=[];
   let newThresh = [thresh[0],thresh[1],thresh[2]];
-  console.log("DATA++++!@+!@+!+!");
-  console.log(newThresh);
-  console.log(data);
+  //console.log("DATA++++!@+!@+!+!");
+  //console.log(newThresh);
+  //console.log(data);
   for(var key in list){
     let listObj = findAlt(data,list[key]);
     console.log("LIST OBJ");

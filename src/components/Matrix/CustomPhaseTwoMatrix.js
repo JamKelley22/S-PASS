@@ -55,13 +55,20 @@ export default class CustomPhaseTwoMatrix extends React.Component{
       console.log("==Add index end===");
     }
     let i=0;
-    for(i=0;i<removeAltIndex.length;i++){
+    console.log("--------------removeAltIndex INFO------------------");
+    console.log(removeAltIndex);
+    console.log(removeAltIndex);
+    for(i=removeAltIndex.length-1; i>=0;i--){
       console.log("AEHAEJFNLNFKAJSDNASJDFSDF")
+      console.log("I");
+      console.log(i);
       console.log(removeAltIndex[i]);
       this.props.removeAcceptedAlternate(removeAltIndex[i]);
+      this.props.removeColFaMMat();
     }
     for(i=0; i<addAltIndex.length;i++){
       this.props.addAcceptedAlternate(addAltIndex[i]);
+      this.props.addColFaMMat();
     }
 
 

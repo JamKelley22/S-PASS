@@ -13,9 +13,9 @@ import {editThreshold} from '../../actions/thresholdsActions.js';
 import {thresholdCheck,findAlt,altRemoveIndex,altAddIndex,findSup
 } from '../../js/thresholdCheck.js';
 import {addAcceptedAlternate,removeAcceptedAlternate} from '../../actions/acceptedAlternatesActions.js';
-import {addColFaMMat} from '../../actions/functionAltModuleActions.js';
 import{addColSaMMat} from '../../actions/supplierAltModuleActions.js';
 import {addAcceptedSupplier,removeAcceptedSupplier} from'../../actions/acceptedSupplierActions.js';
+import {addColFaMMat,removeColFaMMat} from '../../actions/functionAltModuleActions.js';
 
 
 class PhaseTwo extends React.Component{
@@ -59,8 +59,8 @@ class PhaseTwo extends React.Component{
         }
       }
     }
-    console.log("Supplier Matrix");
-    console.log(supplierMatrix);
+    //console.log("Supplier Matrix");
+    //console.log(supplierMatrix);
     return(supplierMatrix);
   }
 
@@ -71,7 +71,7 @@ class PhaseTwo extends React.Component{
         //console.log(supplier);
         if(selectedAlternates[alternate]==alternateData[key].name){
           var temp = alternateData[key].recyclingRate*100;
-          console.log(temp);
+          //console.log(temp);
           let tempString = temp.toString() + "%";
           alternateMatrix.push([
             alternateData[key].RoHS,
@@ -81,8 +81,13 @@ class PhaseTwo extends React.Component{
         }
       }
     }
-    console.log("alternateMatrix");
-    console.log(alternateMatrix);
+    //console.log("alternateMatrix");
+    //
+    //
+    //
+    //
+    //
+    //console.log(alternateMatrix);
     return(alternateMatrix);
   }
 
@@ -123,9 +128,7 @@ class PhaseTwo extends React.Component{
         addMatCol = {this.props.addColFaMMat}
         addMatCol2 = {this.props.addColSaMMat}
       />
-      {console.log("SUPPLIER THRESH ARR")}
-      {console.log(SupplierThreshArr)}
-      {console.log(this.props.supplierData)}
+      
       <UniqueDropdown
 
         title={'Alternate Suppliers'}
@@ -169,6 +172,10 @@ class PhaseTwo extends React.Component{
         selectedAlternates = {this.props.selectedAlternates}
         addAcceptedAlternate = {this.props.addAcceptedAlternate}
         removeAcceptedAlternate = {this.props.removeAcceptedAlternate}
+        //alt Modules
+        addColFaMMat = {this.props.addColFaMMat}
+        removeColFaMMat = {this.props.removeColFaMMat}
+
         //supplier
 
       />
@@ -241,6 +248,8 @@ function matchDispatchToProps(dispatch){
     addColSaMMat:addColSaMMat,
     addAcceptedSupplier: addAcceptedSupplier,
     removeAcceptedSupplier,removeAcceptedSupplier,
+    addColFaMMat: addColFaMMat,
+    removeColFaMMat: removeColFaMMat,
 
   },dispatch)
 }
