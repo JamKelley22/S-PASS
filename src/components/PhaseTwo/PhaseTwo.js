@@ -13,7 +13,7 @@ import {editThreshold} from '../../actions/thresholdsActions.js';
 import {thresholdCheck,findAlt,altRemoveIndex,altAddIndex,findSup,supRemoveIndex,supAddIndex
 } from '../../js/thresholdCheck.js';
 import {addAcceptedAlternate,removeAcceptedAlternate} from '../../actions/acceptedAlternatesActions.js';
-import{addColSaMMat,removeColSaMMat} from '../../actions/supplierAltModuleActions.js';
+import{addColSaMMat,removeColSaMMat,addRowSaMMat,removeRowSaMMat} from '../../actions/supplierAltModuleActions.js';
 import {addAcceptedSupplier,removeAcceptedSupplier} from'../../actions/acceptedSupplierActions.js';
 import {addColFaMMat,removeColFaMMat} from '../../actions/functionAltModuleActions.js';
 
@@ -122,6 +122,8 @@ class PhaseTwo extends React.Component{
         //used for accepted matrixContent
         addMatCol = {this.props.addColFaMMat}
         addMatCol2 = {this.props.addColSaMMat}
+        removeMatData={this.props.removeColSaMMat}
+        removeMatData2={this.props.removeColFaMMat}
       />
 
       <UniqueDropdown
@@ -139,8 +141,10 @@ class PhaseTwo extends React.Component{
         removeAcceptedData = {this.props.removeAcceptedSupplier}
 
         //used for accepted matrixContent
-        addMatCol = {this.props.addColFaMMat}
-        addMatCol2 = {this.props.addColSaMMat}
+        //addMatCol = {this.props.addColFaMMat}
+        //addMatCol2 = {this.props.addColSaMMat}
+        addMatRow = {this.props.addRowSaMMat}
+        removeMatData={this.props.removeRowSaMMat}
       />
 
       <CustomPhaseTwoMatrix
@@ -184,8 +188,11 @@ class PhaseTwo extends React.Component{
         //add and remove supplier data actions
         addAcceptedSupplier = {this.props.addAcceptedSupplier}
         removeAcceptedSupplier = {this.props.removeAcceptedSupplier}
+        addRowSaMMat = {this.props.addRowSaMMat}
+        removeRowSaMMat = {this.props.removeRowSaMMat}
         addColSaMMat = {this.props.addColSaMMat}
         removeColSaMMat = {this.props.removeColSaMMat}
+        removeRowSaMMat = {this.props.removeRowSaMMat}
       />
 
       <MatrixDisplay
@@ -270,6 +277,8 @@ function matchDispatchToProps(dispatch){
     //supplier alternate module matrix actions
     addColSaMMat:addColSaMMat,
     removeColSaMMat: removeColSaMMat,
+    addRowSaMMat: addRowSaMMat,
+    removeRowSaMMat: removeRowSaMMat,
 
   },dispatch)
 }
