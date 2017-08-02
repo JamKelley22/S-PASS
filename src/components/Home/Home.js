@@ -11,7 +11,7 @@ import PhaseThree from '../PhaseThree/PhaseThreeIn.js';
 
 import Project from '../Project/Project.js';
 
-import SideBar from '../SideBar/Sidebar.js';
+import SideBar from '../SideBar/SideBar.js';
 import Breadcrumbs from '../breadcrumbs.js';
 import {PageHeader,Button,Grid,Row,Col,Nav,Panel,Jumbotron,Glyphicon} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';

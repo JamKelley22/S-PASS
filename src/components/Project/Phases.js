@@ -19,7 +19,7 @@ import PhasesSideBar from '../SideBar/PhasesSideBar.js';
 import Files from './Files.js';
 import About from './About.js';
 
-import Breadcrumbs from '../Breadcrumbs.js';
+import Breadcrumbs from '../breadcrumbs.js';
 
 import './Dashboard/SPASS.css';
 

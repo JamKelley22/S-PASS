@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SideBar from '../SideBar/Sidebar.js';
+import SideBar from '../SideBar/SideBar.js';
 import Home from '../Home/Home.js';
 import TopNav from '../SideBar/navbar.js';
 import MasashiRouter from '../MasashiTest/MasashiTest.js';

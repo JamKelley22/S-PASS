@@ -136,7 +136,7 @@ export default class PhaseOneInput extends React.Component{
         <p>
         <b>Below: </b>
         Using the given interpretation of contribution probabilities, estimate to what extent each product function contributes to achieve each environmental sustainability requirement. Note that all empty cell values should have values, and the sum of all columns for each row should be 100%.
-        <Image src={require('../../../Images/interpretation_of_contribution_probabilities.png')} alt='Quad-copter'/>
+        <Image src={require('../../../Images/interpretation_of_contribution_probabilities.PNG')} alt='Quad-copter'/>
 
         </p>
 
@@ -183,7 +183,7 @@ export default class PhaseOneInput extends React.Component{
 <p>
 <b>Below: </b>
 Estimate to what extent each product module satisfies each product function using the descriptions of satisfaction levels. Each satisfaction level is a range from 1 (poor) to 5 (very good) and has 0 if the module does not provide the function.
-<Image src={require('../../../Images/description_of_satisfaction_levels.png')} alt='Quad-copter'/>
+<Image src={require('../../../Images/description_of_satisfaction_levels.PNG')} alt='Quad-copter'/>
 
 </p>
 

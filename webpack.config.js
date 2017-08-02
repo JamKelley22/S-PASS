@@ -24,7 +24,7 @@ module.exports = {
         loader: "style-loader!css-loader"
       },
       {
-        test: /\.png$/,
+        test: /\.(png|PNG)$/,
         loader: "url-loader?name=/img/[name].[ext]"
       },
       {

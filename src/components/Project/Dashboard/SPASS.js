@@ -6,7 +6,7 @@ import Overview from '../Overview.js';
 import Files from '../Files.js';
 import About from '../About.js';
 
-import Breadcrumbs from '../../Breadcrumbs.js';
+import Breadcrumbs from '../../breadcrumbs.js';
 import SideBar from '../../SideBar/SideBar.js';
 
 import './SPASS.css';

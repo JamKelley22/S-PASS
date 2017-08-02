@@ -22,7 +22,7 @@ const About = ({match}) =>(
       An overview of S-PASS is illustrated in the figure below. The S-PASS basically employs a matrix propagation system, which constructs and uses a series of overlapping matrices, to derive a final solution through matrix operations starting from the rows in the initial matrix to columns in the last matrix.
       </p>
 
-      <Image src={require('../../Images/S-PASS_diagram.png')} alt='S-PASS Diagram'/>
+      <Image src={require('../../Images/S-PASS_Diagram.PNG')} alt='S-PASS Diagram'/>
 
       <p>
       Students’ information input regarding new part modules and suppliers in consideration of sustainable design requirements and proper environmental impact is processed through the matrix system to obtain acceptable sustainable product architectures and their suppliers.

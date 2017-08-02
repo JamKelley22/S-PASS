@@ -9,7 +9,7 @@ import thunk from "redux-thunk";
 import promise from "redux-promise-middleware";
 
 //Reducers that will be used on the store.
-import reducer from "./reducers";
+import reducers from "./reducers";
 
 //History for router
 //export const history = syncHistoryWithStore(browserHistory, store);
@@ -20,6 +20,6 @@ import reducer from "./reducers";
 const middleware = applyMiddleware(promise(),thunk,createLogger());
 
 //Exports store with imported reducers and middleware.
-const store = createStore(reducer,middleware);
+const store = createStore(reducers,middleware);
 
 export default store;
