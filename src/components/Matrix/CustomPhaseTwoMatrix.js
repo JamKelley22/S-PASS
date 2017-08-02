@@ -41,15 +41,15 @@ export default class CustomPhaseTwoMatrix extends React.Component{
     let addAltIndex=[];
     console.log("============++++++THESHS++++++=============");
     console.log(this.state.threshs);
-    if(this.props.acceptedData.length!=0){
-      removeAltIndex = this.props.findRemoveIndex(this.props.data,this.state.threshs,this.props.acceptedData);//(this.props.data,this.state.threshs,this.props.acceptedData));
+    if(this.props.acceptedAlternates.length!=0){
+      removeAltIndex = this.props.findRemoveAltIndex(this.props.altData,this.state.threshs,this.props.acceptedAlternates);
       console.log("===remove index start===");
       console.log(removeAltIndex);
       console.log("===remove index end===");
     }
 
     if(this.props.selectedAlternates){
-      addAltIndex = this.props.findAddIndex(this.props.data,this.state.threshs,this.props.selectedAlternates,this.props.acceptedData);
+      addAltIndex = this.props.findAddAltIndex(this.props.altData,this.state.threshs,this.props.selectedAlternates,this.props.acceptedAlternates);
       console.log("==Add index start===");
       console.log(addAltIndex);
       console.log("==Add index end===");
@@ -64,14 +64,12 @@ export default class CustomPhaseTwoMatrix extends React.Component{
       console.log(i);
       console.log(removeAltIndex[i]);
       this.props.removeAcceptedAlternate(removeAltIndex[i]);
-      this.props.removeColFaMMat();
+      this.props.removeColFaMMat(removeAltIndex[i]);
     }
     for(i=0; i<addAltIndex.length;i++){
       this.props.addAcceptedAlternate(addAltIndex[i]);
       this.props.addColFaMMat();
     }
-
-
     this.refs.overlay0.hide();
     this.refs.overlay1.hide();
     this.refs.overlay2.hide();

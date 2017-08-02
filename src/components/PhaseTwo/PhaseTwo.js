@@ -158,19 +158,32 @@ class PhaseTwo extends React.Component{
           ['100 Certain to contribute']
         ]}
         editCell = {this.props.editThreshold}
-        findRemoveIndex = {this.altRemoveIndex}
-        findAddIndex = {this.altAddIndex}
-        acceptedData = {this.props.acceptedAlternates}
-        data = {this.props.altModuleData}
+        //====Alternate Modules====
+        findRemoveAltIndex = {this.altRemoveIndex}
+        findAddAltIndex = {this.altAddIndex}
+        acceptedAlternates = {this.props.acceptedAlternates}
+        altData = {this.props.altModuleData}
         selectedAlternates = {this.props.selectedAlternates}
         addAcceptedAlternate = {this.props.addAcceptedAlternate}
         removeAcceptedAlternate = {this.props.removeAcceptedAlternate}
-        //alt Modules
         addColFaMMat = {this.props.addColFaMMat}
         removeColFaMMat = {this.props.removeColFaMMat}
 
-        //supplier
+      //=======Suppliers=======
+        //custom functions
+        //findRemoveSupIndex = {this.altRemoveIndex}
+        //findAddSupIndex = {this.altAddIndex}
 
+        //suppler store data
+        acceptedSuppliers = {this.props.acceptedSuppliers}
+        supData = {this.props.supplierData}
+        selectedSuppliers = {this.props.selectedSuppliers}
+
+        //add and remove supplier data actions
+        //addAcceptedSuppliers = {this.props.addAcceptedAlternate}
+        //removeAcceptedSupplier = {this.props.removeAcceptedAlternate}
+        //addColFaMMat = {this.props.addColFaMMat}
+        //removeColFaMMat = {this.props.removeColFaMMat}
       />
 
       <MatrixDisplay
@@ -231,19 +244,30 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   return bindActionCreators({
+    //alternate module and accepted alternate module list actions
     addAlternate: addAlternate,
     removeAlternate: removeAlternate,
-    addSupplier: addSupplier,
-    removeSupplier: removeSupplier,
-    editThreshold : editThreshold,
     addAcceptedAlternate: addAcceptedAlternate,
     removeAcceptedAlternate: removeAcceptedAlternate,
-    addColFaMMat: addColFaMMat,
-    addColSaMMat:addColSaMMat,
-    addAcceptedSupplier: addAcceptedSupplier,
-    removeAcceptedSupplier,removeAcceptedSupplier,
+
+    //supplier list actions
+    addSupplier: addSupplier,
+    removeSupplier: removeSupplier,
+
+    //threshold edit
+    editThreshold : editThreshold,
+
+    //Function alternate
     addColFaMMat: addColFaMMat,
     removeColFaMMat: removeColFaMMat,
+
+    //accepted supplier actions
+    addAcceptedSupplier: addAcceptedSupplier,
+    removeAcceptedSupplier,removeAcceptedSupplier,
+
+    //supplier alternate module matrix actions
+    addColSaMMat:addColSaMMat,
+
 
   },dispatch)
 }
