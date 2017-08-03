@@ -69,7 +69,7 @@ export default class PhaseThreeOutput extends React.Component{
 
   functionProduct(funMod,modArch){
     console.log(funMod);
-    if(funMod[0].length!=0){
+    if(funMod[0].length!=0 && modArch.length!=0){
     //Deep copy of matrices.
     var newFunMod = funMod.map(function(arr) {
     return arr.slice();
