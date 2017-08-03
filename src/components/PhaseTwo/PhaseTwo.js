@@ -178,6 +178,9 @@ class PhaseTwo extends React.Component{
         removeAcceptedAlternate = {this.props.removeAcceptedAlternate}
         addColFaMMat = {this.props.addColFaMMat}
         removeColFaMMat = {this.props.removeColFaMMat}
+        addRowMPAMat = {this.props.addRowMPAMat}
+        removeRowMPAMat = {this.props.removeRowMPAMat}
+
 
       //=======Suppliers=======
         //custom functions
@@ -286,6 +289,8 @@ function matchDispatchToProps(dispatch){
 
     addRowMPAMat:addRowMPAMat,
     removeRowMPAMat:removeRowMPAMat,
+
+
 
   },dispatch)
 }
