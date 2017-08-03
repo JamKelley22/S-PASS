@@ -125,7 +125,7 @@ Estimate how well each product module satisfies each product function. Base this
               matrixContent={this.props.supplierAltModuleMatrix._data}
               colNames={this.props.acceptedAlternates}
               rowNames={this.props.acceptedSuppliers}
-              editCell={this.props.editCellFMMat}
+              editCell={this.props.editCellSaMMat}
               bgColor={'#9DC64D'}
               canEditCells={true}
               numberType='#' // | bin | % | # |
@@ -143,7 +143,7 @@ Estimate how well each product module satisfies each product function. Base this
           title = "Modules vs. Product Architecture"
           matrixContent={this.props.moduleProductArchitecture._data}
           colNames={this.props.newArchitectureList}
-          rowNames={this.props.modules}
+          rowNames={this.props.acceptedAlternates}
           editCell={this.props.editCellMPAMat}
           bgColor={'#9DC64D'}
           canEditCells={true}

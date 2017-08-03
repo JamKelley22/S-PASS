@@ -26,7 +26,16 @@ class PhaseThreeIn extends React.Component{
           functionModuleMatrix={this.props.functionModuleMatrix}
           moduleArchitectureMatrix={this.props.moduleArchitectureMatrix}
           requirements = {this.props.requirements}
+
+
+          functionAltModuleMatrix={this.props.functionAltModuleMatrix}
+          moduleProductArchitecture={this.props.moduleProductArchitecture}
+          acceptedAlternates={this.props.acceptedAlternates}
+          newArchitectureList={this.props.newArchitectureList}
+
           requirementFunctionMatrix={this.props.requirementFunctionMatrix}
+          acceptedSuppliers={this.props.acceptedSuppliers}
+          supplierAltModuleMatrix={this.props.supplierAltModuleMatrix}
         />
     );
   }
@@ -34,13 +43,25 @@ class PhaseThreeIn extends React.Component{
 
 function mapStateToProps(state){
   return{
-    functions: state.functionList,
+
     modules:state.moduleList,
     requirements:state.requirementList,
     productArchitecture: state.productArchitecture,
     requirementFunctionMatrix: state.requirementFunctionMatrix,
     functionModuleMatrix: state.functionModuleMatrix,
     moduleArchitectureMatrix: state.moduleArchitectureMatrix,
+
+    //matrix 1 output
+    functions: state.functionList,
+    //matrix mult 1
+    functionAltModuleMatrix: state.functionAltModuleMatrix,
+    moduleProductArchitecture: state.moduleProductArchitecture,
+    acceptedAlternates: state.acceptedAlternates,
+    newArchitectureList: state.newArchitectureList,
+    //relation of (function Alt Module Matrix)/(moduleProductArchitecture)
+    requirementFunctionMatrix: state.requirementFunctionMatrix,
+    acceptedSuppliers: state.acceptedSuppliers,
+    supplierAltModuleMatrix: state.supplierAltModuleMatrix,
   };
 }
 

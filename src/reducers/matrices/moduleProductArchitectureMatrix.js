@@ -1,12 +1,15 @@
 var math=require('mathjs');
 const initialState = math.matrix();
-initialState.resize([8,3]);
+initialState.resize([0,3]);
 
   export default function(state = initialState, action){
     switch(action.type){
 
       case "ADD_ROW_MOD_PROD_ARCH":
+      console.log("==========MASASHI LOOK HERE============");
+
       if(state._size.length==1||isNaN(state._size[1])){
+        console.log("INSIDE IF");
         let newMat = math.matrix();
         newMat.resize([1,0]);
         console.log(newMat);
