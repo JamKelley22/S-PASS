@@ -135,8 +135,8 @@ export default class PhaseOneInput extends React.Component{
           removeMatCol={this.props.removeColFMMat}
           addMatCol={this.props.addColFMMat}
 
-          addMatRow3={this.props.addRowMPAMat}
-          removeMatRow3={this.props.removeRowMPAMat}
+          //addMatRow3={this.props.addRowMPAMat}
+          //removeMatRow3={this.props.removeRowMPAMat}
         />
 
         <h3>Step 2: Product Contribution Estimation</h3>

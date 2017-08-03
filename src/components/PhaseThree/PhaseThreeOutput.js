@@ -15,6 +15,34 @@ export default class PhaseThreeOutput extends React.Component{
     this.matrixMult = this.matrixMult;
     this.findRelation = this.findRelation;
     this.functionProduct = this.functionProduct;
+    this.selectionMatrix = this.selectionMatrix;
+  }
+
+  selectionMatrix(mat1,mat2){
+    console.log("=====SELECTION MATRIX======");
+    console.log(mat1);
+    if(mat1.length!=0){
+    let newMatrix = this.matrixMult(mat1,mat2);
+    console.log("newMatrix");
+    console.log(newMatrix);
+    var selected = newMatrix.map(function(x){
+      console.log("made it");
+      return(x.map(function(num){
+        console.log("also made it");
+        if(num>0){
+          return "Accepted";
+        }
+        else{
+          return "Not Accepted";
+        }
+      }))
+    })
+    console.log(selected);
+    return selected;
+  }
+  else{
+    return [["nothing selected","nothing selected","nothing selected"]];
+  }
   }
 
   matrixMult(mat1,mat2){
@@ -40,6 +68,8 @@ export default class PhaseThreeOutput extends React.Component{
   }
 
   functionProduct(funMod,modArch){
+    console.log(funMod);
+    if(funMod[0].length!=0){
     //Deep copy of matrices.
     var newFunMod = funMod.map(function(arr) {
     return arr.slice();
@@ -63,35 +93,39 @@ export default class PhaseThreeOutput extends React.Component{
     });
 
     return matOutput._data;
+    }
+  else{
+    let temp=[];
+    for(var i=0;i<funMod.length;i++){
+      temp.push([]);
+    }
+    return temp;
   }
-
-
-
+  }
   render(){
-
     return(
-
       <div id='scroll'>
-
+        {console.log(this.props.functionAltModuleMatrix)}
+        {console.log(this.props.moduleProductArchitecture)}
         <h1>Selection Output</h1>
         <p>Below are the average functional satisfaction levels for new produt architectures</p>
         <MatrixDisplay
           title="Function vs. Architecture"
-          colNames={this.props.productArchitecture}
+          colNames={this.props.newArchitectureList}
           rowNames={this.props.functions}
           matrixContent={this.functionProduct(
-            this.props.functionModuleMatrix._data,
-            this.props.moduleArchitectureMatrix._data)}
+            this.props.functionAltModuleMatrix._data,
+            this.props.moduleProductArchitecture._data)}
           bgColor={'#7C7B50'}
         />
 
         <MatrixDisplay
           title="Requirement vs. Architecture"
-          colNames={this.props.productArchitecture}
+          colNames={this.props.newArchitectureList}
           rowNames={this.props.requirements}
           matrixContent={this.matrixMult(this.props.requirementFunctionMatrix,
-            this.functionProduct(this.props.functionModuleMatrix._data,
-            this.props.moduleArchitectureMatrix._data))}
+            this.functionProduct(this.props.functionAltModuleMatrix._data,
+              this.props.moduleProductArchitecture._data))}
           bgColor={'#7C7B50'}
 
           editCell={null}
@@ -104,11 +138,10 @@ export default class PhaseThreeOutput extends React.Component{
         <p>Below are the suppliers selected for new product architectures</p>
         <MatrixDisplay
           title="Supplier vs. Architecture"
-          colNames={this.props.productArchitecture}
-          rowNames={this.props.requirements}
-          matrixContent={this.matrixMult(this.props.requirementFunctionMatrix,
-            this.functionProduct(this.props.functionModuleMatrix._data,
-            this.props.moduleArchitectureMatrix._data))}
+          colNames={this.props.newArchitectureList}
+          rowNames={this.props.acceptedSuppliers}
+          matrixContent={this.selectionMatrix(this.props.supplierAltModuleMatrix._data,
+            this.props.moduleProductArchitecture._data)}
           bgColor={'#7C7B50'}
 
           editCell={null}
@@ -128,17 +161,3 @@ export default class PhaseThreeOutput extends React.Component{
     );
   }
 }
-/*
-this.functionProduct(
-  this.props.functionModuleMatrix._data,
-  this.props.moduleArchitectureMatrix._data)
-mat 1:
-this.functionProduct(
-  this.props.functionModuleMatrix._data,
-  this.props.moduleArchitectureMatrix._data)
-mat 2:
-this.matrixMult(this.props.requirementFunctionMatrix,
-  this.functionProduct(this.props.functionModuleMatrix._data,
-  this.props.moduleArchitectureMatrix._data))
-
-*/
