@@ -128,7 +128,7 @@ export default class PhaseThreeOutput extends React.Component{
           title="Requirement vs. Architecture"
           colNames={this.props.newArchitectureList}
           rowNames={this.props.requirements}
-          matrixContent={this.matrixMult(this.props.requirementFunctionMatrix,
+          matrixContent={this.matrixMult(this.props.requirementFunctionMatrix._data,
             this.functionProduct(this.props.functionAltModuleMatrix._data,
               this.props.moduleProductArchitecture._data))}
           bgColor={'#7C7B50'}
