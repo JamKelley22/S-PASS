@@ -102,7 +102,7 @@ class PhaseTwo extends React.Component{
     let SupplierThreshArr=[SupplierThresh.iso,SupplierThresh.recycle,SupplierThresh.pack];
 
     return(
-      <div>
+      <div id='scroll'>
 
       <h1>New Architectures & Suppliers Input</h1>
       {console.log(ModuleThreshArr)}
