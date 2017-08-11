@@ -80,7 +80,7 @@ export default class PhaseOneInput extends React.Component{
 <b>Below: </b>Use satisfaction level 1(poor)-5(excellent). note that at least one(current or alternative) module for each module type of the defined number of module types should b eincluded in the first row.
 </p>
 <p>
-Estimate how well each product module satisfies each product function. Base this on your own assumptions and the information provided. The functional satisfaction levels of the existing modules should be the same as those that you input for Phase 1. Any and all empty remaining cells should be “0”.
+Estimate how well each product module satisfies each product 'function'. Base this on your own assumptions and the information provided. The functional satisfaction levels of the existing modules should be the same as those that you input for Phase 1. Any and all empty remaining cells should be “0”.
 </p>
 
         <div id='matrixRow'>
@@ -93,20 +93,14 @@ Estimate how well each product module satisfies each product function. Base this
               editCell={this.props.editCellFaMMat}
               bgColor={'#9DC64D'}
               canEditCells={true}//Must Specify that cells in the matrix are editable, else they are not
-              numberType='%' // | bin | % | # |
+              numberType='#' // | bin | % | # |
               editType='dropDown'// | dropDown | input |
               dropDownChoices={[
-                ['0','Imposible to contribute'],
-                ['10','Nearly impossible to contribute'],
-                ['20','Very unlikely to contribute'],
-                ['30','Quite unlikely to contribute'],
-                ['40','Possible to contribute'],
-                ['50','Even chance to contribute'],
-                ['60','Better than even chance to contribute'],
-                ['70','Quite likely to contribute'],
-                ['80','Very likely to contribute'],
-                ['90','Nearly certain to contribute'],
-                ['100','Certain to contribute']
+                ['1',''],
+                ['2',''],
+                ['3',''],
+                ['4',''],
+                ['5','']
               ]}
             />
           </div>

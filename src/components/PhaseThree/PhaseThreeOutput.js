@@ -118,7 +118,7 @@ export default class PhaseThreeOutput extends React.Component{
 
           editCell={null}
           canEditCells={false}
-          numberType='bin' // | bin | % | # |
+          numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
         />
@@ -135,7 +135,7 @@ export default class PhaseThreeOutput extends React.Component{
 
           editCell={null}
           canEditCells={false}
-          numberType='bin' // | bin | % | # |
+          numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
         />
@@ -151,7 +151,7 @@ export default class PhaseThreeOutput extends React.Component{
 
           editCell={null}
           canEditCells={false}
-          numberType='bin' // | bin | % | # |
+          numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
         />
