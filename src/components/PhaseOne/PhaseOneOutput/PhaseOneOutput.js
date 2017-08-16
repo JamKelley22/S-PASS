@@ -96,6 +96,12 @@ export default class PhaseOneOutput extends React.Component{
             this.props.functionModuleMatrix._data,
             this.props.moduleArchitectureMatrix._data)}
           bgColor={'#7C7B50'}
+
+          editCell={null}
+          canEditCells={false}
+          numberType='#' // | bin | % | # |
+          editType='input'// | dropDown | input |
+          dropDownChoices={null}
         />
 
 
@@ -115,7 +121,7 @@ Below is the satisfaction level of each environmental sustainability requirement
 
           editCell={null}
           canEditCells={false}
-          numberType='bin' // | bin | % | # |
+          numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
         />

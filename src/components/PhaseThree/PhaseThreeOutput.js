@@ -15,6 +15,34 @@ export default class PhaseThreeOutput extends React.Component{
     this.matrixMult = this.matrixMult;
     this.findRelation = this.findRelation;
     this.functionProduct = this.functionProduct;
+    this.selectionMatrix = this.selectionMatrix;
+  }
+
+  selectionMatrix(mat1,mat2){
+    console.log("=====SELECTION MATRIX======");
+    console.log(mat1);
+    if(mat1.length!=0){
+    let newMatrix = this.matrixMult(mat1,mat2);
+    console.log("newMatrix");
+    console.log(newMatrix);
+    var selected = newMatrix.map(function(x){
+      console.log("made it");
+      return(x.map(function(num){
+        console.log("also made it");
+        if(num>0){
+          return "Accepted";
+        }
+        else{
+          return "Not Accepted";
+        }
+      }))
+    })
+    console.log(selected);
+    return selected;
+  }
+  else{
+    return [["nothing selected","nothing selected","nothing selected"]];
+  }
   }
 
   matrixMult(mat1,mat2){
@@ -40,6 +68,8 @@ export default class PhaseThreeOutput extends React.Component{
   }
 
   functionProduct(funMod,modArch){
+    console.log(funMod);
+    if(funMod[0].length!=0 && modArch.length!=0){
     //Deep copy of matrices.
     var newFunMod = funMod.map(function(arr) {
     return arr.slice();
@@ -63,29 +93,32 @@ export default class PhaseThreeOutput extends React.Component{
     });
 
     return matOutput._data;
+    }
+  else{
+    let temp=[];
+    for(var i=0;i<funMod.length;i++){
+      temp.push([]);
+    }
+    return temp;
   }
-
-
-
+  }
   render(){
-
     return(
-
       <div id='scroll'>
 
         <h1>Average functional satisfaction levels for new produt architectures</h1>
         <MatrixDisplay
           title="Function vs. Architecture"
-          colNames={this.props.productArchitecture}
+          colNames={this.props.newArchitectureList}
           rowNames={this.props.functions}
           matrixContent={this.functionProduct(
-            this.props.functionModuleMatrix._data,
-            this.props.moduleArchitectureMatrix._data)}
+            this.props.functionAltModuleMatrix._data,
+            this.props.moduleProductArchitecture._data)}
           bgColor={'#7C7B50'}
 
           editCell={null}
           canEditCells={false}
-          numberType='bin' // | bin | % | # |
+          numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
         />
@@ -93,16 +126,16 @@ export default class PhaseThreeOutput extends React.Component{
         <h1>Average requirement satisfaction levels for new produt architectures</h1>
         <MatrixDisplay
           title="Requirement vs. Architecture"
-          colNames={this.props.productArchitecture}
+          colNames={this.props.newArchitectureList}
           rowNames={this.props.requirements}
-          matrixContent={this.matrixMult(this.props.requirementFunctionMatrix,
-            this.functionProduct(this.props.functionModuleMatrix._data,
-            this.props.moduleArchitectureMatrix._data))}
+          matrixContent={this.matrixMult(this.props.requirementFunctionMatrix._data,
+            this.functionProduct(this.props.functionAltModuleMatrix._data,
+              this.props.moduleProductArchitecture._data))}
           bgColor={'#7C7B50'}
 
           editCell={null}
           canEditCells={false}
-          numberType='bin' // | bin | % | # |
+          numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
         />
@@ -110,16 +143,15 @@ export default class PhaseThreeOutput extends React.Component{
         <h1>Suppliers selected for new product architectures</h1>
         <MatrixDisplay
           title="Supplier vs. Architecture"
-          colNames={this.props.productArchitecture}
-          rowNames={this.props.requirements}
-          matrixContent={this.matrixMult(this.props.requirementFunctionMatrix,
-            this.functionProduct(this.props.functionModuleMatrix._data,
-            this.props.moduleArchitectureMatrix._data))}
+          colNames={this.props.newArchitectureList}
+          rowNames={this.props.acceptedSuppliers}
+          matrixContent={this.selectionMatrix(this.props.supplierAltModuleMatrix._data,
+            this.props.moduleProductArchitecture._data)}
           bgColor={'#7C7B50'}
 
           editCell={null}
           canEditCells={false}
-          numberType='bin' // | bin | % | # |
+          numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
         />
@@ -134,17 +166,3 @@ export default class PhaseThreeOutput extends React.Component{
     );
   }
 }
-/*
-this.functionProduct(
-  this.props.functionModuleMatrix._data,
-  this.props.moduleArchitectureMatrix._data)
-mat 1:
-this.functionProduct(
-  this.props.functionModuleMatrix._data,
-  this.props.moduleArchitectureMatrix._data)
-mat 2:
-this.matrixMult(this.props.requirementFunctionMatrix,
-  this.functionProduct(this.props.functionModuleMatrix._data,
-  this.props.moduleArchitectureMatrix._data))
-
-*/

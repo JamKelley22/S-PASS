@@ -16,6 +16,7 @@ import {addAcceptedAlternate,removeAcceptedAlternate} from '../../actions/accept
 import{addColSaMMat,removeColSaMMat,addRowSaMMat,removeRowSaMMat} from '../../actions/supplierAltModuleActions.js';
 import {addAcceptedSupplier,removeAcceptedSupplier} from'../../actions/acceptedSupplierActions.js';
 import {addColFaMMat,removeColFaMMat} from '../../actions/functionAltModuleActions.js';
+import {addRowMPAMat,removeRowMPAMat} from '../../actions/moduleProductArchitectureActions.js';
 
 
 class PhaseTwo extends React.Component{
@@ -102,7 +103,7 @@ class PhaseTwo extends React.Component{
     let SupplierThreshArr=[SupplierThresh.iso,SupplierThresh.recycle,SupplierThresh.pack];
 
     return(
-      <div>
+      <div id='scroll'>
 
       <h1>New Architectures & Suppliers Input</h1>
       {console.log(ModuleThreshArr)}
@@ -124,6 +125,9 @@ class PhaseTwo extends React.Component{
         addMatCol2 = {this.props.addColSaMMat}
         removeMatData={this.props.removeColSaMMat}
         removeMatData2={this.props.removeColFaMMat}
+        //phase 3 input matrix sizing for bottom matrix
+        addMatRow={this.props.addRowMPAMat}
+        removeMatRow3={this.props.removeRowMPAMat}
       />
 
       <UniqueDropdown
@@ -174,6 +178,9 @@ class PhaseTwo extends React.Component{
         removeAcceptedAlternate = {this.props.removeAcceptedAlternate}
         addColFaMMat = {this.props.addColFaMMat}
         removeColFaMMat = {this.props.removeColFaMMat}
+        addRowMPAMat = {this.props.addRowMPAMat}
+        removeRowMPAMat = {this.props.removeRowMPAMat}
+
 
       //=======Suppliers=======
         //custom functions
@@ -279,6 +286,11 @@ function matchDispatchToProps(dispatch){
     removeColSaMMat: removeColSaMMat,
     addRowSaMMat: addRowSaMMat,
     removeRowSaMMat: removeRowSaMMat,
+
+    addRowMPAMat:addRowMPAMat,
+    removeRowMPAMat:removeRowMPAMat,
+
+
 
   },dispatch)
 }

@@ -170,10 +170,20 @@ export default class Cell extends React.Component{
       }
     }
     else {
-      return(
-        <td key={ this.props.indexJ } >
-        {this.props.name}</td>
-      );
+      var satisfifyThresh = 3;
+      console.log(this.props.numberType);
+      if(this.props.numberType == '#' && parseFloat(this.props.name) < satisfifyThresh) {////////////////////////////////////////////
+        return(
+          <td style={{backgroundColor: 'red'}}  key={ this.props.indexJ } >
+          {this.props.name}</td>
+        );
+      }
+      else {
+        return(
+          <td key={ this.props.indexJ } >
+          {this.props.name}</td>
+        );
+      }
     }
   }
 
@@ -264,7 +274,7 @@ export class DropDownChoose extends React.Component{
 
     return(
       <div>
-        <div>{this.getChoices()}</div>
+        <div id='DDC'>{this.getChoices()}</div>
       </div>
     );
   }

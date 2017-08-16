@@ -28,6 +28,10 @@ module.exports = {
         loader: "url-loader?name=/img/[name].[ext]"
       },
       {
+        test: /\.(pdf)$/,
+        loader: 'file-loader?name=[path][name].[ext]',
+      },
+      {
         test: /\.jpg$/,
         loader: "file-loader"
       },

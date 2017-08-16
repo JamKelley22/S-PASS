@@ -41,14 +41,18 @@ p {
 }
 #lowerButtons .btn{
   color: white;
-  margin-left: 20%;
-  margin-right: 20%;
 }
 #continueBtn {
   background-color: #9dc64d;
+  float: right;
+  width: 50%;
+  border-radius: 0px;
 }
 #backBtn {
   background-color: #d2d2b1;
+  float: left;
+  width: 50%;
+  border-radius: 0px;
 }
 #noClick {
   cursor: not-allowed !important;

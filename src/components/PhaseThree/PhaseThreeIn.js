@@ -16,6 +16,7 @@ import {addRowMAMat,removeRowMAMat,editCellMAMat
 } from '../../actions/moduleArchitectureAction.js';
 import {editCellFaMMat} from '../../actions/functionAltModuleActions.js';
 import {editCellMPAMat} from '../../actions/moduleProductArchitectureActions.js';
+import {editCellSaMMat} from '../../actions/supplierAltModuleActions.js';
 
 class PhaseThreeIn extends React.Component{
 
@@ -46,6 +47,7 @@ class PhaseThreeIn extends React.Component{
         editCellRFMat={this.props.editCellRFMat}
         editCellMAMat={this.props.editCellMAMat}
         editCellFMMat={this.props.editCellFMMat}
+        editCellSaMMat={this.props.editCellSaMMat}
 
 
         requirementFunctionMatrix={this.props.requirementFunctionMatrix}
@@ -117,6 +119,7 @@ function matchDispatchToProps(dispatch){
     editCellFMMat: editCellFMMat,
     editCellFaMMat: editCellFaMMat,
     editCellMPAMat: editCellMPAMat,
+    editCellSaMMat: editCellSaMMat,
 
 
   },dispatch)

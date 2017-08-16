@@ -1,4 +1,6 @@
 #msMatrix {
   display: inline-block;
   padding: 20px;
+  vertical-align: top;
+  width: 50%;
 }

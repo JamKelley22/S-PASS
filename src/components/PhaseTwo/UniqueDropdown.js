@@ -35,14 +35,17 @@ export default class DropDownChoose extends React.Component{
       console.log("==========================================================");
       if(this.thresholdCheck(this.props.findData(this.props.data,value),
         this.props.threshold)){
-          console.log("Hello")
+          //console.log("Hello")
           this.props.addAcceptedData(value);
           //Add collumn here for fun alt mod matrix!!!!
-          if(this.props.addMatRow){this.props.addMatRow();}
-          console.log("I MADE IT!!!!!!!!");
+          //console.log("I MADE IT!!!!!!!!");
           if(this.props.addMatCol){this.props.addMatCol();}
           if(this.props.addMatCol2){this.props.addMatCol2();}
-          console.log("I ALSO MADE IT!!!!");
+          console.log("ADDING MAT ROW 3");
+          if(this.props.addMatRow){this.props.addMatRow();}
+          //if(this.props.addMatRow3){this.props.addMatRow3();}
+          console.log("AFTER ADDING MAT ROW 3");
+          //console.log("I ALSO MADE IT!!!!");
         }
       else{
         console.log("did not work");
@@ -67,6 +70,7 @@ export default class DropDownChoose extends React.Component{
       this.props.removeAcceptedData(newIndex);
       this.props.removeMatData(newIndex);
       if(this.props.removeMatData2){this.props.removeMatData2(newIndex);}
+      if(this.props.removeMatRow3){this.props.removeMatRow3(newIndex);}
     }
     newArr.splice(index, 1);
     this.setState({

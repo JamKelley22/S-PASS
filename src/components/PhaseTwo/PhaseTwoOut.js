@@ -8,36 +8,42 @@ import MSFilterMatrix from '../Matrix/MSFilterMatrix.js';
 
 import './PhaseTwoOut.css';
 
-@connect((store) => {
-  return{
-  };
-})
-
-export default class PhaseTwoOut extends React.Component{
+class PhaseTwoOut extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {
-    };
+      this.findBools = this.findBools;
+  }
+
+  findBools(selected,accepted){
+    let results = [];
+    for(var i=0;i<selected.length;i++){
+      if(accepted.includes(selected[i])){
+        results.push(true);
+      }
+      else{
+        results.push(false);
+      }
+    }
+    return results;
   }
 
   render(){
-
     return(
-      <div>
+      <div  id='scroll'>
 
       <div id='msMatrix'>
         <MSFilterMatrix
           title = {'Alternate Module'}
-          names = {['A1', 'A2', 'A3']}
-          values = {[false,true,true]}
+          names = {this.props.selectedAlternates}
+          values = {this.findBools(this.props.selectedAlternates,this.props.acceptedAlternates)}
         />
       </div>
 
       <div id='msMatrix'>
         <MSFilterMatrix
           title = {'Supplier'}
-          names = {['S1', 'S2', 'S3']}
-          values = {[true,false,false]}
+          names = {this.props.selectedSuppliers}
+          values = {this.findBools(this.props.selectedSuppliers,this.props.acceptedSuppliers)}
         />
       </div>
 
@@ -60,3 +66,21 @@ export default class PhaseTwoOut extends React.Component{
 const tooltip = (
   <Tooltip id="tooltip"><strong>Holy guacamole!</strong> Check this info.</Tooltip>
 );
+
+function mapStateToProps(state){
+  return{
+    selectedAlternates: state.selectedAlternates,
+    selectedSuppliers: state.selectedSuppliers,
+    acceptedAlternates: state.acceptedAlternates,
+    acceptedSuppliers: state.acceptedSuppliers,
+  };
+}
+
+function matchDispatchToProps(dispatch){
+  return bindActionCreators({
+
+  },dispatch)
+}
+
+
+export default connect(mapStateToProps)(PhaseTwoOut);
