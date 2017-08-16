@@ -95,7 +95,7 @@ export default class PhaseOneOutput extends React.Component{
           matrixContent={this.functionProduct(
             this.props.functionModuleMatrix._data,
             this.props.moduleArchitectureMatrix._data)}
-          bgColor={'#7C7B50'}
+          bgColor={'rgba(210,210,177,0.6)'}
 
           editCell={null}
           canEditCells={false}
@@ -117,7 +117,7 @@ Below is the satisfaction level of each environmental sustainability requirement
           matrixContent={this.matrixMult(this.props.requirementFunctionMatrix._data,
             this.functionProduct(this.props.functionModuleMatrix._data,
             this.props.moduleArchitectureMatrix._data))}
-          bgColor={'#7C7B50'}
+          bgColor={'rgba(210,210,177,0.6)'}
 
           editCell={null}
           canEditCells={false}
