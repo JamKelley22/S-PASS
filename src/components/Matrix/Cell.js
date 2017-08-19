@@ -1,6 +1,8 @@
 import React from 'react';
 import {Button, Table, OverlayTrigger, Popover, FormGroup, FormControl, Form} from 'react-bootstrap';
 import './Cell.css';
+import ScrollArea from 'react-scrollbar';
+
 
 export default class Cell extends React.Component{
   constructor(props) {
@@ -234,13 +236,18 @@ export class DropDownChoose extends React.Component{
     switch(this.props.numberType) {
       case '%':
         return(
-          choices.map((name,index)=> {
+          <div>
+
+
+          {choices.map((name,index)=> {
             return <div id='percentTab'
             onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
             >
               {choices[index][0] + '%' + '\t' + choices[index][1]}
             </div>;
-          })
+          })}
+
+          </div>
         );
       break;
 
@@ -273,9 +280,20 @@ export class DropDownChoose extends React.Component{
   render() {
 
     return(
-      <div>
-        <div id='DDC'>{this.getChoices()}</div>
-      </div>
+        <ScrollArea
+        id='DDC'
+        speed={0.8}
+        className="area"
+        contentClassName="content"
+        horizontal={false}
+        >
+        <div>
+          <h1>Test</h1>
+          <h1>Test</h1>
+          <h1>Test</h1>
+          <h1>Test</h1>
+        </div>
+        </ScrollArea>
     );
   }
 }
