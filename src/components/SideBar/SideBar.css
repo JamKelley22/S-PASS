@@ -115,13 +115,13 @@ h4 {
 }
 #tab:hover #doubleAngle{
   color: #a2b427;
-  left: 80px;
+  left: 55%;
 }
 #doubleAngle {
   -webkit-transition: all 1s; /* Safari */
     position: relative;
     transition: all 1s;
-    left: 70; /* start out at position 0 */
+    left: 50%; /* start out at position 0 */
     top: -.5px;
 }
 .fa-angle-double-right {
