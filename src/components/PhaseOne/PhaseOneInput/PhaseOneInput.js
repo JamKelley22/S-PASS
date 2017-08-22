@@ -6,8 +6,10 @@ import MatrixDisplay from '../../Matrix/Matrix.js';
 import SumDisplay from '../../Matrix/SumDisplay.js';
 import Test from '../../Matrix/Test.js';
 import '../../Matrix/Matrix.css';
+import '../../Matrix/Test.js';
 import ListStuff from '../../ListStuff/ListStuff.js';
 import './PhaseOneInput.css';
+
 
 const tooltip = (
   <Tooltip id="tooltip"><strong>Your Name</strong></Tooltip>
@@ -61,6 +63,7 @@ export default class PhaseOneInput extends React.Component{
     return(
 
       <div id='scroll'>
+
 
       <Modal show={this.state.showModal} onHide={this.hideHelp}>
         <Help/>
