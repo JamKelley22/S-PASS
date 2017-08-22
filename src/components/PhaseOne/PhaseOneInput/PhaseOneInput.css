@@ -40,7 +40,11 @@ p {
     position:absolute;
 }
 #lowerButtons .btn{
-  color: white;
+  background-color: #a2b427;
+  color: rgba(0,0,0,0.7);
+  font-family: 'museo-sans', sans-serif;;
+  font-weight: 700;
+  font-size: 16px;
 }
 #continueBtn {
   background-color: #9dc64d;

@@ -13,7 +13,7 @@ export default class ProjectSideBar extends React.Component{
     this.state = {
       phase: [
         {name: '1. Requirements', link: '/Phases/PhaseOne', open: true},
-        {name: '2. New Modules', link: '/Phases/PhaseTwo', open: false},
+        {name: '2. Architectures/Suppliers', link: '/Phases/PhaseTwo', open: false},
         {name: '3. Selection', link: '/Phases/PhaseThree', open: false}
       ]
     };

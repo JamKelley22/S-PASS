@@ -114,7 +114,7 @@ export default class PhaseThreeOutput extends React.Component{
           matrixContent={this.functionProduct(
             this.props.functionAltModuleMatrix._data,
             this.props.moduleProductArchitecture._data)}
-          bgColor={'#7C7B50'}
+          bgColor={'rgba(210,210,177,0.6)'}
 
           editCell={null}
           canEditCells={false}
@@ -131,7 +131,7 @@ export default class PhaseThreeOutput extends React.Component{
           matrixContent={this.matrixMult(this.props.requirementFunctionMatrix._data,
             this.functionProduct(this.props.functionAltModuleMatrix._data,
               this.props.moduleProductArchitecture._data))}
-          bgColor={'#7C7B50'}
+          bgColor={'rgba(210,210,177,0.6)'}
 
           editCell={null}
           canEditCells={false}
@@ -147,7 +147,7 @@ export default class PhaseThreeOutput extends React.Component{
           rowNames={this.props.acceptedSuppliers}
           matrixContent={this.selectionMatrix(this.props.supplierAltModuleMatrix._data,
             this.props.moduleProductArchitecture._data)}
-          bgColor={'#7C7B50'}
+          bgColor={'rgba(210,210,177,0.6)'}
 
           editCell={null}
           canEditCells={false}

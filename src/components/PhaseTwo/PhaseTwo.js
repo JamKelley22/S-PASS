@@ -105,7 +105,7 @@ class PhaseTwo extends React.Component{
     return(
       <div id='scroll'>
 
-      <h1>New Architectures & Suppliers Input</h1>
+      <h1>New Architectures & Suppliers</h1>
       {console.log(ModuleThreshArr)}
       <UniqueDropdown
         title={'Alternate Modules'}
@@ -207,7 +207,7 @@ class PhaseTwo extends React.Component{
         colNames={["Possibility of RoHS","Recycling Rate","Satisfaction Level of Using Renewable Materials"]}
         rowNames={this.props.selectedAlternates}
         matrixContent={this.makeAlternateMatrix(this.props.selectedAlternates,this.props.altModuleData)}
-        bgColor={'#7C7B50'}
+        bgColor={'rgba(210,210,177,0.6)'}
 
         editCell={null}
         canEditCells={false}
@@ -221,8 +221,7 @@ class PhaseTwo extends React.Component{
         colNames={["ISO 14001","Use of Recycled Materials","Environmental Friendly Packaging"]}
         rowNames={this.props.selectedSuppliers}
         matrixContent={this.makeSupplierMatrix(this.props.selectedSuppliers,this.props.supplierData)}
-        bgColor={'#7C7B50'}
-
+        bgColor={'rgba(210,210,177,0.6)'}
         editCell={null}
         canEditCells={false}
         numberType='bin' // | bin | % | # |

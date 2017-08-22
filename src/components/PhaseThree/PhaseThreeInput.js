@@ -91,7 +91,7 @@ Estimate how well each product module satisfies each product 'function'. Base th
               colNames={this.props.acceptedAlternates}
               rowNames={this.props.functions}
               editCell={this.props.editCellFaMMat}
-              bgColor={'#9DC64D'}
+              bgColor={'rgba(210,210,177,0.6)'}
               canEditCells={true}//Must Specify that cells in the matrix are editable, else they are not
               numberType='#' // | bin | % | # |
               editType='dropDown'// | dropDown | input |
@@ -120,7 +120,7 @@ Estimate how well each product module satisfies each product 'function'. Base th
               colNames={this.props.acceptedAlternates}
               rowNames={this.props.acceptedSuppliers}
               editCell={this.props.editCellSaMMat}
-              bgColor={'#9DC64D'}
+              bgColor={'rgba(210,210,177,0.6)'}
               canEditCells={true}
               numberType='#' // | bin | % | # |
               editType='input'// | dropDown | input |
@@ -139,7 +139,7 @@ Estimate how well each product module satisfies each product 'function'. Base th
           colNames={this.props.newArchitectureList}
           rowNames={this.props.acceptedAlternates}
           editCell={this.props.editCellMPAMat}
-          bgColor={'#9DC64D'}
+          bgColor={'rgba(210,210,177,0.6)'}
           canEditCells={true}
           numberType='bin' // | bin | % | # |
           editType='dropDown'// | dropDown | input |

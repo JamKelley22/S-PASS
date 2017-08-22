@@ -111,7 +111,7 @@
   transition: color .2s;
 }
 #minusSign:hover {
-  color: red;
+  color: #da471f;
 }
 p {
   font-size: 12px;
