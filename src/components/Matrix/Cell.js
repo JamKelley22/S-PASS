@@ -2,6 +2,8 @@ import React from 'react';
 import {Button, Table, OverlayTrigger, Popover, FormGroup, FormControl, Form} from 'react-bootstrap';
 import './Cell.css';
 import ScrollArea from 'react-scrollbar';
+import ReactScrollbar from 'react-scrollbar-js';
+import Test from './Test.js';
 
 
 export default class Cell extends React.Component{
@@ -278,22 +280,20 @@ export class DropDownChoose extends React.Component{
 }
 
   render() {
-
+    let styling = {
+      scrollbar: {
+        width: "auto",
+        maxHeight: "100px",
+        height: "auto"
+      }
+    };
     return(
-        <ScrollArea
-        id='DDC'
-        speed={0.8}
-        className="area"
-        contentClassName="content"
-        horizontal={false}
-        >
-        <div>
-          <h1>Test</h1>
-          <h1>Test</h1>
-          <h1>Test</h1>
-          <h1>Test</h1>
+      <ReactScrollbar style={ styling.scrollbar }>
+        <div id='DDC' className="should-have-a-children scroll-me">
+          {this.getChoices()}
         </div>
-        </ScrollArea>
+      </ReactScrollbar>
+
     );
   }
 }
