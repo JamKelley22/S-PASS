@@ -8,7 +8,7 @@
   color: white;
 }
 #color {
-  backgroundColor: red;
+  backgroundColor: #da471f;
 }
 #center {
   padding-left: 1px;
@@ -26,10 +26,11 @@
 #greenTwo {
   background-color: #A2B427;
 }
-
+/*
 h4 {
   margin-left: 20%;
 }
+*/
 
 
 #sideBtn:hover {

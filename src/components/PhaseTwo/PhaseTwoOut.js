@@ -47,7 +47,7 @@ class PhaseTwoOut extends React.Component{
         />
       </div>
 
-      <h1>New Architectures & Suppliers Output</h1>
+      <h1>New Architectures & Suppliers</h1>
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseTwo/Input'>

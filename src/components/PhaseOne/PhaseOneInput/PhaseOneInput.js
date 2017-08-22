@@ -164,7 +164,7 @@ export default class PhaseOneInput extends React.Component{
               colNames={this.props.functions}
               rowNames={this.props.requirements}
               editCell={this.props.editCellRFMat}
-              bgColor={'#9DC64D'}
+              bgColor={'rgba(210,210,177,0.6)'}
               canEditCells={true}//Must Specify that cells in the matrix are editable, else they are not
               numberType='%' // | bin | % | # |
               editType='dropDown'// | dropDown | input |
@@ -207,7 +207,7 @@ Estimate to what extent each product module satisfies each product function usin
               colNames={this.props.modules}
               rowNames={this.props.functions}
               editCell={this.props.editCellFMMat}
-              bgColor={'#9DC64D'}
+              bgColor={'rgba(210,210,177,0.6)'}
               canEditCells={true}
               numberType='#' // | bin | % | # |
               editType='dropDown'// | dropDown | input |
@@ -239,7 +239,7 @@ Estimate to what extent each product module satisfies each product function usin
           colNames={this.props.productArchitecture}
           rowNames={this.props.modules}
           editCell={this.props.editCellMAMat}
-          bgColor={'#9DC64D'}
+          bgColor={'rgba(210,210,177,0.6)'}
           canEditCells={true}
           numberType='bin' // | bin | % | # |
           editType='dropDown'// | dropDown | input |
