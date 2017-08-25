@@ -23,6 +23,8 @@ import Breadcrumbs from '../breadcrumbs.js';
 
 import './Dashboard/SPASS.css';
 
+import LoadComponent from './loadable/LoadComponent.js';
+
 const Phases = ({match}) =>(
   <div>
     <div className='colorBar'>
@@ -45,16 +47,28 @@ const Phases = ({match}) =>(
     <PhasesSideBar match={match}/>
 
     <div id='content'>
-      <Route path="/Phases/PhaseOne/Input" component={PhaseOneInput}/>
-      <Route path="/Phases/PhaseOne/Output" component={PhaseOneOutput}/>
 
-      <Route path="/Phases/PhaseTwo/Input" component={PhaseTwoInput}/>
-      <Route path="/Phases/PhaseTwo/Output" component={PhaseTwoOutput}/>
+      <RouteWithProps path="/Phases/PhaseOne/Input" component={LoadComponent} CompLoad={PhaseOneInput}/>
+      <RouteWithProps path="/Phases/PhaseOne/Output" component={LoadComponent} CompLoad={PhaseOneOutput}/>
 
-      <Route path="/Phases/PhaseThree/Input" component={PhaseThreeInput}/>
-      <Route path="/Phases/PhaseThree/Output" component={PhaseThreeOutput}/>
+      <RouteWithProps path="/Phases/PhaseTwo/Input" component={LoadComponent} CompLoad={PhaseTwoInput}/>
+      <RouteWithProps path="/Phases/PhaseTwo/Output" component={LoadComponent} CompLoad={PhaseTwoOutput}/>
+
+      <RouteWithProps path="/Phases/PhaseThree/Input" component={LoadComponent} CompLoad={PhaseThreeInput}/>
+      <RouteWithProps path="/Phases/PhaseThree/Output" component={LoadComponent} CompLoad={PhaseThreeOutput}/>
+      
     </div>
   </div>
+)
+
+const RouteWithProps = ({ path, exact, strict, component:Component, location, ...rest }) => (
+<Route
+  path={path}
+  exact={exact}
+  strict={strict}
+  location={location}
+  render={(props) => <Component {...props} {...rest} />}
+  />
 )
 
 export default Phases;
