@@ -56,7 +56,6 @@ const Phases = ({match}) =>(
 
       <RouteWithProps path="/Phases/PhaseThree/Input" component={LoadComponent} CompLoad={PhaseThreeInput}/>
       <RouteWithProps path="/Phases/PhaseThree/Output" component={LoadComponent} CompLoad={PhaseThreeOutput}/>
-      
     </div>
   </div>
 )

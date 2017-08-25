@@ -122,7 +122,7 @@ export default class DropDownChoose extends React.Component{
     let styling = {
       scrollbar: {
         width: "auto",
-        maxHeight: "200px",
+        maxHeight: "100px",
         height: "auto"
       }
     };

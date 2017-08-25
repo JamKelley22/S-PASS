@@ -104,7 +104,6 @@ class PhaseTwo extends React.Component{
 
     return(
       <div id='scroll'>
-
       <h1>New Architectures & Suppliers</h1>
       {console.log(ModuleThreshArr)}
       <UniqueDropdown

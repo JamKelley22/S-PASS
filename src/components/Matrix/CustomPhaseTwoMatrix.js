@@ -2,6 +2,7 @@ import React from 'react';
 import {Table,OverlayTrigger,Tooltip,Popover} from 'react-bootstrap';
 import './Matrix.css';
 import Cell from './Cell.js';
+import ReactScrollbar from 'react-scrollbar-js';
 
 export default class CustomPhaseTwoMatrix extends React.Component{
   constructor(props) {
@@ -95,14 +96,22 @@ export default class CustomPhaseTwoMatrix extends React.Component{
   }
 
   getPopover() {
+    let styling = {
+      scrollbar: {
+        width: "auto",
+        maxHeight: "100px",
+      }
+    };
     return(
       <Popover id="popoverClick" title={'Title'}>
+      <ReactScrollbar style={ styling.scrollbar }>
         <DropDownChoose
           handleDropdownSubmit={this.handleDropdownSubmit}
           value={this.state.value}
           dropDownChoices={this.props.dropDownChoices}
           threshIndex={this.state.index}
         />
+      </ReactScrollbar>
       </Popover>
     );
   }
