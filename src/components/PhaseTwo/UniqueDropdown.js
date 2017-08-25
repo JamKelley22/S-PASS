@@ -2,6 +2,7 @@ import React from 'react';
 import './UniqueDropdown.css'
 import {Button,ListGroup,ListGroupItem} from 'react-bootstrap'
 import {thresholdCheck} from '../../js/thresholdCheck.js'
+import ReactScrollbar from 'react-scrollbar-js';
 
 export default class DropDownChoose extends React.Component{
   constructor(props) {
@@ -118,13 +119,23 @@ export default class DropDownChoose extends React.Component{
 
 
   render() {
+    let styling = {
+      scrollbar: {
+        width: "auto",
+        maxHeight: "200px",
+        height: "auto"
+      }
+    };
+
     const open = ((this.state.dropdownOpen) ?
     <ListGroupItem id='group'>
       <div id='clicker' onClick={this.toggleDropdown} >
         <i className="fa fa-minus-circle"
         id='minusSign'></i>Cancel
       </div>
+      <ReactScrollbar style={ styling.scrollbar }>
       <div>{this.getChoices()}</div>
+      </ReactScrollbar>
     </ListGroupItem>
     :
     <ListGroupItem id='group'>
@@ -137,12 +148,14 @@ export default class DropDownChoose extends React.Component{
     )
 
     return(
-      <div id='dropdown'>
+      <div>
         <h1>{this.props.title}</h1>
-        <ListGroup>
-        <div>{this.getList()}</div>
-        </ListGroup>
-        {open}
+        <div id='dropdown'>
+            <ListGroup>
+              {this.getList()}
+            </ListGroup>
+          {open}
+        </div>
       </div>
     );
 

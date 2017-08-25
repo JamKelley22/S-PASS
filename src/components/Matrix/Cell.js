@@ -1,7 +1,6 @@
 import React from 'react';
 import {Button, Table, OverlayTrigger, Popover, FormGroup, FormControl, Form} from 'react-bootstrap';
 import './Cell.css';
-import ScrollArea from 'react-scrollbar';
 import ReactScrollbar from 'react-scrollbar-js';
 import Test from './Test.js';
 
