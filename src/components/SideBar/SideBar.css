@@ -101,14 +101,6 @@ h4 {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
 }
-@media (min-width: 300px) {
-  #tab { font-size: 12px; }
-}
-
-@media (min-width: 900px) {
-  #tab { font-size: 18px; }
-}
-
 #tab:hover {
   background-color: rgba(0,0,0,0.2);
   cursor: pointer;
@@ -142,10 +134,27 @@ h4 {
 }
 @media (min-width: 300px) {
   #tabS { font-size: 8px; }
+  #tab { font-size: 10px; }
 }
 
 @media (min-width: 900px) {
+  #tabS { font-size: 10px; }
+  #tab { font-size: 12px; }
+}
+
+@media (min-width: 1050px) {
+  #tabS { font-size: 11px; }
+  #tab { font-size: 13px; }
+}
+
+@media (min-width: 1260px) {
   #tabS { font-size: 12px; }
+  #tab { font-size: 14px; }
+}
+
+@media (min-width: 1400px) {
+  #tabS { font-size: 12px; }
+  #tab { font-size: 18px; }
 }
 
 #tabS:hover {

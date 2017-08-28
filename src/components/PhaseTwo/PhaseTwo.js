@@ -17,7 +17,7 @@ import{addColSaMMat,removeColSaMMat,addRowSaMMat,removeRowSaMMat} from '../../ac
 import {addAcceptedSupplier,removeAcceptedSupplier} from'../../actions/acceptedSupplierActions.js';
 import {addColFaMMat,removeColFaMMat} from '../../actions/functionAltModuleActions.js';
 import {addRowMPAMat,removeRowMPAMat} from '../../actions/moduleProductArchitectureActions.js';
-
+import './PhaseTwo.css';
 
 class PhaseTwo extends React.Component{
   constructor(props) {
@@ -107,6 +107,7 @@ class PhaseTwo extends React.Component{
       <h1>New Architectures & Suppliers</h1>
       {console.log(ModuleThreshArr)}
       <UniqueDropdown
+        id='udd'
         title={'Alternate Modules'}
         dropDownChoices = {this.makeList(this.props.altModuleData)}
         dataValues = {this.props.selectedAlternates}
@@ -130,7 +131,7 @@ class PhaseTwo extends React.Component{
       />
 
       <UniqueDropdown
-
+        id='udd'
         title={'Alternate Suppliers'}
         dropDownChoices = {this.makeList(this.props.supplierData)}
         dataValues = {this.props.selectedSuppliers}
