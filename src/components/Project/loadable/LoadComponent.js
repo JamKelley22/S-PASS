@@ -13,7 +13,7 @@ export default class LoadComponent extends React.Component{
 
   render() {
     let Loadit = Loadable({
-      loader: () => fakeDelay(500).then(() => this.props.CompLoad),
+      loader: () => fakeDelay(750).then(() => this.props.CompLoad),
       loading: Loading
     });
     return (

@@ -1,6 +1,6 @@
 var math=require('mathjs');
 const initialState = math.matrix();
-initialState.resize([5,0]);
+initialState.resize([8,0]);
 
   export default function(state = initialState, action){
     switch(action.type){

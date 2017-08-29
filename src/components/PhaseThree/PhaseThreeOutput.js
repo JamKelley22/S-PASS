@@ -50,7 +50,6 @@ export default class PhaseThreeOutput extends React.Component{
     var newMat2 = this.math.matrix(mat2);
     var newMat = this.math.multiply(newMat1,newMat2);
     return newMat._data;
-
   }
 
   findRelation(myMat){
@@ -69,8 +68,10 @@ export default class PhaseThreeOutput extends React.Component{
 
   functionProduct(funMod,modArch){
     console.log(funMod);
+    //console.log('did the thing YES');
     if(funMod[0].length!=0 && modArch.length!=0){
     //Deep copy of matrices.
+
     var newFunMod = funMod.map(function(arr) {
     return arr.slice();
     });
@@ -81,6 +82,7 @@ export default class PhaseThreeOutput extends React.Component{
     var relation = this.findRelation(newFunMod);
     var mat1= this.matrixMult(newFunMod,newModArch);
     var mat2 =this.matrixMult(relation,newModArch);
+
     console.log(mat1);
     var matOutput = this.math.matrix(mat1);
     matOutput.forEach(function(value,index,matrix){
@@ -106,7 +108,7 @@ export default class PhaseThreeOutput extends React.Component{
     return(
       <div id='scroll'>
 
-        <h1>Average functional satisfaction levels for new produt architectures</h1>
+        <h1>Average functional satisfaction levels for new product architectures</h1>
         <MatrixDisplay
           title="Function vs. Architecture"
           colNames={this.props.newArchitectureList}
@@ -123,7 +125,7 @@ export default class PhaseThreeOutput extends React.Component{
           dropDownChoices={null}
         />
 
-        <h1>Average requirement satisfaction levels for new produt architectures</h1>
+        <h1>Average requirement satisfaction levels for new product architectures</h1>
         <MatrixDisplay
           title="Requirement vs. Architecture"
           colNames={this.props.newArchitectureList}
