@@ -48,13 +48,13 @@ const Phases = ({match}) =>(
 
     <div id='content'>
 
-      <RouteWithProps path="/Phases/PhaseOne/Input" component={LoadComponent} CompLoad={PhaseOneInput}/>
+      <Route path='/Phases/PhaseOne/Input' component={PhaseOneInput}/>
       <RouteWithProps path="/Phases/PhaseOne/Output" component={LoadComponent} CompLoad={PhaseOneOutput}/>
 
-      <RouteWithProps path="/Phases/PhaseTwo/Input" component={LoadComponent} CompLoad={PhaseTwoInput}/>
+      <Route path='/Phases/PhaseTwo/Input' component={PhaseTwoInput}/>
       <RouteWithProps path="/Phases/PhaseTwo/Output" component={LoadComponent} CompLoad={PhaseTwoOutput}/>
 
-      <RouteWithProps path="/Phases/PhaseThree/Input" component={LoadComponent} CompLoad={PhaseThreeInput}/>
+      <Route path='/Phases/PhaseThree/Input' component={PhaseThreeInput}/>
       <RouteWithProps path="/Phases/PhaseThree/Output" component={LoadComponent} CompLoad={PhaseThreeOutput}/>
     </div>
   </div>
