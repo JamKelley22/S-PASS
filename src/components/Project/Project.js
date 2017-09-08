@@ -98,7 +98,7 @@ const NewFolder = ({match}) =>(
       <i className="fa fa-cube" id='newBox'></i>
     </Link>
 
-    <Link to={'/SPASS/Overview'}>
+    <Link to={'/SPASS/About'}>
       <i className="fa fa-leaf" id='newLeaf'></i>
     </Link>
 
