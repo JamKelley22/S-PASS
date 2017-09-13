@@ -2,7 +2,9 @@ import React from 'react';
 import {connect} from "react-redux"; //Connects the store to application.
 import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup, Button} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
-import UniqueDropdown from './UniqueDropdown.js';
+import UniqueDropdownSupplier from './UniqueDropdownSupplier.js';
+import UniqueDropdownModule from './UniqueDropdownModule.js';
+
 import {addAlternate,removeAlternate} from '../../actions/selectedAlternatesActions.js';
 import {addSupplier,removeSupplier} from '../../actions/supplierListActions.js';
 import {bindActionCreators} from 'redux';
@@ -112,7 +114,7 @@ class PhaseTwo extends React.Component{
       <b>Q1) Please identify alternative modules and their suppliers that can substitute the inadequate modules identified in Phase 1.</b>
       </p>
       {console.log(ModuleThreshArr)}
-      <UniqueDropdown
+      <UniqueDropdownModule
         id='udd'
         title={'Alternate Modules'}
         dropDownChoices = {this.makeList(this.props.altModuleData)}
@@ -136,7 +138,7 @@ class PhaseTwo extends React.Component{
         removeMatRow3={this.props.removeRowMPAMat}
       />
 
-      <UniqueDropdown
+      <UniqueDropdownSupplier
         id='udd'
         title={'Alternate Suppliers'}
         dropDownChoices = {this.makeList(this.props.supplierData)}
