@@ -108,7 +108,12 @@ export default class PhaseThreeOutput extends React.Component{
     return(
       <div id='scroll'>
 
-        <h1>Average functional satisfaction levels for new product architectures</h1>
+        <h1>Phase 3: Product Architecture and Supplier Selection (Results)</h1>
+
+        <p>
+        Average functional satisfaction levels for new product architectures:
+        </p>
+
         <MatrixDisplay
           title="Function vs. Architecture"
           colNames={this.props.newArchitectureList}
@@ -125,8 +130,11 @@ export default class PhaseThreeOutput extends React.Component{
           dropDownChoices={null}
         />
 
-        <h1>Average requirement satisfaction levels for new product architectures</h1>
-        <MatrixDisplay
+        <p>
+        Average functional satisfaction levels for new product architectures:
+        </p>
+
+          <MatrixDisplay
           title="Requirement vs. Architecture"
           colNames={this.props.newArchitectureList}
           rowNames={this.props.requirements}
@@ -142,7 +150,10 @@ export default class PhaseThreeOutput extends React.Component{
           dropDownChoices={null}
         />
 
-        <h1>Suppliers selected for new product architectures</h1>
+        <p>
+        Suppliers selected for new product architectures:
+        </p>
+
         <MatrixDisplay
           title="Supplier vs. Architecture"
           colNames={this.props.newArchitectureList}

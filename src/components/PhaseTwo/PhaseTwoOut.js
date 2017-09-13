@@ -31,6 +31,10 @@ class PhaseTwoOut extends React.Component{
     return(
       <div  id='scroll'>
 
+<p>
+<h1>Phase 2: Module and Supplier filtering (Result)</h1>
+</p>
+
       <div id='msMatrix'>
         <MSFilterMatrix
           title = {'Alternate Module'}
@@ -46,8 +50,6 @@ class PhaseTwoOut extends React.Component{
           values = {this.findBools(this.props.selectedSuppliers,this.props.acceptedSuppliers)}
         />
       </div>
-
-      <h1>New Architectures & Suppliers</h1>
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseTwo/Input'>

@@ -99,7 +99,7 @@ export default class PhaseOneOutput extends React.Component{
 
 
 <p>
-<b>2)Satisfaction level of each environmental sustainability requirement for current products</b>
+<b>2) Satisfaction level of each environmental sustainability requirement for current products</b>
 </p>
 
 <p>
