@@ -73,23 +73,15 @@ export default class PhaseOneInput extends React.Component{
       </Modal>
 
       <div id='product1'>
-      <h1>Requirements Input</h1>
+      <h1>Phase 1: Requirement Satisfaction by Existing Products</h1>
         <p style={{paddingLeft: '0px'}}>Product 1: Quad-copter</p><p id='noClick'>Edit <i id='noClick' className="fa fa-edit"/></p>
         <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
       </div>
 
-        <h3>Step 1: Requirements and Functions</h3>
         <p>
-        <b>Instructions: </b>
-        Here you will identify relationships between sustainable design requirements and their associated functions, and between functions and module types. Then, you will evaluate existing products to find whether the functions and requirements are satisfied with the available modules in these products.
+        Please enter requirements:
         </p>
-        <p>
-          Design requirements, their associated functions, and existing modules of products are identified to calculate the satisfaction levels of requirements and functions in existing products. Current product architectures are then evaluated to determine whether the desired requirements and their associated functions are satisfied with the available modules in existing products.
-        </p>
-        <p>
-        <b>Below: </b>
-        Enter all the requirements (eg. Use of renewable energy) for the environmentally responsible design of your product/s below. Requirements must be equal in number and relevant to functions.
-        </p>
+
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
         </div>
@@ -105,9 +97,9 @@ export default class PhaseOneInput extends React.Component{
         />
 
         <p>
-        <b>Below: </b>
-        Enter all the functions (eg. Recharging battery) for the design of your product/s below. Functions must be equal in number to and relevant to requirements.
+        Please enter functions:
         </p>
+
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
         </div>
@@ -126,6 +118,11 @@ export default class PhaseOneInput extends React.Component{
 
         />
 
+
+        <p>
+        Please enter modules:
+        </p>
+
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
         </div>
@@ -143,14 +140,15 @@ export default class PhaseOneInput extends React.Component{
           //addMatRow3={this.props.addRowMPAMat}
           //removeMatRow3={this.props.removeRowMPAMat}
         />
-
-        <h3>Step 2: Product Contribution Estimation</h3>
+        <div>
         <p>
-        <b>Below: </b>
-        Using the given interpretation of contribution probabilities, estimate to what extent each product function contributes to achieve each environmental sustainability requirement. Note that all empty cell values should have values, and the sum of all columns for each row should be 100%.
-        <Image src={require('../../../Images/interpretation_of_contribution_probabilities.PNG')} alt='Quad-copter'/>
-
+        <b>Q1)</b> Please estimate to what extent each product function contributes to achieve each environmental sustainability requirement.
         </p>
+        <p>
+        Note: Each value indicates the contribution probability of the function to the requirement, a range from 0% to 100%.
+        </p>
+        </div>
+
 
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
@@ -192,11 +190,15 @@ export default class PhaseOneInput extends React.Component{
           </div>
 
         </div>
-<p>
-<b>Below: </b>
-Estimate to what extent each product module satisfies each product function using the descriptions of satisfaction levels. Each satisfaction level is a range from 1 (poor) to 5 (very good) and has 0 if the module does not provide the function.
-<Image src={require('../../../Images/description_of_satisfaction_levels.PNG')} alt='Quad-copter'/>
 
+        <p>
+        <b>Q2)</b> Please estimate to what extent each product module satisfies each product function.
+        </p>
+        <p>
+        Note: Each satisfaction level is a range from 1(poor) to 5 (very good) and has 0 if the module does not provide the function.
+        </p>
+<p>
+<Image src={require('../../../Images/description_of_satisfaction_levels.PNG')} alt='Quad-copter'/>
 </p>
 
         <div id='matrixRow'>
@@ -228,10 +230,14 @@ Estimate to what extent each product module satisfies each product function usin
 
         <div>
         <p>
-        <b>Below: </b>
-        In the Modules vs. Product Architecture table, indicate whether modules are used (1) or not used (0) in each product.
+        <b>Q3)</b> Please identify the module composition of current products.
+        </p>
+        <p>
+        <Image src={require('../../../Images/interpretation_of_contribution_probabilities.PNG')} alt='Quad-copter'/>
         </p>
         </div>
+
+
 
         <MatrixDisplay
           title = "Modules vs. Product Architecture"
