@@ -145,7 +145,10 @@ export default class PhaseOneInput extends React.Component{
         <b>Q1)</b> Please estimate to what extent each product function contributes to achieve each environmental sustainability requirement.
         </p>
         <p>
-        Note: Each value indicates the contribution probability of the function to the requirement, a range from 0% to 100%.
+        Note: Each value indicates the contribution probability of the function to the requirement, a range from 0% to 100%. (See figure)
+        </p>
+        <p>
+        <Image src={require('../../../Images/interpretation_of_contribution_probabilities.PNG')} alt='Quad-copter'/>
         </p>
         </div>
 
@@ -195,7 +198,7 @@ export default class PhaseOneInput extends React.Component{
         <b>Q2)</b> Please estimate to what extent each product module satisfies each product function.
         </p>
         <p>
-        Note: Each satisfaction level is a range from 1(poor) to 5 (very good) and has 0 if the module does not provide the function.
+        Note: Each satisfaction level is a range from 1(poor) to 5 (very good) and has 0 if the module does not provide the function. (See figure)
         </p>
 <p>
 <Image src={require('../../../Images/description_of_satisfaction_levels.PNG')} alt='Quad-copter'/>
@@ -232,9 +235,7 @@ export default class PhaseOneInput extends React.Component{
         <p>
         <b>Q3)</b> Please identify the module composition of current products.
         </p>
-        <p>
-        <Image src={require('../../../Images/interpretation_of_contribution_probabilities.PNG')} alt='Quad-copter'/>
-        </p>
+
         </div>
 
 
