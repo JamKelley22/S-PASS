@@ -116,7 +116,7 @@ class PhaseTwo extends React.Component{
       {console.log(ModuleThreshArr)}
       <UniqueDropdownModule
         id='udd'
-        title={'Alternate Modules'}
+        title={'Alternative Modules'}
         dropDownChoices = {this.makeList(this.props.altModuleData)}
         dataValues = {this.props.selectedAlternates}
         addData = {this.props.addAlternate}
@@ -140,7 +140,7 @@ class PhaseTwo extends React.Component{
 
       <UniqueDropdownSupplier
         id='udd'
-        title={'Alternate Suppliers'}
+        title={'Related Suppliers'}
         dropDownChoices = {this.makeList(this.props.supplierData)}
         dataValues = {this.props.selectedSuppliers}
         addData = {this.props.addSupplier}
