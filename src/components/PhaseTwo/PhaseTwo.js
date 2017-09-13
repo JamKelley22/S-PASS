@@ -104,7 +104,13 @@ class PhaseTwo extends React.Component{
 
     return(
       <div id='scroll'>
-      <h1>New Architectures & Suppliers</h1>
+      <h1>Phase 2: New Module Identification and Supplier Filtering</h1>
+      <p>
+      Please fill out the white area of each matrix; Click an empty cell and select one of the listed values.
+      </p>
+      <p>
+      <b>Q1) Please identify alternative modules and their suppliers that can substitute the inadequate modules identified in Phase 1.</b>
+      </p>
       {console.log(ModuleThreshArr)}
       <UniqueDropdown
         id='udd'
@@ -150,6 +156,10 @@ class PhaseTwo extends React.Component{
         addMatRow = {this.props.addRowSaMMat}
         removeMatData={this.props.removeRowSaMMat}
       />
+
+      <p>
+      <b>Q2) Please determine thresholds for module and supplier related sustainability indicators.</b>
+      </p>
 
       <CustomPhaseTwoMatrix
         ModuleThresh = {ModuleThresh}
@@ -201,6 +211,10 @@ class PhaseTwo extends React.Component{
         removeColSaMMat = {this.props.removeColSaMMat}
         removeRowSaMMat = {this.props.removeRowSaMMat}
       />
+
+<p>
+Evaluation of environmental sustainability for new modules and suppliers.
+</p>
 
       <MatrixDisplay
         title="Module Related Environmental Indicators"
