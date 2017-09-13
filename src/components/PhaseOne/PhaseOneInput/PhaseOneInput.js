@@ -73,7 +73,7 @@ export default class PhaseOneInput extends React.Component{
       </Modal>
 
       <div id='product1'>
-      <h1>Requirement Satisfaction by Existing Products</h1>
+      <h1>Phase 1: Requirement Satisfaction by Existing Products</h1>
         <p style={{paddingLeft: '0px'}}>Product 1: Quad-copter</p><p id='noClick'>Edit <i id='noClick' className="fa fa-edit"/></p>
         <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
       </div>
@@ -140,12 +140,14 @@ export default class PhaseOneInput extends React.Component{
           //addMatRow3={this.props.addRowMPAMat}
           //removeMatRow3={this.props.removeRowMPAMat}
         />
+        <div>
         <p>
         <b>Q1)</b> Please estimate to what extent each product function contributes to achieve each environmental sustainability requirement.
         </p>
         <p>
         Note: Each value indicates the contribution probability of the function to the requirement, a range from 0% to 100%.
         </p>
+        </div>
 
 
         <div className='pull-right'>
@@ -228,17 +230,14 @@ export default class PhaseOneInput extends React.Component{
 
         <div>
         <p>
-        <b>Below: </b>
-        In the Modules vs. Product Architecture table, indicate whether modules are used (1) or not used (0) in each product.
-        </p>
-        </div>
-
-        <p>
         <b>Q3)</b> Please identify the module composition of current products.
         </p>
         <p>
         <Image src={require('../../../Images/interpretation_of_contribution_probabilities.PNG')} alt='Quad-copter'/>
         </p>
+        </div>
+
+
 
         <MatrixDisplay
           title = "Modules vs. Product Architecture"

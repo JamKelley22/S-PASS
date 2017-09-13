@@ -72,20 +72,13 @@ export default class PhaseOneOutput extends React.Component{
 
     return(
       <div id="scroll">
-        <h1>Requirements Output</h1>
-
-        <h4>0:No Relation</h4>
-        <h4>1:Very Poor</h4>
-        <h4>2:Poor</h4>
-        <h4>3:Fair</h4>
-        <h4>4:Good</h4>
-        <h4>5:Very Good</h4>
+        <h1>Phase 1: Requirement Satisfaction by Existing Products (Results)</h1>
 
         <p>
-        Below are the average functional satisfaction levels for new product architectures.
+        <b>1) Average functional satisfaction levels for new product architectures</b>
         </p>
         <p>
-        Note that functions in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
+        Note: functions in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
         </p>
 
         <MatrixDisplay
@@ -106,7 +99,11 @@ export default class PhaseOneOutput extends React.Component{
 
 
 <p>
-Below is the satisfaction level of each environmental sustainability requirement for current products. Requirements in red indicate that these requirements are not sufficiently satisfied (less than 3) in at least one of the current products.
+<b>2)Satisfaction level of each environmental sustainability requirement for current products</b>
+</p>
+
+<p>
+Note: functions in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
 </p>
 
 
