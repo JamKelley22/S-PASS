@@ -8,7 +8,7 @@ export default class NameForm extends React.Component {
     this.state = {
       value: '',
       alertVisible: false,
-      alertTitle: 'Its Empty...',
+      alertTitle: "It's empty...",
   };
 
     this.handleChange = this.handleChange.bind(this);
@@ -50,7 +50,7 @@ export default class NameForm extends React.Component {
         if(this.props.addMatRow3){this.props.addMatRow3();}
       }
       else {
-        this.setState({alertVisible: true, alertTitle: 'Its Empty...',
+        this.setState({alertVisible: true, alertTitle: "It's empty...",
         alertMessage: 'Try again with a longer function name'});
       }
     }

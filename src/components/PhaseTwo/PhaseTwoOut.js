@@ -35,6 +35,9 @@ class PhaseTwoOut extends React.Component{
 <h1>Phase 2: Module and Supplier filtering (Result)</h1>
 </p>
 
+<p>
+1) Filtering Result
+</p>
       <div id='msMatrix'>
         <MSFilterMatrix
           title = {'Alternate Module'}
@@ -42,6 +45,10 @@ class PhaseTwoOut extends React.Component{
           values = {this.findBools(this.props.selectedAlternates,this.props.acceptedAlternates)}
         />
       </div>
+
+<p>
+2) Final new module and supplier ListGroupItem
+</p>
 
       <div id='msMatrix'>
         <MSFilterMatrix

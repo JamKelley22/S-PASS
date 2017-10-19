@@ -108,10 +108,11 @@ class PhaseTwo extends React.Component{
       <div id='scroll'>
       <h1>Phase 2: New Module Identification and Supplier Filtering</h1>
       <p>
-      Please fill out the white area of each matrix; Click an empty cell and select one of the listed values.
+      Please fill out the white area of each matrix; Click an empty cell and select one of the listed values. Do not modify any format or forumla in the worksheet.
       </p>
+
       <p>
-      <b>Q1) Please identify alternative modules and their suppliers that can substitute the inadequate modules identified in Phase 1.</b>
+      <b>Q1) Please identify alternative modules and their suppliers that can act as substitutes for the inadequate modules identified in Phase 1.</b>
       </p>
       {console.log(ModuleThreshArr)}
       <UniqueDropdownModule
