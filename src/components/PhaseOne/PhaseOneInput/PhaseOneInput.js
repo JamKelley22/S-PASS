@@ -74,8 +74,7 @@ export default class PhaseOneInput extends React.Component{
 
       <div id='product1'>
       <h1>Phase 1: Requirement Satisfaction by Existing Products</h1>
-        <p style={{paddingLeft: '0px'}}>Product 1: Quad-copter</p><p id='noClick'>Edit <i id='noClick' className="fa fa-edit"/></p>
-        <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
+
       </div>
 
         <p>
@@ -141,6 +140,9 @@ export default class PhaseOneInput extends React.Component{
           //removeMatRow3={this.props.removeRowMPAMat}
         />
         <div>
+        <p>
+        Please fill out the white area of each matrix. Click an empty cell and select one of the listed values. Do not modify any format or forumla in the worksheet.
+        </p>
         <p>
         <b>Q1)</b> Please estimate to what extent each product function contributes to achieve each environmental sustainability requirement.
         </p>
@@ -234,6 +236,9 @@ export default class PhaseOneInput extends React.Component{
         <div>
         <p>
         <b>Q3)</b> Please identify the module composition of current products.
+        </p>
+        <p>
+        Note: 1 (used), 0 (not used)
         </p>
 
         </div>

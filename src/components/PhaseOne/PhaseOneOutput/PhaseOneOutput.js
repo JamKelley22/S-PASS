@@ -103,7 +103,7 @@ export default class PhaseOneOutput extends React.Component{
 </p>
 
 <p>
-Note: functions in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
+Note: requirements in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
 </p>
 
 
@@ -123,6 +123,10 @@ Note: functions in red indicate that these functions are not sufficiently satisf
           dropDownChoices={null}
         />
 
+        <p>
+        <b>3) Modules required to be replaced</b>
+        </p>
+
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseOne/Input'>
             <Button id='backBtn'>Back</Button>
@@ -131,6 +135,9 @@ Note: functions in red indicate that these functions are not sufficiently satisf
             <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
           </LinkContainer>
         </div>
+
+
+
       </div>
     );
   }
