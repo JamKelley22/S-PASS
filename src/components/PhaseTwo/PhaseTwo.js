@@ -112,7 +112,7 @@ class PhaseTwo extends React.Component{
       </p>
 
       <p>
-      <b>Q1) Please identify alternative modules and their suppliers that can act as substitutes for the inadequate modules identified in Phase 1.</b>
+      <b>Q1) Please identify alternative modules and their suppliers that can replace the inadequate modules identified in Phase 1.</b>
       </p>
       {console.log(ModuleThreshArr)}
       <UniqueDropdownModule
