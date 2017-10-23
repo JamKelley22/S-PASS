@@ -39,7 +39,6 @@ const Phases = ({match}) =>(
         ['Home','/'],
         ['Projects','/Project'],
         ['Dashboard','/Dashboard'],
-        ['S-PASS', '/SPASS/About'],
         ['Phases', '/Phases']
       ]}
     />

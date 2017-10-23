@@ -125,7 +125,7 @@ export default class Cell extends React.Component{
 
   normalizeCell() {
     this.setState({
-      cellBG: 'white'
+      cellBG: '#b5b5b5'
     });
   }
 
