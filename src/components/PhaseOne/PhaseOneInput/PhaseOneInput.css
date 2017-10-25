@@ -1,32 +1,24 @@
-h3 {
-  color: #706F47;
-  font-weight: bold;
-  padding-left: 20px;
-}
 
-h1 {
-  padding-left: 20px;
-}
-p {
-  padding-left: 20px;
-}
 
 #pad {
-  padding: 5px;
 }
+
 #product1, #product2 {
   display: inline-block;
+  clear: left;
+
 }
 #scroll {
   max-height: 100%;
   overflow-y: auto;
+  padding-left: 20px;
 }
 #matrixRow {
   max-width: 100%;
   width: 100%;
   position:relative;
-    overflow:auto;
-    white-space: nowrap;
+  overflow:auto;
+  white-space: nowrap;
 }
 #matrixDisplay {
   width: 90%;
@@ -60,4 +52,19 @@ p {
 }
 #noClick {
   cursor: not-allowed !important;
+}
+
+#rowTitle{
+    padding: none;
+    margin: 10px;
+    margin-left: -25px;
+    border: none;
+    background-color: none;
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -ms-transform-origin: 20% 40%; /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: 20% 40%; /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    transform-origin: 20% 40%;
+    float: left;
 }

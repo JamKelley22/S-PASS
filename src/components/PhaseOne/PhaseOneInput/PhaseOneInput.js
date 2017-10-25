@@ -77,7 +77,7 @@ export default class PhaseOneInput extends React.Component{
 
       </div>
 
-        <p>
+        <p className='clearfix'>
         Please enter requirements:
         </p>
 
@@ -95,7 +95,7 @@ export default class PhaseOneInput extends React.Component{
           //addMatCol={this.props.addColRFMat} Not Needed
         />
 
-        <p>
+        <p className='clearfix'>
         Please enter functions:
         </p>
 
@@ -118,7 +118,7 @@ export default class PhaseOneInput extends React.Component{
         />
 
 
-        <p>
+        <p className='clearfix'>
         Please enter modules:
         </p>
 
@@ -140,16 +140,16 @@ export default class PhaseOneInput extends React.Component{
           //removeMatRow3={this.props.removeRowMPAMat}
         />
         <div>
-        <p>
+        <p className='clearfix'>
         Please fill out the white area of each matrix. Click an empty cell and select one of the listed values. Do not modify any format or forumla in the worksheet.
         </p>
-        <p>
+        <p className='clearfix'>
         <b>Q1)</b> Please estimate to what extent each product function contributes to achieve each environmental sustainability requirement.
         </p>
-        <p>
+        <p className='clearfix'>
         Note: Each value indicates the contribution probability of the function to the requirement, a range from 0% to 100%. (See figure)
         </p>
-        <p>
+        <p className='clearfix'>
         <Image src={require('../../../Images/interpretation_of_contribution_probabilities.PNG')} alt='Quad-copter'/>
         </p>
         </div>
@@ -160,6 +160,7 @@ export default class PhaseOneInput extends React.Component{
         </div>
 
         <div id='matrixRow'>
+
           <div id='matrixDisplay'>
             <MatrixDisplay
               title = "Requirements vs. Functions"
@@ -196,13 +197,13 @@ export default class PhaseOneInput extends React.Component{
 
         </div>
 
-        <p>
+        <p className='clearfix'>
         <b>Q2)</b> Please estimate to what extent each product module satisfies each product function.
         </p>
-        <p>
+        <p className='clearfix'>
         Note: Each satisfaction level is a range from 1(poor) to 5 (very good) and has 0 if the module does not provide the function. (See figure)
         </p>
-<p>
+<p className='clearfix'>
 <Image src={require('../../../Images/description_of_satisfaction_levels.PNG')} alt='Quad-copter'/>
 </p>
 
@@ -234,10 +235,10 @@ export default class PhaseOneInput extends React.Component{
         </div>
 
         <div>
-        <p>
+        <p className='clearfix'>
         <b>Q3)</b> Please identify the module composition of current products.
         </p>
-        <p>
+        <p className='clearfix'>
         Note: 1 (used), 0 (not used)
         </p>
 
@@ -281,7 +282,7 @@ const Help = ({match}) =>(
 
     <Modal.Body>
     <h4>Requirements Table</h4>
-      <p>Specify the requirements for environmentally responsible design for your product below. Requirements must be equal in number and relevant to your functions.
+      <p className='clearfix'>Specify the requirements for environmentally responsible design for your product below. Requirements must be equal in number and relevant to your functions.
       </p>
     </Modal.Body>
   </div>

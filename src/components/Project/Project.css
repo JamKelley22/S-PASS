@@ -115,7 +115,9 @@
 }
 p {
   font-size: 12px;
+  padding-top: 15px;
 }
+
 .table {
   max-width: 100px;
 }
@@ -129,15 +131,18 @@ p {
   height: 15%;
   max-height: 15%;
   overflow:visible;
+
 }
 .panel-body {
   padding: 3px;
   display: inline-block;
+
 }
 .p1 {
   background-color: #F4F4E1;
   height: 80%;
   z-index: -1;
+
 }
 
 h3 {
@@ -145,6 +150,7 @@ h3 {
   font-weight: 300;
   line-height: 120%;
   margin: 0px;
+
 }
 
 h1 {
@@ -152,8 +158,12 @@ h1 {
   font-size: 24px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.7);
+
 }
 
+#top {
+  padding-left: 20px;
+}
 
 
 #allProject {
@@ -161,4 +171,15 @@ h1 {
   height: 100%;
   overflow-y: hidden;
 }
- #newLeaf:hover {color: #89B700;} #newWrench:hover {color: #C5EA6F;}
+ #newLeaf:hover {
+   color: #89B700;
+ }
+#newWrench:hover {
+    color: #C5EA6F;
+}
+
+.clearfix {
+    content: "";
+    clear: both;
+    display: table;
+}
