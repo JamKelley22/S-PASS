@@ -36,9 +36,11 @@
 p {
   display: inline-block;
 
+
 }
 #Product1, #Product2 {
   display: inline-block;
+
 
 }
 #phase {
@@ -81,6 +83,7 @@ p {
   font-weight: 500;
   color: rgba(0,0,0,0.5);
   padding: 10px;
+  clear: left;
 }
 #fRight {
   float: right;

@@ -8,6 +8,7 @@
   color: rgba(0,0,0,0.7);
   padding: 10px;
   font-weight: 700;
+  clear: left;
 }
 #content {
   padding-left: 20px;

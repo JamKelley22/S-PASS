@@ -74,10 +74,10 @@ export default class PhaseOneOutput extends React.Component{
       <div id="scroll">
         <h1>Phase 1: Requirement Satisfaction by Existing Products (Results)</h1>
 
-        <p>
+        <p className='clearfix'>
         <b>1) Average functional satisfaction levels for new product architectures</b>
         </p>
-        <p>
+        <p className='clearfix'>
         Note: functions in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
         </p>
 
@@ -98,11 +98,11 @@ export default class PhaseOneOutput extends React.Component{
         />
 
 
-<p>
+<p className='clearfix'>
 <b>2) Satisfaction level of each environmental sustainability requirement for current products</b>
 </p>
 
-<p>
+<p className='clearfix'>
 Note: requirements in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
 </p>
 
@@ -123,7 +123,7 @@ Note: requirements in red indicate that these functions are not sufficiently sat
           dropDownChoices={null}
         />
 
-        <p>
+        <p className='clearfix'>
         <b>3) Modules required to be replaced</b>
         </p>
 

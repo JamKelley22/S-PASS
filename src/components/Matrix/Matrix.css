@@ -38,7 +38,7 @@ max-height: 45px;
 
   /* fix problem when last visible word doesn't adjoin right side  */
     padding-right: 1em;
-
+    padding-left: 15px;
 
 
 }
