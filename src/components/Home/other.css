@@ -14,8 +14,8 @@ h5 {
   font-size: 16px;
   max-width: 500px;
   line-height: 130%;
-  margin-left: 40px;
-  margin-top: 20px;
+  /*margin-left: 40px;
+  margin-top: 20px;*/
 }
 
 h2 {
@@ -24,7 +24,7 @@ h2 {
   font-family: "museo-sans", sans-serif;
   font-weight: 700;
   font-size: 32px;
-  margin-left: 40px;
+  /*margin-left: 40px;*/
 
 }
 
@@ -34,7 +34,7 @@ h3 {
   font-weight: 700;
   font-size: 26px;
   opacity: 0.7;
-  margin-top: 30px;
+  /*margin-top: 30px;*/
 }
 
 p {
@@ -44,7 +44,7 @@ p {
   font-size: 16px;
   opacity: 0.9;
   max-width: 500px;
-  margin-top: 10px;
+  /*margin-top: 10px;*/
 }
 
 #p1 {

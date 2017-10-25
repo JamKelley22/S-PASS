@@ -160,6 +160,7 @@ export default class PhaseOneInput extends React.Component{
         </div>
 
         <div id='matrixRow'>
+          <div id="rowTitle"><h1>Requirements</h1></div>
           <div id='matrixDisplay'>
             <MatrixDisplay
               title = "Requirements vs. Functions"
