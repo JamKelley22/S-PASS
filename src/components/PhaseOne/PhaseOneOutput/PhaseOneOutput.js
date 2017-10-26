@@ -150,8 +150,6 @@ export default class PhaseOneOutput extends React.Component{
         <p>
         Note: functions in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
         </p>
-          {this.state.fp_avg}
-          {this.state.rp_avg}
 
 
         <MatrixDisplay
@@ -166,6 +164,7 @@ export default class PhaseOneOutput extends React.Component{
           numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
+          averages={this.state.fp_avg}
         />
 
 
@@ -190,6 +189,7 @@ Note: requirements in red indicate that these functions are not sufficiently sat
           numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
+          averages={this.state.rp_avg}
         />
 
         <p>
