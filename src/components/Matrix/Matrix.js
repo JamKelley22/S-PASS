@@ -36,6 +36,7 @@ export default class notATest extends React.Component{
     return(
 
       <div id="myScroll">
+      <div id='addScrollbar'>
         <h1>{this.props.title}</h1>
           <Table responsive striped bordered condensed hover id="myTable">
           <thead>
@@ -82,6 +83,7 @@ export default class notATest extends React.Component{
                   </tr>})}
             </tbody>
           </Table>
+      </div>
       </div>
   );
   }

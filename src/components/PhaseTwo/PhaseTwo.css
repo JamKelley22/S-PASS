@@ -1,3 +1,7 @@
-#udd {
-  
+#addScrollbar::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+.formatScrollbarArea {
+
 }
