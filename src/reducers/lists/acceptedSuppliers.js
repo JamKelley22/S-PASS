@@ -1,4 +1,4 @@
-const initialState=[]
+const initialState=["S1","S2","S3"]
 
 export default function(state = initialState, action){
       switch(action.type){

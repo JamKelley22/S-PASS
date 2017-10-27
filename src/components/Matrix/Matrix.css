@@ -17,6 +17,12 @@
   width: 100%;
   overflow-x: auto;
   margin-right: 0px;
+  overflow-y: auto;
+  height: auto;/*Causes tables to be full height*/
+}
+
+#addScrollbar::-webkit-scrollbar {
+  width: 5px;
 }
 
 #padLeft20 {

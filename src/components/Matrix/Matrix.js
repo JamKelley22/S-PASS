@@ -6,6 +6,7 @@ import Cell from './Cell.js';
 export default class notATest extends React.Component{
   constructor(props) {
     super(props);
+    this.getSumColumnCells = this.getSumColumnCells.bind(this);
     this.state = {
       rowSum: 0
     };
@@ -56,6 +57,51 @@ export default class notATest extends React.Component{
             })}
    */
 
+   getSumColumnCells() {
+     const data = this.props.matrixContent;
+     var rowSum;
+
+     return(
+       data.map((el,indexI) => {
+         rowSum = 0;
+         el.map((value,indexJ) => {
+           rowSum+=value;
+         })
+         //alert(rowSum);
+         if(rowSum > this.props.maxNumber || rowSum < this.props.maxNumber) {
+           return(
+             <tr>
+               <td >
+                 <span style={{color:'red'}} className="fa fa-exclamation-circle"></span><p style={{color:'red'}}>{(rowSum*100).toFixed(0)}%</p>
+               </td>
+             </tr>
+           );
+         }
+         else if(rowSum == 1) {
+           return(
+             <tr>
+               <td >
+                 <span style={{color:'green'}} className="fa fa-check"></span><p style={{color:'green'}}>{(rowSum*100).toFixed(0)}%</p>
+               </td>
+             </tr>
+           );
+         }
+         else {
+           return(
+             <tr>
+               <td >
+                 {rowSum}
+               </td>
+             </tr>
+           );
+         }
+
+       })
+     );
+
+
+   }
+
   render(){
     var averages = this.props.averages;
     var matrixContent = this.props.matrixContent;
@@ -63,6 +109,7 @@ export default class notATest extends React.Component{
     return(
 
       <div id="myScroll">
+      <div id='addScrollbar'>
         <h1>{this.props.title}</h1>
           <Table responsive striped bordered condensed hover id="myTable">
           <thead>
@@ -111,6 +158,7 @@ export default class notATest extends React.Component{
             {this.loadAverage(averages)}
             </tbody>
           </Table>
+      </div>
       </div>
   );
   }
