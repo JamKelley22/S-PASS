@@ -10,6 +10,14 @@ import './PhaseThree.css';
 export default class PhaseThreeOutput extends React.Component{
   constructor(props) {
     super(props);
+    this.state = {
+        fa_matrix: null,
+        ra_matrix: null,
+        ea_matrix: null,
+        fa_avg: null,
+        ra_avg:null
+
+    }
     //var math=require('mathjs');
     this.math = require('mathjs');
     this.matrixMult = this.matrixMult;
@@ -18,40 +26,85 @@ export default class PhaseThreeOutput extends React.Component{
     this.selectionMatrix = this.selectionMatrix;
   }
 
+
+  /*===========================================================================
+  ****************         START HELPER FUNCTIONS        **********************
+  ===========================================================================*/
+
+  /*
+  PURPOSE: Find average of matrix columns
+  INPUT: Matrix of M x N size
+  OUTPUT: Array of length N
+  */
+    findAverage(mat){
+
+        var size = [mat.length,mat[0].length];
+        var sum = Array.apply(null, Array(size[1])).map(Number.prototype.valueOf,0);
+
+        for(var i=0;i<size[0];i++) {
+            for(var j=0;j<size[1];j++) {
+                sum[j] += parseFloat(mat[i][j]);
+            }
+        }
+
+        sum = sum.map(currentValue => currentValue/size[0]);
+        sum = sum.map(currentValue => Math.round(currentValue*100)/100);
+        return sum;
+    }
+
+
+  /*
+  PURPOSE:
+  INPUT:
+  OUTPUT:
+   */
   selectionMatrix(mat1,mat2){
     console.log("=====SELECTION MATRIX======");
     console.log(mat1);
     if(mat1.length!=0){
-    let newMatrix = this.matrixMult(mat1,mat2);
-    console.log("newMatrix");
-    console.log(newMatrix);
-    var selected = newMatrix.map(function(x){
-      console.log("made it");
-      return(x.map(function(num){
-        console.log("also made it");
-        if(num>0){
-          return "Accepted";
-        }
-        else{
-          return "Not Accepted";
-        }
-      }))
-    })
-    console.log(selected);
-    return selected;
-  }
-  else{
-    return [["nothing selected","nothing selected","nothing selected"]];
-  }
+      let newMatrix = this.matrixMult(mat1,mat2);
+      console.log("newMatrix");
+      console.log(newMatrix);
+      var selected = newMatrix.map(function(x){
+        console.log("made it");
+        return(x.map(function(num){
+          console.log("also made it");
+          if(num>0){
+            return "Accepted";
+          }
+          else{
+            return "Not Accepted";
+          }
+        }))
+      })
+      console.log(selected);
+      return selected;
+    }
+    else{
+      return [["nothing selected","nothing selected","nothing selected"]];
+    }
   }
 
+  /*
+  PURPOSE:
+  INPUT:
+  OUTPUT:
+   */
   matrixMult(mat1,mat2){
     var newMat1 = this.math.matrix(mat1);
     var newMat2 = this.math.matrix(mat2);
     var newMat = this.math.multiply(newMat1,newMat2);
+    for(var i=0;i<newMat._size[0];i++){
+        newMat._data[i] = newMat._data[i].map(currentValue => Math.round(currentValue*100)/100);
+    }
     return newMat._data;
   }
 
+  /*
+  PURPOSE:
+  INPUT:
+  OUTPUT:
+   */
   findRelation(myMat){
     //var newMat = this.math.matrix(mat);
     var newMat = myMat.map(function(arr) {
@@ -66,6 +119,11 @@ export default class PhaseThreeOutput extends React.Component{
     return relationMat._data;
   }
 
+  /*
+  PURPOSE:
+  INPUT:
+  OUTPUT:
+   */
   functionProduct(funMod,modArch){
     console.log(funMod);
     //console.log('did the thing YES');
@@ -96,15 +154,37 @@ export default class PhaseThreeOutput extends React.Component{
 
     return matOutput._data;
     }
-  else{
-    let temp=[];
-    for(var i=0;i<funMod.length;i++){
-      temp.push([]);
+    else{
+      let temp=[];
+      for(var i=0;i<funMod.length;i++){
+        temp.push([]);
+      }
+      return temp;
     }
-    return temp;
   }
-  }
+
+  /*===========================================================================
+  ****************           END HELPER FUNCTIONS        **********************
+  ===========================================================================*/
+
+
   render(){
+      //Create function architecture matrix
+      {this.state.fa_matrix = this.functionProduct(
+          this.props.functionAltModuleMatrix._data,
+          this.props.moduleProductArchitecture._data)}
+      //Create requirement architecture matrix
+      {this.state.ra_matrix = this.matrixMult(this.props.requirementFunctionMatrix._data,
+          this.functionProduct(this.props.functionAltModuleMatrix._data,
+              this.props.moduleProductArchitecture._data))}
+      //Create supplier architecture matrix
+      {this.state.ea_matrix = this.selectionMatrix(this.props.supplierAltModuleMatrix._data,
+          this.props.moduleProductArchitecture._data)}
+      //Create function architecture averages
+      {this.state.fa_avg = this.findAverage(this.state.fa_matrix)}
+      //Create requirement architecture averages
+      {this.state.ra_avg = this.findAverage(this.state.ra_matrix)}
+
     return(
       <div id='scroll'>
 
@@ -118,9 +198,7 @@ export default class PhaseThreeOutput extends React.Component{
           title="Function vs. Architecture"
           colNames={this.props.newArchitectureList}
           rowNames={this.props.functions}
-          matrixContent={this.functionProduct(
-            this.props.functionAltModuleMatrix._data,
-            this.props.moduleProductArchitecture._data)}
+          matrixContent={this.state.fa_matrix}
           bgColor={'rgba(210,210,177,0.6)'}
 
           editCell={null}
@@ -128,6 +206,7 @@ export default class PhaseThreeOutput extends React.Component{
           numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
+          averages={this.state.fa_avg}
         />
 
         <p>
@@ -138,9 +217,7 @@ export default class PhaseThreeOutput extends React.Component{
           title="Requirement vs. Architecture"
           colNames={this.props.newArchitectureList}
           rowNames={this.props.requirements}
-          matrixContent={this.matrixMult(this.props.requirementFunctionMatrix._data,
-            this.functionProduct(this.props.functionAltModuleMatrix._data,
-              this.props.moduleProductArchitecture._data))}
+          matrixContent={this.state.ra_matrix}
           bgColor={'rgba(210,210,177,0.6)'}
 
           editCell={null}
@@ -148,6 +225,7 @@ export default class PhaseThreeOutput extends React.Component{
           numberType='#' // | bin | % | # |
           editType='input'// | dropDown | input |
           dropDownChoices={null}
+          averages={this.state.ra_avg}
         />
 
         <p>
@@ -158,8 +236,7 @@ export default class PhaseThreeOutput extends React.Component{
           title="Supplier vs. Architecture"
           colNames={this.props.newArchitectureList}
           rowNames={this.props.acceptedSuppliers}
-          matrixContent={this.selectionMatrix(this.props.supplierAltModuleMatrix._data,
-            this.props.moduleProductArchitecture._data)}
+          matrixContent={this.state.ea_matrix}
           bgColor={'rgba(210,210,177,0.6)'}
 
           editCell={null}

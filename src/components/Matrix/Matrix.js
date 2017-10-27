@@ -30,7 +30,34 @@ export default class notATest extends React.Component{
 
   }
 
+  loadAverage(avg){
+    if(avg){
+      return <tr>
+        <th style={{backgroundColor: this.props.bgColor, minHeight: '60px'}}>
+          <div className="block-with-text">
+            Average
+          </div>
+        </th>
+          {avg.map((name)=>
+              {console.log(name);
+                return <th>{name}</th>
+              }
+          )}
+      </tr>
+    }
+  }
+  /*
+         {averages.map((name,index)=>
+            {
+              return <tr>
+                <th style={{backgroundColor: this.props.bgColor, minHeight: '60px'}}><div className="block-with-text">TEST
+                </div></th>
+              </tr>
+            })}
+   */
+
   render(){
+    var averages = this.props.averages;
     var matrixContent = this.props.matrixContent;
     //alert(this.props.dropDownChoices);
     return(
@@ -80,6 +107,8 @@ export default class notATest extends React.Component{
                 )}
 
                   </tr>})}
+
+            {this.loadAverage(averages)}
             </tbody>
           </Table>
       </div>
