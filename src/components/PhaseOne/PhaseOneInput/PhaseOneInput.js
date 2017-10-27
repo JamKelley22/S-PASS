@@ -171,6 +171,7 @@ export default class PhaseOneInput extends React.Component{
               canEditCells={true}//Must Specify that cells in the matrix are editable, else they are not
               numberType='%' // | bin | % | # |
               editType='dropDown'// | dropDown | input |
+              maxNumber={1}
               dropDownChoices={[
                 [0,'Imposible to contribute'],
                 [10,'Nearly impossible to contribute'],
