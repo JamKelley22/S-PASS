@@ -1,6 +1,16 @@
 var math=require('mathjs');
-const initialState = math.matrix();
-initialState.resize([8,0]);
+const initialState = math.matrix([//Idk how to get the initial width of a matrix
+  [5,5,0,0,0,5,5,0,0,0],
+  [4,4,0,0,0,4,3,0,0,0],
+  [3,3,0,0,0,4,4,0,5,0],
+  [3,3,4,5,4,5,1,5,0,4],
+  [5,5,4,4,4,5,4,5,5,4],
+  [4,4,0,0,0,5,5,0,0,0],
+  [3,3,0,0,0,5,4,0,0,0],
+  [4,4,0,0,0,5,5,0,0,0],
+  ]);
+//initialState.resize([8,8]);
+
 
   export default function(state = initialState, action){
     switch(action.type){

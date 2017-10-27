@@ -219,6 +219,8 @@ class PhaseTwo extends React.Component{
 Evaluation of environmental sustainability for new modules and suppliers.
 </p>
 
+      <div id='addScrollbar'
+      className='formatScrollbarArea'>
       <MatrixDisplay
         title="Module Related Environmental Indicators"
         colNames={["Possibility of RoHS","Recycling Rate","Satisfaction Level of Using Renewable Materials"]}
@@ -232,6 +234,7 @@ Evaluation of environmental sustainability for new modules and suppliers.
         editType='input'// | dropDown | input |
         dropDownChoices={null}
       />
+      </div>
 
       <MatrixDisplay
         title="Supplier Related Environmental Indicators"

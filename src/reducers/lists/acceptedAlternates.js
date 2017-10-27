@@ -1,4 +1,4 @@
-const initialState=[]
+const initialState=["A1","A3","A4","A6","A8","A10","A11","A13","A15","A17"]
 
 export default function(state = initialState, action){
       switch(action.type){

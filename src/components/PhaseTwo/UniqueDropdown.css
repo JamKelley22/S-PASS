@@ -13,5 +13,9 @@
   height: 50px;
 }
 #dropdown {
-  
+
+}
+
+#addScrollbar::-webkit-scrollbar {
+  width: 5px;
 }

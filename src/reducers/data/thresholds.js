@@ -2,15 +2,15 @@ const initialState=
 [
   {
     name:"alternates",
-    hazardousMaterialUse:0,//0
-    recyclability:0,//1
-    renewableMaterialUse:0,//2
+    hazardousMaterialUse:4,//0
+    recyclability:0.7,//1
+    renewableMaterialUse:4,//2
   },
   {
     name:"suppliers",
-    ISO:false,//3
-    recycledMaterials:0,//4
-    packageRecycling:0//5
+    ISO:true,//3
+    recycledMaterials:3,//4
+    packageRecycling:0.8//5
   }
 ]
 

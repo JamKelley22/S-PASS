@@ -80,9 +80,18 @@ export default class DropDownChoose extends React.Component{
   }
 
   getList() {
+    let styling = {
+      scrollbar: {
+        width: "auto",
+        height: "200px",
+        overflowY: "auto"
+      }
+    };
     const values = this.state.listValues;
+
     return(
-    values.map((name,index)=> {
+    <div style={styling.scrollbar} id='addScrollbar'>
+    {values.map((name,index)=> {
       return <ListGroupItem id='value'>
         {values[index]}
         <Button
@@ -94,7 +103,8 @@ export default class DropDownChoose extends React.Component{
           delete
         </Button>
       </ListGroupItem>;
-    })
+    })}
+    </div>
     );
   }
 
