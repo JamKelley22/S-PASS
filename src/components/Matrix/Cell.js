@@ -87,7 +87,7 @@ export default class Cell extends React.Component{
     switch(this.props.editType) {
         case 'dropDown':
           return (
-            <Popover id="popoverClick" title={this.state.popTitle}>
+            <Popover {...this.props} id="popover-positioned-scrolling-bottom" className='pop' title={this.state.popTitle}>
               <DropDownChoose
                 handleDropdownSubmit={this.handleDropdownSubmit}
                 value={this.state.value}
@@ -99,7 +99,7 @@ export default class Cell extends React.Component{
           break;
         case 'input':
           return (
-            <Popover id="popoverClick" title={this.state.popTitle}>
+            <Popover {...this.props} id="popover-positioned-scrolling-bottom" className='pop' title={this.state.popTitle}>
               <form action="#">
                 <label>
                   <InputBox
@@ -136,8 +136,8 @@ export default class Cell extends React.Component{
       switch (this.props.numberType) {
         case '#':
           return(
-            <OverlayTrigger onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
+            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
               {this.props.name}</td>
             </OverlayTrigger>
           );
@@ -145,8 +145,8 @@ export default class Cell extends React.Component{
 
         case 'bin':
           return(
-            <OverlayTrigger onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
+            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
               {this.props.name}</td>
             </OverlayTrigger>
           );
@@ -154,8 +154,8 @@ export default class Cell extends React.Component{
 
         case '%':
           return(
-            <OverlayTrigger onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
+            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
               {this.props.name * 100}%</td>
             </OverlayTrigger>
           );
@@ -164,8 +164,8 @@ export default class Cell extends React.Component{
 
         default:
           return(
-            <OverlayTrigger onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
+            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
+              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
               {this.props.name}</td>
             </OverlayTrigger>
           );
@@ -177,13 +177,13 @@ export default class Cell extends React.Component{
       console.log(this.props.numberType);
       if(this.props.numberType == '#' && parseFloat(this.props.name) < satisfifyThresh) {////////////////////////////////////////////
         return(
-          <td style={{backgroundColor: 'red'}}  key={ this.props.indexJ } >
+          <td id='myRel' style={{backgroundColor: 'red'}}  key={ this.props.indexJ } >
           {this.props.name}</td>
         );
       }
       else {
         return(
-          <td key={ this.props.indexJ } >
+          <td id='myRel' key={ this.props.indexJ } >
           {this.props.name}</td>
         );
       }

@@ -1,7 +1,8 @@
 .popover-content {
   padding: 0px;
-  max-height: 100px;
   overflow-y: auto;
+  width: auto;
+  overflow-x: visible;
 }
 #percentTab {
   padding-left: 5px;
@@ -16,4 +17,10 @@
     content:' ';
     display:block;
     border:.5px solid black;
+}
+#myRel {
+  position: relative;
+}
+.pop {
+  width: 500px !important;
 }

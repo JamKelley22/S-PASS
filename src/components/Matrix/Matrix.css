@@ -7,6 +7,8 @@
   font-family: "museo-sans", sans-serif;
   color: rgba(0,0,0,0.7);
   background-color: rgba(210,210,177,.2);
+  overflow-y: visible;
+  margin-bottom: 150;
 
 }
 #colNames{
@@ -17,13 +19,14 @@
   width: 100%;
   overflow-x: auto;
   margin-right: 0px;
-  overflow-y: auto;
+  overflow-y:visible !important;
   height: auto;/*Causes tables to be full height*/
 }
 
 #addScrollbar::-webkit-scrollbar {
     width: 10px;  /* remove scrollbar space */
     /* background: transparent;  optional: just make scrollbar invisible */
+    overflow-y: visible;
 }
 /* optional: show position indicator in red*/
 #addScrollbar::-webkit-scrollbar-thumb {
