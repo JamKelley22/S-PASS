@@ -183,3 +183,18 @@ h1 {
     clear: both;
     display: table;
 }
+#all::-webkit-scrollbar {
+    width: 10px;  /* remove scrollbar space */
+    /* background: transparent;  optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+#all::-webkit-scrollbar-thumb {
+    background: #41463f;
+    border: 1px solid rgb(0,0,0);
+}
+
+#all::-webkit-scrollbar-track {
+    background: rgb(0,0,0);
+    border: 4px solid transparent;
+    background-clip: content-box;
+}

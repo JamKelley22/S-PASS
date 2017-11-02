@@ -24,10 +24,8 @@ const Home = ({match}) =>(
   <div>
     <Jumbotron className='jumbotron' id='jumbo'>
       <div id='centerText'>
-        <h2>CooL:SLiCE</h2>
-        <h5>CooL:SLiCE stands for Constructionism in Learning: Sustainable Life Cycle Engineering. It is the online tool that helps engineers construct environmentally responsible product designs.
-        </h5>
-        <h5>Read more about the tools within CooL:SLiCE below!
+        <h2>S-PASS</h2>
+        <h5>S-PASS stands for Sustainable Product Architecture and Supplier Selection. It is the online tool that helps engineers construct environmentally responsible product designs.
         </h5>
         <LinkContainer to={`/SPASS/About`}>
           <Button bsStyle="primary">Get Started!</Button>
@@ -41,14 +39,9 @@ const Home = ({match}) =>(
         <Panel id='p1'>
 
           <div id='centerText'>
-            <h3><i className="fa fa-cube"/> Design</h3>
-            <p>Use a built in CAD program to vizualize and design 3D virtual product models and architectures.</p>
-
             <h3><i className="fa fa-leaf"/> S-PASS</h3>
             <p>Use the sustainable product architecture and supplier selection (S-PASS) tool to evaluate existing architectures of a product and find replacement product architectures and suppliers.</p>
 
-            <h3><i className="fa fa-wrench"/> MAT</h3>
-            <p>Use the Manufacturing Analysis Tool (MAT) to look at the manfacturing details of your product.</p>
           </div>
 
         </Panel>

@@ -6,7 +6,7 @@ import './Project.css'
 
 
 const About = ({match}) =>(
-  <div>
+  <div id='all'>
     <div id='top'className='clear'>
 
 

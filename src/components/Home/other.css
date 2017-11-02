@@ -59,8 +59,7 @@ p {
   width: 100%;
 }
 .homebg {
-
-  height: 100%;
+  height:auto;
 }
 #jumbo {
   margin-bottom: 0px;
