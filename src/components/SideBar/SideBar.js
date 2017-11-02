@@ -15,7 +15,7 @@ const SideBar = ({match}) =>(
       <Link to={'/Home'}>
         <i id='brownText' className="fa fa-arrow-left"/>
       </Link>
-      Dashboard</h3>
+      Home</h3>
     </div>
 
     <div className='sideContent'>
@@ -28,7 +28,7 @@ const SideBar = ({match}) =>(
         <div id='tab'><i className="fa fa-calendar"/> Phases</div>
       </LinkContainer>
 
-      <div id='tab'><div id='noClick'><i className="fa fa-file-text"/> Files</div></div>
+
 
     </div>
   </div>

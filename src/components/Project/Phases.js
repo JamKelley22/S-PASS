@@ -37,8 +37,7 @@ const Phases = ({match}) =>(
     <Breadcrumbs
       crumbs={[
         ['Home','/'],
-        ['Projects','/Project'],
-        ['Dashboard','/Dashboard'],
+        ['SPASS','/SPASS/About'],
         ['Phases', '/Phases']
       ]}
     />

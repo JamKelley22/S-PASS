@@ -26,9 +26,6 @@ const NavBar = () => (
             <NavItem><span className="navItem">Resources</span></NavItem>
           </LinkContainer>
 
-          <LinkContainer to="/Project">
-            <NavItem><span className="navItem">Project</span></NavItem>
-          </LinkContainer>
 
         </Nav>
       </Row>
