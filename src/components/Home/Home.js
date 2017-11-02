@@ -29,7 +29,7 @@ const Home = ({match}) =>(
         </h5>
         <h5>Read more about the tools within CooL:SLiCE below!
         </h5>
-        <LinkContainer to={`/Project`}>
+        <LinkContainer to={`/SPASS/About`}>
           <Button bsStyle="primary">Get Started!</Button>
         </LinkContainer>
       </div>

@@ -22,8 +22,6 @@ const SPASS = ({match}) =>(
     <Breadcrumbs
       crumbs={[
         ['Home','/'],
-        ['Projects','/Project'],
-        ['Dashboard','/Dashboard'],
         ['S-PASS', '/SPASS/About']
       ]}
     />
