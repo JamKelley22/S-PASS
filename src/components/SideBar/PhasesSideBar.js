@@ -52,14 +52,14 @@ export default class ProjectSideBar extends React.Component{
             return(
               <div>
                 <div id='ford' onClick={() => this.handleClick(i)}>
-                  <div id='tab'>{ph.name} <i className="fa fa-angle-down"/></div>
+                  <div id='tab' disabled>{ph.name} <i className="fa fa-angle-down"/></div>
                 </div>
                 <LinkContainer to={ph.link+'/Input'}>
-                  <div id='tabS'>Input</div>
+                  <div tabIndex="0" id='tabS'>Input</div>
                 </LinkContainer>
 
                 <LinkContainer to={ph.link+'/Output'}>
-                  <div id='tabS'>Output</div>
+                  <div tabIndex="0" id='tabS'>Output</div>
                 </LinkContainer>
               </div>
             )

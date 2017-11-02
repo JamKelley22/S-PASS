@@ -120,10 +120,6 @@ h4 {
   display: inline-block;
   top: 3px;
 }
-#ford:focus {
-  background-color: white;
-  color: #54513D;;
-}
 #tabS {
   max-width: 80%;
   margin-left: 20%;
@@ -160,6 +156,11 @@ h4 {
 #tabS:hover {
   background-color: rgba(0,0,0,0.2);
   cursor: pointer;
+}
+
+#tabS:focus {
+  background-color: rgba(0,0,0,0.2);
+  outline:none;
 }
 
 #brownText {
