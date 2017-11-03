@@ -103,10 +103,10 @@ p {
   background-size: cover;
 }
 
-img {
-  width: 100%;
+#divImage {
+  width: 70%;
   height: auto;
-  margin-right: 25px;
+  margin-top: 40px;
 }
 
 .clearfix {
