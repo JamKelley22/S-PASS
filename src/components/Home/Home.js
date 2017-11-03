@@ -69,7 +69,8 @@ Students completing this case study will identify the challenges and benefits of
         An overview of S-PASS is illustrated in the figure below. The tool employs a matrix propagation system which constructs and uses a series of overlapping matrices to derive a final solution. Users input information regarding sustainability requirements, existing and alternative modules, and new suppliers. This information is then processed according to thresholds on requirement satisfaction and environmental impact to reveal acceptable alternative modules (product architectures) and related suppliers.
         </p>
 
-        {/*}<Image src={require('../../Images/S-PASS_Diagram.PNG')} alt='S-PASS Diagram' className='clearfix' />*/}
+
+        <img src="/./Images/S-PASS_Diagram.PNG" />
 
  </div>
  </Panel>
