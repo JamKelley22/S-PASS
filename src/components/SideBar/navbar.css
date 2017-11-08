@@ -12,27 +12,33 @@
   color:#000000;
   opacity: 0.7;
   font-size: 14px;
+  background-color: none;
 }
 
-/*.li:active {
-    background-color: #B9CA57 !important;
-}*/
 
-/*.nav-green {
+
+.bar > li.navBtn > a:visited {
+  background-color: white !important;
+}
+
+.bar > li.navBtn > a:link {
+  background-color: white !important;
+}
+
+.bar > li.navBtn > a:focus {
   background-color: #B9CA57 !important;
-}*/
-
-/*#greenPills {
-  background-color: #B9CA57;
-}*/
-
-/*.li:active {
-    background-color: #B9CA57 !important;
-}*/
-
-.navItem:active {
-
 }
+
+.bar > li.navBtn > a:hover {
+  background-color: rgba(185, 202, 87, .3) !important;
+}
+
+.bar > li.navBtn > a:active {
+  background-color: rgba(185, 202, 87, .3) !important;
+}
+
+/*stay highlinted when on homepage*/
+
 
 
 #HSM {

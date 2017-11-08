@@ -44,8 +44,7 @@ const Home = ({match}) =>(
           <h3 className='clearfix'><i className="fa fa-leaf"/>Learning Objectives</h3>
 
 <p className='clearfix'>
-Learning Objectives
-Students completing this case study will identify the challenges and benefits of sustainability decision making for design and manufacturing. The learning objectives of this case study are listed as follows:
+Students completing this case study will identify the challenges and benefits of sustainability decision-making for design and manufacturing. The learning objectives of this case study are listed as follows:
 </p>
 <p className='clearfix'>
 •	Students will use multi-perspectives for product design, considering requirements, functions, modules, product architectures, and suppliers, to develop environmentally responsible products.
