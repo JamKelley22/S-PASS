@@ -11,6 +11,9 @@ import BackgroundImage from 'react-background-image-loader';
 
 import pdfFile from './pdf-sample.pdf';
 
+{/*import Ledge from '/./Images/stairs.png' //relative path to image // import attempt*/}
+
+
 class Resources extends React.Component {
   render() {
     return(
@@ -39,8 +42,11 @@ class Resources extends React.Component {
 
 
       <div className='homebg'>
-        <div id='spacing'/>
-          <BackgroundImage id='bgImage' src={'/./Images/stairs.png'} placeholder={'localImage'} >
+
+      <BackgroundImage id='bgImage' src={'/./Images/stairs.png'} placeholder={'localImage'} > {/*}// working*/}
+      {/*<BackgroundImage src={stairs} alt={stairs} > //import attempt */}
+
+                  <div id='spacing'/>
           <Panel id="p1">
             <div id='centerText'>
               <p>
