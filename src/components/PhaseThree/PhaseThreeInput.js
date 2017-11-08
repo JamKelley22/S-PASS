@@ -70,14 +70,14 @@ export default class PhaseOneInput extends React.Component{
         </Modal.Footer>
       </Modal>
 
-      <h1>Phase 3: Product Architecture and Supplier Selection</h1>
-      <p>
+      <h1 className='clearfix'>Phase 3: Product Architecture and Supplier Selection</h1>
+      <p className='clearfix'>
       Please fill out the white area of each matrix.
       </p>
-      <p>
+      <p className='clearfix'>
       <b>Q1) Please estimate how well each product module satisfies each product function.</b>
       </p>
-      <p>
+      <p className='clearfix'>
       Note: Use satisfaction level 1(poor)-5(excellent)
       </p>
 
@@ -111,10 +111,10 @@ export default class PhaseOneInput extends React.Component{
 
         </div>
 
-<p>
+<p className='clearfix'>
 <b>Q2) Please identify each module's supplier</b>
 </p>
-<p>
+<p className='clearfix'>
 Note: 1(related, 0(notrelated)
 </p>
 
@@ -136,10 +136,10 @@ Note: 1(related, 0(notrelated)
           </div>
         </div>
 
-        <p>
+        <p className='clearfix'>
         <b>Q3) Please define each architecture with modules.</b>
         </p>
-        <p>
+        <p className='clearfix'>
         Note: 1(related), 0(not related)
         </p>
 

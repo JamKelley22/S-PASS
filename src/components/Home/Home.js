@@ -28,7 +28,8 @@ const Home = ({match}) =>(
       <h5>
       Use the sustainable product architecture and supplier selection (S-PASS) tool to evaluate existing architectures of a product and find replacement product architectures and suppliers.
       </h5>
-        <LinkContainer to={`/Project`}>
+        {/*<LinkContainer to={`/Project`}>*/}
+        <LinkContainer to={`./SPASS/About`}>
           <Button bsStyle="primary">Get Started!</Button>
         </LinkContainer>
       </div>
@@ -43,8 +44,7 @@ const Home = ({match}) =>(
           <h3 className='clearfix'><i className="fa fa-leaf"/>Learning Objectives</h3>
 
 <p className='clearfix'>
-Learning Objectives
-Students completing this case study will identify the challenges and benefits of sustainability decision making for design and manufacturing. The learning objectives of this case study are listed as follows:
+Students completing this case study will identify the challenges and benefits of sustainability decision-making for design and manufacturing. The learning objectives of this case study are listed as follows:
 </p>
 <p className='clearfix'>
 •	Students will use multi-perspectives for product design, considering requirements, functions, modules, product architectures, and suppliers, to develop environmentally responsible products.
@@ -70,7 +70,10 @@ Students completing this case study will identify the challenges and benefits of
         </p>
 
 
-        <img src="/./Images/S-PASS_Diagram.PNG" />
+        {/*<img src="/./Images/S-PASS_Diagram.PNG" id="divImage" />*/}
+        {/*<img src={require('../../Images/S-PASS_Diagram_B.PNG')} alt='S-PASS Diagram' className='clearfix' />*/}
+        <img src={require('../../Images/S-PASS_Diagram_C.PNG')} alt='S-PASS Diagram' id="divImage" className='clearfix' />
+
 
  </div>
  </Panel>

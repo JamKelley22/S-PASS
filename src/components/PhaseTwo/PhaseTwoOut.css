@@ -4,3 +4,8 @@
   vertical-align: top;
   width: 50%;
 }
+.clearfix {
+    content: "";
+    clear: both;
+    display: table;
+}

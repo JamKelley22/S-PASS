@@ -106,12 +106,12 @@ class PhaseTwo extends React.Component{
 
     return(
       <div id='scroll'>
-      <h1>Phase 2: New Module Identification and Supplier Filtering</h1>
-      <p>
+      <h1 className='clearfix'>Phase 2: New Module Identification and Supplier Filtering</h1>
+      <p className='clearfix'>
       Please fill out the white area of each matrix; Click an empty cell and select one of the listed values. Do not modify any format or forumla in the worksheet.
       </p>
 
-      <p>
+      <p className='clearfix'>
       <b>Q1) Please identify alternative modules and their suppliers that can replace the inadequate modules identified in Phase 1.</b>
       </p>
       {console.log(ModuleThreshArr)}
@@ -160,7 +160,7 @@ class PhaseTwo extends React.Component{
         removeMatData={this.props.removeRowSaMMat}
       />
 
-      <p>
+      <p className='clearfix'>
       <b>Q2) Please determine thresholds for module and supplier related sustainability indicators.</b>
       </p>
 
@@ -215,7 +215,7 @@ class PhaseTwo extends React.Component{
         removeRowSaMMat = {this.props.removeRowSaMMat}
       />
 
-<p>
+<p className='clearfix'>
 Evaluation of environmental sustainability for new modules and suppliers.
 </p>
 
