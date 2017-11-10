@@ -8,14 +8,15 @@
   opacity: 0.7;
   font-size: 14px;
 }
-.navItemHome {
+
+.navItem {
   color:#000000;
   opacity: 0.7;
   font-size: 14px;
   background-color: none;
 }
 
-.navItemResources {
+.navItem {
   color:#000000;
   opacity: 0.7;
   font-size: 14px;
@@ -48,6 +49,7 @@
 .bar > li.navBtn > a:visited:active {
   background-color: #B9CA57 !important;
 }
+
 
 
 

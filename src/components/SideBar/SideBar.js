@@ -12,23 +12,18 @@ const SideBar = ({match}) =>(
   <div className='sidebar'>
     <div id='green'>
       <h3 id='center' id='brownText'>
-      <Link to={'/Dashboard'}>
+      <Link to={'/Home'}>
         <i id='brownText' className="fa fa-arrow-left"/>
       </Link>
-      Dashboard</h3>
+      Home</h3>
     </div>
 
     <div className='sideContent'>
-
-      <LinkContainer to={'/SPASS/About'}>
-        <div id='tab'><i className="fa fa-comment"/> About</div>
-      </LinkContainer>
 
       <LinkContainer to={'/Phases/PhaseOne/Input'}>
         <div id='tab'><i className="fa fa-calendar"/> Phases</div>
       </LinkContainer>
 
-      <div id='tab'><div id='noClick'><i className="fa fa-file-text"/> Files</div></div>
 
     </div>
   </div>

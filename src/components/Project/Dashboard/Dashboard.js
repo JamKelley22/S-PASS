@@ -22,13 +22,13 @@ const Dashboard = ({match}) =>(
       </div>
     </div>
 
-    <Breadcrumbs
+    {/*<Breadcrumbs
       crumbs={[
         ['Home','/'],
         ['Projects','/Project'],
         ['Dashboard','/Dashboard']
       ]}
-    />
+    />*/}
 
     <DashboardSideBar match={match}/>
 

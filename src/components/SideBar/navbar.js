@@ -18,12 +18,14 @@ const NavBar = () => (
         </Col>
         <Nav bsStyle="pills" className='bar' pullRight>
 
+        {/*<li class="bio"><a class="active" href="#">Bio</a></li>*/}
+
           <LinkContainer to="/Home" className="navBtn">
-            <NavItem><span className="navItemHome">Home</span></NavItem>
+            <NavItem><span className="navItem">Home</span></NavItem>
           </LinkContainer>
 
           <LinkContainer to="/Resources" className="navBtn">
-            <NavItem><span className="navItemResources">Resources</span></NavItem>
+            <NavItem><span className="navItem">Resources</span></NavItem>
           </LinkContainer>
 
         </Nav>
