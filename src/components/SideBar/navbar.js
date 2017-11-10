@@ -19,11 +19,11 @@ const NavBar = () => (
         <Nav bsStyle="pills" className='bar' pullRight>
 
           <LinkContainer to="/Home" className="navBtn">
-            <NavItem><span className="navItem">Home</span></NavItem>
+            <NavItem><span className="navItemHome">Home</span></NavItem>
           </LinkContainer>
 
           <LinkContainer to="/Resources" className="navBtn">
-            <NavItem><span className="navItem">Resources</span></NavItem>
+            <NavItem><span className="navItemResources">Resources</span></NavItem>
           </LinkContainer>
 
         </Nav>

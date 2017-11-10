@@ -8,7 +8,14 @@
   opacity: 0.7;
   font-size: 14px;
 }
-.navItem {
+.navItemHome {
+  color:#000000;
+  opacity: 0.7;
+  font-size: 14px;
+  background-color: none;
+}
+
+.navItemResources {
   color:#000000;
   opacity: 0.7;
   font-size: 14px;
@@ -33,11 +40,25 @@
   background-color: rgba(185, 202, 87, .3) !important;
 }
 
-.bar > li.navBtn > a:active {
-  background-color: rgba(185, 202, 87, .3) !important;
+.bar > li.navBtn > a:hover:active {
+  background-color: #B9CA57 !important;
+  box-shadow: inset 0px 1px 3px 2px rgba(0, 0, 0, 0.4);
 }
 
-/*stay highlinted when on homepage*/
+.bar > li.navBtn > a:visited:active {
+  background-color: #B9CA57 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
