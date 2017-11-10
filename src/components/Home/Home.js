@@ -24,10 +24,12 @@ const Home = ({match}) =>(
   <div>
     <Jumbotron className='jumbotron' id='jumbo'>
       <div id='centerText'>
-        <h2>S-PASS</h2>
-        <h5>S-PASS stands for Sustainable Product Architecture and Supplier Selection. It is the online tool that helps engineers construct environmentally responsible product designs.
-        </h5>
-        <LinkContainer to={`/SPASS/About`}>
+      <h2>S-PASS</h2>
+      <h5>
+      Use the sustainable product architecture and supplier selection (S-PASS) tool to evaluate existing architectures of a product and find replacement product architectures and suppliers.
+      </h5>
+        {/*<LinkContainer to={`/Project`}>*/}
+        <LinkContainer to={`./SPASS/About`}>
           <Button bsStyle="primary">Get Started!</Button>
         </LinkContainer>
       </div>
@@ -39,12 +41,44 @@ const Home = ({match}) =>(
         <Panel id='p1'>
 
           <div id='centerText'>
-            <h3><i className="fa fa-leaf"/> S-PASS</h3>
-            <p>Use the sustainable product architecture and supplier selection (S-PASS) tool to evaluate existing architectures of a product and find replacement product architectures and suppliers.</p>
+          <h3 className='clearfix'><i className="fa fa-leaf"/>Learning Objectives</h3>
+
+<p className='clearfix'>
+Students completing this case study will identify the challenges and benefits of sustainability decision-making for design and manufacturing. The learning objectives of this case study are listed as follows:
+</p>
+<p className='clearfix'>
+•	Students will use multi-perspectives for product design, considering requirements, functions, modules, product architectures, and suppliers, to develop environmentally responsible products.
+</p>
+<p className='clearfix'>
+•	Students will perform a design decision-making process to integrate environmental issues into selection of product concepts and suppliers through the S-PASS (Sustainable Product Architecture and Supplier Selection) tool.
+</p>
+<p className='clearfix'>
+•	Students will formulate their own design problems for development of environmentally responsible products.
+</p>
+
+
+
 
           </div>
 
         </Panel>
+
+        <Panel id="p1">
+        <div id='centerText'>
+        <p className='clearfix'>
+        An overview of S-PASS is illustrated in the figure below. The tool employs a matrix propagation system which constructs and uses a series of overlapping matrices to derive a final solution. Users input information regarding sustainability requirements, existing and alternative modules, and new suppliers. This information is then processed according to thresholds on requirement satisfaction and environmental impact to reveal acceptable alternative modules (product architectures) and related suppliers.
+        </p>
+
+
+        {/*<img src="/./Images/S-PASS_Diagram.PNG" id="divImage" />*/}
+        {/*<img src={require('../../Images/S-PASS_Diagram_B.PNG')} alt='S-PASS Diagram' className='clearfix' />*/}
+        <img src={require('../../Images/S-PASS_Diagram_C.PNG')} alt='S-PASS Diagram' id="divImage" className='clearfix' />
+
+
+ </div>
+ </Panel>
+
+
         <div id='spacing'/>
       </BackgroundImage>
     </div>

@@ -18,14 +18,13 @@ const NavBar = () => (
         </Col>
         <Nav bsStyle="pills" className='bar' pullRight>
 
-          <LinkContainer to="/Home">
+          <LinkContainer to="/Home" className="navBtn">
             <NavItem><span className="navItem">Home</span></NavItem>
           </LinkContainer>
 
-          <LinkContainer to="/Resources">
+          <LinkContainer to="/Resources" className="navBtn">
             <NavItem><span className="navItem">Resources</span></NavItem>
           </LinkContainer>
-
 
         </Nav>
       </Row>

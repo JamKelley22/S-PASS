@@ -31,11 +31,11 @@ class PhaseTwoOut extends React.Component{
     return(
       <div  id='scroll'>
 
-<p>
-<h1>Phase 2: Module and Supplier filtering (Result)</h1>
+<p className='clearfix'>
+<h1 >Phase 2: Module and Supplier filtering (Result)</h1>
 </p>
 
-<p>
+<p className='clearfix'>
 1) Filtering Result
 </p>
       <div id='msMatrix'>
@@ -46,7 +46,7 @@ class PhaseTwoOut extends React.Component{
         />
       </div>
 
-<p>
+<p className='clearfix'>
 2) Final new module and supplier ListGroupItem
 </p>
 
