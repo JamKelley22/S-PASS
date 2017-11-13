@@ -43,7 +43,7 @@ export default class MSFilterMatrix extends React.Component{
       else {
         rows.push(
           <tr>
-            <td style={{backgroundColor: 'red'}}>Rejected</td>
+            <td style={{backgroundColor: '#da471f'}}>Rejected</td>
           </tr>
         );
       }
@@ -71,7 +71,7 @@ export default class MSFilterMatrix extends React.Component{
         rows.push(
           <tr>
             <td>{names[i]}</td>
-            <td style={{backgroundColor: 'red'}}>Rejected</td>
+            <td style={{backgroundColor: '#da471f'}}>Rejected</td>
           </tr>
         );
       }

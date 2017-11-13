@@ -1,14 +1,13 @@
 .colorBar {
-  height: 5%;
-  max-height: 5%;
+  height: 0%;
+  max-height: 0%;
   margin: 0px;
   background-color: #ffffff;
-
-
   /*#41463f*/
   /*#f1f1e7*/
   /*#a2b427*/
 }
+
 .colorBarText p{
   color: rgba(0,0,0,0.7);
   padding: 10px;

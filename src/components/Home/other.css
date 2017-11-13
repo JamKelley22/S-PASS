@@ -47,6 +47,10 @@ p {
 
 }
 
+a, a:visited, a:hover, a:focus, a:link {
+  color: #41463f;
+}
+
 /*color block background*/
 #p1 {
   background-color: #f1f1e7;
@@ -58,14 +62,16 @@ p {
   padding-top: 40px;
   margin: auto;
   margin-top: 50px;
+  border-radius: 3px;
 }
 .panel-body {
   width: 100%;
 }
-.homebg {
 
+.homebg {
   height: 100%;
 }
+
 #jumbo {
   margin-bottom: 0px;
   margin-top: 0px;

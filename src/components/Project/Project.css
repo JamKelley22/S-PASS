@@ -184,3 +184,7 @@ h1 {
     clear: both;
     display: table;
 }
+
+div {
+  background color: #f1f1e7;
+}

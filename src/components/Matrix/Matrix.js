@@ -72,7 +72,7 @@ export default class notATest extends React.Component{
            return(
              <tr>
                <td >
-                 <span style={{color:'red'}} className="fa fa-exclamation-circle"></span><p style={{color:'red'}}>{(rowSum*100).toFixed(0)}%</p>
+                 <span style={{color:'#da471f'}} className="fa fa-exclamation-circle"></span><p style={{color:'#da471f'}}>{(rowSum*100).toFixed(0)}%</p>
                </td>
              </tr>
            );
@@ -81,7 +81,7 @@ export default class notATest extends React.Component{
            return(
              <tr>
                <td >
-                 <span style={{color:'green'}} className="fa fa-check"></span><p style={{color:'green'}}>{(rowSum*100).toFixed(0)}%</p>
+                 <span style={{color:'#a2b427'}} className="fa fa-check"></span><p style={{color:'#a2b427'}}>{(rowSum*100).toFixed(0)}%</p>
                </td>
              </tr>
            );
