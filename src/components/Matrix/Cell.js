@@ -177,7 +177,7 @@ export default class Cell extends React.Component{
       console.log(this.props.numberType);
       if(this.props.numberType == '#' && parseFloat(this.props.name) < satisfifyThresh) {////////////////////////////////////////////
         return(
-          <td id='myRel' style={{backgroundColor: 'red'}}  key={ this.props.indexJ } >
+          <td id='myRel' style={{backgroundColor: '#da471f'}}  key={ this.props.indexJ } >
           {this.props.name}</td>
         );
       }

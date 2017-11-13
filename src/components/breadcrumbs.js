@@ -15,11 +15,11 @@ export default class Breadcrumbs extends React.Component{
     if (typeof arr == 'undefined') {
       arr = [
         ['Home','/'],
-        ['Dashboard','/Dashboard'],
-        ['Projects','/Project'],
         ['Phases', '/Phases']
       ]
+
     }
+
     return(
       <Breadcrumb id='breadcrumbs'>
       {arr.map((el, indexI) => {

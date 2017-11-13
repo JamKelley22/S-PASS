@@ -20,14 +20,9 @@ const SideBar = ({match}) =>(
 
     <div className='sideContent'>
 
-      <LinkContainer to={'/SPASS/About'}>
-        <div id='tab'><i className="fa fa-comment"/> About</div>
-      </LinkContainer>
-
       <LinkContainer to={'/Phases/PhaseOne/Input'}>
         <div id='tab'><i className="fa fa-calendar"/> Phases</div>
       </LinkContainer>
-
 
 
     </div>

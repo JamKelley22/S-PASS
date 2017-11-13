@@ -41,19 +41,22 @@ export default class ProjectSideBar extends React.Component{
             <Link to={'/SPASS/About'}>
               <i id='brownText' className="fa fa-arrow-left"/>
             </Link>
-            Phases</h3>
+            Case Study</h3>
         </div>
 
         <div className='sideContent'>
+
         {this.state.phase.map((currElement, index) => {
           var i = index;
           var ph = this.state.phase[i];
           if(ph.open) {
             return(
+
               <div>
                 <div id='ford' onClick={() => this.handleClick(i)}>
                   <div id='tab' disabled>{ph.name} <i className="fa fa-angle-down"/></div>
                 </div>
+
                 <LinkContainer to={ph.link+'/Input'}>
                   <div tabIndex="0" id='tabS'>Input</div>
                 </LinkContainer>

@@ -8,36 +8,60 @@
   opacity: 0.7;
   font-size: 14px;
 }
-.navItem {
+
+span.navItem {
+  font-size: 16px;
   color:#000000;
   opacity: 0.7;
-  font-size: 14px;
   background-color: none;
 }
 
-
+.bar > li.navBtn > a {
+  color: rgba(0,0,0,0.6);
+  font-family: "museo-sans", sans-serif;
+  font-weight: 700;
+  border-radius: 3px;
+}
 
 .bar > li.navBtn > a:visited {
-  background-color: white !important;
+  background-color: #f1f1e7 !important;
+  box-shadow: 0 1px 10px 0 rgba(0,0,0,0.2), 0 2px 12px 0 rgba(0,0,0,0.19);
 }
 
 .bar > li.navBtn > a:link {
-  background-color: white !important;
+  background-color: #f1f1e7 !important;
 }
 
 .bar > li.navBtn > a:focus {
   background-color: #B9CA57 !important;
+  box-shadow: 0 1px 10px 0 rgba(0,0,0,0.2), 0 2px 12px 0 rgba(0,0,0,0.19);
 }
 
 .bar > li.navBtn > a:hover {
-  background-color: rgba(185, 202, 87, .3) !important;
+  box-shadow: 0 4px 40px 0 rgba(0,0,0,0.2), 0 8px 48px 0 rgba(0,0,0,0.19);
+  box-shadow color: rgba (185, 202, 87, 0.3);
 }
 
-.bar > li.navBtn > a:active {
-  background-color: rgba(185, 202, 87, .3) !important;
+.bar > li.navBtn > a:hover:active {
+  background-color: #B9CA57 !important;
+  box-shadow: inset 0px 1px 3px 2px rgba(0, 0, 0, 0.4);
 }
 
-/*stay highlinted when on homepage*/
+.bar > li.navBtn > a:visited:active {
+  background-color: #B9CA57 !important;
+  box-shadow: 0 1px 10px 0 rgba(0,0,0,0.2), 0 2px 12px 0 rgba(0,0,0,0.19);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -46,4 +70,9 @@
   overflow-x: hidden;
   padding: 10px;
   padding-right: 3%;
+  -webkit-box-shadow: 1px 5px 9px -5px rgba(0,0,0,0.37);
+  -moz-box-shadow: 1px 5px 9px -5px rgba(0,0,0,0.37);
+  box-shadow: 1px 5px 9px -5px rgba(0,0,0,0.37);
+  background-color: #f1f1e7;
+
 }

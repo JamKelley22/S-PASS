@@ -21,6 +21,8 @@ import BackgroundImage from 'react-background-image-loader';
 import other from './other.css';
 
 const Home = ({match}) =>(
+
+
   <div>
     <Jumbotron className='jumbotron' id='jumbo'>
       <div id='centerText'>

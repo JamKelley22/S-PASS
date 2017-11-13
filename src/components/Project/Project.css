@@ -196,7 +196,7 @@ h1 {
 }
 
 #all::-webkit-scrollbar-track {
-    background: rgb(0,0,0);
+    background: #f1f1e7;
     border: 4px solid transparent;
     background-clip: content-box;
 }

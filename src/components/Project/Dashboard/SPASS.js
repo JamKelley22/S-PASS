@@ -15,16 +15,16 @@ const SPASS = ({match}) =>(
   <div>
     <div className='colorBar'>
       <div className='colorBarText'>
-        <p style={{paddingTop: '0px', paddingBottom: '0px'}}>Company X—Drone Design</p>
       </div>
     </div>
 
-    <Breadcrumbs
+  {/*}  <Breadcrumbs
       crumbs={[
         ['Home','/'],
         ['S-PASS', '/SPASS/About']
       ]}
-    />
+    />*/}
+
     <SideBar match={match}/>
 
 
