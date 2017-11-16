@@ -23,7 +23,23 @@
   height: auto;/*Causes tables to be full height*/
 }
 
+#addScrollbar::-webkit-scrollbar {
+    width: 10px;  /* remove scrollbar space */
+    /* background: transparent;  optional: just make scrollbar invisible */
+    overflow-y: visible;
+}
+/* optional: show position indicator in red*/
+#addScrollbar::-webkit-scrollbar-thumb {
+    background: #41463f;
+    border: 1px solid rgb(0,0,0);
+}
 
+
+#addScrollbar::-webkit-scrollbar-track {
+    background: rgb(0,0,0);
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
 
 #padLeft20 {
   padding-left: 20px;
