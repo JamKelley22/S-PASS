@@ -81,9 +81,12 @@ export default class PhaseOneInput extends React.Component{
         Please enter requirements:
         </p>
 
+{/*
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
         </div>
+*/}
+
         <ListStuff
           list={this.props.requirements}
           title="Requirements"
@@ -99,9 +102,11 @@ export default class PhaseOneInput extends React.Component{
         Please enter functions:
         </p>
 
-        <div className='pull-right'>
-          <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-        </div>
+        {/*
+                <div className='pull-right'>
+                  <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
+                </div>
+        */}
         <ListStuff
           list={this.props.functions}
           title="Functions"
@@ -122,10 +127,11 @@ export default class PhaseOneInput extends React.Component{
         Please enter modules:
         </p>
 
-        <div className='pull-right'>
-          <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-        </div>
-
+        {/*
+                <div className='pull-right'>
+                  <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
+                </div>
+        */}
         <ListStuff
           list={this.props.modules}
           title="Modules"
@@ -155,9 +161,11 @@ export default class PhaseOneInput extends React.Component{
         </div>
 
 
-        <div className='pull-right'>
-          <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
-        </div>
+        {/*
+                <div className='pull-right'>
+                  <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
+                </div>
+        */}
 
         <div id='matrixRow'>
 

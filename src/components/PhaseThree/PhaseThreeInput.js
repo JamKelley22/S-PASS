@@ -81,10 +81,12 @@ export default class PhaseOneInput extends React.Component{
       Note: Use satisfaction level 1(poor)-5(excellent)
       </p>
 
+{/*
         <div className='pull-right'>
           <i className="fa fa-question-circle" id='pad' onClick={this.showHelp}/>
           <i className="fa fa-search" id='pad'/>
         </div>
+*/}
 
 
         <div id='matrixRow'>

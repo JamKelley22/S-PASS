@@ -84,15 +84,16 @@ export default class DropDownChoose extends React.Component{
     return(
     values.map((name,index)=> {
       return <ListGroupItem id='value'>
+      <Button
+        id="deleteBtn"
+        bsStyle="danger"
+        bsSize="xsmall"
+        className="btn pull-left"
+        onClick={()=> this.handleRemove(index)}
+      >
+        delete
+      </Button>
         {values[index]}
-        <Button
-          bsStyle="danger"
-          bsSize="xsmall"
-          className="btn pull-right"
-          onClick={()=> this.handleRemove(index)}
-        >
-          delete
-        </Button>
       </ListGroupItem>;
     })
     );

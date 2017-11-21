@@ -4,9 +4,14 @@
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
-#line {
 
+#myTable {
+  margin: 0px !important;
 }
+
+#line {
+}
+
 #item {
   min-height: 56.2;
   height: 56.2;
@@ -15,4 +20,11 @@
 
 #tableIcon {
   padding-top: 23px;
+  margin-right: 5px;
+}
+
+#sumDisplay {
+  -webkit-box-shadow: -9px -5px 11px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: -9px -5px 11px -10px rgba(0,0,0,0.75);
+  box-shadow: -9px -5px 11px -10px rgba(0,0,0,0.75);
 }
