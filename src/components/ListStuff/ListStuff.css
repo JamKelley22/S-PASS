@@ -11,3 +11,6 @@
 #clicker {
   cursor: pointer;
 }
+#deleteBtn {
+  margin-right: 10px;
+}

@@ -40,15 +40,16 @@ export default class ListStuff extends React.Component{
             <div>
               <ListGroupItem id='group' className='even'><h4>{name}</h4></ListGroupItem>
               <ListGroupItem key={functions} id='group' href="#link1">
+              <Button
+                id="deleteBtn"
+                bsStyle="danger"
+                bsSize="xsmall"
+                className="btn pull-left"
+                onClick={()=> this.handleRemove(0)}
+              >
+                Delete
+              </Button>
                 1. {functions}
-                <Button
-                  bsStyle="danger"
-                  bsSize="xsmall"
-                  className="btn pull-right"
-                  onClick={()=> this.handleRemove(0)}
-                >
-                  Delete
-                </Button>
               </ListGroupItem>
             </div>
           );
@@ -56,29 +57,31 @@ export default class ListStuff extends React.Component{
         else if(index%2 == 0) {
           return(
             <ListGroupItem key={functions} id='group' href="#link1">
+            <Button
+              id="deleteBtn"
+              bsStyle="danger"
+              bsSize="xsmall"
+              className="btn pull-left"
+              onClick={()=> this.handleRemove(index)}
+            >
+              Delete
+            </Button>
               {index+1}. {functions}
-              <Button
-                bsStyle="danger"
-                bsSize="xsmall"
-                className="btn pull-right"
-                onClick={()=> this.handleRemove(index)}
-              >
-                Delete
-              </Button>
             </ListGroupItem>
           );
       }
       return(
         <ListGroupItem key={functions} id='group' className='even' href="#link1">
+        <Button
+          id="deleteBtn"
+          bsStyle="danger"
+          bsSize="xsmall"
+          className="btn pull-left"
+          onClick={()=> this.handleRemove(index)}
+        >
+          Delete
+        </Button>
           {index+1}. {functions}
-          <Button
-            bsStyle="danger"
-            bsSize="xsmall"
-            className="btn pull-right"
-            onClick={()=> this.handleRemove(index)}
-          >
-            Delete
-          </Button>
         </ListGroupItem>
       );
     }

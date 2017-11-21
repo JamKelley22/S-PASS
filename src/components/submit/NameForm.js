@@ -90,6 +90,7 @@ export default class NameForm extends React.Component {
               id='submit'
               bsStyle="success"
               bsSize="xsmall"
+              className="btn pull-left"
               type="submit"
               value="Submit" />
           </form>
@@ -113,6 +114,7 @@ export default class NameForm extends React.Component {
             id='submit'
             bsStyle="success"
             bsSize="xsmall"
+            className="btn pull-left"
             onClick={this.handleSubmit}>
             Submit
           </Button>
