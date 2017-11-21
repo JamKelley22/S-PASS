@@ -47,7 +47,7 @@ export default class ListStuff extends React.Component{
                   className="btn pull-right"
                   onClick={()=> this.handleRemove(0)}
                 >
-                  delete
+                  Delete
                 </Button>
               </ListGroupItem>
             </div>
@@ -63,7 +63,7 @@ export default class ListStuff extends React.Component{
                 className="btn pull-right"
                 onClick={()=> this.handleRemove(index)}
               >
-                delete
+                Delete
               </Button>
             </ListGroupItem>
           );
@@ -77,7 +77,7 @@ export default class ListStuff extends React.Component{
             className="btn pull-right"
             onClick={()=> this.handleRemove(index)}
           >
-            delete
+            Delete
           </Button>
         </ListGroupItem>
       );

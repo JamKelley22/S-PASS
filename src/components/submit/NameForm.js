@@ -74,19 +74,24 @@ export default class NameForm extends React.Component {
     if (this.state.alertVisible) {
       return (
         <div>
-        <Alert bsStyle="danger" onDismiss={this.handleAlertDismiss}>
+        <Alert id="alert" bsStyle="danger" onDismiss={this.handleAlertDismiss}>
           <h4>{this.state.alertTitle}</h4>
           <p>Try again with a unique function name</p>
-          <p>
-            <Button onClick={this.handleAlertDismiss}>Hide Alert</Button>
-          </p>
+
         </Alert>
 
           <form onSubmit={this.handleSubmit}>
             <label>
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input
+                            id="formControl"
+                            type="text" value={this.state.value} onChange={this.handleChange} />
             </label>
-            <input type="submit" value="Submit" />
+            <input
+              id='submit'
+              bsStyle="success"
+              bsSize="xsmall"
+              type="submit"
+              value="Submit" />
           </form>
         </div>
       );
