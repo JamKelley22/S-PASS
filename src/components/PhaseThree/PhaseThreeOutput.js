@@ -189,6 +189,7 @@ export default class PhaseThreeOutput extends React.Component{
       <div id='scroll'>
 
         <h1>Phase 3: Product Architecture and Supplier Selection (Results)</h1>
+        <div className="divLine"></div>
 
         <p>
         Average functional satisfaction levels for new product architectures:
@@ -212,6 +213,7 @@ export default class PhaseThreeOutput extends React.Component{
         <p>
         Average functional satisfaction levels for new product architectures:
         </p>
+        <div className="divLine"></div>
 
           <MatrixDisplay
           title="Requirement vs. Architecture"
@@ -248,7 +250,7 @@ export default class PhaseThreeOutput extends React.Component{
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseThree/Input'>
-            <Button id='backBtn'>Back</Button>
+            <Button id='backBtn'><i id='chevronLeft' className="fa fa-chevron-left"/>Back</Button>
           </LinkContainer>
         </div>
 

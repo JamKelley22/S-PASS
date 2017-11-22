@@ -55,3 +55,13 @@ p {
   display: inline-block;
     overflow: hidden;
 }
+
+#chevronRight {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+#chevronLeft {
+  padding-right: 10px;
+  font-size: 14px;
+}

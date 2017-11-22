@@ -71,6 +71,8 @@ export default class PhaseOneInput extends React.Component{
       </Modal>
 
       <h1 className='clearfix'>Phase 3: Product Architecture and Supplier Selection</h1>
+      <div className="divLine"></div>
+
       <p className='clearfix'>
       Please fill out the white area of each matrix.
       </p>
@@ -78,7 +80,7 @@ export default class PhaseOneInput extends React.Component{
       <b>Q1) Please estimate how well each product module satisfies each product function.</b>
       </p>
       <p className='clearfix'>
-      Note: Use satisfaction level 1(poor)-5(excellent)
+      Note: Use satisfaction level 1 (poor)-5 (excellent)
       </p>
 
 {/*
@@ -112,6 +114,7 @@ export default class PhaseOneInput extends React.Component{
           </div>
 
         </div>
+        <div className="divLine"></div>
 
 <p className='clearfix'>
 <b>Q2) Please identify each module's supplier</b>
@@ -137,12 +140,13 @@ Note: 1(related, 0(notrelated)
             />
           </div>
         </div>
+        <div className="divLine"></div>
 
         <p className='clearfix'>
         <b>Q3) Please define each architecture with modules.</b>
         </p>
         <p className='clearfix'>
-        Note: 1(related), 0(not related)
+        Note: 1 (related), 0 (not related)
         </p>
 
         <MatrixDisplay
@@ -163,10 +167,10 @@ Note: 1(related, 0(notrelated)
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseTwo/Output'>
-            <Button id='backBtn'>Back</Button>
+            <Button id='backBtn'><i id='chevronLeft' className="fa fa-chevron-left"/>Back</Button>
           </LinkContainer>
           <LinkContainer to='/Phases/PhaseThree/Output'>
-            <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
+            <Button style={{float: 'right'}} id='continueBtn'>Continue<i id='chevronRight' className="fa fa-chevron-right"/></Button>
           </LinkContainer>
         </div>
       </div>

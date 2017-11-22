@@ -77,6 +77,9 @@ export default class PhaseOneInput extends React.Component{
 
       </div>
 
+
+      <div className="divLine"></div>
+
         <p className='clearfix'>
         Please enter requirements:
         </p>
@@ -145,6 +148,10 @@ export default class PhaseOneInput extends React.Component{
           //addMatRow3={this.props.addRowMPAMat}
           //removeMatRow3={this.props.removeRowMPAMat}
         />
+
+
+        <div className="divLine"></div>
+
         <div>
         <p className='clearfix'>
         Please fill out the white area of each matrix. Click an empty cell and select one of the listed values. Do not modify any format or forumla in the worksheet.
@@ -206,6 +213,10 @@ export default class PhaseOneInput extends React.Component{
 
         </div>
 
+
+<div className="divLine"></div>
+
+
         <p className='clearfix'>
         <b>Q2)</b> Please estimate to what extent each product module satisfies each product function.
         </p>
@@ -243,6 +254,10 @@ export default class PhaseOneInput extends React.Component{
 
         </div>
 
+
+<div className="divLine"></div>
+
+
         <div>
         <p className='clearfix'>
         <b>Q3)</b> Please identify the module composition of current products.
@@ -273,7 +288,7 @@ export default class PhaseOneInput extends React.Component{
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseOne/Output'>
-            <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
+            <Button style={{float: 'right'}} id='continueBtn'>Continue<i id='chevronRight' className="fa fa-chevron-right"/></Button>
           </LinkContainer>
         </div>
 

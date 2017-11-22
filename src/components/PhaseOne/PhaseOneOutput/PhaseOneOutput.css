@@ -45,3 +45,19 @@ p{
   width: 50%;
   border-radius: 0px;
 }
+
+.divLine {
+  height: 2px;
+  background-color: #41463f;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+#chevronRight {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+#chevronLeft {
+  padding-right: 10px;
+  font-size: 14px;
+}

@@ -11,11 +11,13 @@ const SideBar = ({match}) =>(
 
   <div className='sidebar'>
     <div id='green'>
-      <h3 id='center' id='brownText'>
+
       <Link to={'/Home'}>
+        <h3 id='center' id='brownText'>
         <i id='brownText' className="fa fa-arrow-left"/>
+        Home</h3>
       </Link>
-      Home</h3>
+
     </div>
 
     <div className='sideContent'>

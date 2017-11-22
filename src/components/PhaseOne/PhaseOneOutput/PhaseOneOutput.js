@@ -144,8 +144,10 @@ export default class PhaseOneOutput extends React.Component{
     return(
       <div id="scroll">
         <h1>Phase 1: Requirement Satisfaction by Existing Products (Results)</h1>
-        <p>
 
+    <div className="divLine"></div>
+
+        <p>
         <b>1) Average functional satisfaction levels for new product architectures</b>
         </p>
         <p className='clearfix'>
@@ -169,6 +171,10 @@ export default class PhaseOneOutput extends React.Component{
         />
 
 
+
+
+
+
 <p className='clearfix'>
 <b>2) Satisfaction level of each environmental sustainability requirement for current products</b>
 </p>
@@ -177,7 +183,7 @@ export default class PhaseOneOutput extends React.Component{
 Note: requirements in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
 </p>
 
-
+<div className="divLine"></div>
         <MatrixDisplay
           title="Requirement vs. Product"
           colNames={this.props.productArchitecture}
@@ -193,16 +199,19 @@ Note: requirements in red indicate that these functions are not sufficiently sat
           averages={this.state.rp_avg}
         />
 
+
+
+
         <p className='clearfix'>
         <b>3) Modules required to be replaced</b>
         </p>
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseOne/Input'>
-            <Button id='backBtn'>Back</Button>
+            <Button id='backBtn'><i id='chevronLeft' className="fa fa-chevron-left"/>Back</Button>
           </LinkContainer>
           <LinkContainer to='/Phases/PhaseTwo/Input'>
-            <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
+            <Button style={{float: 'right'}} id='continueBtn'>Continue<i id='chevronRight' className="fa fa-chevron-right"/></Button>
           </LinkContainer>
         </div>
 

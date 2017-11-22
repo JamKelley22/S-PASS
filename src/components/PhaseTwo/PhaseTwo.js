@@ -107,6 +107,8 @@ class PhaseTwo extends React.Component{
     return(
       <div id='scroll'>
       <h1 className='clearfix'>Phase 2: New Module Identification and Supplier Filtering</h1>
+      <div className="divLine"></div>
+
       <p className='clearfix'>
       Please fill out the white area of each matrix; Click an empty cell and select one of the listed values. Do not modify any format or forumla in the worksheet.
       </p>
@@ -159,6 +161,7 @@ class PhaseTwo extends React.Component{
         addMatRow = {this.props.addRowSaMMat}
         removeMatData={this.props.removeRowSaMMat}
       />
+      <div className="divLine"></div>
 
       <p className='clearfix'>
       <b>Q2) Please determine thresholds for module and supplier related sustainability indicators.</b>
@@ -251,10 +254,10 @@ Evaluation of environmental sustainability for new modules and suppliers.
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseOne/Output'>
-          <Button id='backBtn'>Back</Button>
+          <Button id='backBtn'><i id='chevronLeft' className="fa fa-chevron-left"/>Back</Button>
         </LinkContainer>
         <LinkContainer to='/Phases/PhaseTwo/Output'>
-          <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
+          <Button style={{float: 'right'}} id='continueBtn'>Continue<i id='chevronRight' className="fa fa-chevron-right"/></Button>
         </LinkContainer>
       </div>
 

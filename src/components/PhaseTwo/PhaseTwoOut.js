@@ -34,6 +34,7 @@ class PhaseTwoOut extends React.Component{
 <p className='clearfix'>
 <h1 >Phase 2: Module and Supplier filtering (Result)</h1>
 </p>
+<div className="divLine"></div>
 
 <p className='clearfix'>
 1) Filtering Result
@@ -45,6 +46,7 @@ class PhaseTwoOut extends React.Component{
           values = {this.findBools(this.props.selectedAlternates,this.props.acceptedAlternates)}
         />
       </div>
+      <div className="divLine"></div>
 
 <p className='clearfix'>
 2) Final new module and supplier ListGroupItem
@@ -60,10 +62,10 @@ class PhaseTwoOut extends React.Component{
 
       <div id='lowerButtons'>
         <LinkContainer to='/Phases/PhaseTwo/Input'>
-          <Button id='backBtn'>Back</Button>
+          <Button id='backBtn'><i id='chevronLeft' className="fa fa-chevron-left"/>Back</Button>
         </LinkContainer>
         <LinkContainer to='/Phases/PhaseThree/Input'>
-          <Button style={{float: 'right'}} id='continueBtn'>Continue</Button>
+          <Button style={{float: 'right'}} id='continueBtn'>Continue<i id='chevronRight' className="fa fa-chevron-right"/></Button>
         </LinkContainer>
       </div>
 
