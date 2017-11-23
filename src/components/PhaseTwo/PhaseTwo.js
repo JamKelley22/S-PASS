@@ -19,6 +19,7 @@ import{addColSaMMat,removeColSaMMat,addRowSaMMat,removeRowSaMMat} from '../../ac
 import {addAcceptedSupplier,removeAcceptedSupplier} from'../../actions/acceptedSupplierActions.js';
 import {addColFaMMat,removeColFaMMat} from '../../actions/functionAltModuleActions.js';
 import {addRowMPAMat,removeRowMPAMat} from '../../actions/moduleProductArchitectureActions.js';
+import {addNewSupplier} from '../../actions/supplierListActions.js'
 import './PhaseTwo.css';
 
 class PhaseTwo extends React.Component{
@@ -291,6 +292,7 @@ function matchDispatchToProps(dispatch){
     //supplier list actions
     addSupplier: addSupplier,
     removeSupplier: removeSupplier,
+    addNewSupplier: addNewSupplier,
 
     //threshold edit
     editThreshold : editThreshold,

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Table, Tooltip,OverlayTrigger,ListGroup,ListGroupItem,Button,Image,Grid,Row,Col,Modal,Popover} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
-import NameForm from '../../submit/NameForm.js';
 import MatrixDisplay from '../../Matrix/Matrix.js';
 import SumDisplay from '../../Matrix/SumDisplay.js';
 import Test from '../../Matrix/Test.js';

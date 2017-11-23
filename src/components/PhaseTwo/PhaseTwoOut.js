@@ -6,6 +6,10 @@ import {connect} from "react-redux"; //Connects the store to application.
 import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup} from 'react-bootstrap';
 import MSFilterMatrix from '../Matrix/MSFilterMatrix.js';
 
+import SupplierForm from '../submit/SupplierForm.js';
+import {addNewSupplier} from '../../actions/supplierListActions.js'
+//import {addRequirement,removeRequirement} from '../../actions/requirementListActions.js';
+
 import './PhaseTwoOut.css';
 
 class PhaseTwoOut extends React.Component{
@@ -69,6 +73,10 @@ class PhaseTwoOut extends React.Component{
         </LinkContainer>
       </div>
 
+      <SupplierForm
+      submit={addNewSupplier}
+      />
+
       </div>
     );
   }
@@ -89,9 +97,8 @@ function mapStateToProps(state){
 
 function matchDispatchToProps(dispatch){
   return bindActionCreators({
-
+    addNewSupplier : addNewSupplier,
   },dispatch)
 }
 
-
-export default connect(mapStateToProps)(PhaseTwoOut);
+export default connect(mapStateToProps,matchDispatchToProps)(PhaseTwoOut);

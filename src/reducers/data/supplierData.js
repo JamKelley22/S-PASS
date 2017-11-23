@@ -21,5 +21,12 @@ const initialState=
 ]
 
 export default function(state=initialState,action){
+  if(action.type == "ADD_NEW_SUPPLIER") {
+    console.log("=========adding a supplier=======");
+    console.log(this.state);
+    return [...state,action.payload]
+    //make a new supplier HERE
+  }
+  console.log("not adding a supplier");
   return state;
 }
