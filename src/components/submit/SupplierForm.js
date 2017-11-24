@@ -80,13 +80,24 @@ export default class SupplierForm extends React.Component {
     this.state.value = "";
     test
     */
-    this.props.submit(
-      this.state.nameValue,
-      this.state.isoValue,
-      this.state.materialsValue,
-      this.state.packageValue);
+    var namePass = this.state.nameValue.length > 0;
+    var matPass = this.state.materialsValue > 0 && this.state.materialsValue < 5;
+    var packPass = this.state.packageValue >= 0 && this.state.packageValue <= 1;
+    console.log(namePass);
+    console.log(matPass);
+    console.log(packPass);
+    if(namePass && matPass && packPass) {
+      this.props.submit(
+        this.state.nameValue,
+        this.state.isoValue,
+        this.state.materialsValue,
+        this.state.packageValue
+      );
     this.setState({nameValue: "", isoValue: false, materialsValue: 1, packageValue: 0.0});
-    event.preventDefault();
+  }
+  else {
+    this.setState({alertVisible: true});
+  }
   }
 
   handleAlertDismiss() {
@@ -98,93 +109,133 @@ export default class SupplierForm extends React.Component {
   }
 
   render() {
-    if (this.state.alertVisible) {
+    if(this.state.alertVisible) {
       return (
         <div>
+        <h1>Supplier Input Form</h1>
         <Alert id="alert" bsStyle="danger" onDismiss={this.handleAlertDismiss}>
-          <h4>{this.state.alertTitle}</h4>
-          <p>Try again with a unique function name</p>
+          <h4>"Error in Values Entered or Duplicate Supplier Name"</h4>
 
         </Alert>
+          <Form>
 
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              <input
-                            id="formControl"
-                            type="text" value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input
+            <FormGroup bsSize="small" id='formGroup0'>
+            <ControlLabel>Name</ControlLabel>
+              <FormControl
+                type="text"
+                placeholder="Company X"
+                value={this.state.nameValue}
+                onChange={this.handleChangeName.bind(this)}
+                onKeyPress={this.handleKeyPress.bind(this)}
+              />
+            </FormGroup>
+
+            <FormGroup controlId="formGroup1">
+              <ControlLabel>ISO</ControlLabel>
+              {' '}
+              <Checkbox
+              onChange={this.handleChangeISO.bind(this)}
+              value={this.state.isoValue}
+              >
+                Complient
+              </Checkbox>
+            </FormGroup>
+
+            <FormGroup controlId="formGroup2">
+              <ControlLabel>Recycled Materials</ControlLabel>
+              {' '}
+              <FormControl
+                type="text"
+                placeholder="1 - 5"
+                value={this.state.materialsValue}
+                onChange={this.handleChangeMaterals.bind(this)}
+              />
+            </FormGroup>
+
+            <FormGroup controlId="formGroup3">
+              <ControlLabel>Package Recycling</ControlLabel>
+              {' '}
+              <FormControl
+                type="text"
+                placeholder="0.0 - 1.0"
+                value={this.state.packageValue}
+                onChange={this.handleChangePackage.bind(this)}
+              />
+            </FormGroup>
+
+            <Button
               id='submit'
               bsStyle="success"
               bsSize="xsmall"
               className="btn pull-left"
-              type="submit"
-              value="Submit" />
-          </form>
+              onClick={this.handleSubmit}>
+              Submit
+            </Button>
+          </Form>
         </div>
       );
     }
+    else {
+      return (
+        <div>
+        <h1>Supplier Input Form</h1>
+          <Form>
 
-    return (
+            <FormGroup bsSize="small" id='formGroup0'>
+            <ControlLabel>Name</ControlLabel>
+              <FormControl
+                type="text"
+                placeholder="Company X"
+                value={this.state.nameValue}
+                onChange={this.handleChangeName.bind(this)}
+                onKeyPress={this.handleKeyPress.bind(this)}
+              />
+            </FormGroup>
 
-      <div>
-      <h1>Supplier Input Form</h1>
-        <Form>
+            <FormGroup controlId="formGroup1">
+              <ControlLabel>ISO</ControlLabel>
+              {' '}
+              <Checkbox
+              onChange={this.handleChangeISO.bind(this)}
+              value={this.state.isoValue}
+              >
+                Complient
+              </Checkbox>
+            </FormGroup>
 
-          <FormGroup bsSize="small" id='formGroup0'>
-          <ControlLabel>Name</ControlLabel>
-            <FormControl
-              type="text"
-              placeholder="Company X"
-              value={this.state.nameValue}
-              onChange={this.handleChangeName.bind(this)}
-              onKeyPress={this.handleKeyPress.bind(this)}
-            />
-          </FormGroup>
+            <FormGroup controlId="formGroup2">
+              <ControlLabel>Recycled Materials</ControlLabel>
+              {' '}
+              <FormControl
+                type="text"
+                placeholder="1 - 5"
+                value={this.state.materialsValue}
+                onChange={this.handleChangeMaterals.bind(this)}
+              />
+            </FormGroup>
 
-          <FormGroup controlId="formGroup1">
-            <ControlLabel>ISO</ControlLabel>
-            {' '}
-            <Checkbox
-            onChange={this.handleChangeISO.bind(this)}
-            value={this.state.isoValue}
-            >
-              Complient
-            </Checkbox>
-          </FormGroup>
+            <FormGroup controlId="formGroup3">
+              <ControlLabel>Package Recycling</ControlLabel>
+              {' '}
+              <FormControl
+                type="text"
+                placeholder="0.0 - 1.0"
+                value={this.state.packageValue}
+                onChange={this.handleChangePackage.bind(this)}
+              />
+            </FormGroup>
 
-          <FormGroup controlId="formGroup2">
-            <ControlLabel>Recycled Materials</ControlLabel>
-            {' '}
-            <FormControl
-              type="text"
-              placeholder="1 - 5"
-              value={this.state.materialsValue}
-              onChange={this.handleChangeMaterals.bind(this)}
-            />
-          </FormGroup>
-
-          <FormGroup controlId="formGroup3">
-            <ControlLabel>Package Recycling</ControlLabel>
-            {' '}
-            <FormControl
-              type="text"
-              placeholder="0.0 - 1.0"
-              value={this.state.packageValue}
-              onChange={this.handleChangePackage.bind(this)}
-            />
-          </FormGroup>
-
-          <Button
-            id='submit'
-            bsStyle="success"
-            bsSize="xsmall"
-            className="btn pull-left"
-            onClick={this.handleSubmit}>
-            Submit
-          </Button>
-        </Form>
-      </div>
-    );
+            <Button
+              id='submit'
+              bsStyle="success"
+              bsSize="xsmall"
+              className="btn pull-left"
+              onClick={this.handleSubmit}>
+              Submit
+            </Button>
+          </Form>
+        </div>
+      );
+    }
   }
 }
