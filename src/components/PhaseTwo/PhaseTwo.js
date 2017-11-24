@@ -6,7 +6,7 @@ import UniqueDropdownSupplier from './UniqueDropdownSupplier.js';
 import UniqueDropdownModule from './UniqueDropdownModule.js';
 
 import {addAlternate,removeAlternate} from '../../actions/selectedAlternatesActions.js';
-import {addSupplier,removeSupplier} from '../../actions/supplierListActions.js';
+import {addSupplier,removeSupplier,addNewSupplier} from '../../actions/supplierListActions.js';
 import {bindActionCreators} from 'redux';
 import CustomPhaseTwoMatrix from '../Matrix/CustomPhaseTwoMatrix.js';
 import MatrixDisplay from '../Matrix/Matrix.js';
@@ -19,7 +19,7 @@ import{addColSaMMat,removeColSaMMat,addRowSaMMat,removeRowSaMMat} from '../../ac
 import {addAcceptedSupplier,removeAcceptedSupplier} from'../../actions/acceptedSupplierActions.js';
 import {addColFaMMat,removeColFaMMat} from '../../actions/functionAltModuleActions.js';
 import {addRowMPAMat,removeRowMPAMat} from '../../actions/moduleProductArchitectureActions.js';
-import {addNewSupplier} from '../../actions/supplierListActions.js'
+import SupplierForm from '../submit/SupplierForm.js';
 import './PhaseTwo.css';
 
 class PhaseTwo extends React.Component{
@@ -262,9 +262,13 @@ Evaluation of environmental sustainability for new modules and suppliers.
         </LinkContainer>
       </div>
 
-
+      <SupplierForm
+      submit={this.props.addNewSupplier}
+      />
 
       </div>
+
+
     );
   }
 }

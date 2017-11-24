@@ -73,9 +73,7 @@ class PhaseTwoOut extends React.Component{
         </LinkContainer>
       </div>
 
-      <SupplierForm
-      submit={addNewSupplier}
-      />
+
 
       </div>
     );
@@ -95,10 +93,10 @@ function mapStateToProps(state){
   };
 }
 
-function matchDispatchToProps(dispatch){
+function matchDispatchToProps(dispatch){//t
   return bindActionCreators({
-    addNewSupplier : addNewSupplier,
+
   },dispatch)
 }
 
-export default connect(mapStateToProps,matchDispatchToProps)(PhaseTwoOut);
+export default connect(mapStateToProps)(PhaseTwoOut);

@@ -53,7 +53,6 @@ export default class SupplierForm extends React.Component {
   }
 
   handleSubmit(event) {
-    alert(this.state.nameValue);
 
     /*
     console.log(this.state.nameValue);
@@ -79,6 +78,7 @@ export default class SupplierForm extends React.Component {
       event.preventDefault();
     }
     this.state.value = "";
+    test
     */
     this.props.submit(
       this.state.nameValue,
@@ -86,6 +86,7 @@ export default class SupplierForm extends React.Component {
       this.state.materialsValue,
       this.state.packageValue);
     this.setState({nameValue: "", isoValue: false, materialsValue: 1, packageValue: 0.0});
+    event.preventDefault();
   }
 
   handleAlertDismiss() {
@@ -136,8 +137,8 @@ export default class SupplierForm extends React.Component {
               type="text"
               placeholder="Company X"
               value={this.state.nameValue}
-              onChange={this.handleChangeName}
-              onKeyPress={this.handleKeyPress}
+              onChange={this.handleChangeName.bind(this)}
+              onKeyPress={this.handleKeyPress.bind(this)}
             />
           </FormGroup>
 
@@ -145,8 +146,9 @@ export default class SupplierForm extends React.Component {
             <ControlLabel>ISO</ControlLabel>
             {' '}
             <Checkbox
-            onChange={this.handleChangeISO}
-            value={this.state.isoValue}>
+            onChange={this.handleChangeISO.bind(this)}
+            value={this.state.isoValue}
+            >
               Complient
             </Checkbox>
           </FormGroup>
@@ -158,7 +160,7 @@ export default class SupplierForm extends React.Component {
               type="text"
               placeholder="1 - 5"
               value={this.state.materialsValue}
-              onChange={this.handleChangeMaterals}
+              onChange={this.handleChangeMaterals.bind(this)}
             />
           </FormGroup>
 
@@ -169,7 +171,7 @@ export default class SupplierForm extends React.Component {
               type="text"
               placeholder="0.0 - 1.0"
               value={this.state.packageValue}
-              onChange={this.handleChangePackage}
+              onChange={this.handleChangePackage.bind(this)}
             />
           </FormGroup>
 

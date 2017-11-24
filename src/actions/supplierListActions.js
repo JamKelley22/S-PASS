@@ -14,7 +14,7 @@ export const addNewSupplier = (supplierName,supplierISO,supplierMaterals,supplie
       ISO: supplierISO,
       recycledMaterials: supplierMaterals,
       packageRecycling: supplierPackage
-    }
+    },
   }
 };
 export const removeSupplier = (index) =>{
