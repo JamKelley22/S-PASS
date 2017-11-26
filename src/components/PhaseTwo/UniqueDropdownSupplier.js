@@ -1,15 +1,20 @@
 import React from 'react';
+import {connect} from "react-redux"; //Connects the store to application.
+import {bindActionCreators} from 'redux';
 import './UniqueDropdown.css'
 import {Button,ListGroup,ListGroupItem} from 'react-bootstrap'
 import {thresholdCheck} from '../../js/thresholdCheck.js'
 import ReactScrollbar from 'react-scrollbar-js';
+import SupplierForm from '../submit/SupplierForm.js';
+import {addNewSupplier} from '../../actions/supplierListActions.js';
 
-export default class DropDownChoose extends React.Component{
+class DropDownChoose extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
       listValues: this.props.dataValues,
-      dropdownOpen: false
+      dropdownOpen: false,
+      newSupplierForm: false
     };
     this.thresholdCheck = thresholdCheck.bind(this);//threshold check
     //this.unique = unique.bind(this);//threshold check
@@ -18,6 +23,7 @@ export default class DropDownChoose extends React.Component{
     this.handleDropdownSubmit = this.handleDropdownSubmit.bind(this);
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
+    this.toggleNewSupplierForm = this.toggleNewSupplierForm.bind(this);
   }
 
   handleDropdownSubmit(value) {
@@ -101,14 +107,22 @@ export default class DropDownChoose extends React.Component{
 
   getChoices() {
     const choices = this.props.dropDownChoices;
-    return(
-    choices.map((name,index)=> {
+    var all = choices.map((name,index)=> {
       return <ListGroupItem id='choice'
       onClick={() => this.handleDropdownSubmit(choices[index])}
       >
         {choices[index]}
       </ListGroupItem>;
-    })
+    });
+    all.push(
+      <ListGroupItem id='choice'
+      onClick={() => this.toggleNewSupplierForm()}
+      >
+        {"Add New Supplier / Close"}
+      </ListGroupItem>
+    );
+    return(
+      all
     );
   }
 
@@ -116,6 +130,13 @@ export default class DropDownChoose extends React.Component{
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
     });
+  }
+
+  toggleNewSupplierForm() {
+    this.setState({
+      newSupplierForm: !this.state.newSupplierForm
+    });
+    console.log(this.state.newSupplierForm);
   }
 
 
@@ -127,6 +148,14 @@ export default class DropDownChoose extends React.Component{
         height: "auto"
       }
     };
+
+    const form = ((this.state.newSupplierForm) ?
+      <SupplierForm
+      submit={this.props.addNewSupplier}
+      />
+      :
+      <br/>
+    );
 
     const open = ((this.state.dropdownOpen) ?
     <ListGroupItem id='group'>
@@ -146,7 +175,7 @@ export default class DropDownChoose extends React.Component{
         Add a Supplier
       </div>
     </ListGroupItem>
-    )
+  );
 
     return(
       <div>
@@ -156,9 +185,29 @@ export default class DropDownChoose extends React.Component{
               {this.getList()}
             </ListGroup>
           {open}
+          {form}
         </div>
+
+
       </div>
     );
 
   }
 }
+
+function mapStateToProps(state){
+  return{
+
+  };
+}
+
+function matchDispatchToProps(dispatch){
+  return bindActionCreators({
+
+    addNewSupplier: addNewSupplier
+
+  },dispatch)
+}
+
+
+export default connect(mapStateToProps,matchDispatchToProps)(DropDownChoose);

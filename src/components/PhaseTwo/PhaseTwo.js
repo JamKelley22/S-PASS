@@ -262,9 +262,7 @@ Evaluation of environmental sustainability for new modules and suppliers.
         </LinkContainer>
       </div>
 
-      <SupplierForm
-      submit={this.props.addNewSupplier}
-      />
+
 
       </div>
 
