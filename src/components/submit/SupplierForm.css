@@ -9,10 +9,12 @@
   padding: 5px;
   margin-right: 10px;
 }
+
+
 #close {
   display: inline-block;
   float: right;
-  background-color: rgb(210, 210, 177);
+  background-color: #d43f3a;
   color: white;
   border: none;
   border-radius: 3px;
@@ -20,6 +22,19 @@
   padding: 5px;
   margin-right: 10px;
 }
+#close:hover {
+  background-color: #ac2925;
+}
+
+#submit:hover {
+  background-color: #909b51;
+}
+
+
+a, a:visited, a:hover, a:focus, a:link {
+  color: #41463f;
+}
+
 #formGroup {
   display: inline-block;
   width: 80%;

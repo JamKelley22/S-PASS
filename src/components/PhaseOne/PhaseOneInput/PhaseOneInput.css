@@ -46,13 +46,23 @@
   width: 45%;
   border-radius: 0px;
   margin-top: 50px;
+  border-radius: 3px;
 }
+
+#continueBtn:hover {
+  background-color: #909b51;
+}
+
 #backBtn {
   background-color: #d2d2b1;
   float: left;
   width: 450%;
   border-radius: 0px;
   margin-top: 50px;
+  border-radius: 3px;
+}
+#backBtn:hover {
+  background-color: #aaa77d;
 }
 #noClick {
   cursor: not-allowed !important;

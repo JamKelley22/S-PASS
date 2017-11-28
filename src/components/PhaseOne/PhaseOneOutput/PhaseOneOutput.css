@@ -39,12 +39,14 @@ p{
   display: inline-block;
     overflow: hidden;
 }
+
 #backBtn {
   background-color: #d2d2b1;
   float: left;
   width: 50%;
-  border-radius: 0px;
+  border-radius: 3px;
 }
+
 
 .divLine {
   height: 2px;

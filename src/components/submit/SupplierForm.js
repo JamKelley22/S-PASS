@@ -84,7 +84,10 @@ export default class SupplierForm extends React.Component {
         <div>
         <h1>Supplier Input Form</h1>
         <Alert id="alert" bsStyle="danger" onDismiss={this.handleAlertDismiss}>
-          <h4>"Error in Values Entered or Duplicate Supplier Name"</h4>
+          <h4>Sorry, that won't work...</h4>
+          <p>There's an error in the values or a duplicate supplier name</p>
+
+
 
         </Alert>
           <Form>
