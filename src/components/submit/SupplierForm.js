@@ -53,39 +53,9 @@ export default class SupplierForm extends React.Component {
   }
 
   handleSubmit(event) {
-
-    /*
-    console.log(this.state.nameValue);
-    if(this.props.functions.indexOf(this.state.nameValue)==-1){
-      console.log(this.state.nameValue.length);
-      if(this.state.nameValue.length > 0) {
-        this.setState({alertVisible: false});
-        this.props.submit(this.state.nameValue);
-        //add matrix row add
-        this.props.addMatRow();
-        if(this.props.addMatCol){this.props.addMatCol()};
-        if(this.props.addMatRow2){this.props.addMatRow2();}
-        if(this.props.addMatRow3){this.props.addMatRow3();}
-      }
-      else {
-        this.setState({alertVisible: true, alertTitle: "It's empty...",
-        alertMessage: 'Try again with a longer function name'});
-      }
-    }
-    else{
-      this.setState({alertVisible: true, alertTitle: 'Thats a duplicate!',
-      alertMessage: 'Try again with a unique function name'});
-      event.preventDefault();
-    }
-    this.state.value = "";
-    test
-    */
     var namePass = this.state.nameValue.length > 0;
-    var matPass = this.state.materialsValue > 0 && this.state.materialsValue < 5;
+    var matPass = this.state.materialsValue > 0 && this.state.materialsValue <= 5;
     var packPass = this.state.packageValue >= 0 && this.state.packageValue <= 1;
-    console.log(namePass);
-    console.log(matPass);
-    console.log(packPass);
     if(namePass && matPass && packPass) {
       this.props.submit(
         this.state.nameValue,
@@ -224,6 +194,14 @@ export default class SupplierForm extends React.Component {
                 onChange={this.handleChangePackage.bind(this)}
               />
             </FormGroup>
+
+            <Button
+              id='close'
+              bsSize="xsmall"
+              className="btn pull-left"
+              onClick={this.props.closeForm}>
+              Close
+            </Button>
 
             <Button
               id='submit'

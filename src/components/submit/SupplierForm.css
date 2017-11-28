@@ -9,6 +9,17 @@
   padding: 5px;
   margin-right: 10px;
 }
+#close {
+  display: inline-block;
+  float: right;
+  background-color: rgb(210, 210, 177);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 5px;
+  margin-right: 10px;
+}
 #formGroup {
   display: inline-block;
   width: 80%;

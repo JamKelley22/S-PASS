@@ -23,7 +23,8 @@ class DropDownChoose extends React.Component{
     this.handleDropdownSubmit = this.handleDropdownSubmit.bind(this);
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
-    this.toggleNewSupplierForm = this.toggleNewSupplierForm.bind(this);
+    this.openNewSupplierForm = this.openNewSupplierForm.bind(this);
+    this.closeNewSupplierForm = this.closeNewSupplierForm.bind(this);
   }
 
   handleDropdownSubmit(value) {
@@ -115,11 +116,13 @@ class DropDownChoose extends React.Component{
       </ListGroupItem>;
     });
     all.push(
+      <div>
       <ListGroupItem id='choice'
-      onClick={() => this.toggleNewSupplierForm()}
+      onClick={() => this.openNewSupplierForm()}
       >
-        {"Add New Supplier / Close"}
+        <div><i className="fa fa-plus" aria-hidden="true"></i>{" Add New Supplier"}</div>
       </ListGroupItem>
+      </div>
     );
     return(
       all
@@ -132,11 +135,18 @@ class DropDownChoose extends React.Component{
     });
   }
 
-  toggleNewSupplierForm() {
+  openNewSupplierForm() {
     this.setState({
       newSupplierForm: !this.state.newSupplierForm
     });
-    console.log(this.state.newSupplierForm);
+    //console.log(this.state.newSupplierForm);
+  }
+
+  closeNewSupplierForm() {
+    this.setState({
+      newSupplierForm: false
+    });
+    //console.log(this.state.newSupplierForm);
   }
 
 
@@ -150,9 +160,12 @@ class DropDownChoose extends React.Component{
     };
 
     const form = ((this.state.newSupplierForm) ?
+      <div>
       <SupplierForm
       submit={this.props.addNewSupplier}
+      closeForm={this.closeNewSupplierForm}
       />
+      </div>
       :
       <br/>
     );
