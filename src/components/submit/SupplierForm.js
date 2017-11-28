@@ -86,10 +86,9 @@ export default class SupplierForm extends React.Component {
         <Alert id="alert" bsStyle="danger" onDismiss={this.handleAlertDismiss}>
           <h4>Sorry, that won't work...</h4>
           <p>There's an error in the values or a duplicate supplier name</p>
-
-
-
         </Alert>
+
+
           <Form>
 
             <FormGroup bsSize="small" id='formGroup0'>
@@ -135,6 +134,14 @@ export default class SupplierForm extends React.Component {
                 onChange={this.handleChangePackage.bind(this)}
               />
             </FormGroup>
+
+            <Button
+              id='close'
+              bsSize="xsmall"
+              className="btn pull-left"
+              onClick={this.props.closeForm}>
+              Close
+            </Button>
 
             <Button
               id='submit'
