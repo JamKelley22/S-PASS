@@ -120,29 +120,29 @@ export default class CustomPhaseTwoMatrix extends React.Component{
     const popoverClick = this.getPopover();
     return(
       <tbody>
-        <td>Value</td>
+        <td id='rowSpan'>Value</td>
         <OverlayTrigger onEnter={() => this.setState({index: 0})} ref="overlay0" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td>{this.state.threshs[0]}</td>
+        <td id="pale">{this.state.threshs[0]}</td>
         </OverlayTrigger>
 
         <OverlayTrigger onEnter={() => this.setState({index: 1})} ref="overlay1" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td>{this.state.threshs[1]*100}%</td>
+        <td id='pale'>{this.state.threshs[1]*100}%</td>
         </OverlayTrigger>
 
         <OverlayTrigger onEnter={() => this.setState({index: 2})} ref="overlay2" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td>{this.state.threshs[2]}</td>
+        <td id="pale">{this.state.threshs[2]}</td>
         </OverlayTrigger>
 
         <OverlayTrigger onEnter={() => this.setState({index: 3})} ref="overlay3" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td>{this.state.threshs[3]}</td>
+        <td id="pale">{this.state.threshs[3]}</td>
         </OverlayTrigger>
 
         <OverlayTrigger onEnter={() => this.setState({index: 4})} ref="overlay4" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td>{this.state.threshs[4]}</td>
+        <td id="pale">{this.state.threshs[4]}</td>
         </OverlayTrigger>
 
         <OverlayTrigger onEnter={() => this.setState({index: 5})} ref="overlay5" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td>{this.state.threshs[5]*100}%</td>
+        <td id="pale">{this.state.threshs[5]*100}%</td>
         </OverlayTrigger>
       </tbody>
     );
@@ -158,17 +158,17 @@ export default class CustomPhaseTwoMatrix extends React.Component{
         <Table responsive striped bordered condensed hover id="myCustomTable">
         <thead>
           <tr>
-            <td rowSpan={2}>Threshold Determination</td>
-            <td colSpan={3}>Module Related Environmental Indicators</td>
-            <td colSpan={3}>Supplier Related Environmental Indicators</td>
+            <td rowSpan={2} id="rowSpan" >Threshold Determination</td>
+            <td colSpan={3} id='rowSpan'>Module Related Environmental Indicators</td>
+            <td colSpan={3} id='rowSpan'>Supplier Related Environmental Indicators</td>
           </tr>
           <tr>
-            <td>Hazardous Material Use</td>
-            <td>Recyclability</td>
-            <td>Renewable Material Use</td>
-            <td>ISO 14001</td>
-            <td>Use of Recycled Materials</td>
-            <td>Environmentally Friendly Packaging</td>
+            <td id='rowSpanPale'>Hazardous Material Use</td>
+            <td id='rowSpanPale'>Recyclability</td>
+            <td id='rowSpanPale'>Renewable Material Use</td>
+            <td id='rowSpanPale'>ISO 14001</td>
+            <td id='rowSpanPale'>Use of Recycled Materials</td>
+            <td id='rowSpanPale'>Environmentally Friendly Packaging</td>
           </tr>
 
         </thead>
