@@ -195,6 +195,7 @@ export default class PhaseThreeOutput extends React.Component{
         Average functional satisfaction levels for new product architectures:
         </p>
 
+<div className='overlay'>
         <MatrixDisplay
           title="Function vs. Architecture"
           colNames={this.props.newArchitectureList}
@@ -209,12 +210,14 @@ export default class PhaseThreeOutput extends React.Component{
           dropDownChoices={null}
           averages={this.state.fa_avg}
         />
+</div>
 
         <p>
         Average functional satisfaction levels for new product architectures:
         </p>
         <div className="divLine"></div>
 
+<div className='overlay'>
           <MatrixDisplay
           title="Requirement vs. Architecture"
           colNames={this.props.newArchitectureList}
@@ -229,11 +232,13 @@ export default class PhaseThreeOutput extends React.Component{
           dropDownChoices={null}
           averages={this.state.ra_avg}
         />
+</div>
 
         <p>
         Suppliers selected for new product architectures:
         </p>
 
+<div className='overlay'>
         <MatrixDisplay
           title="Supplier vs. Architecture"
           colNames={this.props.newArchitectureList}
@@ -247,6 +252,7 @@ export default class PhaseThreeOutput extends React.Component{
           editType='input'// | dropDown | input |
           dropDownChoices={null}
         />
+</div>
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseThree/Input'>

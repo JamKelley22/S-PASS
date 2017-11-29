@@ -154,6 +154,7 @@ export default class PhaseOneOutput extends React.Component{
         Note: functions in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
         </p>
 
+<div className='overlay'>
 
         <MatrixDisplay
           title="Function vs. Product"
@@ -170,7 +171,7 @@ export default class PhaseOneOutput extends React.Component{
           averages={this.state.fp_avg}
         />
 
-
+</div>
 
 
 
@@ -184,6 +185,8 @@ Note: requirements in red indicate that these functions are not sufficiently sat
 </p>
 
 <div className="divLine"></div>
+
+<div className='overlay'>
         <MatrixDisplay
           title="Requirement vs. Product"
           colNames={this.props.productArchitecture}
@@ -198,7 +201,7 @@ Note: requirements in red indicate that these functions are not sufficiently sat
           dropDownChoices={null}
           averages={this.state.rp_avg}
         />
-
+</div>
 
 
 

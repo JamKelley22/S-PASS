@@ -40,6 +40,7 @@ p{
     overflow: hidden;
 }
 
+
 #backBtn {
   background-color: #d2d2b1;
   float: left;
@@ -62,4 +63,9 @@ p{
 #chevronLeft {
   padding-right: 10px;
   font-size: 14px;
+}
+
+.overlay {
+  opacity:0.75;
+background:#FFFFFF;
 }

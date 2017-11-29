@@ -43,7 +43,7 @@ class PhaseTwoOut extends React.Component{
 <p className='clearfix'>
 1) Filtering Result
 </p>
-      <div id='msMatrix'>
+      <div id='msMatrix' className='overlay'>
         <MSFilterMatrix
           title = {'Alternate Module'}
           names = {this.props.selectedAlternates}
@@ -56,7 +56,7 @@ class PhaseTwoOut extends React.Component{
 2) Final new module and supplier ListGroupItem
 </p>
 
-      <div id='msMatrix'>
+      <div id='msMatrix' className='overlay'>
         <MSFilterMatrix
           title = {'Supplier'}
           names = {this.props.selectedSuppliers}

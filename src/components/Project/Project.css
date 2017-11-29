@@ -198,9 +198,19 @@ h1 {
 #all::-webkit-scrollbar-track {
     background: #f1f1e7;
     border: 4px solid transparent;
-    background-clip: content-box;
+    backg
+
+
+
+
+    round-clip: content-box;
 }
 
 #aboutImage {
   margin-top: 35px;
+}
+
+#editIcon {
+  padding-left: 7px;
+  font-size: 18px;
 }

@@ -173,6 +173,10 @@ export default class PhaseOneInput extends React.Component{
                 </div>
         */}
 
+
+        <h1>
+        <i id='editIcon' className="fa fa-pencil"/>
+        </h1>
         <div id='matrixRow'>
 
           <div id='matrixDisplay'>
