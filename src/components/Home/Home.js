@@ -28,7 +28,7 @@ const Home = ({match}) =>(
       <div id='centerText'>
       <h2>S-PASS</h2>
       <h5>
-      Use the sustainable product architecture and supplier selection (S-PASS) tool to evaluate existing architectures of a product and find replacement product architectures and suppliers.
+        Use the Sustainable Product Architecture and Supplier Selection (S-PASS) tool to identify environmentally sustainable product architectures and their suppliers.
       </h5>
         {/*<LinkContainer to={`/Project`}>*/}
         <LinkContainer to={`./SPASS/About`}>
@@ -68,7 +68,7 @@ Students completing this case study will identify the challenges and benefits of
         <Panel id="p1">
         <div id='centerText'>
         <p className='clearfix'>
-        An overview of S-PASS is illustrated in the figure below. The tool employs a matrix propagation system which constructs and uses a series of overlapping matrices to derive a final solution. Users input information regarding sustainability requirements, existing and alternative modules, and new suppliers. This information is then processed according to thresholds on requirement satisfaction and environmental impact to reveal acceptable alternative modules (product architectures) and related suppliers.
+          An Overview of S-PASS is illustrated in the figure below. S-PASS employs a matrix propagation system, which constructs and uses a series of overlapping matrixes, to derive a final solution. Users input information regarding new part modules and suppliers considering sustainable design requirements and environmental impacts. Then, this information is processed to the matrix system to obtain acceptable sustainable product architectures and their suppliers.
         </p>
 
 

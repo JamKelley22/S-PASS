@@ -5,9 +5,6 @@ const initialState=
 "Provide propulsion",
 "Protect motors and rotors from external impacts",
 "Allow for reuse or recycling",
-"Recharging Battery",
-"Picking-up and releasing objects handled",
-"Partly transforming solar energy to electric energy"
 ];
 
 export default function(state = initialState, action){

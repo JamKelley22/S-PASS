@@ -20,6 +20,7 @@
 }
 #myRel {
   position: relative;
+  background-color: white;
 }
 .pop {
   width: 500px !important;

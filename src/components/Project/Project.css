@@ -210,6 +210,12 @@ h1 {
   margin-top: 35px;
 }
 
+#tableImage {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+
 #editIcon {
   padding-left: 7px;
   font-size: 18px;
