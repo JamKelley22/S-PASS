@@ -25,6 +25,15 @@ Company X has just signed a consulting agreement with your team to tap into your
       </p>
 
 
+
+
+      <p className='clearfix'>
+      Follow each phase outlined in the case study description
+      (
+      <a href="https://drive.google.com/file/d/1WFyZkMWiCg7naXGU6eHuI_ePgGg7dxWb/view?usp=sharing" target="_blank" id="underline">See Case Study Description</a>
+      )
+      </p>
+
       <Image src={require('../../Images/Table1.PNG')} alt='S-PASS Diagram' id='tableImage' className='clearfix' />
 
     </div>
