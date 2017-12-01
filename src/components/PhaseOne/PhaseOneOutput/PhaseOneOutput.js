@@ -157,7 +157,7 @@ export default class PhaseOneOutput extends React.Component{
 <div className='overlay'>
 
         <MatrixDisplay
-          title="Function vs. Product"
+          title="Function / Product"
           colNames={this.props.productArchitecture}
           rowNames={this.props.functions}
           matrixContent={this.state.functionVproduct}

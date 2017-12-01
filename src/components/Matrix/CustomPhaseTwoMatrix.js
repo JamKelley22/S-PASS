@@ -159,8 +159,8 @@ export default class CustomPhaseTwoMatrix extends React.Component{
         <thead>
           <tr>
             <td rowSpan={2} id="rowSpan" >Threshold Determination</td>
-            <td colSpan={3} id='rowSpan'>Module Related Environmental Indicators</td>
-            <td colSpan={3} id='rowSpan'>Supplier Related Environmental Indicators</td>
+            <td colSpan={3} id='rowSpanPale'>Module Related Environmental Indicators</td>
+            <td colSpan={3} id='rowSpanPale'>Supplier Related Environmental Indicators</td>
           </tr>
           <tr>
             <td id='rowSpanPale'>Hazardous Material Use</td>

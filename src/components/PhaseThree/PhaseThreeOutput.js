@@ -197,7 +197,7 @@ export default class PhaseThreeOutput extends React.Component{
 
 <div className='overlay'>
         <MatrixDisplay
-          title="Function vs. Architecture"
+          title="Function / Architecture"
           colNames={this.props.newArchitectureList}
           rowNames={this.props.functions}
           matrixContent={this.state.fa_matrix}
@@ -219,7 +219,7 @@ export default class PhaseThreeOutput extends React.Component{
 
 <div className='overlay'>
           <MatrixDisplay
-          title="Requirement vs. Architecture"
+          title="Requirement / Architecture"
           colNames={this.props.newArchitectureList}
           rowNames={this.props.requirements}
           matrixContent={this.state.ra_matrix}
@@ -240,7 +240,7 @@ export default class PhaseThreeOutput extends React.Component{
 
 <div className='overlay'>
         <MatrixDisplay
-          title="Supplier vs. Architecture"
+          title="Supplier / Architecture"
           colNames={this.props.newArchitectureList}
           rowNames={this.props.acceptedSuppliers}
           matrixContent={this.state.ea_matrix}

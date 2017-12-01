@@ -25,8 +25,10 @@ span.navItem {
 
 .bar > li.navBtn > a:visited {
   background-color: #f1f1e7 !important;
-  box-shadow: 0 1px 10px 0 rgba(0,0,0,0.2), 0 2px 12px 0 rgba(0,0,0,0.19);
+  box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.5);
 }
+{/*box-shadow: 0 1px 10px 0 rgba(0,0,0,0.2), 0 2px 12px 0 rgba(0,0,0,0.19);*/}
+
 
 .bar > li.navBtn > a:link {
   background-color: #f1f1e7 !important;
@@ -34,11 +36,11 @@ span.navItem {
 
 .bar > li.navBtn > a:focus {
   background-color: #B9CA57 !important;
-  box-shadow: 0 1px 10px 0 rgba(0,0,0,0.2), 0 2px 12px 0 rgba(0,0,0,0.19);
+  box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.5);
 }
 
 .bar > li.navBtn > a:hover {
-  box-shadow: 0 4px 40px 0 rgba(0,0,0,0.2), 0 8px 48px 0 rgba(0,0,0,0.19);
+  box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.5);
   box-shadow color: rgba (185, 202, 87, 0.3);
 }
 
@@ -49,7 +51,7 @@ span.navItem {
 
 .bar > li.navBtn > a:visited:active {
   background-color: #B9CA57 !important;
-  box-shadow: 0 1px 10px 0 rgba(0,0,0,0.2), 0 2px 12px 0 rgba(0,0,0,0.19);
+  box-shadow: 0px 2px 5px rgba(50, 50, 50, 0.5);
 }
 
 

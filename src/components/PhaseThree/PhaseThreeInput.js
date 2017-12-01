@@ -94,7 +94,7 @@ export default class PhaseOneInput extends React.Component{
         <div id='matrixRow'>
           <div id='matrixDisplay'>
             <MatrixDisplay
-              title = "Functions vs. Modules"
+              title = "Function / Module"
               matrixContent={this.props.functionAltModuleMatrix._data}
               colNames={this.props.acceptedAlternates}
               rowNames={this.props.functions}
@@ -127,7 +127,7 @@ Note: 1(related, 0(notrelated)
         <div id='matrixRow'>
           <div id='matrixDisplay'>
             <MatrixDisplay
-              title = "Supplier vs. Modules"
+              title = "Supplier / Module"
               matrixContent={this.props.supplierAltModuleMatrix._data}
               colNames={this.props.acceptedAlternates}
               rowNames={this.props.acceptedSuppliers}
@@ -150,7 +150,7 @@ Note: 1(related, 0(notrelated)
         </p>
 
         <MatrixDisplay
-          title = "Modules vs. Product Architecture"
+          title = "Module / Product Architecture"
           matrixContent={this.props.moduleProductArchitecture._data}
           colNames={this.props.newArchitectureList}
           rowNames={this.props.acceptedAlternates}
