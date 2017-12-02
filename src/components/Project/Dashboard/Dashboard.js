@@ -40,7 +40,7 @@ const Dashboard = ({match}) =>(
 
           <div id='Product1'>
             <p id='fLeft' style={{paddingLeft: '0px'}}>Product 1: Quad-copter</p>
-            <Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>
+            {/*<Image id='dashImage' src={require('../../../Images/drone1.png')} alt='Quad-copter'/>*/} {/*Drone image deleted*/}
           </div>
 
         </div>
