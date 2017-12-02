@@ -43,7 +43,7 @@ class Resources extends React.Component {
 
       <div className='homebg'>
 
-      <BackgroundImage id='bgImage' src={'Images/Ledge.png'} placeholder={'localImage'} > {/*}// working*/}
+      <BackgroundImage id='bgImage' src={'Images/Leaves.png'} placeholder={'localImage'} > {/*}// working*/}
       {/*<BackgroundImage src={stairs} alt={stairs} > //import attempt */}
 
                   <div id='spacing'/>
