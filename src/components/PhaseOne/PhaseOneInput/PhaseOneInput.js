@@ -162,8 +162,8 @@ export default class PhaseOneInput extends React.Component{
         Note: Each value indicates the contribution probability of the function to the requirement, a range from 0% to 100%. (See figure)
         </p>
         <p className='clearfix'>
-        {/*<Image src={require('../../../Images/interpretation_of_contribution_probabilities.PNG')} alt='Quad-copter'/> */} {/* access src > Images folder*/}
-        <Image src={'../../../Images/interpretation_of_contribution_probabilities.PNG'} />
+        {/*<Image src={require('../../../Images/interpretation_of_contribution_probabilities.png')} alt='Quad-copter'/> */} {/* access src > Images folder*/}
+        <Image src={'../../../Images/interpretation_of_contribution_probabilities.png'} />
 
         </p>
         </div>
@@ -226,8 +226,8 @@ export default class PhaseOneInput extends React.Component{
         Note: Each satisfaction level is a range from 1(poor) to 5 (very good) and has 0 if the module does not provide the function. (See figure)
         </p>
 <p className='clearfix'>
-{/*<Image src={require('../../../Images/description_of_satisfaction_levels.PNG')} alt='Quad-copter'/> */} {/* access src > Images folder */}
-<Image src={'../../../Images/description_of_satisfaction_levels.PNG'} />
+{/*<Image src={require('../../../Images/description_of_satisfaction_levels.png')} alt='Quad-copter'/> */} {/* access src > Images folder */}
+<Image src={'../../../Images/description_of_satisfaction_levels.png'} />
 </p>
 
         <div id='matrixRow'>

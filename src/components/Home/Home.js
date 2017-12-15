@@ -72,9 +72,9 @@ Students completing this case study will identify the challenges and benefits of
         </p>
 
 
-        {/*<img src="/./Images/S-PASS_Diagram.PNG" id="divImage" />*/}
-        {/*<img src={require('../../Images/S-PASS_Diagram_B.PNG')} alt='S-PASS Diagram' className='clearfix' />*/}
-        <img src={require('../../Images/S-PASS_Diagram_C.PNG')} alt='S-PASS Diagram' id="divImage" className='clearfix' />
+        {/*<img src="/./Images/S-PASS_Diagram.png" id="divImage" />*/}
+        {/*<img src={require('../../Images/S-PASS_Diagram_B.png')} alt='S-PASS Diagram' className='clearfix' />*/}
+        <img src={require('../../Images/S-PASS_Diagram_C.png')} alt='S-PASS Diagram' id="divImage" className='clearfix' />
 
 
  </div>
