@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "npm install && node server.js",
     "watch": "webpack --watch",
     "dev": "concurrently \"node server.js\" \"webpack --watch\"",
     "kill": "TASKKILL /f /im node.exe"
