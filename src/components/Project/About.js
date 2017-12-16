@@ -34,8 +34,7 @@ Company X has just signed a consulting agreement with your team to tap into your
       )
       </p>
 
-      /*<Image src={require('../../Images/Table1.png')} alt='S-PASS Diagram' id='tableImage' className='clearfix' />*/
-      <br/>
+
 
     </div>
 
