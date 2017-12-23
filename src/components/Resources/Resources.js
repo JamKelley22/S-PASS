@@ -49,24 +49,51 @@ class Resources extends React.Component {
                   <div id='spacing'/>
           <Panel id="p1">
             <div id='centerText'>
-              <p>
+              <p className='clearfix'>
+              <a href="https://drive.google.com/file/d/1nTPPDNKREY5cP9lI_fVFTMC70LCKu5kP/view?usp=sharing" target="_blank">Overview of S-PASS</a>
+              </p>
+              <p className='clearfix'>
+              <a href="https://drive.google.com/file/d/1YYLp66wQnDUT_u_VjwShQLA_0LIhNxK-/view?usp=sharing" target="_blank">Constructionism in Learning: Sustainable Life Cycle Engineering Project (CooL:SLiCE)</a>
+              </p>
+              {/*
+              <p className='clearfix'>
               <a href="https://drive.google.com/file/d/0B62DcZUjOkoCOENiUFlZT1lvZjQ/view?usp=sharing" target="_blank">Constructionist Learning for Environmentally Responsible Product Design</a>
               </p>
+              */}
+              {/*
               <p className='clearfix'>
               <a href="https://drive.google.com/file/d/0B62DcZUjOkoCazJLUExjTW5sTVU/view?usp=sharing" target="_blank">Cyber Collaboratory-based Sustainable Design Education: A Pedagogical Framework</a>
               </p>
+              */}
               <p className='clearfix'>
               <a href="https://drive.google.com/file/d/0B62DcZUjOkoCdVRLZ1Jnc09UOGc/view?usp=sharing" target="_blank">Development of Learning Modules for Sustainable Life Cycle Product Design: A Constructionist Approach</a>
               </p>
+              {/*
               <p className='clearfix'>
               <a href="https://drive.google.com/file/d/0B62DcZUjOkoCNlpmcldKQVJfOEU/view?usp=sharing" target="_blank">The Organization of Sustainability metrics based on Utility through Explanatory Factor Analysis</a>
               </p>
               <p className='clearfix'>
               <a href="https://drive.google.com/file/d/0B62DcZUjOkoCQVVkV0hjWDJuNGc/view?usp=sharinghttps://drive.google.com/file/d/0B62DcZUjOkoCNlpmcldKQVJfOEU/view?usp=sharing" target="_blank">The Selection and Organization of Sustainability Metrics</a>
               </p>
+              */}
               <p className='clearfix'>
-              <a href="https://drive.google.com/file/d/0B62DcZUjOkoCM2dhbzVOMTRTcVU/view?usp=sharing" target="_blank">A Sustainabile Modular Product Design Approach with Key Components and Uncertain End-of-life Options Consideration</a>
+              <a href="https://drive.google.com/file/d/0B62DcZUjOkoCM2dhbzVOMTRTcVU/view?usp=sharing" target="_blank">A Sustainable Modular Product Design Approach with Key Components and Uncertain End-of-life Options Consideration</a>
               </p>
+              <p className='clearfix'>
+              <a href="https://drive.google.com/file/d/1WFyZkMWiCg7naXGU6eHuI_ePgGg7dxWb/view?usp=sharing" target='_blank'>A Case Study for Sustainable Drone Design</a>
+              </p>
+              <p className='clearfix'>
+              <a href="https://drive.google.com/file/d/1LcuGifKOGoKXG4294DMfQD8WzzfG7I9y/view?usp=sharing" target="_blank">CooL:SLiCE S-PASS Tool</a>
+              </p>
+              <p className='clearfix'>
+              <a href="https://drive.google.com/file/d/1BU9z--R6vCwwm3v76oe1MITJhQSGHj_Y/view?usp=sharing" target="_blank">CooL:SLiCE S-PASS Tool Example</a>
+              </p>
+
+              {/*
+              <a href="\PDF\A Case Study for Sustainable Drone Design_SPASS for Excel.pdf" download="A Case Study for Sustainable Drone Design_SPASS for Excel.pdf">Download Text</a>
+              */}
+
+
             </div>
           </Panel>
 
