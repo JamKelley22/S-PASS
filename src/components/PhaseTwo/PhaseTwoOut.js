@@ -53,7 +53,7 @@ class PhaseTwoOut extends React.Component{
       <div className="divLine"></div>
 
 <p className='clearfix'>
-2) Final new module and supplier ListGroupItem
+2) Final new module and supplier list
 </p>
 
       <div id='msMatrix' className='overlay'>
