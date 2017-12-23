@@ -10,6 +10,7 @@ import {PageHeader,Button,Grid,Row,Col,Nav,NavItem,Image,Jumbotron,Panel} from '
 import BackgroundImage from 'react-background-image-loader';
 
 import pdfFile from './pdf-sample.pdf';
+import './Resources.css'
 
 {/*import Ledge from '/./Images/stairs.png' //relative path to image // import attempt*/}
 
@@ -89,12 +90,18 @@ class Resources extends React.Component {
               <a href="https://drive.google.com/file/d/1BU9z--R6vCwwm3v76oe1MITJhQSGHj_Y/view?usp=sharing" target="_blank">CooL:SLiCE S-PASS Tool Example</a>
               </p>
 
+
+
+
               {/*
               <a href="\PDF\A Case Study for Sustainable Drone Design_SPASS for Excel.pdf" download="A Case Study for Sustainable Drone Design_SPASS for Excel.pdf">Download Text</a>
               */}
 
 
             </div>
+            <p className='clearfix' id='center'>
+            <a href='https://github.com/JamKelley22/S-PASS'><span className="fa fa-github fa-lg"></span></a>
+            </p>
           </Panel>
 
 

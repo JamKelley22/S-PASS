@@ -28,6 +28,8 @@ const NavBar = () => (
             <NavItem><span className="navItem">Resources</span></NavItem>
           </LinkContainer>
 
+
+
         </Nav>
       </Row>
     </Grid>
