@@ -20,6 +20,7 @@ import BackgroundImage from 'react-background-image-loader';
 
 import other from './other.css';
 
+
 const Home = ({match}) =>(
 
 
@@ -80,10 +81,18 @@ Students completing this case study will identify the challenges and benefits of
  </div>
  </Panel>
 
+ <Panel id='p2'>
+ <div id='center'>
+ <a href='https://github.com/JamKelley22/S-PASS'><span id='center' className="fa fa-github fa-2x"></span></a>
+</div>
+ </Panel>
+
+
 
         <div id='spacing'/>
       </BackgroundImage>
     </div>
+
 
   </div>
 )
