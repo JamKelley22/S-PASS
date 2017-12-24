@@ -8,6 +8,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 import MatrixDisplay from '../../Matrix/Matrix.js';
 import '../../Matrix/Matrix.css';
 import './PhaseOneOutput.css'
+import ListStuffSimple from '../../ListStuffSimple/ListStuffSimple.js';
 export default class PhaseOneOutput extends React.Component{
   constructor(props) {
       //Local variables used in calculating display outputs
@@ -15,6 +16,10 @@ export default class PhaseOneOutput extends React.Component{
     this.state = {
         fp_avg: null,      // averages for function product matrix
         rp_avg: null,      // averages for requirement product matrix
+        relation_mat: null,//Used to hold the matrix of relationships for Requirement v Product Matrix
+        relation_list:null,//Used to hold list of related modules.
+        related_module_col_list:null,//Used to add Related Modules to col list in matrix
+        modules_to_replace:null,//Holds a list of the final modules that need to be replaced.
         functionVproduct: null,
         requirementVproduct: null
     };
@@ -22,12 +27,103 @@ export default class PhaseOneOutput extends React.Component{
     this.matrixMult = this.matrixMult;
     this.findRelation = this.findRelation;
     this.functionProduct = this.functionProduct;
+    this.relatedModules = this.relatedModules;
+    this.mat_col_append = this.mat_col_append;
+    this.findReplace = this.findReplace;
+    this.final_replace = this.final_replace;
 
   }
 
   /*===========================================================================
   ****************         START HELPER FUNCTIONS        **********************
   ===========================================================================*/
+    /*
+  PURPOSE: find which requirements need to be replaces in each architecture.
+  INPUT:
+  OUTPUT:
+  */
+    findReplace(mat){
+        var size = [mat.length,mat[0].length];
+        var list = Array.apply(null, Array(size[0])).map(Number.prototype.valueOf,0);
+        for(var i=0;i<size[0];i++){
+            for(var j=0; j<size[1];j++){
+                if(mat[i][j] < 3){
+                    list[i]=1;
+                    break
+                }
+            }
+        }
+        return list;
+    }
+
+    /*
+   PURPOSE:This function determines the final list of modules that need to be replaced.
+   INPUT:
+   OUTPUT:
+   */
+    final_replace(mat,thresh,modules){
+        var mat_size = [mat.length,mat[0].length];
+        var thresh_size = thresh.length;
+        var mod_size = modules.length;
+        var list = Array.apply(null, Array(mat_size[1])).map(Number.prototype.valueOf,0);
+        var final_list=[];
+
+        if(mat_size[0] == thresh_size && mat_size[1] == mod_size){
+            for(var i=0; i<mat_size[0];i++){
+                if(thresh[i]==1) {
+                    for (var j = 0; j < mat_size[1]; j++) {
+                        list[j] += parseFloat(mat[i][j]);
+                    }
+                }
+            }
+        }
+        for(var k=0;k<list.length;k++){
+            if(list[k]>0){
+                final_list.push(modules[k]);
+            }
+        }
+        return final_list;
+    }
+
+
+    /*
+    PURPOSE:
+    INPUT:
+    OUTPUT:
+    */
+    mat_col_append(mat,list){
+        var newMat = mat.map(function(arr) {
+            return arr.slice();
+        });
+        var mat_size = newMat.length;
+        var list_size = list.length;
+        if(mat_size == list_size){
+            for(var i=0; i < mat_size;i++){
+                newMat[i].push(list[i]);
+            }
+        }
+        return newMat;
+    }
+    /*
+  PURPOSE:
+  INPUT:
+  OUTPUT:
+  */
+    relatedModules(mat,modules){
+        var size = [mat.length,mat[0].length];
+        var list = Array.apply(null, Array(size[0])).map(Number.prototype.valueOf,0);
+        for(var i=0;i<size[0];i++){
+            list[i]="";
+            for(var j=0;j<size[1];j++){
+                if(parseFloat(mat[i][j])==1){
+                    var temp = modules[j];
+                    list[i]+= temp + ", ";
+                }
+            }
+        }
+        //console.log("---------------");
+        return list;
+    }
 
   /*
   PURPOSE: Find average of matrix columns
@@ -141,7 +237,23 @@ export default class PhaseOneOutput extends React.Component{
       //Finds averages of requirement versus product matrix
       {this.state.rp_avg = this.findAverage(this.state.requirementVproduct)}
 
-    return(
+      //Fnds the related modules of the requirement v product output matrix
+      {this.state.relation_mat = this.findRelation(this.matrixMult(this.props.requirementFunctionMatrix._data,
+          this.props.functionModuleMatrix._data))}
+
+      //List of relationships for each matrix row.
+      {this.state.relation_list = this.relatedModules(this.state.relation_mat,this.props.modules)}
+
+      //function to append to matrix.
+      {this.state.mat_col_append = this.mat_col_append(this.state.requirementVproduct,this.state.relation_list)}
+
+      //Adds related modules to col list of matrix.
+      {this.state.related_module_col_list = this.props.productArchitecture.slice()}
+      {this.state.related_module_col_list.push("Related Module")}
+
+      {this.state.modules_to_replace = this.final_replace(this.state.relation_mat,this.findReplace(this.state.requirementVproduct),this.props.modules)}
+
+      return(
       <div id="scroll">
         <h1>Phase 1: Requirement Satisfaction by Existing Products (Results)</h1>
 
@@ -189,9 +301,9 @@ Note: requirements in red indicate that these functions are not sufficiently sat
 <div className='overlay'>
         <MatrixDisplay
           title="Requirement vs. Product"
-          colNames={this.props.productArchitecture}
+          colNames={this.state.related_module_col_list}
           rowNames={this.props.requirements}
-          matrixContent={this.state.requirementVproduct}
+          matrixContent={this.state.mat_col_append}
           bgColor={'rgba(210,210,177,0.6)'}
 
           editCell={null}
@@ -209,6 +321,10 @@ Note: requirements in red indicate that these functions are not sufficiently sat
         <b>3) Modules required to be replaced</b>
         </p>
 
+          <ListStuffSimple
+              list={this.state.modules_to_replace}
+          />
+          
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseOne/Input'>
             <Button id='backBtn'><i id='chevronLeft' className="fa fa-chevron-left"/>Back</Button>
