@@ -33,23 +33,16 @@ We are creating a new learning tool for Engineering students to improve the qual
 
 ## Want to run the application locally?
 
----
-1. Setup
----
+### Setup
+
 `npm install`
 
---------------------------------------------------------------------------------
+### Compile
 
-2. Compile
----
 `npm run compile`
 
---------------------------------------------------------------------------------
+### Start
 
-3. Start
----
 `npm start`
 
 Listens on localhost:3000
-
---------------------------------------------------------------------------------
