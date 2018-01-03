@@ -2,19 +2,19 @@ const initialState=
 [
   {
     name:"S1",
-    ISO:true,
+    ISO:1,
     recycledMaterials:5,
     packageRecycling:0.9
   },
   {
     name:"S2",
-    ISO:true,
+    ISO:1,
     recycledMaterials:4,
     packageRecycling:0.9
   },
   {
     name:"S3",
-    ISO:false,
+    ISO:0,
     recycledMaterials:1,
     packageRecycling:0.2
   }
