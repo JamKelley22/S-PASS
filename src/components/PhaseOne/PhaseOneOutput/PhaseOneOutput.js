@@ -157,7 +157,7 @@ export default class PhaseOneOutput extends React.Component{
 <div className='overlay'>
 
         <MatrixDisplay
-          title="Function / Product"
+          title=""
           colNames={this.props.productArchitecture}
           rowNames={this.props.functions}
           matrixContent={this.state.functionVproduct}
@@ -174,7 +174,7 @@ export default class PhaseOneOutput extends React.Component{
 </div>
 
 
-
+<div className="divLine"></div>
 
 <p className='clearfix'>
 <b>2) Satisfaction level of each environmental sustainability requirement for current products</b>
@@ -184,11 +184,11 @@ export default class PhaseOneOutput extends React.Component{
 Note: requirements in red indicate that these functions are not sufficiently satisfied (less than 3) in at least one of the current products.
 </p>
 
-<div className="divLine"></div>
+
 
 <div className='overlay'>
         <MatrixDisplay
-          title="Requirement vs. Product"
+          title=""
           colNames={this.props.productArchitecture}
           rowNames={this.props.requirements}
           matrixContent={this.state.requirementVproduct}
@@ -203,6 +203,9 @@ Note: requirements in red indicate that these functions are not sufficiently sat
         />
 </div>
 
+
+
+<div className="divLine"></div>
 
 
         <p className='clearfix'>
