@@ -300,13 +300,11 @@ Note: requirements in red indicate that these functions are not sufficiently sat
 
 <div className='overlay'>
         <MatrixDisplay
-<<<<<<< HEAD
-          title="Requirement vs. Product"
+
+          title=" "
           colNames={this.state.related_module_col_list}
-=======
-          title=""
-          colNames={this.props.productArchitecture}
->>>>>>> nbbranch10
+          //colNames={this.props.productArchitecture}
+
           rowNames={this.props.requirements}
           matrixContent={this.state.mat_col_append}
           bgColor={'rgba(210,210,177,0.6)'}
@@ -332,7 +330,7 @@ Note: requirements in red indicate that these functions are not sufficiently sat
           <ListStuffSimple
               list={this.state.modules_to_replace}
           />
-          
+
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseOne/Input'>
             <Button id='backBtn'><i id='chevronLeft' className="fa fa-chevron-left"/>Back</Button>
