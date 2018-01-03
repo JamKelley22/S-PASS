@@ -118,6 +118,10 @@ max-height: 45px;
   background-color: rgba(210,210,177,.3);
 }
 
+#rowSpanWhite {
+  background-color: #ffffff;
+}
+
 #pale {
   background-color: rgba(210,210,177,.1);
 }

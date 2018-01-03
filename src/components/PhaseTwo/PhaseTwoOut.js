@@ -36,12 +36,12 @@ class PhaseTwoOut extends React.Component{
       <div  id='scroll'>
 
 <p className='clearfix'>
-<h1 >Phase 2: Module and Supplier filtering (Result)</h1>
+<h1 >Phase 2: Module and Supplier Filtering (Results)</h1>
 </p>
 <div className="divLine"></div>
 
 <p className='clearfix'>
-1) Filtering Result
+1) Filtering Results
 </p>
       <div id='msMatrix' className='overlay'>
         <MSFilterMatrix

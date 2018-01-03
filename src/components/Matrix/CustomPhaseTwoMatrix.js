@@ -103,7 +103,7 @@ export default class CustomPhaseTwoMatrix extends React.Component{
       }
     };
     return(
-      <Popover id="popoverClick" title={'Title'}>
+      <Popover id="popoverClick" title={'Choose a value'}>
       <ReactScrollbar style={ styling.scrollbar }>
         <DropDownChoose
           handleDropdownSubmit={this.handleDropdownSubmit}
@@ -122,27 +122,27 @@ export default class CustomPhaseTwoMatrix extends React.Component{
       <tbody>
         <td id='rowSpan'>Value</td>
         <OverlayTrigger onEnter={() => this.setState({index: 0})} ref="overlay0" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td id="pale">{this.state.threshs[0]}</td>
+        <td id="rowSpanWhite">{this.state.threshs[0]}</td>
         </OverlayTrigger>
 
         <OverlayTrigger onEnter={() => this.setState({index: 1})} ref="overlay1" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td id='pale'>{this.state.threshs[1]*100}%</td>
+        <td id='rowSpanWhite'>{this.state.threshs[1]*100}%</td>
         </OverlayTrigger>
 
         <OverlayTrigger onEnter={() => this.setState({index: 2})} ref="overlay2" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td id="pale">{this.state.threshs[2]}</td>
+        <td id="rowSpanWhite">{this.state.threshs[2]}</td>
         </OverlayTrigger>
 
         <OverlayTrigger onEnter={() => this.setState({index: 3})} ref="overlay3" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td id="pale">{this.state.threshs[3]}</td>
+        <td id="rowSpanWhite">{this.state.threshs[3]}</td>
         </OverlayTrigger>
 
         <OverlayTrigger onEnter={() => this.setState({index: 4})} ref="overlay4" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td id="pale">{this.state.threshs[4]}</td>
+        <td id="rowSpanWhite">{this.state.threshs[4]}</td>
         </OverlayTrigger>
 
         <OverlayTrigger onEnter={() => this.setState({index: 5})} ref="overlay5" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-        <td id="pale">{this.state.threshs[5]*100}%</td>
+        <td id="rowSpanWhite">{this.state.threshs[5]*100}%</td>
         </OverlayTrigger>
       </tbody>
     );
@@ -163,12 +163,12 @@ export default class CustomPhaseTwoMatrix extends React.Component{
             <td colSpan={3} id='rowSpanPale'>Supplier Related Environmental Indicators</td>
           </tr>
           <tr>
-            <td id='rowSpanPale'>Hazardous Material Use</td>
-            <td id='rowSpanPale'>Recyclability</td>
-            <td id='rowSpanPale'>Renewable Material Use</td>
-            <td id='rowSpanPale'>ISO 14001</td>
-            <td id='rowSpanPale'>Use of Recycled Materials</td>
-            <td id='rowSpanPale'>Environmentally Friendly Packaging</td>
+            <td id='rowSpanPale'>Hazardous Material Use (Level: 1=poor - 5=very good)</td>
+            <td id='rowSpanPale'>Recyclability (Rate: 0%-100%)</td>
+            <td id='rowSpanPale'>Renewable Material Use (Level: 1=poor - 5=very good)</td>
+            <td id='rowSpanPale'>ISO 14001 (Yes:1, No:0)</td>
+            <td id='rowSpanPale'>Use of Recycled Materials (Level: 1=poor - 5=very good)</td>
+            <td id='rowSpanPale'>Environmentally Friendly Packaging (Rate: 0% - 100%)</td>
           </tr>
 
         </thead>
@@ -217,11 +217,11 @@ export class DropDownChoose extends React.Component{
         <div>
           <div
             onClick={() => this.props.handleDropdownSubmit(1)}>
-            True
+            1
           </div>
           <div
             onClick={() => this.props.handleDropdownSubmit(0)}>
-            False
+            0
           </div>
         </div>
       );
