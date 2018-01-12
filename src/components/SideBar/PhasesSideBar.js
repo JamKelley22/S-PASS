@@ -3,7 +3,7 @@ import {Button,Nav,NavItem, NavDropdown, MenuItem, Panel, Accordion} from 'react
 import {Link} from 'react-router-dom';
 import React from 'react';
 import {LinkContainer} from 'react-router-bootstrap';
-
+import Save from './Save.js';
 import './SideBar.css'
 
 export default class ProjectSideBar extends React.Component{
@@ -79,6 +79,7 @@ export default class ProjectSideBar extends React.Component{
         })}
 
         </div>
+        <Save/>
       </div>
     );
   }

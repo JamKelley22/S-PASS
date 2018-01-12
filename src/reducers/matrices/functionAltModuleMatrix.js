@@ -1,5 +1,5 @@
 var math=require('mathjs');
-const initialState = math.matrix([//Idk how to get the initial width of a matrix
+const initialState = math.matrix([
   [5,5,0,0,0,5,5,0,0,0],
   [4,4,0,0,0,4,3,0,0,0],
   [3,3,0,0,0,4,4,0,5,0],
