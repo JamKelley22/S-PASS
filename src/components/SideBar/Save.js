@@ -29,24 +29,20 @@ class Save extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      data:empty
+
     };
-    this.getData = this.getData.bind(this);
+    this.beforeDownload = this.beforeDownload.bind(this);
   }
 
-  getData() {
-    console.log("DATAAAAAAAAAAA");
-    this.setState({
-      data: this.props.requirementFunctionMatrix
-    })
-    console.log(this.state.data);
-
+  beforeDownload() {
+    console.log("===Downloading Data===");
+    console.log(this.props.requirementFunctionMatrix._data);
   }
 
   render(){
     return(
-      <div onClick={() => this.getData()}>
-        <CSVLink filename='SPASS_Data.csv' id='link' data={this.state.data.valueOf()} >Download me</CSVLink>
+      <div onClick={() => this.beforeDownload()}>
+        <CSVLink filename='SPASS_Data.csv' id='link' data={this.props.requirementFunctionMatrix._data} >Download me</CSVLink>
       </div>
     );
   }
