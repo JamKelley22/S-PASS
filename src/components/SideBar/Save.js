@@ -29,20 +29,68 @@ class Save extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-
+      data:empty
     };
-    this.beforeDownload = this.beforeDownload.bind(this);
+    this.combineData = this.combineData.bind(this);
   }
 
-  beforeDownload() {
+  combineData() {
+    var newData = [];
+    var holder = [];
+
+    newData.push(["Phase One:"]);
+    newData.push(["","Input:"]);
+    newData.push([]);
+
+    newData.push(["","Function List:"]);
+    holder = this.props.functions;
+    holder.unshift(""); //need b/c unshift returns new length, not new array
+    newData.push(holder);
+    newData.push([]);
+
+    newData.push(["","Module List:"]);
+    holder = this.props.modules;
+    holder.unshift("");
+    newData.push(holder);
+    newData.push([]);
+
+    newData.push(["","Requirement List:"]);
+    holder = this.props.requirements;
+    holder.unshift("");
+    newData.push(holder);
+    newData.push([]);
+
+    newData.push(["","Requirement-Function Matrix:"]);
+    this.props.requirementFunctionMatrix._data.map(function(item) {
+      item.unshift("");
+      newData.push(item);
+    });
+    newData.push([]);
+
+    newData.push(["","Function-Module Matrix:"]);
+    this.props.functionModuleMatrix._data.map(function(item) {
+      item.unshift("");
+      newData.push(item);
+    });
+    newData.push([]);
+
+    newData.push(["","Module-Architecture Matrix:"]);
+    this.props.moduleArchitectureMatrix._data.map(function(item) {
+      item.unshift(""); 
+      newData.push(item);
+    });
+
+    this.setState({
+      data: newData
+    });
     console.log("===Downloading Data===");
-    console.log(this.props.requirementFunctionMatrix._data);
+    console.log(this.state.data);
   }
 
   render(){
     return(
-      <div onClick={() => this.beforeDownload()}>
-        <CSVLink filename='SPASS_Data.csv' id='link' data={this.props.requirementFunctionMatrix._data} >Download me</CSVLink>
+      <div onClick={() => this.combineData()}>
+        <CSVLink filename='SPASS_Data.csv' id='link' data={this.state.data} >Download me</CSVLink>
       </div>
     );
   }
