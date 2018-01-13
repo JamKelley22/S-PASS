@@ -40,7 +40,7 @@ class Save extends React.Component{
 
     newData.push(["Phase One:"]);
     newData.push(["","Input:"]);
-    newData.push([]);
+    newData.push([]);//Empty row for spacing
 
     newData.push(["","Function List:"]);
     holder = this.props.functions;
@@ -50,7 +50,7 @@ class Save extends React.Component{
 
     newData.push(["","Module List:"]);
     holder = this.props.modules;
-    holder.unshift("");
+    holder.unshift("");//Basically acts as a tab
     newData.push(holder);
     newData.push([]);
 
@@ -62,23 +62,31 @@ class Save extends React.Component{
 
     newData.push(["","Requirement-Function Matrix:"]);
     this.props.requirementFunctionMatrix._data.map(function(item) {
-      item.unshift("");
-      newData.push(item);
+      holder = item.slice(0);//Make sure two copies aren't pointing at same memery location
+      holder.unshift("");
+      newData.push(holder);
     });
     newData.push([]);
 
     newData.push(["","Function-Module Matrix:"]);
     this.props.functionModuleMatrix._data.map(function(item) {
-      item.unshift("");
-      newData.push(item);
+      holder = item.slice(0);
+      holder.unshift("");
+      newData.push(holder);
     });
     newData.push([]);
 
     newData.push(["","Module-Architecture Matrix:"]);
     this.props.moduleArchitectureMatrix._data.map(function(item) {
-      item.unshift(""); 
-      newData.push(item);
+      holder = item.slice(0);
+      holder.unshift("");
+      newData.push(holder);
     });
+
+    newData.push(["","Output:"]);
+    newData.push([]);
+
+    
 
     this.setState({
       data: newData
