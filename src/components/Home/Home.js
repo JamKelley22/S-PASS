@@ -29,7 +29,6 @@ const Home = ({match}) =>(
     <Jumbotron className='jumbotron' id='jumbo'>
       <div id='centerText'>
       <h2>S-PASS</h2>
-      <CSVLink data={initialState} >Download me</CSVLink>
 
       <h5>
         Use the Sustainable Product Architecture and Supplier Selection (S-PASS) tool to identify environmentally sustainable product architectures and their suppliers.
