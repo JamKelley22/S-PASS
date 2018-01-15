@@ -18,6 +18,11 @@ export default function(state=initialState, action){
                 ...state.slice(action.payload+1,state.length)]
           break;
       }
+      case "UPDATE_REQUIREMENT_LIST":
+        console.log("Updating requirement list with");
+        console.log(action.payload);
+        return [action.payload]
+        break;
     }
     return state;
 }
