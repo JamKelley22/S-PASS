@@ -21,7 +21,7 @@ export default function(state=initialState, action){
       case "UPDATE_REQUIREMENT_LIST":
         console.log("Updating requirement list with");
         console.log(action.payload);
-        return [action.payload]
+        return action.payload
         break;
     }
     return state;

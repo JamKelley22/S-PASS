@@ -8,7 +8,7 @@ import '../../Matrix/Matrix.css';
 import '../../Matrix/Test.js';
 import ListStuff from '../../ListStuff/ListStuff.js';
 import './PhaseOneInput.css';
-
+import FileInput from '../../FileInput.js';
 
 const tooltip = (
   <Tooltip id="tooltip"><strong>Your Name</strong></Tooltip>
@@ -62,7 +62,7 @@ export default class PhaseOneInput extends React.Component{
     return(
 
       <div id='scroll'>
-
+      <FileInput/>
 
       <Modal show={this.state.showModal} onHide={this.hideHelp}>
         <Help/>

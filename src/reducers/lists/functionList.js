@@ -21,7 +21,7 @@ export default function(state = initialState, action){
         case "UPDATE_FUNCTION_LIST":
           console.log("Updating function list with");
           console.log(action.payload);
-          return [action.payload]
+          return [...state.slice(0,0)].push(action.payload);
           break;
       }
     return state;

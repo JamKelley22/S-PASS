@@ -9,7 +9,6 @@ import MSFilterMatrix from '../Matrix/MSFilterMatrix.js';
 import SupplierForm from '../submit/SupplierForm.js';
 import {addNewSupplier} from '../../actions/supplierListActions.js'
 //import {addRequirement,removeRequirement} from '../../actions/requirementListActions.js';
-import FileInput from '../FileInput.js';
 import './PhaseTwoOut.css';
 
 class PhaseTwoOut extends React.Component{
@@ -34,7 +33,7 @@ class PhaseTwoOut extends React.Component{
   render(){
     return(
       <div  id='scroll'>
-      <FileInput/>
+
 <p className='clearfix'>
 <h1 >Phase 2: Module and Supplier filtering (Result)</h1>
 </p>
