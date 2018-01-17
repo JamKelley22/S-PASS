@@ -2,7 +2,7 @@ import React from 'react';
 import Papa from 'papaparse';
 import {connect} from "react-redux"; //Connects the store to application.
 import {bindActionCreators} from 'redux';
-import {updateRequirementList,updateFunctionList} from '../actions/updateActions';
+import {updateRequirementList,updateFunctionList,updateModuleList} from '../actions/updateActions';
 import {Button} from 'react-bootstrap';
 
 class FileInput extends React.Component {
@@ -34,6 +34,12 @@ class FileInput extends React.Component {
       requirementList.shift();
       console.log(requirementList);
       this.props.updateRequirementList(requirementList);
+
+      var moduleList = data[6];
+      moduleList.shift();
+      console.log(moduleList);
+      this.props.updateModuleList(moduleList);
+
     }
 
     getFile(event) {
@@ -65,6 +71,7 @@ function matchDispatchToProps(dispatch,list){
   return bindActionCreators({
     updateFunctionList : updateFunctionList,
     updateRequirementList : updateRequirementList,
+    updateModuleList : updateModuleList,
 
   },dispatch)
 }

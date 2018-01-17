@@ -30,3 +30,11 @@ export const updateFunctionList = (list) =>{
     payload:list
   }
 };
+
+export const updateModuleList = (list) =>{
+  console.log("Updating Module List");
+  return{
+    type:"UPDATE_MODULE_LIST",
+    payload:list
+  }
+};

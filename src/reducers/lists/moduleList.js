@@ -21,6 +21,11 @@ export default function(state = initialState, action){
           return[...state.slice(0,action.payload),
                 ...state.slice(action.payload+1,state.length)]
           break;
+        case "UPDATE_MODULE_LIST":
+          console.log("Updating module list with");
+          console.log(action.payload);
+          return action.payload
+          break;
       }
     return state;
 }
