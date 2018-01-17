@@ -111,10 +111,6 @@ class PhaseTwo extends React.Component{
       <div className="divLine"></div>
 
       <p className='clearfix'>
-      Please fill out the white area of each matrix; Click an empty cell and select one of the listed values. Do not modify any format or forumla in the worksheet.
-      </p>
-
-      <p className='clearfix'>
       <b>Q1) Please identify alternative modules and their suppliers that can replace the inadequate modules identified in Phase 1.</b>
       </p>
       {console.log(ModuleThreshArr)}
@@ -220,7 +216,7 @@ class PhaseTwo extends React.Component{
       />
 
 <p className='clearfix'>
-Evaluation of environmental sustainability for new modules and suppliers.
+<b>Evaluation of environmental sustainability for new modules and suppliers (given data)</b>
 </p>
 
       <div id='addScrollbar'

@@ -211,12 +211,14 @@ export default class PhaseThreeOutput extends React.Component{
         <div className="divLine"></div>
 
         <p>
+        <b>
         Average functional satisfaction levels for new product architectures:
+        </b>
         </p>
 
 <div className='overlay'>
         <MatrixDisplay
-          title="Function / Architecture"
+          title=""
           colNames={this.props.newArchitectureList}
           rowNames={this.props.functions}
           matrixContent={this.state.fa_matrix}
@@ -231,14 +233,17 @@ export default class PhaseThreeOutput extends React.Component{
         />
 </div>
 
-        <p>
-        Average functional satisfaction levels for new product architectures:
-        </p>
+
         <div className="divLine"></div>
+        <p>
+        <b>
+        Average functional satisfaction levels for new product architectures:
+        </b>
+        </p>
 
 <div className='overlay'>
           <MatrixDisplay
-          title="Requirement / Architecture"
+          title=""
           colNames={this.props.newArchitectureList}
           rowNames={this.props.requirements}
           matrixContent={this.state.ra_matrix}
@@ -253,13 +258,17 @@ export default class PhaseThreeOutput extends React.Component{
         />
 </div>
 
+<div className="divLine"></div>
+
         <p>
+        <b>
         Suppliers selected for new product architectures:
+        </b>
         </p>
 
 <div className='overlay'>
         <MatrixDisplay
-          title="Supplier / Architecture"
+          title=""
           colNames={this.props.newArchitectureList}
           rowNames={this.props.acceptedSuppliers}
           matrixContent={this.state.ea_matrix}

@@ -156,7 +156,7 @@ export default class PhaseOneInput extends React.Component{
         Please fill out the white area of each matrix. Click an empty cell and select one of the listed values. Do not modify any format or forumla in the worksheet.
         </p>
         <p className='clearfix'>
-        <b>Q1)</b> Please estimate to what extent each product function contributes to achieve each environmental sustainability requirement.
+        <b>Q1) Please estimate to what extent each product function contributes to achieve each environmental sustainability requirement.</b>
         </p>
         <p className='clearfix'>
         Note: Each value indicates the contribution probability of the function to the requirement, a range from 0% to 100%. (See figure)
@@ -180,7 +180,7 @@ export default class PhaseOneInput extends React.Component{
 
           <div id='matrixDisplay'>
             <MatrixDisplay
-              title = "Requirement / Function"
+              title = "Requirement–Function Matrix"
               matrixContent={this.props.requirementFunctionMatrix._data}
               colNames={this.props.functions}
               rowNames={this.props.requirements}
@@ -220,7 +220,8 @@ export default class PhaseOneInput extends React.Component{
 
 
         <p className='clearfix'>
-        <b>Q2)</b> Please estimate to what extent each product module satisfies each product function.
+        <b>Q2) Please estimate to what extent each product module satisfies each product function.
+        </b>
         </p>
         <p className='clearfix'>
         Note: Each satisfaction level is a range from 1(poor) to 5 (very good) and has 0 if the module does not provide the function. (See figure)
@@ -233,7 +234,7 @@ export default class PhaseOneInput extends React.Component{
         <div id='matrixRow'>
           <div id='matrixDisplay'>
             <MatrixDisplay
-              title = "Function / Module"
+              title = "Function–Module Matrix"
               matrixContent={this.props.functionModuleMatrix._data}
               colNames={this.props.modules}
               rowNames={this.props.functions}
@@ -263,7 +264,7 @@ export default class PhaseOneInput extends React.Component{
 
         <div>
         <p className='clearfix'>
-        <b>Q3)</b> Please identify the module composition of current products.
+        <b>Q3) Please identify the module composition of current products.</b>
         </p>
         <p className='clearfix'>
         Note: 1 (used), 0 (not used)
@@ -274,7 +275,7 @@ export default class PhaseOneInput extends React.Component{
 
 
         <MatrixDisplay
-          title = "Module / Product Architecture"
+          title = "Module–Product Architecture Matrix"
           matrixContent={this.props.moduleArchitectureMatrix._data}
           colNames={this.props.productArchitecture}
           rowNames={this.props.modules}
