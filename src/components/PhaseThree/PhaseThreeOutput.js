@@ -5,7 +5,6 @@ import {LinkContainer} from 'react-router-bootstrap';
 import {connect} from "react-redux"; //Connects the store to application.
 import {Table} from 'react-bootstrap';
 import MatrixDisplay from '../Matrix/Matrix.js';
-import Save from '../Save.js';
 import './PhaseThree.css';
 
 export default class PhaseThreeOutput extends React.Component{
@@ -186,24 +185,6 @@ export default class PhaseThreeOutput extends React.Component{
       //Create requirement architecture averages
       {this.state.ra_avg = this.findAverage(this.state.ra_matrix)}
 
-      const style = {
-        backgroundColor: "#A2B427",
-      color: "rgba(0,0,0,0.6)",
-      fontFamily: "'museo-sans', sans-serif",
-      fontWeight: "700",
-      fontSize: "16",
-      padding: "6px 12px",
-      borderRadius: "3px",
-      boxShadow: "0 1px 10px 0 rgba(0,0,0,0.2), 0 2px 12px 0 rgba(0,0,0,0.19)",
-      marginLeft: "none",
-      marginTop: "10px",
-      border: "none",
-      textDecoration: "none",
-      textAlign:"center",
-      width: "50%",
-      display: "block",
-      margin: "auto"
-      }
     return(
       <div id='scroll'>
 
@@ -281,10 +262,6 @@ export default class PhaseThreeOutput extends React.Component{
           dropDownChoices={null}
         />
 </div>
-
-        <div className="divLine"></div>
-        <br/>
-        <Save style={style}/>
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseThree/Input'>

@@ -159,7 +159,7 @@ class Save extends React.Component{
   render(){
     return(
       <div onClick={() => this.combineData()}>
-        <CSVLink style={this.props.style} filename='SPASS_Data.csv' data={this.state.data} >Download All Input Data</CSVLink>
+        <CSVLink filename='SPASS_Data.csv' id='link' data={this.state.data} >Download Input Data</CSVLink>
       </div>
     );
   }

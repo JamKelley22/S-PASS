@@ -191,7 +191,3 @@ h4 {
 #noClick, .noClick {
   cursor: not-allowed !important;
 }
-
-#sidebarSave {
-  color: white;
-}

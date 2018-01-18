@@ -13,7 +13,18 @@ export default class notATest extends React.Component{
   }
 
   componentDidMount(){
-
+    //alert(this.props.matrixContent.length + ' ' + this.props.matrixContent[0].length);
+    /*
+    var matrixContent = this.props.matrixContent;
+    var total = 0;
+    for (var i = 0, len = matrixContent.length; i < len; i++) {
+      for (var j = 0, len = matrixContent[i].length; j < len-2; j++) {
+        total += parseFloat(matrixContent[i][j]);
+        //alert(parseFloat(matrixContent[i][j]));
+      }
+    }
+    this.setState({rowSum: total});
+    */
   }
 
   componentDidUpdate(){
@@ -36,6 +47,15 @@ export default class notATest extends React.Component{
       </tr>
     }
   }
+  /*
+         {averages.map((name,index)=>
+            {
+              return <tr>
+                <th style={{backgroundColor: this.props.bgColor, minHeight: '60px'}}><div className="block-with-text">TEST
+                </div></th>
+              </tr>
+            })}
+   */
 
    getSumColumnCells() {
      const data = this.props.matrixContent;
