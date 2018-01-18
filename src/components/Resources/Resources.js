@@ -51,10 +51,10 @@ class Resources extends React.Component {
           <Panel id="p1">
             <div id='centerText'>
               <p className='clearfix'>
-              <a href="https://drive.google.com/file/d/14vcWX8f5f4YtXaJBoC7I3quPOYHY4Bsy/view?usp=sharing" target="_blank">Overview of S-PASS</a>
+              <a href="https://drive.google.com/file/d/1nTPPDNKREY5cP9lI_fVFTMC70LCKu5kP/view?usp=sharing" target="_blank">Overview of S-PASS</a>
               </p>
               <p className='clearfix'>
-              <a href="https://drive.google.com/file/d/1eHZYEWc-hsrtVOkgbbnLuHKi_0SFXEBK/view?usp=sharing" target="_blank">Constructionism in Learning: Sustainable Life Cycle Engineering Project (CooL:SLiCE)</a>
+              <a href="https://drive.google.com/file/d/1YYLp66wQnDUT_u_VjwShQLA_0LIhNxK-/view?usp=sharing" target="_blank">Constructionism in Learning: Sustainable Life Cycle Engineering Project (CooL:SLiCE)</a>
               </p>
               {/*
               <p className='clearfix'>
@@ -67,7 +67,7 @@ class Resources extends React.Component {
               </p>
               */}
               <p className='clearfix'>
-              <a href="https://drive.google.com/open?id=1r1AXSu4zjMoEd5yC47BPiUnUmM70UmUc" target="_blank">Development of Learning Modules for Sustainable Life Cycle Product Design: A Constructionist Approach</a>
+              <a href="https://drive.google.com/file/d/0B62DcZUjOkoCdVRLZ1Jnc09UOGc/view?usp=sharing" target="_blank">Development of Learning Modules for Sustainable Life Cycle Product Design: A Constructionist Approach</a>
               </p>
               {/*
               <p className='clearfix'>
@@ -78,16 +78,16 @@ class Resources extends React.Component {
               </p>
               */}
               <p className='clearfix'>
-              <a href="https://drive.google.com/open?id=1zR8vuPwA3xufEbEhZlehRDhXnSvxtJda" target="_blank">A Sustainable Modular Product Design Approach with Key Components and Uncertain End-of-life Options Consideration</a>
+              <a href="https://drive.google.com/file/d/0B62DcZUjOkoCM2dhbzVOMTRTcVU/view?usp=sharing" target="_blank">A Sustainable Modular Product Design Approach with Key Components and Uncertain End-of-life Options Consideration</a>
               </p>
               <p className='clearfix'>
-              <a href="https://drive.google.com/open?id=155jwGqsWBdVV3fAN3owRGSDPA3wQW2gx" target='_blank'>A Case Study for Sustainable Drone Design</a>
+              <a href="https://drive.google.com/file/d/1WFyZkMWiCg7naXGU6eHuI_ePgGg7dxWb/view?usp=sharing" target='_blank'>A Case Study for Sustainable Drone Design</a>
               </p>
               <p className='clearfix'>
-              <a href="https://drive.google.com/open?id=14Czumn-oPLAJOLk-HCABgGr1QW-6h05V" target="_blank">CooL:SLiCE S-PASS Tool</a>
+              <a href="https://drive.google.com/file/d/1LcuGifKOGoKXG4294DMfQD8WzzfG7I9y/view?usp=sharing" target="_blank">CooL:SLiCE S-PASS Tool</a>
               </p>
               <p className='clearfix'>
-              <a href="https://drive.google.com/open?id=1Hwgz1qeko2IEV9es3FMcuO6PVejYdxY6" target="_blank">CooL:SLiCE S-PASS Tool Example</a>
+              <a href="https://drive.google.com/file/d/1BU9z--R6vCwwm3v76oe1MITJhQSGHj_Y/view?usp=sharing" target="_blank">CooL:SLiCE S-PASS Tool Example</a>
               </p>
 
 
