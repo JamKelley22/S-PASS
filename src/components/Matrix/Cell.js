@@ -192,14 +192,6 @@ export default class Cell extends React.Component{
 
   render(){
     var getCellInputFromUser = this.getCellInputFromUser;
-    /*
-    const errorHover = (
-      <Popover style={{backgroundColor: '#ffcccc'}} id="popoverError">
-        //Error: {this.state.errorMsg}
-      </Popover>
-    );
-    */
-
     return(
       this.getCellToReturn()
     );
