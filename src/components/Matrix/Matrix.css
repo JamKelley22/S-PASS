@@ -129,3 +129,6 @@ max-height: 45px;
 #msTopRow {
   height: 100px;
 }
+#spacing_under_matrix {
+  padding: 0px;
+}

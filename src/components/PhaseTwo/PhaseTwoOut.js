@@ -5,6 +5,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 import {connect} from "react-redux"; //Connects the store to application.
 import {Table, Tooltip, Form, InputGroup, OverlayTrigger, FormControl, FormGroup} from 'react-bootstrap';
 import MSFilterMatrix from '../Matrix/MSFilterMatrix.js';
+import ListStuffSimple from '../ListStuffSimple/ListStuffSimple.js';
 
 import SupplierForm from '../submit/SupplierForm.js';
 import {addNewSupplier} from '../../actions/supplierListActions.js'
@@ -50,6 +51,13 @@ class PhaseTwoOut extends React.Component{
           values = {this.findBools(this.props.selectedAlternates,this.props.acceptedAlternates)}
         />
       </div>
+      <div id='msMatrix' className='overlay'>
+        <MSFilterMatrix
+            title = {'Supplier'}
+            names = {this.props.selectedSuppliers}
+            values = {this.findBools(this.props.selectedSuppliers,this.props.acceptedSuppliers)}
+        />
+      </div>
       <div className="divLine"></div>
 
 <p className='clearfix'>
@@ -57,10 +65,14 @@ class PhaseTwoOut extends React.Component{
 </p>
 
       <div id='msMatrix' className='overlay'>
-        <MSFilterMatrix
-          title = {'Supplier'}
-          names = {this.props.selectedSuppliers}
-          values = {this.findBools(this.props.selectedSuppliers,this.props.acceptedSuppliers)}
+
+        <h1>Accepted Alternates</h1>
+        <ListStuffSimple
+            list={this.props.acceptedAlternates}
+        />
+        <h1>Accepted Suppliers</h1>
+        <ListStuffSimple
+            list={this.props.acceptedSuppliers}
         />
       </div>
 
