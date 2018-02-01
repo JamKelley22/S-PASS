@@ -120,7 +120,7 @@ export default class PhaseOneInput extends React.Component{
 <b>Q2) Please identify each module's supplier</b>
 </p>
 <p className='clearfix'>
-Note: 1(related, 0(notrelated)
+Note: 1(related, 0(not related)
 </p>
 
 
@@ -135,8 +135,11 @@ Note: 1(related, 0(notrelated)
               bgColor={'rgba(210,210,177,0.6)'}
               canEditCells={true}
               numberType='#' // | bin | % | # |
-              editType='input'// | dropDown | input |
-              dropDownChoices={null}
+              editType='dropDown'// | dropDown | input |
+              dropDownChoices={[
+                ['0',''],
+                ['1','']
+              ]}
             />
           </div>
         </div>
