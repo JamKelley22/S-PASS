@@ -18,7 +18,6 @@ import TopNav from './SideBar/navbar.js';
 import {PageHeader,Grid} from 'react-bootstrap';
 
 
-
 const App = () => (
   <div className='main'>
     <Grid>

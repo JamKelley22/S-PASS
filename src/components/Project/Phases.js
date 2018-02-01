@@ -32,15 +32,6 @@ const Phases = ({match}) =>(
       </div>
     </div>
 
-{/*    <Breadcrumbs
-      crumbs={[
-        ['Home','/'],
-        ['SPASS','/SPASS/About'],
-        ['Phases', '/Phases']
-      ]}
-    />
-*/}
-
     <PhasesSideBar match={match}/>
 
     <div id='content'>

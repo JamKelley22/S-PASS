@@ -18,6 +18,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 import Backround from './Backround.js'
 import BackgroundImage from 'react-background-image-loader';
 
+
 import other from './other.css';
 
 
@@ -28,6 +29,7 @@ const Home = ({match}) =>(
     <Jumbotron className='jumbotron' id='jumbo'>
       <div id='centerText'>
       <h2>S-PASS</h2>
+
       <h5>
         Use the Sustainable Product Architecture and Supplier Selection (S-PASS) tool to identify environmentally sustainable product architectures and their suppliers.
       </h5>
