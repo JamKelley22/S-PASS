@@ -145,7 +145,7 @@ export default class Cell extends React.Component{
   getCellToReturn() {
     const popoverClick = this.getPopover();
     if(this.props.canEditCells) {
-      if(this.props.indexI < this.props.numRows / 2 ){
+      if(this.props.indexI < this.props.numRows / 2 - 1){
       switch (this.props.numberType) {
         case '#':
           return(
