@@ -86,8 +86,19 @@ export default class Cell extends React.Component{
     var popoverClick = null;
     switch(this.props.editType) {
         case 'dropDown':
+        //console.log("NumRows: " + this.props.numRows);
           return (
             <Popover {...this.props} id="popover-positioned-scrolling-bottom" className='pop' title={this.state.popTitle}>
+              <DropDownChoose
+                handleDropdownSubmit={this.handleDropdownSubmit}
+                value={this.state.value}
+                dropDownChoices={this.props.dropDownChoices}
+                numberType={this.props.numberType}
+              />
+            </Popover>
+          );
+          return (
+            <Popover {...this.props} id="popover-positioned-scrolling-top" className='pop' title={this.state.popTitle}>
               <DropDownChoose
                 handleDropdownSubmit={this.handleDropdownSubmit}
                 value={this.state.value}
@@ -113,6 +124,7 @@ export default class Cell extends React.Component{
             </Popover>
           );
           break;
+
     }
 
   }
@@ -133,6 +145,7 @@ export default class Cell extends React.Component{
   getCellToReturn() {
     const popoverClick = this.getPopover();
     if(this.props.canEditCells) {
+      if(this.props.indexI < this.props.numRows / 2 ){
       switch (this.props.numberType) {
         case '#':
           return(
@@ -171,6 +184,47 @@ export default class Cell extends React.Component{
           );
           break;
       }
+    }
+    else {
+      switch (this.props.numberType) {
+        case '#':
+          return(
+            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="top" overlay={popoverClick}>
+              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
+              {this.props.name}</td>
+            </OverlayTrigger>
+          );
+          break;
+
+        case 'bin':
+          return(
+            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="top" overlay={popoverClick}>
+              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
+              {this.props.name}</td>
+            </OverlayTrigger>
+          );
+          break;
+
+        case '%':
+          return(
+            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="top" overlay={popoverClick}>
+              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
+              {this.props.name * 100}%</td>
+            </OverlayTrigger>
+          );
+          break;
+
+
+        default:
+          return(
+            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="top" overlay={popoverClick}>
+              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
+              {this.props.name}</td>
+            </OverlayTrigger>
+          );
+          break;
+      }
+    }
     }
     else {
       var satisfifyThresh = 3;
