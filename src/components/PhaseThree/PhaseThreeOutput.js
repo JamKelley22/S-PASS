@@ -202,8 +202,9 @@ export default class PhaseThreeOutput extends React.Component{
       textAlign:"center",
       width: "50%",
       display: "block",
-      margin: "auto"
+       margin: "auto"
       }
+
     return(
       <div id='scroll'>
 
@@ -282,9 +283,9 @@ export default class PhaseThreeOutput extends React.Component{
         />
 </div>
 
-        <div className="divLine"></div>
-        <br/>
-        <Save style={style}/>
+          <div className="divLine"></div>
+          <br/>
+          <Save style={style}/>
 
         <div id='lowerButtons'>
           <LinkContainer to='/Phases/PhaseThree/Input'>

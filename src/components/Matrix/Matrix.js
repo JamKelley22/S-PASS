@@ -122,6 +122,7 @@ export default class notATest extends React.Component{
                       indexJ={indexJ}
                       indexI={indexI}
                       name={name}
+                      numRows={matrixContent.length}
                       canEditCells = {this.props.canEditCells}
                       editCell = {this.props.editCell}
 
@@ -139,7 +140,9 @@ export default class notATest extends React.Component{
             </tbody>
           </Table>
       </div>
+
       </div>
   );
+
   }
 }
