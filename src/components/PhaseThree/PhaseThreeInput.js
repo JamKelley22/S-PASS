@@ -104,6 +104,7 @@ export default class PhaseOneInput extends React.Component{
               numberType='#' // | bin | % | # |
               editType='dropDown'// | dropDown | input |
               dropDownChoices={[
+                ['0',''],
                 ['1',''],
                 ['2',''],
                 ['3',''],
