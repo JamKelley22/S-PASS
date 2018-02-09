@@ -243,6 +243,7 @@ export default class PhaseOneInput extends React.Component{
               canEditCells={true}
               numberType='#' // | bin | % | # |
               editType='dropDown'// | dropDown | input |
+              maxNumber={1}
               dropDownChoices={[
                 ['0',''],
                 ['1',''],

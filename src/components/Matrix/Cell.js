@@ -35,6 +35,7 @@ export default class Cell extends React.Component{
 
   handleSubmit(i,j,event) {
     this.setState({popTitle: 'Enter new cell value:'});
+
     if(!isNaN(this.state.value) & parseFloat(this.state.value) > -1) {
       this.setState({number: parseFloat(this.state.value)},function() {
         this.props.editCell(i,j,this.state.number);
@@ -45,32 +46,19 @@ export default class Cell extends React.Component{
     else {
       this.setState({popTitle: 'Invalid input. Please enter a non-negative number'});
     }
+
     //this.checkError();
-    event.preventDefault();
+    //event.preventDefault();
   }
 
-  /*
-  checkError() {
-    if(parseInt(this.state.value) > this.props.maxNumber || this.state.value == '') {
-      this.setState({error: true, errorMsg: 'value out of acceptable range. Range: 0-' + this.props.maxNumber});
-    }
-    else {
-      this.setState({error: false});
-    }
-  }
-  */
-
-  handleDropdownSubmit(num) {
+  handleDropdownSubmit(num, event) {
     var parseNum = parseFloat(num);
-    switch (this.props.numberType) {
-      case '%':
-        parseNum = parseNum / 100.0;
-        break;
-      default:
+    if(this.props.numberType == '%') {
+      parseNum = parseNum / 100.0;
     }
+
     this.setState({number: parseNum},function() {
-      //alert(typeof(this.state.number/100.0));
-      this.props.editCell(this.props.indexI,this.props.indexJ,parseNum);///////////////////////////////////////////
+      this.props.editCell(this.props.indexI,this.props.indexJ,parseNum);
     });
     this.refs.overlay.hide();
   }
@@ -88,7 +76,7 @@ export default class Cell extends React.Component{
         case 'dropDown':
         //console.log("NumRows: " + this.props.numRows);
           return (
-            <Popover {...this.props} id="popover-positioned-scrolling-bottom" className='pop' title={this.state.popTitle}>
+            <Popover id="popover-positioned-scrolling-bottom" className='pop' title={this.state.popTitle}>
               <DropDownChoose
                 handleDropdownSubmit={this.handleDropdownSubmit}
                 value={this.state.value}
@@ -98,7 +86,7 @@ export default class Cell extends React.Component{
             </Popover>
           );
           return (
-            <Popover {...this.props} id="popover-positioned-scrolling-top" className='pop' title={this.state.popTitle}>
+            <Popover id="popover-positioned-scrolling-top" className='pop' title={this.state.popTitle}>
               <DropDownChoose
                 handleDropdownSubmit={this.handleDropdownSubmit}
                 value={this.state.value}
@@ -110,7 +98,7 @@ export default class Cell extends React.Component{
           break;
         case 'input':
           return (
-            <Popover {...this.props} id="popover-positioned-scrolling-bottom" className='pop' title={this.state.popTitle}>
+            <Popover id="popover-positioned-scrolling-bottom" className='pop' title={this.state.popTitle}>
               <form action="#">
                 <label>
                   <InputBox
@@ -141,90 +129,34 @@ export default class Cell extends React.Component{
     });
   }
 
-  //| dropDown | input |
   getCellToReturn() {
     const popoverClick = this.getPopover();
-    if(this.props.canEditCells) {
-      if(this.props.indexI < this.props.numRows / 2 - 1){
-      switch (this.props.numberType) {
-        case '#':
-          return(
-            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
-              {this.props.name}</td>
-            </OverlayTrigger>
-          );
-          break;
-
-        case 'bin':
-          return(
-            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
-              {this.props.name}</td>
-            </OverlayTrigger>
-          );
-          break;
-
-        case '%':
-          return(
-            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
-              {this.props.name * 100}%</td>
-            </OverlayTrigger>
-          );
-          break;
-
-
-        default:
-          return(
-            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="bottom" overlay={popoverClick}>
-              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
-              {this.props.name}</td>
-            </OverlayTrigger>
-          );
-          break;
-      }
+    var placeHere;
+    if(this.props.indexI < this.props.numRows / 2 - 1){
+      placeHere = "bottom";
     }
     else {
-      switch (this.props.numberType) {
-        case '#':
-          return(
-            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="top" overlay={popoverClick}>
-              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
-              {this.props.name}</td>
-            </OverlayTrigger>
-          );
-          break;
-
-        case 'bin':
-          return(
-            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="top" overlay={popoverClick}>
-              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
-              {this.props.name}</td>
-            </OverlayTrigger>
-          );
-          break;
-
-        case '%':
-          return(
-            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="top" overlay={popoverClick}>
-              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
-              {this.props.name * 100}%</td>
-            </OverlayTrigger>
-          );
-          break;
-
-
-        default:
-          return(
-            <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement="top" overlay={popoverClick}>
-              <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
-              {this.props.name}</td>
-            </OverlayTrigger>
-          );
-          break;
-      }
+      placeHere = "top";
     }
+
+    if(this.props.canEditCells) {
+      if(this.props.numberType == '%') {
+        return(
+          <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement={placeHere} overlay={popoverClick}>
+            <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
+            {this.props.name * 100}%</td>
+          </OverlayTrigger>
+        );
+      }
+      else {
+        return(
+          <OverlayTrigger container={this} onEnter={this.highlightCell} onExit={this.normalizeCell} ref="overlay" trigger="click" rootClose placement={placeHere} overlay={popoverClick}>
+            <td id='myRel' style={{backgroundColor: this.state.cellBG}} key={ this.props.indexJ } >
+            {this.props.name * 1} </td>
+          </OverlayTrigger>
+        );
+      }
+
     }
     else {
       var satisfifyThresh = 3;
@@ -249,7 +181,6 @@ export default class Cell extends React.Component{
     return(
       this.getCellToReturn()
     );
-
   }
 }
 
@@ -280,48 +211,35 @@ export class DropDownChoose extends React.Component{
 
   getChoices() {
     const choices = this.props.dropDownChoices;
-    switch(this.props.numberType) {
-      case '%':
-        return(
-          <div>
+    if(this.props.numberType == '%') {
+      return(
+        <div>
+        {choices.map((name,index)=> {
+          return <div id='percentTab'
+          onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
+          >
+            {choices[index][0] + '%' + '\t' + choices[index][1]}
+          </div>;
+        })}
 
-
-          {choices.map((name,index)=> {
-            return <div id='percentTab'
-            onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
-            >
-              {choices[index][0] + '%' + '\t' + choices[index][1]}
-            </div>;
-          })}
-
-          </div>
-        );
-      break;
-
-      case 'bin':
-        return(
-          choices.map((name,index)=> {
-            return <div id='percentTab'
-            onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
-            >
-              {choices[index][0] + '\t' + choices[index][1]}
-            </div>;
-          })
-        );
-      break;
-
-      case '#':
-        return(
-          choices.map((name,index)=> {
-            return <div id='percentTab'
-            onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
-            >
-              {choices[index][0] + '\t' + choices[index][1]}
-            </div>;
-          })
-        );
-      break;
+        </div>
+      );
     }
+    else {
+      return(
+        <div>
+        {choices.map((name,index)=> {
+          return <div id='percentTab'
+          onClick={() => this.props.handleDropdownSubmit(choices[index][0])}
+          >
+            {choices[index][0] + '\t' + choices[index][1]}
+          </div>;
+        })}
+
+        </div>
+      );
+    }
+
 }
 
   render() {
