@@ -238,7 +238,7 @@ export default class PhaseThreeOutput extends React.Component{
         <div className="divLine"></div>
         <p>
         <b>
-        Average functional satisfaction levels for new product architectures:
+        Average requirement satisfaction levels for new product architectures:
         </b>
         </p>
 
