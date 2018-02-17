@@ -26,7 +26,6 @@ Company X has just signed a consulting agreement with your team to tap into your
 
 
 
-
       <p className='clearfix'>
       Follow each phase outlined in the case study description
       (
